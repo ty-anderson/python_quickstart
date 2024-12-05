@@ -278,9 +278,94 @@ car.stop()                           # run the stop method
 ## Building Large Projects
 
 
-Detail on how python import system works
+# Advanced Topics
 
-How to run scripts in module mode and why its helpful
+## How the python import system works
 
-Python convert to byte-code
+## Run scripts in module mode
 
+## Asyncio
+
+All the code up to this point has been synchronous, meaning everything happens one step at a time.
+Asynchronous (async) code can be used to handle multiple tasks at the same time.
+
+Be aware, async code is more complicated than synchronous in any language, including python. 
+
+When should I use async code?
+
+If your code is...
+- CPU Bound - use [Multi Processing](https://docs.python.org/3/library/multiprocessing.html)
+- IO bound, fast IO, limited number of connections - use [Threading](https://docs.python.org/3/library/threading.html)
+- IO bound, slow IO, many connections - use [Asyncio](https://docs.python.org/3/library/asyncio.html)
+
+In other words....
+```py
+if io_bound:
+    if io_very_slow:
+        print('Use asyncio')
+    else:
+        print('Use threads')
+else:
+    print('Use Multi processing')
+```
+### General Info
+
+The most important keywords: 
+``async`` and ``await``
+
+The most important functions:
+``asyncio.run()`` and ``asyncio.gather()``
+
+- ``async`` - this keyword is used to define a function that will be capable of running async. This turns the 
+function into whats called a coroutine. If a function is a coroutine (has the async keyword), then it has to 
+utilize the await keyword as well.
+- ``await`` - is the keyword that is used to let python know that a function is going to take some time to resolve. 
+It will stop trying to run the function and move on to another task while it waits for the task to resolve.
+- ``asyncio.run()`` - this is the most common way to run a coroutine (function with async). A coroutine cannot be 
+called like a normal function.
+- ``asyncio.gather()`` - this is not required but is extremely useful and common. ``gather`` allows you to run 
+multiple coroutines at the same time.
+
+The best way to understand async code is to experiment with it. Lets look at some examples.
+
+```py
+import asyncio
+
+# this is a coroutine
+async def async_function(request_data):
+    response_data = await some_get_data_function(request_data)
+    return response_data
+
+# this is a coroutine
+async def main():
+    results = await asyncio.gather(
+      async_function('x'), 
+      async_function('y'),
+      async_function('z')
+    )
+    print(results)
+    
+if __name__ == '__main__':
+    asyncio.run(main())  # this is how you run a coroutine
+```
+
+
+
+
+## Cython
+
+## Other Helpful Tips
+
+**Unpacking Iterables** is a useful trick. If you have a list or other iterable that you want to perform an operation on
+you can unpack it with an asterisk.
+
+```py
+# with unpacking
+numbers = [1, 2, 3, 4]
+print(*numbers)
+
+# this gives the same result, but requires more code
+numbers = [1, 2, 3, 4]
+for number in numbers:
+    print(number)
+```
