@@ -74,17 +74,17 @@ The simplest python script. This will print text to your terminal window.
 print('This is my first python script')
 ```
 
-### Data Types
+## Data Types
 
 Native data types in python include:
-- Integer - whole number ie: 5
-- Float - decimal number ie: 7.9
-- String - text surrounded by single or double quotes ie: 'This is a string' or "This is a string"
-- List, Tuple - grouped data combined into a collection that can be iterated over. Lists use square brackets ie: a 
+- Integer ``int`` - whole number ie: 5
+- Float ``float``- decimal number ie: 7.9
+- String ``str``- text surrounded by single or double quotes ie: 'This is a string' or "This is a string"
+- List, Tuple ``list, tuple``- grouped data combined into a collection that can be iterated over. Lists use square brackets ie: a 
 list of integers ``[1, 2, 3, 4]``. Tuples use parenthesis ie: ``(1, 2, 3, 4)``. Lists can be mutated and tuples cannot.
-- Dictionary - key value pair collection of data, using curly-braces. ie: ``{'key 1': 'value 1', 'key 2': 'value 2'}``
+- Dictionary ``dict``- key value pair collection of data, using curly-braces. ie: ``{'key 1': 'value 1', 'key 2': 'value 2'}``
 
-### Variables
+## Variables
 
 Any of the data types can be loaded into a variable that can then be referenced later:
 
@@ -106,7 +106,7 @@ x = x / 4  # divide x by 4
 x = x ** 2  # raise x to the power of 2
 ```
 
-### If Statements
+## If Statements
 
 If statements are great for checking conditions and running code if certain conditions are met.
 
@@ -129,7 +129,7 @@ if x == 100:
     print('x is equal to 100')
 ```
 
-### Loops
+## Loops
 
 Types of loops:
 - For - iterate over an object.
@@ -162,7 +162,7 @@ numbers = [number * 2 for number in numbers]
 ```
 
 
-### Comments
+## Comments
 
 Add comments to your code:
 - ``#`` - single line comments
@@ -177,7 +177,7 @@ Add comments to your code:
   """
   ```
 
-### Importing other libraries
+## Importing other libraries
 
 Python comes with the "Python Standard Library" which has a lot of powerful modules ready to go, no installing required.
 
@@ -214,5 +214,10 @@ with engine.connect() as conn:
     result = conn.execute(text(query))
 ```
 
+## Function
 
 
+## Class
+
+
+## Building Large Projects
