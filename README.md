@@ -216,8 +216,63 @@ with engine.connect() as conn:
 
 ## Function
 
+Use the ``def`` keyword to define a function. You can use parameters to pass data into the function, process the data, and return a result.
+
+```py
+def example_function():
+    pass
+
+
+def repeat(message):
+    print(f'You said {message}')  # this will print back your message and uses f-strings to inject your message to another string.
+    
+
+def add_numbers(number_1, number_2):
+    return number_1 + number_2
+
+```
+
+You can create dynamic parameters using *args and **kwargs
+```py
+def add_numbers(*args):
+    return_value = 0
+    for value in args:
+        return_value = return_value + value
+    
+    return return_value
+```
 
 ## Class
+
+Classes are good for grouping similar data and functions into one object. 
+It's great for maintaining state of data, and performing certain operations on that data.
+
+```py
+import time
+
+
+class Car:
+  def __init__(self, year, make, model):
+    # This function runs when the class is first used. Good for loading data right at the beginning.
+    self.year = year
+    self.make = make
+    self.model = model
+    self.current_speed = 0
+
+  def accelerate(self):
+    self.current_speed = 10
+    # make car go
+
+  def stop(self):
+    self.current_speed = 0
+    # make care brake
+
+
+car = Car(2024, 'Tesla', 'Model Y')  # create the car object
+car.accelerate()                     # run the accelerate function (when it's in a class it's called a method)
+time.sleep(5)                        # wait 5 seconds
+car.stop()                           # run the stop method
+```
 
 
 ## Building Large Projects
