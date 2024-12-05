@@ -221,3 +221,11 @@ with engine.connect() as conn:
 
 
 ## Building Large Projects
+
+
+Detail on how python import system works
+
+How to run scripts in module mode and why its helpful
+
+Python convert to byte-code
+
