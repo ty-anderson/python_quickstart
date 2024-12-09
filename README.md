@@ -1,5 +1,31 @@
 # Getting Started with Python as Fast as Possible
 
+### Table of Contents
+
+- [What is Python?](#what-is-python)
+  - [Lets Get More Technical](#lets-get-more-technical)
+- [How to Use Python](#how-to-use-python)
+  - [Pip Package Manager](#about-the-package-manager-pip)
+  - [Best Practices](#best-practices-for-using-python)
+- [Writing Python Code](#writing-python-code)
+  - [Data Types](#data-types)
+  - [Variables](#variables)
+  - [If Statements](#if-statements)
+  - [Loops](#loops)
+  - [Comments](#comments)
+  - [Imports](#importing-other-libraries)
+  - [Functions](#functions)
+  - [Classes](#classes)
+  - [Building Large Projects](#building-large-projects)
+- [Advanced Topics](#advanced-topics)
+  - [Decorators](#decorators)
+  - [Generators](#generators)
+  - [More About the Import System](#python-import-system)
+  - [Run Scripts in Module Mode](#run-scripts-in-module-mode)
+  - [Asyncio](#asyncio)
+  - [Cython](#cython)
+  - [Other Helpful Tips](#other-helpful-tips)
+  - [Publishing a Project](#publishing-a-project)
 
 # What is Python?
 
@@ -20,7 +46,6 @@ which means there are a lot of people and resources to learn.
   the Anaconda, Inc. company. Personally I think this is just CPython with bloat.
   - PyPy - A fast, minimal version of python that uses a JIT compiler. A little more difficult to configure.
   - Brython - A version of python that can run in a web browser, translating python code into JavaScript.
-
 
 # How to use Python
 1. Download the python interpreter from https://www.python.org/downloads/
@@ -214,7 +239,7 @@ with engine.connect() as conn:
     result = conn.execute(text(query))
 ```
 
-## Function
+## Functions
 
 Use the ``def`` keyword to define a function. You can use parameters to pass data into the function, process the data, and return a result.
 
@@ -242,7 +267,7 @@ def add_numbers(*args):
     return return_value
 ```
 
-## Class
+## Classes
 
 Classes are good for grouping similar data and functions into one object. 
 It's great for maintaining state of data, and performing certain operations on that data.
@@ -277,12 +302,179 @@ car.stop()                           # run the stop method
 
 ## Building Large Projects
 
+Large python projects can be extremely powerful, but they must be organized a certain way to work properly.
+
+A project should always start with a root folder and other folders and files will be housed inside the root folder.
+
+The file structure of a project might look something like this:
+```
+/project_root
+   /db
+       __init__.py
+       model.py
+       connectors.py
+   /views
+       __init__.py
+       views.py
+   /reports
+       __init__.py
+       report_01.py
+       report_02.py
+   .env
+```
+
+Notice other directories have a file called ``__init__.py``. This is a python file that tells python "this folder is
+a python module" which means you can put python files with code inside the folder and use it. With this structure, 
+you have code in the views.py file like:
+```py
+from db import model
+from reports import report_01
+```
+
+If there is code in the ``__init__.py`` file, you can just import the module name like ``import db``. If there is
+a function inside the ``__init__.py`` file called ``new_func`` you could ``from db import new_func``
+
+To run various files in a larger project, see [run scripts in module mode](#run-scripts-in-module-mode)
+
 
 # Advanced Topics
 
-## How the python import system works
+## Decorators
+
+Decorators are a way to add extra functionality to other functions.
+
+```py
+import functools
+
+def decorator_name(func):
+    @functools.wraps(func)
+    def wrapper(*args, **kwargs):
+        # do something before the wrapped function
+        wrapper_value = func(*args, **kwargs)
+        # do something after the wrapped function
+        return wrapper_value
+    return wrapper
+```
+
+To use this defined decorator, it would look something like this:
+```py
+@decorator_name
+def wrapped_function():
+    # regular function stuff
+```
+
+If you've defined the decorator to also take arguments, you can add them:
+```py
+import functools
+
+def decorator_name(arg1, arg2):
+    def decorator_wrap(func):
+        @functools.wraps(func)
+        def wrapper(*args, **kwargs):
+            # do something before the wrapped function
+            wrapper_value = func(*args, **kwargs)
+            # do something after the wrapped function
+            return wrapper_value
+        return wrapper
+    return decorator_name
+
+
+@decorator_name(arg1, arg2)
+def wrapped_function():
+    # regular function stuff
+```
+
+Here is a more in-depth tutorial on decorators https://realpython.com/primer-on-python-decorators/
+
+## Generators
+
+Generators can be thought of as iterables that are not fully loaded into memory. This allows you can handle the 
+same data, without worrying about memory consumption.
+
+A generator is defined by a function that uses the keyword ``yield``. When a function is used, it is run and then 
+looses all state afterward. A generator will maintain state and can be called again multiple times.
+
+For example, imagine you need to pull API data using every individual for the last 20 years. Instead of loading all
+dates into one big list, you can create a generator function to calculate it.
+
+```py
+import datetime
+import requests
+
+# this is a generator because it uses the keyword yield.
+def date_generator(start_date):
+    today = datetime.datetime.today()
+    while start_date < today:
+        yield start_date  # this gets returned. If this function is called again, it will start here.
+        start_date = start_date + 1
+
+
+url = 'example_url.com/api'
+for date in date_generator(datetime.datetime.date(1990, 1, 1)):
+    response = requests.get(f'{url}/date_param={date}')
+```
+
+If you don't want to loop over a generator, you can also use the ``.next()`` method.
+
+```py
+gen = generator_function()
+next_value = gen.next()
+```
+
+More detailed info here https://wiki.python.org/moin/Generators
+
+## Python Import System
+
+Importing libraries can be tricky in certain cases. The typical use is to just import any python package such as 
+``import sys``
+
+The best option 99% of the time is going to be [run scripts in module mode](#run-scripts-in-module-mode). Read
+below to learn more about how the python import system works.
+
+A python interpreter or virtual environment has a list of directories to look for imports from.  
+It will start to look for the import in the first item of the list and go through each directory 
+until it finds the import or fails and raises an exception.  
+
+If you are running a module that imports another module that you've created, in a directory 
+outside of the current directory, then you might need to add that directory to the sys.path. 
+
+- Option 1: Add a pth file in the virtual environment with the path you want to add.
+  1. Go to venv/lib/python/site-packages/<create pth file like custom_path.pth>
+  2. Add your path such as /home/tyranderson/snfStudyData
+	
+- Option 2: Hardcode the path directly into the activate file.
+In a venv you can edit the bin/activate file and include: ``export PYTHONPATH="/the/path/you/want"``
+
+- Option 3: Add into python script - within your script you can ``sys.path.append("/the/path/you/want")``
+but this is temporary and the path will be dropped once the script is done running.  
+
+More info here: https://help.pythonanywhere.com/pages/DebuggingImportError
 
 ## Run scripts in module mode
+
+You can run scripts from a venv 2 different ways:
+1. As a standalone script 
+   1. This is the format path/to/venv/bin/python path/to/script
+   2. If this script has imports to other files, it will have import errors. This is not the recommended way!!!!!!!
+2. In module mode 
+   1. Path/to/venv/bin/python -m path.to.script
+
+Using module mode is considered best practice because it allows all modules to import from the project root properly.
+If you have multiple python modules (.py files) you are importing from various directories within the project,
+you will likely have import errors if you try to run using the standalone method. This is why its considered
+best practice to run in module mode. (PyCharm does this for you when you run a script).
+
+Linux
+```bash
+cd path/to/project
+. venv/bin/activate -m path.to.python.file
+```
+
+Windows
+```commandline
+cd path\to\project
+venv\Scripts\activate -m path.to.python.file
+```
 
 ## Asyncio
 
@@ -333,8 +525,8 @@ import asyncio
 
 # this is a coroutine
 async def async_function(request_data):
-    response_data = await some_get_data_function(request_data)
-    return response_data
+    data = await some_async_task(request_data)
+    return data
 
 # this is a coroutine
 async def main():
@@ -349,10 +541,39 @@ if __name__ == '__main__':
     asyncio.run(main())  # this is how you run a coroutine
 ```
 
-
-
-
 ## Cython
+
+One of the biggest criticisms of python is its performance. When you compare it to statically typed, compiled languages,
+it doesn't have near the same speed. One option to improve performance is with something called Cython. Cython is
+an extension of python that allows statically typed python that can be compiled to C code for performance enhancements.
+
+[Official Cython Docs](https://cython.readthedocs.io/en/latest/index.html)
+
+Example:
+
+```py
+# example.pyx file
+
+def sum_integers(int n):
+    cdef int i
+    cdef int total = 0
+    for i in range(n):
+        total += i
+    return total
+	
+```
+
+Create setup.py file:
+
+```py
+from setuptools import setup
+from Cython.Build import cythonize
+
+setup(
+    ext_modules = cythonize("example.pyx")
+)
+```
+run python setup.py build_ext --inplace
 
 ## Other Helpful Tips
 
@@ -369,3 +590,79 @@ numbers = [1, 2, 3, 4]
 for number in numbers:
     print(number)
 ```
+
+## Publishing a Project
+
+You can create your own python library and publish it to PyPI. First you'll need to create an account and download
+your API keys. Once you have those established, you can create your project and then:
+
+Super summary:
+1. Create the pyproject.toml file and fill out the fields 
+2. run py -m build 
+3. use twine to send to pypi.
+
+More detailed steps:
+1. Make sure all of your files are created inside a folder structure
+2. Create pyproject.toml
+```toml
+[build-system] 
+requires = ["setuptools", "wheel"] 
+build-backend = "setuptools.build_meta"
+  
+[project]
+name = "example_package_YOUR_USERNAME_HERE"
+version = "0.0.1"
+authors = [
+{ name="Example Author", email="author@example.com" },
+]
+description = "A small example package"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+]
+		
+[project.urls]
+Homepage = "https://github.com/pypa/sampleproject"
+Issues = "https://github.com/pypa/sampleproject/issues"
+```
+3. Make sure all relevant build libs are installed:
+   1. pip install --upgrade build
+   2. pip install twine
+4. Run the build
+   1. py -m build
+5. Send to PyPI
+   1. py -m twine upload dist/*
+	
+https://packaging.python.org/en/latest/tutorials/packaging-projects/#creating-the-package-files
+
+There are also new tools coming out such as poetry and uv. 
+The community has started to heavily embrace [UV](https://astral.sh/blog/uv) due to its speed and tooling.
+
+# Important Libraries - Getting Started
+
+## Pandas
+
+## SQLAlchemy
+
+## DuckDB
+
+## Airflow
+
+## Locust
+
+
+# Documentation Tools
+
+## Sphinx
+
+
+## Mermaid
+
+
+## MKDocs
+
+
+# 
