@@ -575,6 +575,13 @@ setup(
 ```
 run python setup.py build_ext --inplace
 
+## Global Interpreter Lock (GIL)
+
+To achieve thread safety in python, there is something called the Global Interpreter Lock (GIL). The GIL is 
+a bit of a double-edged sword because it achieves thread safety, but it also makes python slower due to running
+everything on one thread. Python 3.13 has introduced an experimental mode where the GIL can be deactivated.
+The most important thing here for now is to know it exists.
+
 ## Other Helpful Tips
 
 **Unpacking Iterables** is a useful trick. If you have a list or other iterable that you want to perform an operation on
@@ -645,11 +652,60 @@ The community has started to heavily embrace [UV](https://astral.sh/blog/uv) due
 
 ## Pandas
 
+Pandas is a well-known data handling library. It has the ability to extract, manipulate, and load data.
+
+The central component to pandas is the DataFrame. This is where tabular data is loaded and lives in memory.
+```py
+import pandas as pd
+
+# blank dataframe
+df = pd.DataFrame()
+
+# load a dict into a dataframe
+sample_data = {'id', [1, 2, 3], 'value', [200, 300, 400]}
+df = pd.DataFrame(sample_data)
+
+# load direct from other formats
+df = pd.read_csv('path/to/csv/file.csv')
+df = pd.read_parquet('path')
+df = pd.read_excel('path')
+df = pd.read_json('path')
+df = pd.read_sql('sql statement', sqlalchemy_conn)
+df = pd.read_html('io')
+df = pd.read_xml('io')
+df = pd.read_clipboard()
+```
+
+More here https://pandas.pydata.org/docs/reference/io.html
+
+#### Transformations
+
+Once you have data loaded into a dataframe, you can perform all kinds of operations on the values.
+There are generally two ways of performing modifications. Iterating through each value (not recommended) and
+across columns (called vectorization). A vectorized operation can look like this:
+
+```py
+df = pd.read_csv('path/to/file.csv') # sample data
+
+# performing math computations across columns. You can overwrite existing columns or create new columns
+df['int_column_new'] = df['int_column_01'] + df['int_column_02']
+df['int_column_01'] = df['int_column_01'] - df['int_column_02']
+df['float_column_new'] = df['float_column_01'] * df['float_column_02']
+df['float_column_01'] = df['float_column_01'] / df['float_column_02']
+
+# perform string operations
+df['string_col'] = df['string_col'].str.replace('-', '')
+```
+
 ## SQLAlchemy
 
 ## DuckDB
 
 ## Airflow
+
+## Flask
+
+# Other Interesting Libraries
 
 ## Locust
 
