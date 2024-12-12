@@ -697,7 +697,123 @@ df['float_column_01'] = df['float_column_01'] / df['float_column_02']
 df['string_col'] = df['string_col'].str.replace('-', '')
 ```
 
+Filtering data is very useful.
+
+```py
+df = pd.read_csv('path/to/file.csv') # sample data
+
+# filter where column_name is equal to a value
+df = df[df['column_name'] == 'certain_value']
+# not equal
+df = df[df['column_name'] != 'certain_value']
+# substring
+df = df[df['column_name'].str.contains('partial_string_match')]
+# drop rows where column_name equals any of the list values
+df = df[~df['column_name'].isin(['list', 'of', 'values'])]
+```
+
+Changing column data types:
+
+```py
+df = pd.read_csv('path/to/file.csv') # sample data
+
+df['str_num_values'] = df['str_num_values'].astype(int)
+df['str_num_values'] = df['str_num_values'].astype(str)
+df['str_num_values'] = df['str_num_values'].astype(float)
+
+# dates
+df['date_str_values'] = pd.to_datetime(df['date_str_values'])  # gives datetime format
+df['date_str_values'] = pd.to_datetime(df['date_str_values']).dt.date  # gives just date, no time
+```
+
 ## SQLAlchemy
+
+SQLAlchemy is a robust database management utility library. There are two main components; Core and ORM.
+Core is more base level, closer to the database API, while ORM aims to abstract some of the complexity
+of managing connections with sessions. Generally Core is better for pure database operations while the 
+ORM is geared toward web applications.
+
+Has full compatibility with Postgres, MySQL, SQLite, SQL Server, and Oracle.
+
+Connection strings look like this:
+
+```py
+db_str = 'dialect+driver://username:password@host:port/database'
+
+postgres = "postgresql+psycopg2://scott:tiger@localhost/public"
+
+sql_server = 'mssql+pyodbc://host/database?trusted_connection=yes&driver=ODBC+Driver+18+for+SQL+Server&TrustServerCertificate=yes'
+```
+
+Modeling Tables
+
+```py
+from sqlalchemy import (create_engine, Table, MetaData, Column, String, 
+                        Integer, Double, Date, DateTime, Boolean, func)
+
+engine = create_engine('postgresql+psycopg2://scott:tiger@localhost/public')  # engines are what connects to the db
+
+meta = MetaData()  # create a metadata object to attach tables to
+
+# model out the table
+table1 = Table('table_name',
+               meta,
+               Column('id', Integer, primary_key=True),
+               Column('column1', String(255), unique=True),
+               Column('column2', Double),
+               Column('column3', Boolean, default=False),
+               Column('column4', Date),
+               Column('created_date', DateTime,
+                        server_default=func.now()),
+               schema='public'
+               )
+
+meta.create_all(engine)  # create all the tables that are connected to the metadata object, in the database
+```
+
+Once you have your model and engine ready, you can connect and start running operations:
+
+```py
+from sqlalchemy import create_engine, text
+
+engine = create_engine('connection_string_to_db')
+
+with engine.connect() as conn:
+    query = 'SELECT * FROM table_name'
+    result = conn.execute(text(query)).fetchall()
+```
+This will return a list of Row objects which contain the values in tuples (even if you only selected one column).
+To pull these out of the nested tuples, you can use list comprehension.
+
+```py
+result = [r[0] for r in result]
+```
+
+Note that to run a raw SQL query we had to put it into a text() function. This function will sanitize the query to 
+make sure there is no malicious injection happening. Sometimes it is difficult to transform data values in python
+into a raw SQL query. SQLAlchemy has objects that can perform the same database functions, but in a more pythonic way.
+
+```py
+from sqlalchemy import select, insert, update, delete
+
+df = pd.DataFrame(values)
+data_dict = df.to_dict(orient='records')  # transform pandas dataframe into a dictionary of values
+
+with engine.connect() as conn:                              # connect to database
+    insert_stmt = insert(table_object).values(data_dict)    # create the insert statement
+    conn.execute(insert_stmt)                               # execute the statement
+    conn.commit()                                           # commit the changes
+    
+    value = conn.execute(select(table_object)).fetchone()
+    values = conn.execute(select(table_object)).fetchall()
+    
+    update_stmt = update(user_table).where(user_table.c.id == 5).values(name="user #5")
+    conn.execute(update_stmt)
+    
+    delete_stmt = delete(user_table).where(user_table.c.id == 5)
+    conn.execute(delete_stmt)
+    conn.commit()
+```
 
 ## DuckDB
 
