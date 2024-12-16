@@ -829,6 +829,8 @@ with engine.connect() as conn:                              # connect to databas
 
 ## DuckDB
 
+## Pyspark
+
 ## Airflow
 
 ## Flask
