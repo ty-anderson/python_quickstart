@@ -129,7 +129,14 @@ x = x + 1  # add 1 to x variable
 x = x * 10  # multiply x by 10
 x = x / 4  # divide x by 4
 x = x ** 2  # raise x to the power of 2
+
+x = 7 // 3  # floor division (divide and round down to the nearest whole number)
+# output: 2.333 but rounds down to 2
 ```
+
+You can also use the math library in the python standard library to perform more complex mathematical functions.
+
+[Math Standard Library Docs](https://docs.python.org/3/library/math.html)
 
 ## If Statements
 
@@ -725,6 +732,11 @@ df['str_num_values'] = df['str_num_values'].astype(float)
 df['date_str_values'] = pd.to_datetime(df['date_str_values'])  # gives datetime format
 df['date_str_values'] = pd.to_datetime(df['date_str_values']).dt.date  # gives just date, no time
 ```
+
+Helpful functions:
+
+[Merge (like SQL join)](https://pandas.pydata.org/docs/reference/api/pandas.merge.html)
+[Melt (convert columns to rows)](https://pandas.pydata.org/docs/reference/api/pandas.melt.html)
 
 ## SQLAlchemy
 
