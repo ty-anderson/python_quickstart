@@ -831,6 +831,17 @@ with engine.connect() as conn:                              # connect to databas
 
 ## Pyspark
 
+Spark is a distributed data handling library written in Java. It has a python API that allows users to
+use Spark with Pyspark. In some ways it is very similar to pandas, but it can directly read and write to
+Delta Lake tables, and it spreads the data handling tasks across multiple machines (distributed).
+
+```py
+df = spark.createDataFrame(data)
+current_records = spark.sql("SELECT COALESCE(MAX(created_date), '2000-01-01') FROM lh_gold_01.fact_cms_star_rating").first()[0]
+```
+
+## dotenv
+
 ## Airflow
 
 ## Flask
