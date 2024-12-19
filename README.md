@@ -827,7 +827,22 @@ with engine.connect() as conn:                              # connect to databas
     conn.commit()
 ```
 
+## SQLite
+
+SQLite is an embeddable OLTP database. In other words, it is a database that can be run in memory or from a file.
+It is the most common database in the world being used in web apps, phone apps, IoT devices, and more.
+
+[SQLite Docs](https://www.sqlite.org/docs.html)
+
 ## DuckDB
+
+DuckDB is similar to SQLite, but is an OLAP database. It is incredibly fast and effective and processing large amounts
+of data in memory. It can connect to other databases and perform direct queries on it, even being able to 
+write queries on multiple separate databases 
+[Mix and Match](https://duckdb.org/2024/01/26/multi-database-support-in-duckdb.html#mix-and-match).
+
+[DuckDB Docs](https://duckdb.org/docs/)
+
 
 ## Pyspark
 
@@ -842,13 +857,48 @@ current_records = spark.sql("SELECT COALESCE(MAX(created_date), '2000-01-01') FR
 
 ## dotenv
 
+dotenv is a lightweight package that allows you to load environment variables into memory from a file. 
+
+``pip install python-dotenv``
+
+Create a ``.env`` file in your project like:
+
+```dotenv
+ENV_VAR_NAME='ENV_VAR_VALUE'
+API_KEY_01='2JHDKFJH3KF'
+```
+
+```py
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+env_var = os.getenv('ENV_VAR_NAME')
+api_key = os.getenv('API_KEY_01')
+```
+
 ## Airflow
 
+Airflow is an orchestration tool to run and monitor jobs. It allows you to program it in a way that it can
+have dependencies. For example, only run one script after another has run successfully.
+
+[Airflow Docs](https://airflow.apache.org/docs/apache-airflow/stable/index.html)
+
 ## Flask
+
+Flask is a popular web app framework. It is very lightweight and has many "plugin" type packages that are built to 
+be pieced together to achieve all desired features.
+
+[Flask Docs](https://flask.palletsprojects.com/en/stable/)
 
 # Other Interesting Libraries
 
 ## Locust
+
+Locust is a load testing framework that can send millions of requests.
+
+[Locust Docs](https://locust.io/)
 
 
 # Documentation Tools
