@@ -1,0 +1,784 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../docs_2_how_to_use/">
+      
+      
+        <link rel="next" href="../docs_4_building_large_projects/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.50">
+    
+    
+      
+        <title>Writing Code - Python Learning</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.a40c8224.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#writing-python-code" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Python Learning" class="md-header__button md-logo" aria-label="Python Learning" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Python Learning
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Writing Code
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Python Learning" class="md-nav__button md-logo" aria-label="Python Learning" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Python Learning
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs_1_what_is_python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    What is Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs_2_how_to_use/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How to Use
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Writing Code
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Writing Code
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#data-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Types
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variables
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#if-statements" class="md-nav__link">
+    <span class="md-ellipsis">
+      If Statements
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#loops" class="md-nav__link">
+    <span class="md-ellipsis">
+      Loops
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comments
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#importing-other-libraries" class="md-nav__link">
+    <span class="md-ellipsis">
+      Importing other libraries
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Functions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Classes
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs_4_building_large_projects/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Building Large Projects
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs_5_advanced_topics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Advanced Topics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs_6_publishing_project/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Publishing Projects
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs_7_important_libraries/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Important Libraries
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#data-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Types
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variables
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#if-statements" class="md-nav__link">
+    <span class="md-ellipsis">
+      If Statements
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#loops" class="md-nav__link">
+    <span class="md-ellipsis">
+      Loops
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comments
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#importing-other-libraries" class="md-nav__link">
+    <span class="md-ellipsis">
+      Importing other libraries
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Functions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Classes
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="writing-python-code">Writing Python Code</h1>
+<p>Python uses white-space and tabs, instead of curly-braces and semicolons like other common languages.</p>
+<p>The simplest python script. This will print text to your terminal window.</p>
+<pre><code class="language-py">print('This is my first python script')
+</code></pre>
+<h2 id="data-types">Data Types</h2>
+<p>Native data types in python include:
+- Integer <code>int</code> - whole number ie: 5
+- Float <code>float</code>- decimal number ie: 7.9
+- String <code>str</code>- text surrounded by single or double quotes ie: 'This is a string' or "This is a string"
+- List, Tuple <code>list, tuple</code>- grouped data combined into a collection that can be iterated over. Lists use square brackets ie: a 
+list of integers <code>[1, 2, 3, 4]</code>. Tuples use parenthesis ie: <code>(1, 2, 3, 4)</code>. Lists can be mutated and tuples cannot.
+- Dictionary <code>dict</code>- key value pair collection of data, using curly-braces. ie: <code>{'key 1': 'value 1', 'key 2': 'value 2'}</code></p>
+<h2 id="variables">Variables</h2>
+<p>Any of the data types can be loaded into a variable that can then be referenced later:</p>
+<pre><code class="language-py">x = 14
+variable_01 = 'This is a variable'
+also_a_variable = {'foo': 'bar'}
+</code></pre>
+<p>Variables can be named almost anything, you just can't start a variable with a number and no special characters. </p>
+<p>You can perform mathematical operations, just like most programming languages.</p>
+<pre><code class="language-py">x = 5  # set variable
+x = x + 1  # add 1 to x variable
+x = x * 10  # multiply x by 10
+x = x / 4  # divide x by 4
+x = x ** 2  # raise x to the power of 2
+
+x = 7 // 3  # floor division (divide and round down to the nearest whole number)
+# output: 2.333 but rounds down to 2
+</code></pre>
+<p>You can also use the math library in the python standard library to perform more complex mathematical functions.</p>
+<p><a href="https://docs.python.org/3/library/math.html">Math Standard Library Docs</a></p>
+<h2 id="if-statements">If Statements</h2>
+<p>If statements are great for checking conditions and running code if certain conditions are met.</p>
+<pre><code class="language-py">x = 10
+if x &gt; 8:
+    print('x is greater than 8')
+elif x &lt;= 1:
+    print('x is less or equal to 1')
+else:
+    print('x is between 1 and 8')
+</code></pre>
+<p>Keep in mind that checking equality should be done with two equal signs <code>==</code> because a single <code>=</code> is for assigning variables.</p>
+<pre><code class="language-py">x = 100
+
+if x == 100:
+    print('x is equal to 100')
+</code></pre>
+<h2 id="loops">Loops</h2>
+<p>Types of loops:
+- For - iterate over an object.
+- While - loop until a condition is met.
+- List comprehension - single line loop over an object.</p>
+<p>For loop</p>
+<pre><code class="language-py">numbers = [2, 4, 6, 8, 10]
+
+for number in numbers:
+    print(number)  # will print each number in the list
+</code></pre>
+<p>While loop</p>
+<pre><code class="language-py">x = 0
+while x &lt; 10:
+    print(x)
+    x = x + 1  # add 1 to x on each loop
+    # this loop will terminate once x is greater than 10
+</code></pre>
+<p>List comprehension - this is like a single line for loop</p>
+<pre><code class="language-py">numbers = [2, 4, 6, 8, 10]
+
+# if we want to do a simple change to all the numbers in this list, such as double the amounts, we can use list comprehension
+numbers = [number * 2 for number in numbers]
+</code></pre>
+<h2 id="comments">Comments</h2>
+<p>Add comments to your code:
+- <code>#</code> - single line comments
+- <code>""" """</code> - multi-line comments
+  ```py
+  # single line comment.</p>
+<p>"""
+  Multi like comment
+  Use this to describe 
+  many things.
+  """
+  ```</p>
+<h2 id="importing-other-libraries">Importing other libraries</h2>
+<p>Python comes with the "Python Standard Library" which has a lot of powerful modules ready to go, no installing required.</p>
+<p><a href="https://docs.python.org/3/library/index.html">Python Standard Library Docs</a></p>
+<p>To use any of these, or to use any libraries installed with pip, they must be imported. This is typically done at the top of the .py file.</p>
+<pre><code class="language-py">import os  # standard library, lets you interact with objects on your operating system like files.
+import pandas as pd  # third-party library installed with pip. This imports the package and renames it as pd
+from sqlalchemy import select, insert  # this imports specific parts of the sqlalchemy library, avoiding importing everything.
+</code></pre>
+<p>Load a csv file into a DataFrame using pandas.</p>
+<pre><code class="language-py">import pandas as pd
+
+df = pd.read_csv('path/to/file.csv')
+</code></pre>
+<p>Connect to a database with sqlalchemy:</p>
+<pre><code class="language-py"># import library
+from sqlalchemy import create_engine, text
+
+# create an engine object to connect
+engine = create_engine('postgresql+psycopg2://username:password@servername:port/database')
+
+# connect to the database and query a table
+with engine.connect() as conn:
+    query = 'SELECT * FROM table'
+    result = conn.execute(text(query))
+</code></pre>
+<h2 id="functions">Functions</h2>
+<p>Use the <code>def</code> keyword to define a function. You can use parameters to pass data into the function, process the data, and return a result.</p>
+<pre><code class="language-py">def example_function():
+    pass
+
+
+def repeat(message):
+    print(f'You said {message}')  # this will print back your message and uses f-strings to inject your message to another string.
+
+
+def add_numbers(number_1, number_2):
+    return number_1 + number_2
+
+</code></pre>
+<p>You can create dynamic parameters using <em>args and </em>*kwargs</p>
+<pre><code class="language-py">def add_numbers(*args):
+    return_value = 0
+    for value in args:
+        return_value = return_value + value
+
+    return return_value
+</code></pre>
+<h2 id="classes">Classes</h2>
+<p>Classes are good for grouping similar data and functions into one object. 
+It's great for maintaining state of data, and performing certain operations on that data.</p>
+<pre><code class="language-py">import time
+
+
+class Car:
+  def __init__(self, year, make, model):
+    # This function runs when the class is first used. Good for loading data right at the beginning.
+    self.year = year
+    self.make = make
+    self.model = model
+    self.current_speed = 0
+
+  def accelerate(self):
+    self.current_speed = 10
+    # make car go
+
+  def stop(self):
+    self.current_speed = 0
+    # make care brake
+
+
+car = Car(2024, 'Tesla', 'Model Y')  # create the car object
+car.accelerate()                     # run the accelerate function (when it's in a class it's called a method)
+time.sleep(5)                        # wait 5 seconds
+car.stop()                           # run the stop method
+</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.60a45f97.min.js"></script>
+      
+    
+  </body>
+</html>
