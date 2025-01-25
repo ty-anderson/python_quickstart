@@ -270,3 +270,78 @@ be pieced together to achieve all desired features.
 Locust is a load testing framework that can send millions of requests.
 
 [Locust Docs](https://locust.io/)
+
+## Reportlab
+
+Creating PDF's can be difficult or require external software like LaTeX or wkhtmltopdf.
+
+If you don't want to have these dependencies, reportlab is a pure python library to create PDFs.
+
+``pip install reportlab``
+
+ReportLab includes a low-level API for generating PDF documents directly from Python, 
+and a higher-level template language—similar to HTML and the template systems used in 
+web development—called RML. Generally, the second option is usually more convenient 
+for those who must make exhaustive use of the capabilities of the library when 
+generating documents. For the rest of the cases, the low-level API that we will 
+describe in this article will suffice. However, you can find the official 
+documentation here [https://docs.reportlab.com/](https://docs.reportlab.com/).
+
+```py
+from reportlab.pdfgen import canvas
+
+c = canvas.Canvas("hello-world.pdf")
+c.save()
+```
+
+```py
+# import the canvas object
+from reportlab.pdfgen import canvas
+
+# create a Canvas object with a filename
+c = canvas.Canvas("rl-hello_again.pdf", pagesize=(595.27, 841.89))  # A4 pagesize
+# draw a string at x=100, y=800 points
+# point ~ standard desktop publishing (72 DPI)
+# coordinate system:
+#   y
+#   |
+#   |   page
+#   |
+#   |
+#   0-------x
+c.drawString(50, 780, "Hello Again")
+# finish page
+c.showPage()
+# construct and save file to .pdf
+c.save()
+```
+
+Use standard page sizes like letter, A4, and more.
+
+```py
+from reportlab.lib.pagesizes import letter
+
+c = canvas.Canvas("hello-world.pdf", pagesize=letter)
+```
+
+Make shapes in PDF.
+
+```py
+from reportlab.lib.pagesizes import A4
+from reportlab.pdfgen import canvas
+
+w, h = A4
+c = canvas.Canvas("shapes.pdf", pagesize=A4)
+c.drawString(30, h - 50, "Line")
+x = 120
+y = h - 45
+c.line(x, y, x + 100, y)
+c.drawString(30, h - 100, "Rectangle")
+c.rect(x, h - 120, 100, 50)
+c.drawString(30, h - 170, "Circle")
+c.circle(170, h - 165, 20)
+c.drawString(30, h - 240, "Ellipse")
+c.ellipse(x, y - 170, x + 100, y - 220)
+c.showPage()
+c.save()
+```
