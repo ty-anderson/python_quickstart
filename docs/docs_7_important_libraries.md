@@ -300,11 +300,11 @@ Stopping the app:
 
 Use ``pgrep -fl gunicorn`` to show a list of gunicorn processes with their PIDs.
 
-kill by bid: ``kill <pid>``
+kill by bid: ``kill <pid>`` (kill by process ID)
 
 OR
 
-kill all gunicorn: ``pkill gunicorn``
+kill all gunicorn: ``pkill gunicorn`` (kill by process name)
 
 For a more stable production environment, a process manager is better.
 
