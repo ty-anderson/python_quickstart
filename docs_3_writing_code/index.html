@@ -615,13 +615,28 @@
 <pre><code class="language-py">print('This is my first python script')
 </code></pre>
 <h2 id="data-types">Data Types</h2>
-<p>Native data types in python include:
-- Integer <code>int</code> - whole number ie: 5
-- Float <code>float</code>- decimal number ie: 7.9
-- String <code>str</code>- text surrounded by single or double quotes ie: 'This is a string' or "This is a string"
-- List, Tuple <code>list, tuple</code>- grouped data combined into a collection that can be iterated over. Lists use square brackets ie: a 
-list of integers <code>[1, 2, 3, 4]</code>. Tuples use parenthesis ie: <code>(1, 2, 3, 4)</code>. Lists can be mutated and tuples cannot.
-- Dictionary <code>dict</code>- key value pair collection of data, using curly-braces. ie: <code>{'key 1': 'value 1', 'key 2': 'value 2'}</code></p>
+<p>Native data types in python include:</p>
+<ul>
+<li>Integer <code>int</code> - whole number ie: 5</li>
+<li>Float <code>float</code>- decimal number ie: 7.9</li>
+<li>String <code>str</code>- text surrounded by single or double quotes ie: 'This is a string' or "This is a string"</li>
+<li>List, Tuple <code>list, tuple</code>- grouped data combined into a collection that can be iterated over. Lists use square brackets ie: a 
+list of integers <code>[1, 2, 3, 4]</code>. Tuples use parenthesis ie: <code>(1, 2, 3, 4)</code>. Lists can be mutated and tuples cannot.</li>
+<li>Dictionary <code>dict</code>- key value pair collection of data, using curly-braces. ie: <code>{'key 1': 'value 1', 'key 2': 'value 2'}</code></li>
+</ul>
+<p>Dictionary methods:</p>
+<ul>
+<li>Get value from dictionary <code>dict_name['key_name']'</code> or <code>dict_name.get('key_name')</code></li>
+<li>Loop through the dict with:</li>
+</ul>
+<pre><code class="language-py">for k, v in dict_name.items():
+   print(k, v) 
+</code></pre>
+<p>String methods:</p>
+<ul>
+<li>f-strings</li>
+<li>Combine iterable into string <code>''.join(iterable)</code></li>
+</ul>
 <h2 id="variables">Variables</h2>
 <p>Any of the data types can be loaded into a variable that can then be referenced later:</p>
 <pre><code class="language-py">x = 14
@@ -682,17 +697,19 @@ while x &lt; 10:
 numbers = [number * 2 for number in numbers]
 </code></pre>
 <h2 id="comments">Comments</h2>
-<p>Add comments to your code:
-- <code>#</code> - single line comments
-- <code>""" """</code> - multi-line comments
-  ```py
-  # single line comment.</p>
-<p>"""
-  Multi like comment
-  Use this to describe 
-  many things.
-  """
-  ```</p>
+<p>Add comments to your code:</p>
+<ul>
+<li><code>#</code> - single line comments</li>
+<li><code>""" """</code> - multi-line comments</li>
+</ul>
+<pre><code class="language-python"># single line comment.
+
+&quot;&quot;&quot;
+Multi like comment
+Use this to describe 
+many things.
+&quot;&quot;&quot;
+</code></pre>
 <h2 id="importing-other-libraries">Importing other libraries</h2>
 <p>Python comes with the "Python Standard Library" which has a lot of powerful modules ready to go, no installing required.</p>
 <p><a href="https://docs.python.org/3/library/index.html">Python Standard Library Docs</a></p>
