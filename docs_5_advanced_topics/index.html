@@ -346,6 +346,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#context-managers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Context Managers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#decorators" class="md-nav__link">
     <span class="md-ellipsis">
       Decorators
@@ -556,6 +565,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#context-managers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Context Managers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#decorators" class="md-nav__link">
     <span class="md-ellipsis">
       Decorators
@@ -668,6 +686,58 @@ or keyword arguments, you can use args and kwargs.</p>
     for kwarg in kwargs:
         print(kwarg)
 </code></pre>
+<p>You can also unpack dictionaries directly into a function call.</p>
+<pre><code class="language-py">def greet(name, age):
+    print(f&quot;Hello, {name}. You are {age} years old.&quot;)
+
+data = {&quot;name&quot;: &quot;Alice&quot;, &quot;age&quot;: 25}
+greet(**data)  # Equivalent to greet(name=&quot;Alice&quot;, age=25)
+</code></pre>
+<h2 id="context-managers">Context Managers</h2>
+<p>In programming there are a lot of instances where you'll need to open something
+(file, database connection, etc.) and you'll need to make sure to close it
+to free up resources and to protect the file from being corrupted or altered.</p>
+<p>A very safe way to handle this is with context managers, using the <code>with</code> keyword.</p>
+<p>Read, write, append to files.</p>
+<pre><code class="language-py"># write to file by opening in write mode 'w'
+with open('file.txt', 'w') as write_file:
+    write_file.write('Hello there')
+# file is closed at this point
+
+with open('file.txt', 'r') as read_only_file:
+    file_data = read_only_file.read()
+
+# close the file and use the data from it
+print(file_data)
+
+with open('file.txt', 'a') as append_file:
+    append_file.write('This is how to append text to file.')
+
+with open('file.txt', 'rw') as read_write_file:
+    read_write_file.write('info')
+    data = read_write_file.read()
+</code></pre>
+<p>Safely manage connections to a database.</p>
+<pre><code class="language-py">from sqlalchemy import create_engine
+
+engine = create_engine('connection_string')
+
+with engine.connect() as conn:
+    conn.execute('query here')
+</code></pre>
+<p>You can create your own objects with context managers.</p>
+<pre><code class="language-py">class NewObject:
+    def __init__(self, vars):
+        self.vars = vars
+
+    def __enter__(self):
+        # open the connection using with statement
+        self.open()
+
+    def __exit__(self):
+        # automatically run this on exiting with statement
+        self.close()
+</code></pre>
 <h2 id="decorators">Decorators</h2>
 <p>Decorators are a way to add extra functionality to other functions.</p>
 <pre><code class="language-py">import functools
@@ -706,6 +776,44 @@ def wrapped_function():
     # regular function stuff
 </code></pre>
 <p>Here is a more in-depth tutorial on decorators https://realpython.com/primer-on-python-decorators/</p>
+<p>Some favorite decorators:</p>
+<pre><code class="language-py">def time_it(func):
+    &quot;&quot;&quot;Prints the time it takes for a function to run&quot;&quot;&quot;
+    @functools.wraps(func)
+    def wrapper(*args, **kwargs):
+        start_time = datetime.datetime.now()
+        return_val = func(*args, **kwargs)
+        print(f'{func.__name__} ran successfully in {datetime.datetime.now() - start_time}')
+        return return_val
+    return wrapper
+</code></pre>
+<pre><code class="language-py">def avoid_day_of_week(day_of_week: List[int]):
+    &quot;&quot;&quot;
+    Avoid running the decorated function on certain day of week.
+
+    day_of_week:
+        0 -&gt; Mon
+        1 -&gt; Tue
+        2 -&gt; Wed
+        3 -&gt; Thu
+        4 -&gt; Fri
+        5 -&gt; Sat
+        6 -&gt; Sun
+    &quot;&quot;&quot;
+    def decorator(func):
+        @wraps(func)
+        def wrapper(*args, **kwargs):
+            current_dt = utc_now()
+            dow = calendar.weekday(current_dt.year, current_dt.month, current_dt.day)
+            if dow in day_of_week:
+                logit(f'Avoiding day of week {calendar.day_abbr[dow]} day integer ({dow})')
+                return
+            else:
+                func(*args, **kwargs)
+
+        return wrapper
+    return decorator
+</code></pre>
 <h2 id="generators">Generators</h2>
 <p>Generators can be thought of as iterables that are not fully loaded into memory. This allows you can handle the 
 same data, without worrying about memory consumption.</p>

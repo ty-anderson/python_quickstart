@@ -395,6 +395,24 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#filtering" class="md-nav__link">
+    <span class="md-ellipsis">
+      Filtering
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#change-data-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Change Data Types
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -440,6 +458,15 @@
   <a href="#dotenv" class="md-nav__link">
     <span class="md-ellipsis">
       dotenv
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requests" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requests
     </span>
   </a>
   
@@ -556,6 +583,24 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#filtering" class="md-nav__link">
+    <span class="md-ellipsis">
+      Filtering
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#change-data-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Change Data Types
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -601,6 +646,15 @@
   <a href="#dotenv" class="md-nav__link">
     <span class="md-ellipsis">
       dotenv
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requests" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requests
     </span>
   </a>
   
@@ -663,7 +717,7 @@ df = pd.read_xml('io')
 df = pd.read_clipboard()
 </code></pre>
 <p>More here https://pandas.pydata.org/docs/reference/io.html</p>
-<h4 id="transformations">Transformations</h4>
+<h3 id="transformations">Transformations</h3>
 <p>Once you have data loaded into a dataframe, you can perform all kinds of operations on the values.
 There are generally two ways of performing modifications. Iterating through each value (not recommended) and
 across columns (called vectorization). A vectorized operation can look like this:</p>
@@ -678,7 +732,7 @@ df['float_column_01'] = df['float_column_01'] / df['float_column_02']
 # perform string operations
 df['string_col'] = df['string_col'].str.replace('-', '')
 </code></pre>
-<p>Filtering data is very useful.</p>
+<h3 id="filtering">Filtering</h3>
 <pre><code class="language-py">df = pd.read_csv('path/to/file.csv') # sample data
 
 # filter where column_name is equal to a value
@@ -690,7 +744,7 @@ df = df[df['column_name'].str.contains('partial_string_match')]
 # drop rows where column_name equals any of the list values
 df = df[~df['column_name'].isin(['list', 'of', 'values'])]
 </code></pre>
-<p>Changing column data types:</p>
+<h3 id="change-data-types">Change Data Types</h3>
 <pre><code class="language-py">df = pd.read_csv('path/to/file.csv') # sample data
 
 df['str_num_values'] = df['str_num_values'].astype(int)
@@ -807,6 +861,26 @@ load_dotenv()
 
 env_var = os.getenv('ENV_VAR_NAME')
 api_key = os.getenv('API_KEY_01')
+</code></pre>
+<h2 id="requests">Requests</h2>
+<p>Requests is a user-friendly way to make HTTP calls. Very good for API's.</p>
+<p><code>pip install requests</code></p>
+<pre><code class="language-py">import requests
+
+url = 'https://data.cms.gov/provider-data/api/1/metastore/schemas/dataset/items/4pq5-n9py?show-reference-ids=false'
+response = requests.get(url)
+print(response.status_code)
+print(response.headers)
+print(response.text)
+</code></pre>
+<p>Send post requests with auth details and payload.</p>
+<pre><code class="language-py">import requests
+from io import BytesIO
+
+response = requests.get(url, 
+                        auth={'user': 'username', 'password': 'password_here'},
+                        data={'payload_json': {'data': 'value'}},
+                        files={'file': BytesIO()})
 </code></pre>
 <h2 id="airflow">Airflow</h2>
 <p>Airflow is an orchestration tool to run and monitor jobs. It allows you to program it in a way that it can
