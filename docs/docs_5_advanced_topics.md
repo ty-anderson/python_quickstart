@@ -1,5 +1,19 @@
 # Advanced Topics
 
+## Dynamic Function Parameters
+
+If you have a function and you want to be able to pass any number of arguments
+or keyword arguments, you can use args and kwargs.
+
+```py
+def function_name(*args, **kwargs):
+    # in the function you can access args and kwargs
+    for arg in args:
+        print(arg)
+    for kwarg in kwargs:
+        print(kwarg)
+```
+
 ## Decorators
 
 Decorators are a way to add extra functionality to other functions.
@@ -147,6 +161,7 @@ Be aware, async code is more complicated than synchronous in any language, inclu
 When should I use async code?
 
 If your code is...
+
 - CPU Bound - use [Multi Processing](https://docs.python.org/3/library/multiprocessing.html)
 - IO bound, fast IO, limited number of connections - use [Threading](https://docs.python.org/3/library/threading.html)
 - IO bound, slow IO, many connections - use [Asyncio](https://docs.python.org/3/library/asyncio.html)
@@ -257,4 +272,17 @@ print(*numbers)
 numbers = [1, 2, 3, 4]
 for number in numbers:
     print(number)
+```
+
+The double asterisk ** is for unpacking keyword arguments. This is why
+they are used in functions with args and kwargs.
+
+```py
+def function_name(*args, **kwargs):
+    # in the function you can access args and kwargs
+    print(args[0])
+    print(kwargs['item_01'])
+    
+
+function_name(1, 2, 3, item_01='value 1', item_02='value 2')
 ```

@@ -11,12 +11,27 @@ print('This is my first python script')
 ## Data Types
 
 Native data types in python include:
+
 - Integer ``int`` - whole number ie: 5
 - Float ``float``- decimal number ie: 7.9
 - String ``str``- text surrounded by single or double quotes ie: 'This is a string' or "This is a string"
 - List, Tuple ``list, tuple``- grouped data combined into a collection that can be iterated over. Lists use square brackets ie: a 
 list of integers ``[1, 2, 3, 4]``. Tuples use parenthesis ie: ``(1, 2, 3, 4)``. Lists can be mutated and tuples cannot.
 - Dictionary ``dict``- key value pair collection of data, using curly-braces. ie: ``{'key 1': 'value 1', 'key 2': 'value 2'}``
+
+Dictionary methods:
+
+- Get value from dictionary ``dict_name['key_name']'`` or ``dict_name.get('key_name')``
+- Loop through the dict with:
+```py
+for k, v in dict_name.items():
+   print(k, v) 
+```
+
+String methods:
+
+- f-strings
+- Combine iterable into string ``''.join(iterable)``
 
 ## Variables
 
@@ -106,17 +121,19 @@ numbers = [number * 2 for number in numbers]
 ## Comments
 
 Add comments to your code:
+
 - ``#`` - single line comments
 - ``""" """`` - multi-line comments
-  ```py
-  # single line comment.
-  
-  """
-  Multi like comment
-  Use this to describe 
-  many things.
-  """
-  ```
+
+```python
+# single line comment.
+
+"""
+Multi like comment
+Use this to describe 
+many things.
+"""
+```
 
 ## Importing other libraries
 

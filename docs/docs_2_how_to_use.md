@@ -1,5 +1,7 @@
 
 # How to use Python
+
+## Download Python
 1. Download the python interpreter from https://www.python.org/downloads/
 2. Python files end with ``.py`` for example ``new_file.py``. Notice all lowercase and underscore format. 
 Python heavily uses this **snake case** formatting.
@@ -8,7 +10,7 @@ Python heavily uses this **snake case** formatting.
    - Example: ``C:\username\python\bin\python.exe path\to\your\python\file.py``
    - Note you'll modify this to the correct paths on your computer.
 
-### About the package manager (pip)
+## About the package manager (pip)
 - The python community has a place where people can create and upload their own python packages. https://pypi.org/
 - Python has a built-in manager that allows you to install packages from PyPI directly. This manager is called ``pip``
 - There are many very popular libraries. Some popular and well utilized ones are:
@@ -24,7 +26,7 @@ Python heavily uses this **snake case** formatting.
 That would cause it to become bloated if every project used the same interpreter. For this reason, every python project 
 should have its own interpreter (see [Best practices for using python](#best-practices-for-using-python))
 
-### Best practices for using python
+## Best practices for using python
 - Every python project should have its own interpreter, called a virtual environment or shortened to "venv". To do this, we need to create a copy of the python interpreter 
 for each project. PyCharm can manage this for you, or you can do it manually. If using PyCharm, you can skip to the pip commands.
   - To do this manually, you should use the terminal to navigate to the folder your project files will exist in and type ``python -m venv venv``
