@@ -1011,9 +1011,9 @@ on port 8000 (linux <code>sudo ufw allow 8000</code>). </p>
 </ol>
 <p>Stopping the app:</p>
 <p>Use <code>pgrep -fl gunicorn</code> to show a list of gunicorn processes with their PIDs.</p>
-<p>kill by bid: <code>kill &lt;pid&gt;</code></p>
+<p>kill by bid: <code>kill &lt;pid&gt;</code> (kill by process ID)</p>
 <p>OR</p>
-<p>kill all gunicorn: <code>pkill gunicorn</code></p>
+<p>kill all gunicorn: <code>pkill gunicorn</code> (kill by process name)</p>
 <p>For a more stable production environment, a process manager is better.</p>
 <p>Create a systemd service file.</p>
 <p>Then you can enable/disable/start/stop the app as a service.</p>
