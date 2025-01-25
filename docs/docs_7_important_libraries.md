@@ -261,6 +261,69 @@ have dependencies. For example, only run one script after another has run succes
 Flask is a popular web app framework. It is very lightweight and has many "plugin" type packages that are built to 
 be pieced together to achieve all desired features.
 
+### Self Hosting
+
+If you want to host your own flask app, gunicorn is a WSGI pure python server used for production.
+You'll need to ``pip install gunicorn`` and then run the commands.
+
+Running locally:
+
+``gunicorn -w 4 'module_name:app_name'``
+
+``-w`` is the number of workers, default is 1.
+
+If you want to be able to access the site on the network, you need to bind to 0.0.0.0:
+
+``gunicorn -w 4 -b 0.0.0.0:8000 'app:app''``
+
+``0.0.0.0`` binds the app to all available network interfaces, making it accessible on your network.
+This is a special ip address that tells your application to listen on all available network interfaces
+of the machine, instead of just localhost. 
+
+To make this accessible from the internet, you need to configure your router to forward traffic that 
+goes to your chosen port (8000) in this case, to the machine that is running the app. This is done
+with port forwarding in your router admin settings. Visually it might look like 
+``public_ip:8000 -> server_local_ip:8000``.
+
+You may need to update firewall config on the server to allow external connections 
+on port 8000 (linux ``sudo ufw allow 8000``). 
+
+If your ISP changes your public IP, you make need to use a dynamic DNS (DDNS) service like No-IP or DynDNS.
+
+Security Warning: exposing your app to the internet comes with security risks. To mitigate:
+
+1. Use HTTPS: Serve your app behind a reverse proxy like nginx with an SSL certificate.
+2. Restrict Access: Limit access to specific IPs or use authentication to secure your app.
+3. Monitor Logs: Monitor your server logs for unusual activity.
+
+Stopping the app:
+
+Use ``pgrep -fl gunicorn`` to show a list of gunicorn processes with their PIDs.
+
+kill by bid: ``kill <pid>``
+
+OR
+
+kill all gunicorn: ``pkill gunicorn``
+
+For a more stable production environment, a process manager is better.
+
+Create a systemd service file.
+
+Then you can enable/disable/start/stop the app as a service.
+
+```
+sudo systemctl enable gunicorn  # auto start on boot
+sudo systemctl start gunicorn  # prevent auto start on boot
+sudo systemctl status gunicorn
+sudo systemctl stop gunicorn
+sudo systemctl restart <service-name>
+```
+
+When you make changes to a service file, you need to reload the service:
+
+``sudo systemctl daemon-reload``
+
 [Flask Docs](https://flask.palletsprojects.com/en/stable/)
 
 ## Other Interesting Libraries
