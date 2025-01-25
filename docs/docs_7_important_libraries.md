@@ -263,15 +263,15 @@ be pieced together to achieve all desired features.
 
 [Flask Docs](https://flask.palletsprojects.com/en/stable/)
 
-# Other Interesting Libraries
+## Other Interesting Libraries
 
-## Locust
+### Locust
 
 Locust is a load testing framework that can send millions of requests.
 
 [Locust Docs](https://locust.io/)
 
-## Reportlab
+### Reportlab
 
 Creating PDF's can be difficult or require external software like LaTeX or wkhtmltopdf.
 
