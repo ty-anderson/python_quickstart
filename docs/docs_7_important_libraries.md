@@ -263,6 +263,8 @@ be pieced together to achieve all desired features.
 
 ### Self Hosting
 
+Make sure to activate your python interpreter!
+
 If you want to host your own flask app, gunicorn is a WSGI pure python server used for production.
 You'll need to ``pip install gunicorn`` and then run the commands.
 
