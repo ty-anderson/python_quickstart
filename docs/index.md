@@ -1,0 +1,3 @@
+# Getting Started with Python as Fast as Possible
+
+Click on any of the pages on the left to begin...

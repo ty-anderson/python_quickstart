@@ -1,0 +1,11 @@
+site_name: Python Learning
+theme: material
+nav:
+  - Home: index.md
+  - What is Python: docs_1_what_is_python.md
+  - How to Use: docs_2_how_to_use.md
+  - Writing Code: docs_3_writing_code.md
+  - Building Large Projects: docs_4_building_large_projects.md
+  - Advanced Topics: docs_5_advanced_topics.md
+  - Publishing Projects: docs_6_publishing_project.md
+  - Important Libraries: docs_7_important_libraries.md
