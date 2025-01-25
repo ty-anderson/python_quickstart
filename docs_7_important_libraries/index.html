@@ -488,6 +488,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Flask">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#self-hosting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Self Hosting
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -708,6 +723,21 @@
       Flask
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Flask">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#self-hosting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Self Hosting
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -955,6 +985,46 @@ have dependencies. For example, only run one script after another has run succes
 <h2 id="flask">Flask</h2>
 <p>Flask is a popular web app framework. It is very lightweight and has many "plugin" type packages that are built to 
 be pieced together to achieve all desired features.</p>
+<h3 id="self-hosting">Self Hosting</h3>
+<p>If you want to host your own flask app, gunicorn is a WSGI pure python server used for production.
+You'll need to <code>pip install gunicorn</code> and then run the commands.</p>
+<p>Running locally:</p>
+<p><code>gunicorn -w 4 'module_name:app_name'</code></p>
+<p><code>-w</code> is the number of workers, default is 1.</p>
+<p>If you want to be able to access the site on the network, you need to bind to 0.0.0.0:</p>
+<p><code>gunicorn -w 4 -b 0.0.0.0:8000 'app:app''</code></p>
+<p><code>0.0.0.0</code> binds the app to all available network interfaces, making it accessible on your network.
+This is a special ip address that tells your application to listen on all available network interfaces
+of the machine, instead of just localhost. </p>
+<p>To make this accessible from the internet, you need to configure your router to forward traffic that 
+goes to your chosen port (8000) in this case, to the machine that is running the app. This is done
+with port forwarding in your router admin settings. Visually it might look like 
+<code>public_ip:8000 -&gt; server_local_ip:8000</code>.</p>
+<p>You may need to update firewall config on the server to allow external connections 
+on port 8000 (linux <code>sudo ufw allow 8000</code>). </p>
+<p>If your ISP changes your public IP, you make need to use a dynamic DNS (DDNS) service like No-IP or DynDNS.</p>
+<p>Security Warning: exposing your app to the internet comes with security risks. To mitigate:</p>
+<ol>
+<li>Use HTTPS: Serve your app behind a reverse proxy like nginx with an SSL certificate.</li>
+<li>Restrict Access: Limit access to specific IPs or use authentication to secure your app.</li>
+<li>Monitor Logs: Monitor your server logs for unusual activity.</li>
+</ol>
+<p>Stopping the app:</p>
+<p>Use <code>pgrep -fl gunicorn</code> to show a list of gunicorn processes with their PIDs.</p>
+<p>kill by bid: <code>kill &lt;pid&gt;</code></p>
+<p>OR</p>
+<p>kill all gunicorn: <code>pkill gunicorn</code></p>
+<p>For a more stable production environment, a process manager is better.</p>
+<p>Create a systemd service file.</p>
+<p>Then you can enable/disable/start/stop the app as a service.</p>
+<pre><code>sudo systemctl enable gunicorn  # auto start on boot
+sudo systemctl start gunicorn  # prevent auto start on boot
+sudo systemctl status gunicorn
+sudo systemctl stop gunicorn
+sudo systemctl restart &lt;service-name&gt;
+</code></pre>
+<p>When you make changes to a service file, you need to reload the service:</p>
+<p><code>sudo systemctl daemon-reload</code></p>
 <p><a href="https://flask.palletsprojects.com/en/stable/">Flask Docs</a></p>
 <h2 id="other-interesting-libraries">Other Interesting Libraries</h2>
 <h3 id="locust">Locust</h3>
