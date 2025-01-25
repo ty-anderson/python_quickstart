@@ -954,6 +954,52 @@ c.ellipse(x, y - 170, x + 100, y - 220)
 c.showPage()
 c.save()
 </code></pre>
+<p>You can make tables from a pandas dataframe</p>
+<pre><code class="language-py">from reportlab.lib.pagesizes import letter, landscape
+from reportlab.platypus import SimpleDocTemplate, Table, TableStyle
+from reportlab.lib import colors
+
+filename = &quot;landscape_table_fit.pdf&quot;
+doc = SimpleDocTemplate(filename, pagesize=landscape(letter))
+
+# Example DataFrame
+import pandas as pd
+df = pd.DataFrame({
+    &quot;Column 1&quot;: [&quot;A&quot;, &quot;B&quot;, &quot;C&quot;],
+    &quot;Column 2&quot;: [1, 2, 3],
+    &quot;Column 3&quot;: [4.5, 5.5, 6.5],
+    &quot;Column 4&quot;: [&quot;Long Text Example&quot;, &quot;Another Example&quot;, &quot;More Text&quot;],
+    &quot;Column 5&quot;: [&quot;X&quot;, &quot;Y&quot;, &quot;Z&quot;]
+})
+
+# Convert DataFrame to list of lists
+data = [df.columns.tolist()] + df.values.tolist()
+
+# Calculate dynamic column widths to fit the page
+page_width = landscape(letter)[0]
+available_width = page_width - 40  # Subtract margins
+num_columns = len(df.columns)
+col_width = available_width / num_columns
+
+# Create a table with fixed column widths
+table = Table(data, colWidths=[col_width] * num_columns)
+table.setStyle(TableStyle([
+    ('BACKGROUND', (0, 0), (-1, 0), colors.lightgrey),
+    ('TEXTCOLOR', (0, 0), (-1, 0), colors.black),
+    ('ALIGN', (0, 0), (-1, -1), 'CENTER'),
+    ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
+    ('BOTTOMPADDING', (0, 0), (-1, 0), 12),
+    ('GRID', (0, 0), (-1, -1), 1, colors.grey),
+]))
+
+# Add the table to the elements list
+elements = [table]
+
+# Build the document
+doc.build(elements)
+
+print(f&quot;PDF saved as {filename}&quot;)
+</code></pre>
 
 
 
