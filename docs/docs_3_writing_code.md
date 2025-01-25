@@ -30,7 +30,7 @@ for k, v in dict_name.items():
 
 String methods:
 
-- f-strings
+- f-strings - inject variables into a string with curly braces ``print(f'Variable = {x}')``
 - Combine iterable into string ``''.join(iterable)``
 
 ## Variables

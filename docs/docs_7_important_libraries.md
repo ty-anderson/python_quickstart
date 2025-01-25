@@ -28,7 +28,7 @@ df = pd.read_clipboard()
 
 More here https://pandas.pydata.org/docs/reference/io.html
 
-#### Transformations
+### Transformations
 
 Once you have data loaded into a dataframe, you can perform all kinds of operations on the values.
 There are generally two ways of performing modifications. Iterating through each value (not recommended) and
@@ -47,7 +47,7 @@ df['float_column_01'] = df['float_column_01'] / df['float_column_02']
 df['string_col'] = df['string_col'].str.replace('-', '')
 ```
 
-Filtering data is very useful.
+### Filtering
 
 ```py
 df = pd.read_csv('path/to/file.csv') # sample data
@@ -62,7 +62,7 @@ df = df[df['column_name'].str.contains('partial_string_match')]
 df = df[~df['column_name'].isin(['list', 'of', 'values'])]
 ```
 
-Changing column data types:
+### Change Data Types
 
 ```py
 df = pd.read_csv('path/to/file.csv') # sample data
@@ -219,6 +219,34 @@ load_dotenv()
 
 env_var = os.getenv('ENV_VAR_NAME')
 api_key = os.getenv('API_KEY_01')
+```
+
+## Requests
+
+Requests is a user-friendly way to make HTTP calls. Very good for API's.
+
+``pip install requests``
+
+```py
+import requests
+
+url = 'https://data.cms.gov/provider-data/api/1/metastore/schemas/dataset/items/4pq5-n9py?show-reference-ids=false'
+response = requests.get(url)
+print(response.status_code)
+print(response.headers)
+print(response.text)
+```
+
+Send post requests with auth details and payload.
+
+```py
+import requests
+from io import BytesIO
+
+response = requests.get(url, 
+                        auth={'user': 'username', 'password': 'password_here'},
+                        data={'payload_json': {'data': 'value'}},
+                        files={'file': BytesIO()})
 ```
 
 ## Airflow

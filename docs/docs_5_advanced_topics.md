@@ -14,6 +14,72 @@ def function_name(*args, **kwargs):
         print(kwarg)
 ```
 
+You can also unpack dictionaries directly into a function call.
+```py
+def greet(name, age):
+    print(f"Hello, {name}. You are {age} years old.")
+
+data = {"name": "Alice", "age": 25}
+greet(**data)  # Equivalent to greet(name="Alice", age=25)
+```
+
+## Context Managers
+
+In programming there are a lot of instances where you'll need to open something
+(file, database connection, etc.) and you'll need to make sure to close it
+to free up resources and to protect the file from being corrupted or altered.
+
+A very safe way to handle this is with context managers, using the ``with`` keyword.
+
+Read, write, append to files.
+
+```py
+# write to file by opening in write mode 'w'
+with open('file.txt', 'w') as write_file:
+    write_file.write('Hello there')
+# file is closed at this point
+
+with open('file.txt', 'r') as read_only_file:
+    file_data = read_only_file.read()
+
+# close the file and use the data from it
+print(file_data)
+
+with open('file.txt', 'a') as append_file:
+    append_file.write('This is how to append text to file.')
+
+with open('file.txt', 'rw') as read_write_file:
+    read_write_file.write('info')
+    data = read_write_file.read()
+```
+
+Safely manage connections to a database.
+
+```py
+from sqlalchemy import create_engine
+
+engine = create_engine('connection_string')
+
+with engine.connect() as conn:
+    conn.execute('query here')
+```
+
+You can create your own objects with context managers.
+
+```py
+class NewObject:
+    def __init__(self, vars):
+        self.vars = vars
+
+    def __enter__(self):
+        # open the connection using with statement
+        self.open()
+
+    def __exit__(self):
+        # automatically run this on exiting with statement
+        self.close()
+```
+
 ## Decorators
 
 Decorators are a way to add extra functionality to other functions.
@@ -60,6 +126,49 @@ def wrapped_function():
 ```
 
 Here is a more in-depth tutorial on decorators https://realpython.com/primer-on-python-decorators/
+
+Some favorite decorators:
+
+```py
+def time_it(func):
+    """Prints the time it takes for a function to run"""
+    @functools.wraps(func)
+    def wrapper(*args, **kwargs):
+        start_time = datetime.datetime.now()
+        return_val = func(*args, **kwargs)
+        print(f'{func.__name__} ran successfully in {datetime.datetime.now() - start_time}')
+        return return_val
+    return wrapper
+```
+
+```py
+def avoid_day_of_week(day_of_week: List[int]):
+    """
+    Avoid running the decorated function on certain day of week.
+
+    day_of_week:
+        0 -> Mon
+        1 -> Tue
+        2 -> Wed
+        3 -> Thu
+        4 -> Fri
+        5 -> Sat
+        6 -> Sun
+    """
+    def decorator(func):
+        @wraps(func)
+        def wrapper(*args, **kwargs):
+            current_dt = utc_now()
+            dow = calendar.weekday(current_dt.year, current_dt.month, current_dt.day)
+            if dow in day_of_week:
+                logit(f'Avoiding day of week {calendar.day_abbr[dow]} day integer ({dow})')
+                return
+            else:
+                func(*args, **kwargs)
+
+        return wrapper
+    return decorator
+```
 
 ## Generators
 
