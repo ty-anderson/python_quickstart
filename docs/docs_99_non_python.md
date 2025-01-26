@@ -3,6 +3,17 @@
 ## Docker
 
 
+Docker Compose
+
+Make sure you have the latest version (currently V2).
+
+Docker compose V1 was built on python, V2 is built in Go. If you run ``which docker compose`` 
+and it shows the path ``/usr/bin/docker-compose`` then you still have V1. Remove it
+with ``sudo rm /usr/bin/docker-compose``. 
+
+Show docker version: ``sudo docker version``
+
+
 ## Reverse-Proxy
 
 Reverse Proxy - software that routes traffic from one endpoint to another, or multiple others.
@@ -108,6 +119,14 @@ Additional considerations to run in Docker:
 - If you run Caddy in a docker container, ``localhost`` will be that container, due to dockers own DNS.
 - If you run your web server that you're routing to in a docker container, you can use that container name
     in the caddy file config.
+
+You can also route ports directly.
+
+```
+:8443 {
+    reverse_proxy 127.0.0.1:8000
+}
+```
 
 ## Web Server
 
