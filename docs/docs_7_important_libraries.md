@@ -285,7 +285,7 @@ of the machine, instead of just localhost.
 To make this accessible from the internet, you need to configure your router to forward traffic that 
 goes to your chosen port (8000 in this case) to the machine that is running the app. This is done
 with port forwarding in your router admin settings. Visually it might look like 
-``public_ip:8000 -> server_local_ip:8000``.
+``public_ip:8000 -> server_local_ip:8000``. BTW this is called port forwarding.
 
 You may need to update firewall config on the server to allow external connections 
 on port 8000 (linux ``sudo ufw allow 8000``). 
