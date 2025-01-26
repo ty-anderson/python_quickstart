@@ -283,7 +283,7 @@ This is a special ip address that tells your application to listen on all availa
 of the machine, instead of just localhost. 
 
 To make this accessible from the internet, you need to configure your router to forward traffic that 
-goes to your chosen port (8000) in this case, to the machine that is running the app. This is done
+goes to your chosen port (8000 in this case) to the machine that is running the app. This is done
 with port forwarding in your router admin settings. Visually it might look like 
 ``public_ip:8000 -> server_local_ip:8000``.
 
