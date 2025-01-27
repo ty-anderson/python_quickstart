@@ -586,6 +586,26 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs_99_non_python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Non-Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -998,9 +1018,9 @@ You'll need to <code>pip install gunicorn</code> and then run the commands.</p>
 This is a special ip address that tells your application to listen on all available network interfaces
 of the machine, instead of just localhost. </p>
 <p>To make this accessible from the internet, you need to configure your router to forward traffic that 
-goes to your chosen port (8000) in this case, to the machine that is running the app. This is done
+goes to your chosen port (8000 in this case) to the machine that is running the app. This is done
 with port forwarding in your router admin settings. Visually it might look like 
-<code>public_ip:8000 -&gt; server_local_ip:8000</code>.</p>
+<code>public_ip:8000 -&gt; server_local_ip:8000</code>. BTW this is called port forwarding.</p>
 <p>You may need to update firewall config on the server to allow external connections 
 on port 8000 (linux <code>sudo ufw allow 8000</code>). </p>
 <p>If your ISP changes your public IP, you make need to use a dynamic DNS (DDNS) service like No-IP or DynDNS.</p>
