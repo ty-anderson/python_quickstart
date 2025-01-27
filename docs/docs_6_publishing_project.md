@@ -4,11 +4,13 @@ You can create your own python library and publish it to PyPI. First you'll need
 your API keys. Once you have those established, you can create your project and then:
 
 Super summary:
+
 1. Create the pyproject.toml file and fill out the fields 
 2. run py -m build 
 3. use twine to send to pypi.
 
 More detailed steps:
+
 1. Make sure all of your files are created inside a folder structure
 2. Create pyproject.toml
 ```toml
