@@ -15,7 +15,7 @@ capabilities: it can be read-only, write-only, or read-write. It can also allow
 arbitrary random access (seeking forwards or backwards to any location), or 
 only sequential access (for example in the case of a socket or pipe).
 
-Text I/O
+### Text I/O
 
 Text I/O expects and produces str objects. This means that whenever the backing store 
 is natively made of bytes (such as in the case of a file), encoding and decoding of 
@@ -36,7 +36,7 @@ write data to them in the same way you would with a file.
 
 ![bytesio.png](images/bytesio.png)
 
-Binary I/O
+### Binary I/O
 
 Binary I/O (also called buffered I/O) expects bytes-like objects and produces bytes objects. 
 No encoding, decoding, or newline translation is performed. This category of streams can 
@@ -128,3 +128,18 @@ mailserver.login(msg['From'], 'password here')
 mailserver.send_message(msg)
 mailserver.quit()
 ```
+
+
+## Python on iOS and Android
+
+This info comes from this article [Medium Article](https://medium.com/@pouyahallaj/python-for-ios-a-new-era-with-python-3-13-cb19460f5c75)
+
+Python 3.13 has brought official support for iOS and Android as a platform. 
+On iOS, since Apple restricts being able to install system resources or run binaries, 
+developers are forced to run python in embedded mode. In other words, writing native iOS
+applications and embedding a python interpreter using ``libPython``. This bundles the python
+interpreter and your code into a bundle that gets uploaded to the App store.
+
+Here is the offical docs [https://docs.python.org/3/using/ios.html](https://docs.python.org/3/using/ios.html)
+
+
