@@ -328,6 +328,12 @@ When you make changes to a service file, you need to reload the service:
 
 [Flask Docs](https://flask.palletsprojects.com/en/stable/)
 
+## FastAPI
+
+FastAPI is one of the most performant web frameworks available for python.
+
+
+
 ## Other Interesting Libraries
 
 ### Locust

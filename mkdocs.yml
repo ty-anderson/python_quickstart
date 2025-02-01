@@ -1,5 +1,7 @@
 site_name: Python Learning
 theme: material
+extra_javascript:
+  - https://unpkg.com/mermaid@8.6.4/dist/mermaid.min.js
 nav:
   - Home: index.md
   - What is Python: docs_1_what_is_python.md
@@ -12,3 +14,5 @@ nav:
   - Documentation Libraries: docs_8_documentation.md
   - Standard Library Gems: docs_9_std_lib.md
   - Non-Python: docs_99_non_python.md
+  - Networking: docs_100_networking.md
+  - Caddy: docs_101_caddy.md

@@ -32,4 +32,3 @@ from reports import report_01
 If there is code in the ``__init__.py`` file, you can just import the module name like ``import db``. If there is
 a function inside the ``__init__.py`` file called ``new_func`` you could ``from db import new_func``
 
-To run various files in a larger project, see [run scripts in module mode](#run-scripts-in-module-mode)
