@@ -153,4 +153,23 @@ healthfin.solutions {
 }
 ```
 
+Serve different sites with different paths of the same domain.
 
+```caddy
+healthfin.solutions {
+    handle_path /notes* {
+        root * /srv/web_apps/notes
+        file_server
+    }
+
+    reverse_proxy homeserver.home:8000
+}
+
+:8009 {
+    root * /srv/web_apps/notes
+    file_server
+}
+```
+
+This config allows for access to the main server from the root domain, but 
+also changes to the static site when you add the /notes path.
