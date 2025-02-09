@@ -1,7 +1,7 @@
 site_name: Python Learning
 theme: material
 extra_javascript:
-  - https://unpkg.com/mermaid@8.6.4/dist/mermaid.min.js
+  - https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js
 nav:
   - Home: index.md
   - What is Python: docs_1_what_is_python.md
@@ -16,3 +16,4 @@ nav:
   - Non-Python: docs_99_non_python.md
   - Networking: docs_100_networking.md
   - Caddy: docs_101_caddy.md
+  - DNS: docs_102_dns_server.md

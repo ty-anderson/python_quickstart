@@ -1,3 +1,7 @@
+<script>
+  mermaid.initialize({ startOnLoad: true });
+</script>
+
 # What is Python?
 
 - Python is a general purpose programming language (its good at a lot of things).
