@@ -1,0 +1,788 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../docs_100_networking/">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.50">
+    
+    
+      
+        <title>Caddy - Python Learning</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.a40c8224.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#caddy" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Python Learning" class="md-header__button md-logo" aria-label="Python Learning" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Python Learning
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Caddy
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Python Learning" class="md-nav__button md-logo" aria-label="Python Learning" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Python Learning
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs_1_what_is_python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    What is Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs_2_how_to_use/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How to Use
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs_3_writing_code/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Writing Code
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs_4_building_large_projects/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Building Large Projects
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs_5_advanced_topics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Advanced Topics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs_6_publishing_project/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Publishing Projects
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs_7_important_libraries/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Important Libraries
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs_8_documentation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Documentation Libraries
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs_9_std_lib/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Standard Library Gems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs_99_non_python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Non-Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs_100_networking/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Networking
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Caddy
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Caddy
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#reverse-proxy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reverse-Proxy
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Reverse-Proxy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#examples-using-caddy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples using Caddy:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      File Server
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#reverse-proxy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reverse-Proxy
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Reverse-Proxy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#examples-using-caddy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples using Caddy:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      File Server
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="caddy">Caddy</h1>
+<p>Official site: https://caddyserver.com/</p>
+<h2 id="reverse-proxy">Reverse-Proxy</h2>
+<p>Reverse Proxy - software that routes traffic from one endpoint to another, or multiple others.</p>
+<p>Caddy is very simple and it comes with built in certificate management through Lets Encrypt. </p>
+<pre><code class="language-caddy">&lt;requested-domain&gt; {
+    reverse_proxy &lt;ip and port service is routed to&gt;
+}
+</code></pre>
+<h3 id="examples-using-caddy">Examples using Caddy:</h3>
+<p>Very simple config. This says using the host machine ip address, using the protocol on port 80 (http)
+respond with "Hello from Caddy".</p>
+<pre><code class="language-caddy">:80 {
+    respond &quot;Hello from Caddy&quot;
+}
+</code></pre>
+<p>Internal and localhost certificates
+If you configure sites with local or internal addresses, Caddy will serve them over HTTPS 
+using a locally-trusted certificate authority with short-lived, auto-renewing certificates. 
+It even offers to install your unique root into your local trust stores for you.</p>
+<pre><code class="language-caddy">localhost {
+    respond &quot;Hello from HTTPS!&quot;
+}
+
+192.168.1.10 {
+    respond &quot;Also HTTPS!&quot;
+}
+
+http://localhost {
+    respond &quot;Plain HTTP&quot;
+}
+</code></pre>
+<p>When requests go to example.com, it will get routed
+to this reverse proxy, which then pushes it to localhost:5000. Just be sure the DNS
+records are updated to route the domain to this IP address.</p>
+<pre><code class="language-caddy">example.com {
+    reverse_proxy localhost:5000
+}
+</code></pre>
+<p>Here is Caddy as a reverse proxy doing load balancing, in a round-robin method.</p>
+<pre><code class="language-caddy">example.com {
+    reverse_proxy backend1:5000 backend2:5000 backend3:5000
+}
+</code></pre>
+<p>You can do path based proxying to serve different backends based on the url path. In this 
+example <code>example.com/api</code> will go to one web server, while <code>example.com/static</code> goes to another.</p>
+<pre><code class="language-caddy">example.com {
+    reverse_proxy /api backend1:5000
+    reverse_proxy /static backend2:5001
+    reverse_proxy /app backend3:5002
+}
+</code></pre>
+<p>You can setup to route subdomains as well. This will retrieve an SSL certificate for all domains added.</p>
+<pre><code class="language-caddy">example.com {
+    reverse_proxy localhost:3000
+}
+
+api.example.com {
+    reverse_proxy localhost:4000
+}
+</code></pre>
+<p>You can also proxy to external services.</p>
+<pre><code class="language-caddy">example.com {
+    reverse_proxy https:/api.example.com
+}
+</code></pre>
+<p>You can also configure domains to redirect to one domain. In this example all requests to 
+www.example.com will be rerouted to example.com. </p>
+<pre><code class="language-caddy">example.com www.example.com {
+    reverse_proxy localhost:3000
+}
+</code></pre>
+<p>To run Caddy:</p>
+<ul>
+<li>Download to computer</li>
+<li>Setup config file <code>Caddyfile</code> typically in <code>/etc/caddy/Caddyfile</code></li>
+<li>Start the Caddy server <code>sudo systemctl start caddy</code></li>
+</ul>
+<p>To run in Docker:</p>
+<ul>
+<li>Create a docker-compose.yml file.</li>
+</ul>
+<pre><code class="language-docker-compose">services:
+  caddy:
+    image: caddy:latest
+    container_name: caddy
+    ports:
+      - &quot;80:80&quot;        # HTTP
+      - &quot;443:443&quot;      # HTTPS
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile   # Mount your Caddyfile
+      - ./data:/data                       # Let’s Encrypt certificates
+      - ./config:/config                   # Caddy configuration
+    restart: unless-stopped
+</code></pre>
+<ul>
+<li>Create your Caddyfile (make sure to create it in the same location your volume is pointed to).</li>
+</ul>
+<pre><code class="language-caddy">example.com {
+    reverse_proxy backend:3000
+}
+</code></pre>
+<ul>
+<li>Run <code>docker compose up -d</code> to start the server.</li>
+</ul>
+<p>Additional considerations to run in Docker:</p>
+<ul>
+<li>If you run Caddy in a docker container, <code>localhost</code> will be that container, due to dockers own DNS.</li>
+<li>If you run your web server that you're routing to in a docker container, you can use that container name
+    in the caddy file config.</li>
+</ul>
+<p>You can also route ports directly.</p>
+<pre><code>:8443 {
+    reverse_proxy 127.0.0.1:8000
+}
+</code></pre>
+<h2 id="file-server">File Server</h2>
+<p>Caddy has an option to serve static files over HTTP. This is not a file server like sFTP
+because it serves over http or https.</p>
+<pre><code class="language-caddy">healthfin.solutions {
+    root * /srv/website
+    file_server
+}
+</code></pre>
+<p>Serve different sites with different paths of the same domain.</p>
+<pre><code class="language-caddy">healthfin.solutions {
+    handle_path /notes* {
+        root * /srv/web_apps/notes
+        file_server
+    }
+
+    reverse_proxy homeserver.home:8000
+}
+
+:8009 {
+    root * /srv/web_apps/notes
+    file_server
+}
+</code></pre>
+<p>This config allows for access to the main server from the root domain, but 
+also changes to the static site when you add the /notes path.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.60a45f97.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@8.6.4/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>

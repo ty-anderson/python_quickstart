@@ -37,4 +37,6 @@ a device with, say ip ``192.168.1.104`` to name ``mydevice.home``. Keep in mind 
 router might have a suffix that attaches to these names, such as ``.home``
 
 
+## Commands
 
+``netstat`` - 

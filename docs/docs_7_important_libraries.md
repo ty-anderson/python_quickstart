@@ -261,6 +261,11 @@ have dependencies. For example, only run one script after another has run succes
 Flask is a popular web app framework. It is very lightweight and has many "plugin" type packages that are built to 
 be pieced together to achieve all desired features.
 
+Web workers rule of thumb:
+
+- Sync workers: ~50 - 100 concurrent users per worker.
+- Async workers: ~500 - 1000+ concurrent users per worker.
+
 ### Self Hosting
 
 Make sure to activate your python interpreter!

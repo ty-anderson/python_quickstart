@@ -129,6 +129,13 @@ mailserver.send_message(msg)
 mailserver.quit()
 ```
 
+## Python HTTP Server
+
+Python has an HTTP server built into the standard library.
+
+Serving static files: ``python -m http.server 8008`` this will look for an index.html
+file to start serving, and can be accessed on ``localhost:8008``.
+
 
 ## Python on iOS and Android
 

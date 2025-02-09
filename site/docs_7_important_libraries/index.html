@@ -1,0 +1,1280 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../docs_6_publishing_project/">
+      
+      
+        <link rel="next" href="../docs_8_documentation/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.50">
+    
+    
+      
+        <title>Important Libraries - Python Learning</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.a40c8224.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#important-libraries-getting-started" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Python Learning" class="md-header__button md-logo" aria-label="Python Learning" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Python Learning
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Important Libraries
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Python Learning" class="md-nav__button md-logo" aria-label="Python Learning" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Python Learning
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs_1_what_is_python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    What is Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs_2_how_to_use/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How to Use
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs_3_writing_code/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Writing Code
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs_4_building_large_projects/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Building Large Projects
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs_5_advanced_topics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Advanced Topics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs_6_publishing_project/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Publishing Projects
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Important Libraries
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Important Libraries
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pandas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pandas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pandas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#transformations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transformations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filtering" class="md-nav__link">
+    <span class="md-ellipsis">
+      Filtering
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#change-data-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Change Data Types
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sqlalchemy" class="md-nav__link">
+    <span class="md-ellipsis">
+      SQLAlchemy
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sqlite" class="md-nav__link">
+    <span class="md-ellipsis">
+      SQLite
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#duckdb" class="md-nav__link">
+    <span class="md-ellipsis">
+      DuckDB
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pyspark" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pyspark
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dotenv" class="md-nav__link">
+    <span class="md-ellipsis">
+      dotenv
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requests" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requests
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#airflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Airflow
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flask" class="md-nav__link">
+    <span class="md-ellipsis">
+      Flask
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Flask">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#self-hosting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Self Hosting
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fastapi" class="md-nav__link">
+    <span class="md-ellipsis">
+      FastAPI
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-interesting-libraries" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other Interesting Libraries
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Other Interesting Libraries">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#locust" class="md-nav__link">
+    <span class="md-ellipsis">
+      Locust
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reportlab" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reportlab
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs_8_documentation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Documentation Libraries
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs_9_std_lib/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Standard Library Gems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs_99_non_python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Non-Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs_100_networking/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Networking
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs_101_caddy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Caddy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pandas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pandas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pandas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#transformations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transformations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filtering" class="md-nav__link">
+    <span class="md-ellipsis">
+      Filtering
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#change-data-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Change Data Types
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sqlalchemy" class="md-nav__link">
+    <span class="md-ellipsis">
+      SQLAlchemy
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sqlite" class="md-nav__link">
+    <span class="md-ellipsis">
+      SQLite
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#duckdb" class="md-nav__link">
+    <span class="md-ellipsis">
+      DuckDB
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pyspark" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pyspark
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dotenv" class="md-nav__link">
+    <span class="md-ellipsis">
+      dotenv
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requests" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requests
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#airflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Airflow
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flask" class="md-nav__link">
+    <span class="md-ellipsis">
+      Flask
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Flask">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#self-hosting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Self Hosting
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fastapi" class="md-nav__link">
+    <span class="md-ellipsis">
+      FastAPI
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-interesting-libraries" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other Interesting Libraries
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Other Interesting Libraries">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#locust" class="md-nav__link">
+    <span class="md-ellipsis">
+      Locust
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reportlab" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reportlab
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="important-libraries-getting-started">Important Libraries - Getting Started</h1>
+<h2 id="pandas">Pandas</h2>
+<p>Pandas is a well-known data handling library. It has the ability to extract, manipulate, and load data.</p>
+<p>The central component to pandas is the DataFrame. This is where tabular data is loaded and lives in memory.</p>
+<pre><code class="language-py">import pandas as pd
+
+# blank dataframe
+df = pd.DataFrame()
+
+# load a dict into a dataframe
+sample_data = {'id', [1, 2, 3], 'value', [200, 300, 400]}
+df = pd.DataFrame(sample_data)
+
+# load direct from other formats
+df = pd.read_csv('path/to/csv/file.csv')
+df = pd.read_parquet('path')
+df = pd.read_excel('path')
+df = pd.read_json('path')
+df = pd.read_sql('sql statement', sqlalchemy_conn)
+df = pd.read_html('io')
+df = pd.read_xml('io')
+df = pd.read_clipboard()
+</code></pre>
+<p>More here https://pandas.pydata.org/docs/reference/io.html</p>
+<h3 id="transformations">Transformations</h3>
+<p>Once you have data loaded into a dataframe, you can perform all kinds of operations on the values.
+There are generally two ways of performing modifications. Iterating through each value (not recommended) and
+across columns (called vectorization). A vectorized operation can look like this:</p>
+<pre><code class="language-py">df = pd.read_csv('path/to/file.csv') # sample data
+
+# performing math computations across columns. You can overwrite existing columns or create new columns
+df['int_column_new'] = df['int_column_01'] + df['int_column_02']
+df['int_column_01'] = df['int_column_01'] - df['int_column_02']
+df['float_column_new'] = df['float_column_01'] * df['float_column_02']
+df['float_column_01'] = df['float_column_01'] / df['float_column_02']
+
+# perform string operations
+df['string_col'] = df['string_col'].str.replace('-', '')
+</code></pre>
+<h3 id="filtering">Filtering</h3>
+<pre><code class="language-py">df = pd.read_csv('path/to/file.csv') # sample data
+
+# filter where column_name is equal to a value
+df = df[df['column_name'] == 'certain_value']
+# not equal
+df = df[df['column_name'] != 'certain_value']
+# substring
+df = df[df['column_name'].str.contains('partial_string_match')]
+# drop rows where column_name equals any of the list values
+df = df[~df['column_name'].isin(['list', 'of', 'values'])]
+</code></pre>
+<h3 id="change-data-types">Change Data Types</h3>
+<pre><code class="language-py">df = pd.read_csv('path/to/file.csv') # sample data
+
+df['str_num_values'] = df['str_num_values'].astype(int)
+df['str_num_values'] = df['str_num_values'].astype(str)
+df['str_num_values'] = df['str_num_values'].astype(float)
+
+# dates
+df['date_str_values'] = pd.to_datetime(df['date_str_values'])  # gives datetime format
+df['date_str_values'] = pd.to_datetime(df['date_str_values']).dt.date  # gives just date, no time
+</code></pre>
+<p>Helpful functions:</p>
+<p><a href="https://pandas.pydata.org/docs/reference/api/pandas.merge.html">Merge (like SQL join)</a>
+<a href="https://pandas.pydata.org/docs/reference/api/pandas.melt.html">Melt (convert columns to rows)</a></p>
+<h2 id="sqlalchemy">SQLAlchemy</h2>
+<p>SQLAlchemy is a robust database management utility library. There are two main components; Core and ORM.
+Core is more base level, closer to the database API, while ORM aims to abstract some of the complexity
+of managing connections with sessions. Generally Core is better for pure database operations while the 
+ORM is geared toward web applications.</p>
+<p>Has full compatibility with Postgres, MySQL, SQLite, SQL Server, and Oracle.</p>
+<p>Connection strings look like this:</p>
+<pre><code class="language-py">db_str = 'dialect+driver://username:password@host:port/database'
+
+postgres = &quot;postgresql+psycopg2://scott:tiger@localhost/public&quot;
+
+sql_server = 'mssql+pyodbc://host/database?trusted_connection=yes&amp;driver=ODBC+Driver+18+for+SQL+Server&amp;TrustServerCertificate=yes'
+</code></pre>
+<p>Modeling Tables</p>
+<pre><code class="language-py">from sqlalchemy import (create_engine, Table, MetaData, Column, String, 
+                        Integer, Double, Date, DateTime, Boolean, func)
+
+engine = create_engine('postgresql+psycopg2://scott:tiger@localhost/public')  # engines are what connects to the db
+
+meta = MetaData()  # create a metadata object to attach tables to
+
+# model out the table
+table1 = Table('table_name',
+               meta,
+               Column('id', Integer, primary_key=True),
+               Column('column1', String(255), unique=True),
+               Column('column2', Double),
+               Column('column3', Boolean, default=False),
+               Column('column4', Date),
+               Column('created_date', DateTime,
+                        server_default=func.now()),
+               schema='public'
+               )
+
+meta.create_all(engine)  # create all the tables that are connected to the metadata object, in the database
+</code></pre>
+<p>Once you have your model and engine ready, you can connect and start running operations:</p>
+<pre><code class="language-py">from sqlalchemy import create_engine, text
+
+engine = create_engine('connection_string_to_db')
+
+with engine.connect() as conn:
+    query = 'SELECT * FROM table_name'
+    result = conn.execute(text(query)).fetchall()
+</code></pre>
+<p>This will return a list of Row objects which contain the values in tuples (even if you only selected one column).
+To pull these out of the nested tuples, you can use list comprehension.</p>
+<pre><code class="language-py">result = [r[0] for r in result]
+</code></pre>
+<p>Note that to run a raw SQL query we had to put it into a text() function. This function will sanitize the query to 
+make sure there is no malicious injection happening. Sometimes it is difficult to transform data values in python
+into a raw SQL query. SQLAlchemy has objects that can perform the same database functions, but in a more pythonic way.</p>
+<pre><code class="language-py">from sqlalchemy import select, insert, update, delete
+
+df = pd.DataFrame(values)
+data_dict = df.to_dict(orient='records')  # transform pandas dataframe into a dictionary of values
+
+with engine.connect() as conn:                              # connect to database
+    insert_stmt = insert(table_object).values(data_dict)    # create the insert statement
+    conn.execute(insert_stmt)                               # execute the statement
+    conn.commit()                                           # commit the changes
+
+    value = conn.execute(select(table_object)).fetchone()
+    values = conn.execute(select(table_object)).fetchall()
+
+    update_stmt = update(user_table).where(user_table.c.id == 5).values(name=&quot;user #5&quot;)
+    conn.execute(update_stmt)
+
+    delete_stmt = delete(user_table).where(user_table.c.id == 5)
+    conn.execute(delete_stmt)
+    conn.commit()
+</code></pre>
+<h2 id="sqlite">SQLite</h2>
+<p>SQLite is an embeddable OLTP database. In other words, it is a database that can be run in memory or from a file.
+It is the most common database in the world being used in web apps, phone apps, IoT devices, and more.</p>
+<p><a href="https://www.sqlite.org/docs.html">SQLite Docs</a></p>
+<h2 id="duckdb">DuckDB</h2>
+<p>DuckDB is similar to SQLite, but is an OLAP database. It is incredibly fast and effective and processing large amounts
+of data in memory. It can connect to other databases and perform direct queries on it, even being able to 
+write queries on multiple separate databases 
+<a href="https://duckdb.org/2024/01/26/multi-database-support-in-duckdb.html#mix-and-match">Mix and Match</a>.</p>
+<p><a href="https://duckdb.org/docs/">DuckDB Docs</a></p>
+<h2 id="pyspark">Pyspark</h2>
+<p>Spark is a distributed data handling library written in Java. It has a python API that allows users to
+use Spark with Pyspark. In some ways it is very similar to pandas, but it can directly read and write to
+Delta Lake tables, and it spreads the data handling tasks across multiple machines (distributed).</p>
+<pre><code class="language-py">df = spark.createDataFrame(data)
+current_records = spark.sql(&quot;SELECT COALESCE(MAX(created_date), '2000-01-01') FROM lh_gold_01.fact_cms_star_rating&quot;).first()[0]
+</code></pre>
+<h2 id="dotenv">dotenv</h2>
+<p>dotenv is a lightweight package that allows you to load environment variables into memory from a file. </p>
+<p><code>pip install python-dotenv</code></p>
+<p>Create a <code>.env</code> file in your project like:</p>
+<pre><code class="language-dotenv">ENV_VAR_NAME='ENV_VAR_VALUE'
+API_KEY_01='2JHDKFJH3KF'
+</code></pre>
+<pre><code class="language-py">import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+env_var = os.getenv('ENV_VAR_NAME')
+api_key = os.getenv('API_KEY_01')
+</code></pre>
+<h2 id="requests">Requests</h2>
+<p>Requests is a user-friendly way to make HTTP calls. Very good for API's.</p>
+<p><code>pip install requests</code></p>
+<pre><code class="language-py">import requests
+
+url = 'https://data.cms.gov/provider-data/api/1/metastore/schemas/dataset/items/4pq5-n9py?show-reference-ids=false'
+response = requests.get(url)
+print(response.status_code)
+print(response.headers)
+print(response.text)
+</code></pre>
+<p>Send post requests with auth details and payload.</p>
+<pre><code class="language-py">import requests
+from io import BytesIO
+
+response = requests.get(url, 
+                        auth={'user': 'username', 'password': 'password_here'},
+                        data={'payload_json': {'data': 'value'}},
+                        files={'file': BytesIO()})
+</code></pre>
+<h2 id="airflow">Airflow</h2>
+<p>Airflow is an orchestration tool to run and monitor jobs. It allows you to program it in a way that it can
+have dependencies. For example, only run one script after another has run successfully.</p>
+<p><a href="https://airflow.apache.org/docs/apache-airflow/stable/index.html">Airflow Docs</a></p>
+<h2 id="flask">Flask</h2>
+<p>Flask is a popular web app framework. It is very lightweight and has many "plugin" type packages that are built to 
+be pieced together to achieve all desired features.</p>
+<p>Web workers rule of thumb:</p>
+<ul>
+<li>Sync workers: ~50 - 100 concurrent users per worker.</li>
+<li>Async workers: ~500 - 1000+ concurrent users per worker.</li>
+</ul>
+<h3 id="self-hosting">Self Hosting</h3>
+<p>Make sure to activate your python interpreter!</p>
+<p>If you want to host your own flask app, gunicorn is a WSGI pure python server used for production.
+You'll need to <code>pip install gunicorn</code> and then run the commands.</p>
+<p>Running locally:</p>
+<p><code>gunicorn -w 4 'module_name:app_name'</code></p>
+<p><code>-w</code> is the number of workers, default is 1.</p>
+<p>If you want to be able to access the site on the network, you need to bind to 0.0.0.0:</p>
+<p><code>gunicorn -w 4 -b 0.0.0.0:8000 'app:app''</code></p>
+<p><code>0.0.0.0</code> binds the app to all available network interfaces, making it accessible on your network.
+This is a special ip address that tells your application to listen on all available network interfaces
+of the machine, instead of just localhost. </p>
+<p>To make this accessible from the internet, you need to configure your router to forward traffic that 
+goes to your chosen port (8000 in this case) to the machine that is running the app. This is done
+with port forwarding in your router admin settings. Visually it might look like 
+<code>public_ip:8000 -&gt; server_local_ip:8000</code>. BTW this is called port forwarding.</p>
+<p>You may need to update firewall config on the server to allow external connections 
+on port 8000 (linux <code>sudo ufw allow 8000</code>). </p>
+<p>If your ISP changes your public IP, you make need to use a dynamic DNS (DDNS) service like No-IP or DynDNS.</p>
+<p>Security Warning: exposing your app to the internet comes with security risks. To mitigate:</p>
+<ol>
+<li>Use HTTPS: Serve your app behind a reverse proxy like nginx with an SSL certificate.</li>
+<li>Restrict Access: Limit access to specific IPs or use authentication to secure your app.</li>
+<li>Monitor Logs: Monitor your server logs for unusual activity.</li>
+</ol>
+<p>Stopping the app:</p>
+<p>Use <code>pgrep -fl gunicorn</code> to show a list of gunicorn processes with their PIDs.</p>
+<p>kill by bid: <code>kill &lt;pid&gt;</code> (kill by process ID)</p>
+<p>OR</p>
+<p>kill all gunicorn: <code>pkill gunicorn</code> (kill by process name)</p>
+<p>For a more stable production environment, a process manager is better.</p>
+<p>Create a systemd service file.</p>
+<p>Then you can enable/disable/start/stop the app as a service.</p>
+<pre><code>sudo systemctl enable gunicorn  # auto start on boot
+sudo systemctl start gunicorn  # prevent auto start on boot
+sudo systemctl status gunicorn
+sudo systemctl stop gunicorn
+sudo systemctl restart &lt;service-name&gt;
+</code></pre>
+<p>When you make changes to a service file, you need to reload the service:</p>
+<p><code>sudo systemctl daemon-reload</code></p>
+<p><a href="https://flask.palletsprojects.com/en/stable/">Flask Docs</a></p>
+<h2 id="fastapi">FastAPI</h2>
+<p>FastAPI is one of the most performant web frameworks available for python.</p>
+<h2 id="other-interesting-libraries">Other Interesting Libraries</h2>
+<h3 id="locust">Locust</h3>
+<p>Locust is a load testing framework that can send millions of requests.</p>
+<p><a href="https://locust.io/">Locust Docs</a></p>
+<h3 id="reportlab">Reportlab</h3>
+<p>Creating PDF's can be difficult or require external software like LaTeX or wkhtmltopdf.</p>
+<p>If you don't want to have these dependencies, reportlab is a pure python library to create PDFs.</p>
+<p><code>pip install reportlab</code></p>
+<p>ReportLab includes a low-level API for generating PDF documents directly from Python, 
+and a higher-level template language—similar to HTML and the template systems used in 
+web development—called RML. Generally, the second option is usually more convenient 
+for those who must make exhaustive use of the capabilities of the library when 
+generating documents. For the rest of the cases, the low-level API that we will 
+describe in this article will suffice. However, you can find the official 
+documentation here <a href="https://docs.reportlab.com/">https://docs.reportlab.com/</a>.</p>
+<pre><code class="language-py">from reportlab.pdfgen import canvas
+
+c = canvas.Canvas(&quot;hello-world.pdf&quot;)
+c.save()
+</code></pre>
+<pre><code class="language-py"># import the canvas object
+from reportlab.pdfgen import canvas
+
+# create a Canvas object with a filename
+c = canvas.Canvas(&quot;rl-hello_again.pdf&quot;, pagesize=(595.27, 841.89))  # A4 pagesize
+# draw a string at x=100, y=800 points
+# point ~ standard desktop publishing (72 DPI)
+# coordinate system:
+#   y
+#   |
+#   |   page
+#   |
+#   |
+#   0-------x
+c.drawString(50, 780, &quot;Hello Again&quot;)
+# finish page
+c.showPage()
+# construct and save file to .pdf
+c.save()
+</code></pre>
+<p>Use standard page sizes like letter, A4, and more.</p>
+<pre><code class="language-py">from reportlab.lib.pagesizes import letter
+
+c = canvas.Canvas(&quot;hello-world.pdf&quot;, pagesize=letter)
+</code></pre>
+<p>Make shapes in PDF.</p>
+<pre><code class="language-py">from reportlab.lib.pagesizes import A4
+from reportlab.pdfgen import canvas
+
+w, h = A4
+c = canvas.Canvas(&quot;shapes.pdf&quot;, pagesize=A4)
+c.drawString(30, h - 50, &quot;Line&quot;)
+x = 120
+y = h - 45
+c.line(x, y, x + 100, y)
+c.drawString(30, h - 100, &quot;Rectangle&quot;)
+c.rect(x, h - 120, 100, 50)
+c.drawString(30, h - 170, &quot;Circle&quot;)
+c.circle(170, h - 165, 20)
+c.drawString(30, h - 240, &quot;Ellipse&quot;)
+c.ellipse(x, y - 170, x + 100, y - 220)
+c.showPage()
+c.save()
+</code></pre>
+<p>You can make tables from a pandas dataframe</p>
+<pre><code class="language-py">from reportlab.lib.pagesizes import letter, landscape
+from reportlab.platypus import SimpleDocTemplate, Table, TableStyle
+from reportlab.lib import colors
+
+filename = &quot;landscape_table_fit.pdf&quot;
+doc = SimpleDocTemplate(filename, pagesize=landscape(letter))
+
+# Example DataFrame
+import pandas as pd
+df = pd.DataFrame({
+    &quot;Column 1&quot;: [&quot;A&quot;, &quot;B&quot;, &quot;C&quot;],
+    &quot;Column 2&quot;: [1, 2, 3],
+    &quot;Column 3&quot;: [4.5, 5.5, 6.5],
+    &quot;Column 4&quot;: [&quot;Long Text Example&quot;, &quot;Another Example&quot;, &quot;More Text&quot;],
+    &quot;Column 5&quot;: [&quot;X&quot;, &quot;Y&quot;, &quot;Z&quot;]
+})
+
+# Convert DataFrame to list of lists
+data = [df.columns.tolist()] + df.values.tolist()
+
+# Calculate dynamic column widths to fit the page
+page_width = landscape(letter)[0]
+available_width = page_width - 40  # Subtract margins
+num_columns = len(df.columns)
+col_width = available_width / num_columns
+
+# Create a table with fixed column widths
+table = Table(data, colWidths=[col_width] * num_columns)
+table.setStyle(TableStyle([
+    ('BACKGROUND', (0, 0), (-1, 0), colors.lightgrey),
+    ('TEXTCOLOR', (0, 0), (-1, 0), colors.black),
+    ('ALIGN', (0, 0), (-1, -1), 'CENTER'),
+    ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
+    ('BOTTOMPADDING', (0, 0), (-1, 0), 12),
+    ('GRID', (0, 0), (-1, -1), 1, colors.grey),
+]))
+
+# Add the table to the elements list
+elements = [table]
+
+# Build the document
+doc.build(elements)
+
+print(f&quot;PDF saved as {filename}&quot;)
+</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.60a45f97.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@8.6.4/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>
