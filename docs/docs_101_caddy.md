@@ -173,3 +173,14 @@ healthfin.solutions {
 
 This config allows for access to the main server from the root domain, but 
 also changes to the static site when you add the /notes path.
+
+Don't forget you can setup a local DNS server on your machine and setup a 
+local domain DNS rewrite.
+
+```caddy
+anderson.docs {
+    tls internal
+    root * /srv/web_apps/notes
+    file_server
+}
+```
