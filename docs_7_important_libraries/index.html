@@ -506,6 +506,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#fastapi" class="md-nav__link">
+    <span class="md-ellipsis">
+      FastAPI
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#other-interesting-libraries" class="md-nav__link">
     <span class="md-ellipsis">
       Other Interesting Libraries
@@ -598,6 +607,46 @@
   
   <span class="md-ellipsis">
     Non-Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs_100_networking/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Networking
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs_101_caddy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Caddy
   </span>
   
 
@@ -758,6 +807,15 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fastapi" class="md-nav__link">
+    <span class="md-ellipsis">
+      FastAPI
+    </span>
+  </a>
   
 </li>
       
@@ -1005,6 +1063,11 @@ have dependencies. For example, only run one script after another has run succes
 <h2 id="flask">Flask</h2>
 <p>Flask is a popular web app framework. It is very lightweight and has many "plugin" type packages that are built to 
 be pieced together to achieve all desired features.</p>
+<p>Web workers rule of thumb:</p>
+<ul>
+<li>Sync workers: ~50 - 100 concurrent users per worker.</li>
+<li>Async workers: ~500 - 1000+ concurrent users per worker.</li>
+</ul>
 <h3 id="self-hosting">Self Hosting</h3>
 <p>Make sure to activate your python interpreter!</p>
 <p>If you want to host your own flask app, gunicorn is a WSGI pure python server used for production.
@@ -1047,6 +1110,8 @@ sudo systemctl restart &lt;service-name&gt;
 <p>When you make changes to a service file, you need to reload the service:</p>
 <p><code>sudo systemctl daemon-reload</code></p>
 <p><a href="https://flask.palletsprojects.com/en/stable/">Flask Docs</a></p>
+<h2 id="fastapi">FastAPI</h2>
+<p>FastAPI is one of the most performant web frameworks available for python.</p>
 <h2 id="other-interesting-libraries">Other Interesting Libraries</h2>
 <h3 id="locust">Locust</h3>
 <p>Locust is a load testing framework that can send millions of requests.</p>
@@ -1207,6 +1272,8 @@ print(f&quot;PDF saved as {filename}&quot;)
     
     
       <script src="../assets/javascripts/bundle.60a45f97.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@8.6.4/dist/mermaid.min.js"></script>
       
     
   </body>

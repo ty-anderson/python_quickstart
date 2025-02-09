@@ -12,6 +12,8 @@
         <link rel="prev" href="../docs_9_std_lib/">
       
       
+        <link rel="next" href="../docs_100_networking/">
+      
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.50">
@@ -444,15 +446,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#reverse-proxy" class="md-nav__link">
-    <span class="md-ellipsis">
-      Reverse-Proxy
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#web-server" class="md-nav__link">
     <span class="md-ellipsis">
       Web Server
@@ -474,6 +467,46 @@
   
 </nav>
       
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs_100_networking/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Networking
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs_101_caddy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Caddy
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -508,15 +541,6 @@
   <a href="#docker" class="md-nav__link">
     <span class="md-ellipsis">
       Docker
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#reverse-proxy" class="md-nav__link">
-    <span class="md-ellipsis">
-      Reverse-Proxy
     </span>
   </a>
   
@@ -563,99 +587,6 @@
 and it shows the path <code>/usr/bin/docker-compose</code> then you still have V1. Remove it
 with <code>sudo rm /usr/bin/docker-compose</code>. </p>
 <p>Show docker version: <code>sudo docker version</code></p>
-<h2 id="reverse-proxy">Reverse-Proxy</h2>
-<p>Reverse Proxy - software that routes traffic from one endpoint to another, or multiple others.</p>
-<p>Examples: Nginx, Caddy</p>
-<p>Caddy is very simple and it comes with built in certificate management through Lets Encrypt. </p>
-<pre><code class="language-caddy">&lt;requested-domain&gt; {
-    reverse_proxy &lt;ip and port service is routed to&gt;
-}
-</code></pre>
-<p>Examples using Caddy:</p>
-<p>Simple - proxy traffic to backend server. When requests go to example.com, it will get routed
-to the this reverse proxy , which then pushes it to localhost:5000. Just be sure the DNS
-records are updated to route the domain to this IP address.</p>
-<pre><code class="language-caddy">example.com {
-    reverse_proxy localhost:5000
-}
-</code></pre>
-<p>Here is Caddy as a reverse proxy doing load balancing, in a round-robin method.</p>
-<pre><code class="language-caddy">example.com {
-    reverse_proxy backend1:5000 backend2:5000 backend3:5000
-}
-</code></pre>
-<p>You can do path based proxying to serve different backends based on the url path. In this 
-example <code>example.com/api</code> will go to one web server, while <code>example.com/static</code> goes to another.</p>
-<pre><code class="language-caddy">example.com {
-    reverse_proxy /api backend1:5000
-    reverse_proxy /static backend2:5001
-    reverse_proxy /app backend3:5002
-}
-</code></pre>
-<p>You can setup to route subdomains as well. This will retrieve an SSL certificate for all domains added.</p>
-<pre><code class="language-caddy">example.com {
-    reverse_proxy localhost:3000
-}
-
-api.example.com {
-    reverse_proxy localhost:4000
-}
-</code></pre>
-<p>You can also proxy to external services.</p>
-<pre><code class="language-caddy">example.com {
-    reverse_proxy https:/api.example.com
-}
-</code></pre>
-<p>You can also configure domains to redirect to one domain. In this example all requests to 
-www.example.com will be rerouted to example.com. </p>
-<pre><code class="language-caddy">example.com www.example.com {
-    reverse_proxy localhost:3000
-}
-</code></pre>
-<p>To run Caddy:</p>
-<ul>
-<li>Download to computer</li>
-<li>Setup config file <code>Caddyfile</code> typically in <code>/etc/caddy/Caddyfile</code></li>
-<li>Start the Caddy server <code>sudo systemctl start caddy</code></li>
-</ul>
-<p>To run in Docker:</p>
-<ul>
-<li>Create a docker-compose.yml file.</li>
-</ul>
-<pre><code class="language-docker-compose">services:
-  caddy:
-    image: caddy:latest
-    container_name: caddy
-    ports:
-      - &quot;80:80&quot;        # HTTP
-      - &quot;443:443&quot;      # HTTPS
-    volumes:
-      - ./Caddyfile:/etc/caddy/Caddyfile   # Mount your Caddyfile
-      - ./data:/data                       # Let’s Encrypt certificates
-      - ./config:/config                   # Caddy configuration
-    restart: unless-stopped
-</code></pre>
-<ul>
-<li>Create your Caddyfile (make sure to create it in the same location your volume is pointed to).</li>
-</ul>
-<pre><code class="language-caddy">example.com {
-    reverse_proxy backend:3000
-}
-</code></pre>
-<ul>
-<li>Run <code>docker compose up -d</code> to start the server.</li>
-</ul>
-<p>Additional considerations to run in Docker:</p>
-<ul>
-<li>If you run Caddy in a docker container, <code>localhost</code> will be that container, due to dockers own DNS.</li>
-<li>If you run your web server that you're routing to in a docker container, you can use that container name
-    in the caddy file config.</li>
-</ul>
-<p>You can also route ports directly.</p>
-<pre><code>:8443 {
-    reverse_proxy 127.0.0.1:8000
-}
-</code></pre>
 <h2 id="web-server">Web Server</h2>
 <h2 id="file-server">File Server</h2>
 
@@ -708,6 +639,8 @@ www.example.com will be rerouted to example.com. </p>
     
     
       <script src="../assets/javascripts/bundle.60a45f97.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@8.6.4/dist/mermaid.min.js"></script>
       
     
   </body>

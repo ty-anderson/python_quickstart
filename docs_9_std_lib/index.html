@@ -423,12 +423,54 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="IO package">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#text-io" class="md-nav__link">
+    <span class="md-ellipsis">
+      Text I/O
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#binary-io" class="md-nav__link">
+    <span class="md-ellipsis">
+      Binary I/O
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
   <a href="#smtp-sending-emails" class="md-nav__link">
     <span class="md-ellipsis">
       SMTP - Sending Emails
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#python-http-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      Python HTTP Server
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#python-on-ios-and-android" class="md-nav__link">
+    <span class="md-ellipsis">
+      Python on iOS and Android
     </span>
   </a>
   
@@ -454,6 +496,46 @@
   
   <span class="md-ellipsis">
     Non-Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs_100_networking/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Networking
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs_101_caddy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Caddy
   </span>
   
 
@@ -495,12 +577,54 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="IO package">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#text-io" class="md-nav__link">
+    <span class="md-ellipsis">
+      Text I/O
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#binary-io" class="md-nav__link">
+    <span class="md-ellipsis">
+      Binary I/O
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
   <a href="#smtp-sending-emails" class="md-nav__link">
     <span class="md-ellipsis">
       SMTP - Sending Emails
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#python-http-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      Python HTTP Server
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#python-on-ios-and-android" class="md-nav__link">
+    <span class="md-ellipsis">
+      Python on iOS and Android
     </span>
   </a>
   
@@ -533,7 +657,7 @@ Other common terms are stream and file-like object.</p>
 capabilities: it can be read-only, write-only, or read-write. It can also allow 
 arbitrary random access (seeking forwards or backwards to any location), or 
 only sequential access (for example in the case of a socket or pipe).</p>
-<p>Text I/O</p>
+<h3 id="text-io">Text I/O</h3>
 <p>Text I/O expects and produces str objects. This means that whenever the backing store 
 is natively made of bytes (such as in the case of a file), encoding and decoding of 
 data is made transparently as well as optional translation of platform-specific newline characters.</p>
@@ -546,7 +670,7 @@ if it were a file, rather than creating an actual file on disk. It can be
 used to create strings that mimic file objects, allowing you to read and 
 write data to them in the same way you would with a file.</p>
 <p><img alt="bytesio.png" src="../images/bytesio.png" /></p>
-<p>Binary I/O</p>
+<h3 id="binary-io">Binary I/O</h3>
 <p>Binary I/O (also called buffered I/O) expects bytes-like objects and produces bytes objects. 
 No encoding, decoding, or newline translation is performed. This category of streams can 
 be used for all kinds of non-text data, and also when manual control over 
@@ -622,6 +746,18 @@ mailserver.login(msg['From'], 'password here')
 mailserver.send_message(msg)
 mailserver.quit()
 </code></pre>
+<h2 id="python-http-server">Python HTTP Server</h2>
+<p>Python has an HTTP server built into the standard library.</p>
+<p>Serving static files: <code>python -m http.server 8008</code> this will look for an index.html
+file to start serving, and can be accessed on <code>localhost:8008</code>.</p>
+<h2 id="python-on-ios-and-android">Python on iOS and Android</h2>
+<p>This info comes from this article <a href="https://medium.com/@pouyahallaj/python-for-ios-a-new-era-with-python-3-13-cb19460f5c75">Medium Article</a></p>
+<p>Python 3.13 has brought official support for iOS and Android as a platform. 
+On iOS, since Apple restricts being able to install system resources or run binaries, 
+developers are forced to run python in embedded mode. In other words, writing native iOS
+applications and embedding a python interpreter using <code>libPython</code>. This bundles the python
+interpreter and your code into a bundle that gets uploaded to the App store.</p>
+<p>Here is the offical docs <a href="https://docs.python.org/3/using/ios.html">https://docs.python.org/3/using/ios.html</a></p>
 
 
 
@@ -672,6 +808,8 @@ mailserver.quit()
     
     
       <script src="../assets/javascripts/bundle.60a45f97.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@8.6.4/dist/mermaid.min.js"></script>
       
     
   </body>
