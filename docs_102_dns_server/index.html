@@ -9,6 +9,8 @@
       
       
       
+        <link rel="prev" href="../docs_101_caddy/">
+      
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -16,7 +18,7 @@
     
     
       
-        <title>DNS Server - Python Learning</title>
+        <title>DNS - Python Learning</title>
       
     
     
@@ -94,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              DNS Server
+              DNS
             
           </span>
         </div>
@@ -440,6 +442,102 @@
   
 
     
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    DNS
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    DNS
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#adguard" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adguard
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concept-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concept 1
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Options
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup-adguard" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setup Adguard
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -475,6 +573,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#concept-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concept 1
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Options
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup-adguard" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setup Adguard
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -491,10 +616,61 @@
 
 
 <h1 id="dns-server">DNS Server</h1>
+<p>A DNS Server is a server that holds domain name records and point to the 
+corresponding IP addresses. </p>
 <h2 id="adguard">Adguard</h2>
 <p>You can setup your own local DNS server on your network. Frequently these
 allow you to setup your own name resolutions on your network, but also block
 certain sites from resolving, which can prevent ads.</p>
+<h2 id="concept-1">Concept 1</h2>
+<p>You can setup your own DNS server on your network. Open source servers include
+adguard, dnsmasq, and pihole. </p>
+<div class="mermaid">
+graph TD
+    A[Router]
+    B[Internet]
+    C[Home Server]
+    D[Computer 1]
+    E[Computer 2]
+
+    B <-..-> A
+    C --Otherwise have your router use its default DNS--> A
+    D --Resolve DNS Here First--> C
+</div>
+
+<h2 id="options">Options</h2>
+<p>You have two options when setting up your own DNS server</p>
+<ol>
+<li>Set up individual devices on your network to use self-hosted DNS server</li>
+<li>Set up your router to point all devices to the self-hosted DNS server.</li>
+</ol>
+<h2 id="setup-adguard">Setup Adguard</h2>
+<p>Docker compose file:</p>
+<pre><code class="language-docker">services:
+  adguardhome:
+    container_name: adguardhome
+    image: adguard/adguardhome
+    restart: unless-stopped
+    ports:
+      - &quot;53:53/udp&quot;
+      - &quot;53:53/tcp&quot;
+      - &quot;3000:80/tcp&quot;   # Web UI
+#      - &quot;443:443/tcp&quot; # (Optional, for HTTPS UI)
+    volumes:
+      - ./workdir:/opt/adguardhome/work
+      - ./confdir:/opt/adguardhome/conf
+</code></pre>
+<p><code>sudo docker compose up -d</code> - you now have a DNS server running.</p>
+<p>To access the web UI you can go to <code>http://&lt;ip address&gt;:3000</code>.</p>
+<p>To add a local domain, go to Filters&gt;DNS rewrites</p>
+<p>If you want to do option 1:</p>
+<p>Go to the device(s) you want to use your DNS server. Go to System Preferences -&gt;
+Network -&gt; Wifi (or Ethernet) -&gt; DNS. From there add the IP address of your 
+server running the DNS server.</p>
+<p>If you want option 2:</p>
+<p>Go into your router options. Find DNS settings (might be under DHCP Settings).</p>
+<p>Add your custom server, its a good idea to add a fallback server in case yours
+goes down. Google is 8.8.8.8 or cloudflare 1.1.1.1.</p>
 
 
 
@@ -546,7 +722,7 @@ certain sites from resolving, which can prevent ads.</p>
     
       <script src="../assets/javascripts/bundle.60a45f97.min.js"></script>
       
-        <script src="https://unpkg.com/mermaid@8.6.4/dist/mermaid.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
       
     
   </body>
