@@ -9,7 +9,7 @@
       
       
       
-        <link rel="prev" href="../docs_100_networking/">
+        <link rel="prev" href="../docs_100_servers/">
       
       
         <link rel="next" href="../docs_102_dns_server/">
@@ -210,6 +210,41 @@
   
   
   
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Python
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
       <a href="../docs_1_what_is_python/" class="md-nav__link">
         
@@ -223,9 +258,10 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -243,9 +279,10 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -263,9 +300,10 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -283,9 +321,10 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -303,9 +342,10 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -323,9 +363,10 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -343,9 +384,10 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -363,9 +405,10 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -383,6 +426,14 @@
     </li>
   
 
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
     
       
       
@@ -391,11 +442,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../docs_99_non_python/" class="md-nav__link">
+      <a href="../docs_99_docker/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Non-Python
+    Docker
   </span>
   
 
@@ -416,6 +467,26 @@
   
   <span class="md-ellipsis">
     Networking
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs_100_servers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Servers
   </span>
   
 
@@ -613,6 +684,23 @@
 
 <h1 id="caddy">Caddy</h1>
 <p>Official site: https://caddyserver.com/</p>
+<p>docker compose:</p>
+<pre><code>services:
+  caddy:
+    image: caddy:latest
+    container_name: caddy
+    ports:
+      - &quot;80:80&quot;        # HTTP
+      - &quot;443:443&quot;
+      - &quot;8009:8009&quot;
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile   # Mount your Caddyfile
+      - ./data:/data                       # Let’s Encrypt certificates
+      - ./config:/config                   # Caddy configuration
+      - /srv/web_apps/notes:/srv/web_apps/notes
+    restart: unless-stopped
+</code></pre>
+<p>Don't forget to open the port(s) in the firewall.</p>
 <h2 id="reverse-proxy">Reverse-Proxy</h2>
 <p>Reverse Proxy - software that routes traffic from one endpoint to another, or multiple others.</p>
 <p>Caddy is very simple and it comes with built in certificate management through Lets Encrypt. </p>
