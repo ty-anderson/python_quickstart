@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../docs_99_docker/">
+        <link rel="prev" href="../docs_9_std_lib/">
       
       
-        <link rel="next" href="../docs_100_servers/">
+        <link rel="next" href="../docs_100_networking/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Networking - Python Learning</title>
+        <title>Docker - Python Learning</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#networking" class="md-skip">
+        <a href="#docker" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Networking
+              Docker
             
           </span>
         </div>
@@ -439,26 +439,6 @@
       
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../docs_99_docker/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Docker
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
     
   
   
@@ -468,14 +448,12 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
-      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
   
   <span class="md-ellipsis">
-    Networking
+    Docker
   </span>
   
 
@@ -486,7 +464,7 @@
         
   
   <span class="md-ellipsis">
-    Networking
+    Docker
   </span>
   
 
@@ -498,8 +476,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -508,28 +484,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#dhcp" class="md-nav__link">
+  <a href="#docker" class="md-nav__link">
     <span class="md-ellipsis">
-      DHCP
+      Docker
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Docker">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#docker-compose" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker Compose
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#dns" class="md-nav__link">
-    <span class="md-ellipsis">
-      DNS
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="DNS">
-      <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#local-dns" class="md-nav__link">
+  <a href="#build-a-docker-image" class="md-nav__link">
     <span class="md-ellipsis">
-      Local DNS
+      Build a Docker Image
     </span>
   </a>
   
@@ -537,48 +513,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ipv4-vs-ipv6" class="md-nav__link">
-    <span class="md-ellipsis">
-      IPv4 vs IPv6
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="IPv4 vs IPv6">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ipv4" class="md-nav__link">
-    <span class="md-ellipsis">
-      IPv4
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ipv6" class="md-nav__link">
-    <span class="md-ellipsis">
-      IPv6
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#commands" class="md-nav__link">
-    <span class="md-ellipsis">
-      Commands
-    </span>
-  </a>
   
 </li>
       
@@ -586,6 +520,26 @@
   
 </nav>
       
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs_100_networking/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Networking
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -667,8 +621,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -677,28 +629,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#dhcp" class="md-nav__link">
+  <a href="#docker" class="md-nav__link">
     <span class="md-ellipsis">
-      DHCP
+      Docker
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Docker">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#docker-compose" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker Compose
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#dns" class="md-nav__link">
-    <span class="md-ellipsis">
-      DNS
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="DNS">
-      <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#local-dns" class="md-nav__link">
+  <a href="#build-a-docker-image" class="md-nav__link">
     <span class="md-ellipsis">
-      Local DNS
+      Build a Docker Image
     </span>
   </a>
   
@@ -706,48 +658,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ipv4-vs-ipv6" class="md-nav__link">
-    <span class="md-ellipsis">
-      IPv4 vs IPv6
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="IPv4 vs IPv6">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ipv4" class="md-nav__link">
-    <span class="md-ellipsis">
-      IPv4
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ipv6" class="md-nav__link">
-    <span class="md-ellipsis">
-      IPv6
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#commands" class="md-nav__link">
-    <span class="md-ellipsis">
-      Commands
-    </span>
-  </a>
   
 </li>
       
@@ -766,72 +676,72 @@
                   
 
 
-<h1 id="networking">Networking</h1>
-<p>A network has many different things going on.</p>
-<p>In networking, devices sit behind routers. Routers have a public IP address that
-is used in accessing the internet, or a wide area network (WAN). The router also 
-manages local ip address for all devices through DHCP. </p>
-<h2 id="dhcp">DHCP</h2>
-<p>DHCP - Dynamic Host Configuration Protocol</p>
-<p>DHCP is a server responsible for assigning local ip addresses to devices on the network. 
-It can also have local domain names assigned, frequently setup as <code>home.local</code> or <code>local</code>.</p>
-<p>You can use DHCP to reserve certain ip addresses for certain devices.
-You can also assign names that point to a certain device. This way you can refer to 
-the device on the network by an easy to remember name instead of the ip address.
-For example 192.168.1.104 -&gt; homeserver.</p>
-<p>When a device joins a network, it sends a "DHCP discover" message. 
-A DHCP server responds to the message and assigns an IP address and other configuration information. 
-DHCP also assigns new IP addresses when devices move to new locations. </p>
-<h2 id="dns">DNS</h2>
-<p>DNS - Domain Name System</p>
-<p>This translates IP addresses into domain names. Think of a phonebook for the internet. Instead
-of names to phone numbers it points domain names to ip addresses. There are public DNS servers
-that route the public domains on the internet. </p>
-<h3 id="local-dns">Local DNS</h3>
-<p>There are also DNS servers that are run on a router or a local machine. This establishes
-mappings from names to ip address only on your local network. This makes it so you can setup
-a device with, say ip <code>192.168.1.104</code> to name <code>mydevice.home</code>. Keep in mind that your 
-router might have a suffix that attaches to these names, such as <code>.home</code></p>
-<h2 id="ipv4-vs-ipv6">IPv4 vs IPv6</h2>
-<h3 id="ipv4">IPv4</h3>
-<p>consists of devices having a 32-bit address that looks like 192.168.1.100.
-It consists of public and private addresses, where the public addresses are
-accessible over the internet and private addresses are only accessible over 
-a local network. This means for data to get passed from one device over the internet
-to another device, the protocol Network Area Translation (NAT) is used. NAT
-will convert every packet of your private ip to the public which costs compute.</p>
-<h3 id="ipv6">IPv6</h3>
+  <h1>Docker</h1>
+
+<h2 id="docker">Docker</h2>
+<p>Docker uses images of a software to create containers that run them. They will create their own isolated environment on the host system. They are typically very easy to install and even easier to uninstall. They can enhance security by isolating the host system from the system running the software.</p>
+<p>When you find an image you want to use do:
+<code>docker pull &lt;image_name&gt;</code></p>
+<p>To see images downloaded use:
+<code>docker images</code></p>
+<p>See containers:
+<code>docker ps</code></p>
+<p>Run container:
+<code>docker run image-name -d</code>
+-d means run in detached mode so when the terminal is closed, the container continues to run</p>
+<p>Some containers need other info to run, which can be passed after the command:
+Postgres example:
+<code>docker run --name postgres_db -e POSTGRES_PASSWORD=postgres -p 5432:5432 -d postgres</code></p>
 <ul>
-<li>128-bit addresses, virtually infinite possible addresses.</li>
-<li>Device addresses are globally routable (not hidden behind a public IP).</li>
-<li>Because devices are globally routable, it eliminates the need for NAT 
-as devices can connect end-to-end. Allowing for better connection
-speeds for video, audio, peer-to-peer, gaming, etc.</li>
-<li>Devices can auto-configure with Stateless Address Autoconfiguration (SLAAC), no
-need for DHCP.</li>
-<li>Firewalls are more relevant with IPv6 due to addresses being globally routable.</li>
+<li>--name is what the container will be named</li>
+<li>-p is for port mapping host computer port to image port (first is host, second is container)</li>
+<li>-e is for adding environment variables</li>
 </ul>
-<p><code>ip -6 addr show</code></p>
-<p>Local address: <code>fe80::</code></p>
-<ul>
-<li>Scope: Local network segment (cannot be routed on the internet).</li>
-<li>Usage: Used for internal network functions like router discovery and neighbor discovery.</li>
-<li>Common for: Internal device communication.</li>
-</ul>
-<p>Global address: Usually starts with <code>2xxx::</code> or <code>3xxx::</code></p>
-<ul>
-<li>Scope: Globally routable on the internet.</li>
-<li>Usage: For internet-facing applications or public communication.</li>
-<li>This is often the correct address for external access.</li>
-</ul>
-<p>Address types:</p>
-<ul>
-<li>scope global → for internet or external routing.</li>
-<li>scope link → for local network only.</li>
-</ul>
-<p>SSH: ssh user@[fe80::1a2b:3c4d:5e6f%eth0]</p>
-<h2 id="commands">Commands</h2>
-<p><code>netstat</code> - </p>
+<h3 id="docker-compose">Docker Compose</h3>
+<p>Make sure you have the latest version (currently V2).</p>
+<p>Docker compose V1 was built on python, V2 is built in Go. If you run <code>which docker compose</code> 
+and it shows the path <code>/usr/bin/docker-compose</code> then you still have V1. Remove it
+with <code>sudo rm /usr/bin/docker-compose</code>. </p>
+<p>Docker compose is a handy way to run docker with certain settings in a yaml file
+Create a docker-compose.yaml file.</p>
+<p>Run container
+<code>docker compose up -d</code></p>
+<p>Stop container
+<code>docker compose down</code></p>
+<p>Upgrade container
+<code>docker compose down</code>
+<code>docker compose pull</code>
+<code>docker compose up -d</code></p>
+<h3 id="build-a-docker-image">Build a Docker Image</h3>
+<p>A Dockerfile is how to build an image. The contents might look something like this:</p>
+<p><em>Dockerfile</em>
+FROM python:3.9-slim
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+COPY . .
+CMD ["python", "app.py"]</p>
+<p>When your dockerfile is ready, run:
+<code>docker build -t my-image-name:tag .</code></p>
+<p>• Replace my-image-name with the name you want to give your image.
+• Replace tag with an optional version (e.g., latest or v1.0).</p>
+<p>Save image to file:
+<code>docker save -o /path/to/destination/image-name.tar my-image-name:tag</code></p>
+<p>Load image from file:
+<code>docker load -i /path/to/destination/image-name.tar</code></p>
+<p>Access docker container in terminal
+Access the container environment
+<code>docker exec -it &lt;container-name-or-id&gt; /bin/sh</code></p>
+<p>/bin/sh is the terminal experience (shell in this case) you could do /bin/bash</p>
+<p>Access container logs
+<code>docker logs &lt;container name or id&gt;</code></p>
+<p>For continuously showing log output
+<code>docker logs -f &lt;container-name-or-id&gt;</code></p>
+<p>Files and Docker
+If you need to use files for anything involving docker, you need to configure volumes.</p>
+<p>Volumes are a mapping of the docker container file system to the host file system.</p>
+<p><code>-v /home/svr/immich:/usr/src/app/upload</code></p>
+<p>Just like port mapping, the first is host and second is container.</p>
 
 
 

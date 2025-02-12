@@ -20,7 +20,6 @@ graph TD
     B[Internet]
     C[Home Server]
     D[Computer 1]
-    E[Computer 2]
 
     B <-..-> A
     C --Otherwise have your router use its default DNS--> A
@@ -38,7 +37,7 @@ You have two options when setting up your own DNS server
 
 Docker compose file:
 
-```docker
+```
 services:
   adguardhome:
     container_name: adguardhome

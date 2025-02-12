@@ -208,6 +208,41 @@
   
   
   
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Python
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
       <a href="../docs_1_what_is_python/" class="md-nav__link">
         
@@ -221,9 +256,10 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -241,9 +277,10 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -261,9 +298,10 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -281,9 +319,10 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -301,9 +340,10 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -321,9 +361,10 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -341,9 +382,10 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -361,9 +403,10 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -381,6 +424,14 @@
     </li>
   
 
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
     
       
       
@@ -389,11 +440,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../docs_99_non_python/" class="md-nav__link">
+      <a href="../docs_99_docker/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Non-Python
+    Docker
   </span>
   
 
@@ -414,6 +465,26 @@
   
   <span class="md-ellipsis">
     Networking
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs_100_servers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Servers
   </span>
   
 
@@ -631,7 +702,6 @@ graph TD
     B[Internet]
     C[Home Server]
     D[Computer 1]
-    E[Computer 2]
 
     B <-..-> A
     C --Otherwise have your router use its default DNS--> A
@@ -646,7 +716,7 @@ graph TD
 </ol>
 <h2 id="setup-adguard">Setup Adguard</h2>
 <p>Docker compose file:</p>
-<pre><code class="language-docker">services:
+<pre><code>services:
   adguardhome:
     container_name: adguardhome
     image: adguard/adguardhome

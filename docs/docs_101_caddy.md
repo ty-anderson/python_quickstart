@@ -2,6 +2,26 @@
 
 Official site: https://caddyserver.com/
 
+docker compose:
+```
+services:
+  caddy:
+    image: caddy:latest
+    container_name: caddy
+    ports:
+      - "80:80"        # HTTP
+      - "443:443"
+      - "8009:8009"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile   # Mount your Caddyfile
+      - ./data:/data                       # Let’s Encrypt certificates
+      - ./config:/config                   # Caddy configuration
+      - /srv/web_apps/notes:/srv/web_apps/notes
+    restart: unless-stopped
+```
+
+Don't forget to open the port(s) in the firewall.
+
 ## Reverse-Proxy
 
 Reverse Proxy - software that routes traffic from one endpoint to another, or multiple others.
