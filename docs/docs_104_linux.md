@@ -2,9 +2,9 @@
 
 ## Execute files
 
-To execute file: ``. path/to/file`` or ``source path/to/file``
+To execute file: ``. /path/to/file`` or ``source /path/to/file``
 
-Example: ``. bash_script.sh`` or ``source bash_script.sh``
+Example: ``. /bash_script.sh`` or ``source /bash_script.sh``
 
 - ``. bash_script.sh`` executes the script as a standalone process. This method requires execute permissions.
 - ``source bash_script.sh`` executes the script in the existing process (doesn't create standalone process). Allows
