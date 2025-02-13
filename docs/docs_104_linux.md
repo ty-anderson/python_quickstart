@@ -57,7 +57,7 @@ Combine them:
 - 6 (4+2) → Read, Write (``rw-``)
 - 5 (4+1) → Read, Execute (``r-x``)
 
-Example: ``chmod 755 filename``
+**Example:** ``chmod 755 filename``
 
 - Owner: ``rwx`` (7)
 - Group: ``r-x`` (5)
