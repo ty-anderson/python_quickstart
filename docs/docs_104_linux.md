@@ -32,7 +32,7 @@ not in 'root' group, you cannot write.
 
 ### Alter Permissions
 
-Use ``chmod``:
+Use ``chmod``
 
 There are 2 main methods, numeric or symbolic. The numeric mode requires memorizing number codes for altering permissions.
 Symbolic is more straight forward.
