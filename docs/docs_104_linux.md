@@ -42,6 +42,7 @@ Symbolic is more straight forward.
 - ``o-r`` → Remove read for others (``o``).
 
 Examples:
+
 - Change all permissions: ``chmod u+rwx,g+r,o-r filename``
 - Change only owner permissions: ``chmod u+rwx filename``
 - Change only group permissions: ``chmod g-w filename``
