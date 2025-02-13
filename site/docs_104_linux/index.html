@@ -696,30 +696,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Alter Permissions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#numeric-mode" class="md-nav__link">
-    <span class="md-ellipsis">
-      Numeric mode
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#symbolic-mode" class="md-nav__link">
-    <span class="md-ellipsis">
-      Symbolic mode
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
         
       </ul>
@@ -825,30 +801,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Alter Permissions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#numeric-mode" class="md-nav__link">
-    <span class="md-ellipsis">
-      Numeric mode
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#symbolic-mode" class="md-nav__link">
-    <span class="md-ellipsis">
-      Symbolic mode
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
         
       </ul>
@@ -892,19 +844,7 @@
 </ul>
 <p>You will see something like below:</p>
 <p><code>drwxr-xr-x  2 root root 4096 Feb 12 12:34 /srv/web_apps</code></p>
-<p>The first section is read, write, execute for owner, group, others.</p>
-<ul>
-<li>The first column (drwxr-xr-x) shows the permissions.</li>
-<li><code>d</code> -&gt; directory.</li>
-<li><code>rwx</code> -&gt; Owner: read, write, execute</li>
-<li><code>r-xr</code> -&gt; Group: read, execute, no write</li>
-<li><code>r-x</code> -&gt; Others: read, execute, no write.</li>
-<li>The third column (e.g., <code>root root</code>) shows the owner and group.</li>
-</ul>
-<p><code>whoami</code> - find the user logged in.
-<code>groups</code> - show the groups you are in.</p>
-<p>You can run commands via ssh</p>
-<p><code>ssh user@server "ls -ld /srv/web_apps"</code></p>
+<p>The first section is read, write, execute for owner, group, others. </p>
 <table>
 <thead>
 <tr>
@@ -941,27 +881,9 @@ If your user is not root, check if your in the root group <code>groups</code>. I
 not in 'root' group, you cannot write.</p>
 <h3 id="alter-permissions">Alter Permissions</h3>
 <p>Use <code>chmod</code>:</p>
-<h4 id="numeric-mode">Numeric mode</h4>
-<p>Each permission type has a number:</p>
-<ul>
-<li>4 → Read (<code>r</code>)</li>
-<li>2 → Write (<code>w</code>)</li>
-<li>1 → Execute (<code>x</code>)</li>
-</ul>
-<p>Combine them:</p>
-<ul>
-<li>7 (4+2+1) → Read, Write, Execute (<code>rwx</code>)</li>
-<li>6 (4+2) → Read, Write (<code>rw-</code>)</li>
-<li>5 (4+1) → Read, Execute (<code>r-x</code>)</li>
-</ul>
-<p><strong>Example:</strong> <code>chmod 755 filename</code></p>
-<ul>
-<li>Owner: <code>rwx</code> (7)</li>
-<li>Group: <code>r-x</code> (5)</li>
-<li>Others: <code>r-x</code> (5)</li>
-</ul>
-<h4 id="symbolic-mode">Symbolic mode</h4>
-<p><strong>Example:</strong> <code>chmod u+rwx,g+r,o-r filename</code></p>
+<p>There are 2 main methods, numeric or symbolic. The numeric mode requires memorizing number codes for altering permissions.
+Symbolic is more straight forward.</p>
+<p><strong>Example:</strong> <code>chmod u+rwx,g+r,o-r filename</code> or <code>chmod u+rwx filename</code></p>
 <ul>
 <li><code>u+rwx</code> → Add read, write, execute for owner (<code>u</code>).</li>
 <li><code>g+r</code> → Add read for group (<code>g</code>).</li>

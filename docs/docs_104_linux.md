@@ -17,22 +17,7 @@ You will see something like below:
 
 ``drwxr-xr-x  2 root root 4096 Feb 12 12:34 /srv/web_apps``
 
-The first section is read, write, execute for owner, group, others.
-
-- The first column (drwxr-xr-x) shows the permissions.
-  - ``d`` -> directory.
-  - ``rwx`` -> Owner: read, write, execute
-  - ``r-xr`` -> Group: read, execute, no write
-  - ``r-x`` -> Others: read, execute, no write.
-- The third column (e.g., ``root root``) shows the owner and group.
-
-
-``whoami`` - find the user logged in.
-``groups`` - show the groups you are in.
-
-You can run commands via ssh
-
-``ssh user@server "ls -ld /srv/web_apps"``
+The first section is read, write, execute for owner, group, others. 
 
 | Section | Meaning                          | Who it applies to      |
 |---------|----------------------------------|------------------------|
@@ -49,29 +34,10 @@ not in 'root' group, you cannot write.
 
 Use ``chmod``:
 
-#### Numeric mode
+There are 2 main methods, numeric or symbolic. The numeric mode requires memorizing number codes for altering permissions.
+Symbolic is more straight forward.
 
-Each permission type has a number:
-
-- 4 → Read (``r``)
-- 2 → Write (``w``)
-- 1 → Execute (``x``)
-
-Combine them:
-
-- 7 (4+2+1) → Read, Write, Execute (``rwx``)
-- 6 (4+2) → Read, Write (``rw-``)
-- 5 (4+1) → Read, Execute (``r-x``)
-
-**Example:** ``chmod 755 filename``
-
-- Owner: ``rwx`` (7)
-- Group: ``r-x`` (5)
-- Others: ``r-x`` (5)
-
-#### Symbolic mode
-
-**Example:** ``chmod u+rwx,g+r,o-r filename``
+**Example:** ``chmod u+rwx,g+r,o-r filename`` or ``chmod u+rwx filename``
 
 - ``u+rwx`` → Add read, write, execute for owner (``u``).
 - ``g+r`` → Add read for group (``g``).
