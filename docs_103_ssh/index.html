@@ -720,6 +720,7 @@ a file that sits on both machines and grants access without needing a password.<
 <li>Copy the ssh key to the server <code>ssh-copy-id user@server</code></li>
 </ol>
 <p>If it worked correctly, you should now be able to login without needing a password.</p>
+<p>You can run commands through ssh, without logging in: <code>ssh user@server "sudo chown -R user:user /srv/web_apps"</code></p>
 
 
 
