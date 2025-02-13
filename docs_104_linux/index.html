@@ -698,6 +698,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#change-ownership" class="md-nav__link">
+    <span class="md-ellipsis">
+      Change ownership:
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -803,6 +812,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#change-ownership" class="md-nav__link">
+    <span class="md-ellipsis">
+      Change ownership:
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -883,13 +901,18 @@ not in 'root' group, you cannot write.</p>
 <p>Use <code>chmod</code>:</p>
 <p>There are 2 main methods, numeric or symbolic. The numeric mode requires memorizing number codes for altering permissions.
 Symbolic is more straight forward.</p>
-<p><strong>Example:</strong> <code>chmod u+rwx,g+r,o-r filename</code> or <code>chmod u+rwx filename</code></p>
+<p>Change all permissions: <code>chmod u+rwx,g+r,o-r filename</code>
+Change only owner permissions: <code>chmod u+rwx filename</code>
+Change only group permissions: <code>chmod g-w filename</code>
+Change only other permissions: <code>chmod o-r filename</code>
+Give everyone execute permissions: <code>chmod +x filename</code></p>
 <ul>
 <li><code>u+rwx</code> → Add read, write, execute for owner (<code>u</code>).</li>
 <li><code>g+r</code> → Add read for group (<code>g</code>).</li>
 <li><code>o-r</code> → Remove read for others (<code>o</code>).</li>
 </ul>
-<p>Change ownership: <code>sudo chown -R user:user /srv/web_apps</code></p>
+<h3 id="change-ownership">Change ownership:</h3>
+<p>Change the owner of the file to a different user: <code>sudo chown -R user:user /srv/web_apps</code></p>
 <h2 id="copy-directory">Copy Directory</h2>
 <p>Two baked-in commands are <code>scp</code> or <code>rsync</code>.</p>
 <p>Here's an example with scp: <code>scp -r ./site user@server:/srv/web_apps</code>.</p>
