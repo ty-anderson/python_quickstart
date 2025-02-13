@@ -45,7 +45,7 @@ not in 'root' group, you cannot write.
 
 Use ``chmod``:
 
-#### Numeric mode:
+#### Numeric mode
 
 Each permission type has a number:
 
@@ -65,7 +65,7 @@ Combine them:
 - Group: ``r-x`` (5)
 - Others: ``r-x`` (5)
 
-#### Symbolic Mode:
+#### Symbolic Mode
 
 **Example:** ``chmod u+rwx,g+r,o-r filename``
 
