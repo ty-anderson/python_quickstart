@@ -1,4 +1,4 @@
-site_name: Python Learning
+site_name: Tech Notes
 theme: material
 extra_javascript:
   - https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js
