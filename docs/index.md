@@ -1,3 +1,3 @@
-# Getting Started with Python as Fast as Possible
+# My Tech Notes
 
 Click on any of the pages on the left to begin...
