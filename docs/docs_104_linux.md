@@ -1,5 +1,11 @@
 # Linux
 
+## Execute files
+
+To execute file: ``. path/to/file`` or ``source path/to/file``
+
+Example: ``. bash_script.sh`` or ``source bash_script.sh``
+
 ## File Permissions
 
 How to check file permissions: 
@@ -41,6 +47,12 @@ You can change ownership of the directory: ``ssh user@server "sudo chown -R user
 
 Two canned commands are ``scp`` or ``rsync``.
 
-Here's an example with scp: ``scp -r ./site tyler@anderson.home:/srv/web_apps``.
+Here's an example with scp: ``scp -r ./site user@server:/srv/web_apps``.
+
+rsync is typically recommended over scp.
+
+Copy directory into another:``rsync -av ./site user@server:/srv/web_apps/notes``
+
+Copy directory contents into another:``rsync -av ./site/ user@server:/srv/web_apps/notes/`` (trailing ``/``)
 
 

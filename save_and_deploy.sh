@@ -6,3 +6,4 @@ git add .
 git commit -m "update"
 git push
 scp -r ./site tyler@anderson.home:/srv/web_apps/notes
+rsync -av ./site/ tyler@anderson.home:/srv/web_apps/notes/
