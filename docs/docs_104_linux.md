@@ -41,11 +41,33 @@ To see if you're root do: ``whoami``. If the output is 'root' then you can write
 If your user is not root, check if your in the root group ``groups``. If your
 not in 'root' group, you cannot write.
 
-You can change ownership of the directory: ``ssh user@server "sudo chown -R user:user /srv/web_apps"``
+### Alter Permissions
+
+Use ``chmod``:
+
+Each permission type has a number:
+
+- 4 → Read (``r``)
+- 2 → Write (``w``)
+- 1 → Execute (``x``)
+
+Combine them:
+
+- 7 (4+2+1) → Read, Write, Execute (``rwx``)
+- 6 (4+2) → Read, Write (``rw-``)
+- 5 (4+1) → Read, Execute (``r-x``)
+
+Example: ``chmod 755 filename``
+
+- Owner: ``rwx`` (7)
+- Group: ``r-x`` (5)
+- Others: ``r-x`` (5)
+
+Change ownership: ``sudo chown -R user:user /srv/web_apps``
 
 ## Copy Directory
 
-Two canned commands are ``scp`` or ``rsync``.
+Two baked-in commands are ``scp`` or ``rsync``.
 
 Here's an example with scp: ``scp -r ./site user@server:/srv/web_apps``.
 

@@ -686,6 +686,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="File Permissions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alter-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Alter Permissions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -776,6 +791,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="File Permissions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alter-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Alter Permissions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -859,9 +889,29 @@
 <p>To see if you're root do: <code>whoami</code>. If the output is 'root' then you can write.
 If your user is not root, check if your in the root group <code>groups</code>. If your
 not in 'root' group, you cannot write.</p>
-<p>You can change ownership of the directory: <code>ssh user@server "sudo chown -R user:user /srv/web_apps"</code></p>
+<h3 id="alter-permissions">Alter Permissions</h3>
+<p>Use <code>chmod</code>:</p>
+<p>Each permission type has a number:</p>
+<ul>
+<li>4 → Read (<code>r</code>)</li>
+<li>2 → Write (<code>w</code>)</li>
+<li>1 → Execute (<code>x</code>)</li>
+</ul>
+<p>Combine them:</p>
+<ul>
+<li>7 (4+2+1) → Read, Write, Execute (<code>rwx</code>)</li>
+<li>6 (4+2) → Read, Write (<code>rw-</code>)</li>
+<li>5 (4+1) → Read, Execute (<code>r-x</code>)</li>
+</ul>
+<p>Example: <code>chmod 755 filename</code></p>
+<ul>
+<li>Owner: <code>rwx</code> (7)</li>
+<li>Group: <code>r-x</code> (5)</li>
+<li>Others: <code>r-x</code> (5)</li>
+</ul>
+<p>Change ownership: <code>sudo chown -R user:user /srv/web_apps</code></p>
 <h2 id="copy-directory">Copy Directory</h2>
-<p>Two canned commands are <code>scp</code> or <code>rsync</code>.</p>
+<p>Two baked-in commands are <code>scp</code> or <code>rsync</code>.</p>
 <p>Here's an example with scp: <code>scp -r ./site user@server:/srv/web_apps</code>.</p>
 <p>rsync is typically recommended over scp.</p>
 <p>Copy directory into another:<code>rsync -av ./site user@server:/srv/web_apps/notes</code></p>

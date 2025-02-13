@@ -15,3 +15,4 @@ To generate ssh keys:
 
 If it worked correctly, you should now be able to login without needing a password.
 
+You can run commands through ssh, without logging in: ``ssh user@server "sudo chown -R user:user /srv/web_apps"``
