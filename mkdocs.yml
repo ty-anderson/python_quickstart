@@ -21,5 +21,5 @@ nav:
     - Caddy: docs_101_caddy.md
     - DNS: docs_102_dns_server.md
   - Linux and Other OS:
-    - Linux: docs_103_linux.md
+    - Linux: docs_104_linux.md
     - SSH: docs_103_ssh.md
