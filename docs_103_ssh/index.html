@@ -9,10 +9,6 @@
       
       
       
-        <link rel="prev" href="../docs_9_std_lib/">
-      
-      
-        <link rel="next" href="../docs_100_networking/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +16,7 @@
     
     
       
-        <title>Docker - Tech Notes</title>
+        <title>SSH - Tech Notes</title>
       
     
     
@@ -62,7 +58,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#docker" class="md-skip">
+        <a href="#ssh" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +94,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Docker
+              SSH
             
           </span>
         </div>
@@ -439,28 +435,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Docker
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../docs_99_docker/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -469,57 +447,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#docker" class="md-nav__link">
-    <span class="md-ellipsis">
-      Docker
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Docker">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#docker-compose" class="md-nav__link">
-    <span class="md-ellipsis">
-      Docker Compose
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#build-a-docker-image" class="md-nav__link">
-    <span class="md-ellipsis">
-      Build a Docker Image
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -621,47 +548,8 @@
   
   
   
+    
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#docker" class="md-nav__link">
-    <span class="md-ellipsis">
-      Docker
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Docker">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#docker-compose" class="md-nav__link">
-    <span class="md-ellipsis">
-      Docker Compose
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#build-a-docker-image" class="md-nav__link">
-    <span class="md-ellipsis">
-      Build a Docker Image
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -676,72 +564,18 @@
                   
 
 
-  <h1>Docker</h1>
-
-<h2 id="docker">Docker</h2>
-<p>Docker uses images of a software to create containers that run them. They will create their own isolated environment on the host system. They are typically very easy to install and even easier to uninstall. They can enhance security by isolating the host system from the system running the software.</p>
-<p>When you find an image you want to use do:
-<code>docker pull &lt;image_name&gt;</code></p>
-<p>To see images downloaded use:
-<code>docker images</code></p>
-<p>See containers:
-<code>docker ps</code></p>
-<p>Run container:
-<code>docker run image-name -d</code>
--d means run in detached mode so when the terminal is closed, the container continues to run</p>
-<p>Some containers need other info to run, which can be passed after the command:
-Postgres example:
-<code>docker run --name postgres_db -e POSTGRES_PASSWORD=postgres -p 5432:5432 -d postgres</code></p>
-<ul>
-<li>--name is what the container will be named</li>
-<li>-p is for port mapping host computer port to image port (first is host, second is container)</li>
-<li>-e is for adding environment variables</li>
-</ul>
-<h3 id="docker-compose">Docker Compose</h3>
-<p>Make sure you have the latest version (currently V2).</p>
-<p>Docker compose V1 was built on python, V2 is built in Go. If you run <code>which docker compose</code> 
-and it shows the path <code>/usr/bin/docker-compose</code> then you still have V1. Remove it
-with <code>sudo rm /usr/bin/docker-compose</code>. </p>
-<p>Docker compose is a handy way to run docker with certain settings in a yaml file
-Create a docker-compose.yaml file.</p>
-<p>Run container
-<code>docker compose up -d</code></p>
-<p>Stop container
-<code>docker compose down</code></p>
-<p>Upgrade container
-<code>docker compose down</code>
-<code>docker compose pull</code>
-<code>docker compose up -d</code></p>
-<h3 id="build-a-docker-image">Build a Docker Image</h3>
-<p>A Dockerfile is how to build an image. The contents might look something like this:</p>
-<p><em>Dockerfile</em>
-FROM python:3.9-slim
-WORKDIR /app
-COPY requirements.txt .
-RUN pip install -r requirements.txt
-COPY . .
-CMD ["python", "app.py"]</p>
-<p>When your dockerfile is ready, run:
-<code>docker build -t my-image-name:tag .</code></p>
-<p>• Replace my-image-name with the name you want to give your image.
-• Replace tag with an optional version (e.g., latest or v1.0).</p>
-<p>Save image to file:
-<code>docker save -o /path/to/destination/image-name.tar my-image-name:tag</code></p>
-<p>Load image from file:
-<code>docker load -i /path/to/destination/image-name.tar</code></p>
-<p>Access docker container in terminal
-Access the container environment
-<code>docker exec -it &lt;container-name-or-id&gt; /bin/sh</code></p>
-<p>/bin/sh is the terminal experience (shell in this case) you could do /bin/bash</p>
-<p>Access container logs
-<code>docker logs &lt;container name or id&gt;</code></p>
-<p>For continuously showing log output
-<code>docker logs -f &lt;container-name-or-id&gt;</code></p>
-<p>Files and Docker
-If you need to use files for anything involving docker, you need to configure volumes.</p>
-<p>Volumes are a mapping of the docker container file system to the host file system.</p>
-<p><code>-v /home/svr/immich:/usr/src/app/upload</code></p>
-<p>Just like port mapping, the first is host and second is container.</p>
+<h1 id="ssh">SSH</h1>
+<p>To SSH into a server its <code>ssh username@ipaddress</code> or <code>ssh username@servername</code>.</p>
+<p>SSH uses port 22.</p>
+<p>Typically when you SSH into a system, it will ask for your password. Instead of
+using a password everytime, you can create a ssh key. These keys are essentially 
+a file that sits on both machines and grants access without needing a password.</p>
+<p>To generate ssh keys:</p>
+<ol>
+<li>On local machine <code>ssh-keygen -t rsa -b 4096</code>. It will ask for a passphrase, but you can leave it empty.</li>
+<li>Copy the ssh key to the server <code>ssh-copy-id user@server</code></li>
+</ol>
+<p>If it worked correctly, you should now be able to login without needing a password.</p>
 
 
 
