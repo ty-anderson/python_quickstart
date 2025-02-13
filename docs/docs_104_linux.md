@@ -55,9 +55,7 @@ Examples:
 - Change only other permissions: ``chmod o-r filename``
 - Give everyone execute permissions: ``chmod +x filename``
 
-
-
-### Change ownership: 
+### Change Ownership
 
 Change the owner of the file to a different user: ``sudo chown -R user:user /srv/web_apps``
 
@@ -67,7 +65,7 @@ Two baked-in commands are ``scp`` or ``rsync``.
 
 Here's an example with scp: ``scp -r ./site user@server:/srv/web_apps``.
 
-rsync is typically recommended over scp.
+**rsync is typically recommended over scp.**
 
 Copy directory into another:``rsync -av ./site user@server:/srv/web_apps/notes``
 

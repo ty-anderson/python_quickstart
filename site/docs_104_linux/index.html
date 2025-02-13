@@ -701,7 +701,7 @@
           <li class="md-nav__item">
   <a href="#change-ownership" class="md-nav__link">
     <span class="md-ellipsis">
-      Change ownership:
+      Change Ownership
     </span>
   </a>
   
@@ -815,7 +815,7 @@
           <li class="md-nav__item">
   <a href="#change-ownership" class="md-nav__link">
     <span class="md-ellipsis">
-      Change ownership:
+      Change Ownership
     </span>
   </a>
   
@@ -920,12 +920,12 @@ Symbolic is more straight forward.</p>
 <li>Change only other permissions: <code>chmod o-r filename</code></li>
 <li>Give everyone execute permissions: <code>chmod +x filename</code></li>
 </ul>
-<h3 id="change-ownership">Change ownership:</h3>
+<h3 id="change-ownership">Change Ownership</h3>
 <p>Change the owner of the file to a different user: <code>sudo chown -R user:user /srv/web_apps</code></p>
 <h2 id="copy-directory">Copy Directory</h2>
 <p>Two baked-in commands are <code>scp</code> or <code>rsync</code>.</p>
 <p>Here's an example with scp: <code>scp -r ./site user@server:/srv/web_apps</code>.</p>
-<p>rsync is typically recommended over scp.</p>
+<p><strong>rsync is typically recommended over scp.</strong></p>
 <p>Copy directory into another:<code>rsync -av ./site user@server:/srv/web_apps/notes</code></p>
 <p>Copy directory contents into another:<code>rsync -av ./site/ user@server:/srv/web_apps/notes/</code> (trailing <code>/</code>)</p>
 
