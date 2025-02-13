@@ -15,7 +15,11 @@ nav:
     - Documentation Libraries: docs_8_documentation.md
     - Standard Library Gems: docs_9_std_lib.md
   - Docker: docs_99_docker.md
-  - Networking: docs_100_networking.md
-  - Servers: docs_100_servers.md
-  - Caddy: docs_101_caddy.md
-  - DNS: docs_102_dns_server.md
+  - Networking:
+    - General Networking: docs_100_networking.md
+    - Servers: docs_100_servers.md
+    - Caddy: docs_101_caddy.md
+    - DNS: docs_102_dns_server.md
+  - Linux and Other OS:
+    - Linux: docs_103_linux.md
+    - SSH: docs_103_ssh.md
