@@ -906,12 +906,14 @@ Symbolic is more straight forward.</p>
 <li><code>g+r</code> → Add read for group (<code>g</code>).</li>
 <li><code>o-r</code> → Remove read for others (<code>o</code>).</li>
 </ul>
-<p>Examples:
-- Change all permissions: <code>chmod u+rwx,g+r,o-r filename</code>
-- Change only owner permissions: <code>chmod u+rwx filename</code>
-- Change only group permissions: <code>chmod g-w filename</code>
-- Change only other permissions: <code>chmod o-r filename</code>
-- Give everyone execute permissions: <code>chmod +x filename</code></p>
+<p>Examples:</p>
+<ul>
+<li>Change all permissions: <code>chmod u+rwx,g+r,o-r filename</code></li>
+<li>Change only owner permissions: <code>chmod u+rwx filename</code></li>
+<li>Change only group permissions: <code>chmod g-w filename</code></li>
+<li>Change only other permissions: <code>chmod o-r filename</code></li>
+<li>Give everyone execute permissions: <code>chmod +x filename</code></li>
+</ul>
 <h3 id="change-ownership">Change ownership:</h3>
 <p>Change the owner of the file to a different user: <code>sudo chown -R user:user /srv/web_apps</code></p>
 <h2 id="copy-directory">Copy Directory</h2>
