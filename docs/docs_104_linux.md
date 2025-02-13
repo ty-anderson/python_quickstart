@@ -37,13 +37,19 @@ Use ``chmod``:
 There are 2 main methods, numeric or symbolic. The numeric mode requires memorizing number codes for altering permissions.
 Symbolic is more straight forward.
 
-**Example:** ``chmod u+rwx,g+r,o-r filename`` or ``chmod u+rwx filename``
+Change all permissions: ``chmod u+rwx,g+r,o-r filename``
+Change only owner permissions: ``chmod u+rwx filename``
+Change only group permissions: ``chmod g-w filename``
+Change only other permissions: ``chmod o-r filename``
+Give everyone execute permissions: ``chmod +x filename``
 
 - ``u+rwx`` → Add read, write, execute for owner (``u``).
 - ``g+r`` → Add read for group (``g``).
 - ``o-r`` → Remove read for others (``o``).
 
-Change ownership: ``sudo chown -R user:user /srv/web_apps``
+### Change ownership: 
+
+Change the owner of the file to a different user: ``sudo chown -R user:user /srv/web_apps``
 
 ## Copy Directory
 
