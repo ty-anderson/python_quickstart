@@ -13,7 +13,11 @@ How to check file permissions:
 - ``ls -l`` - view permissions of files in the directory.
 - ``ls -ld`` - view permissions of the directory itself.
 
-drwxr-xr-x  2 root root 4096 Feb 12 12:34 /srv/web_apps
+You will see something like below:
+
+``drwxr-xr-x  2 root root 4096 Feb 12 12:34 /srv/web_apps``
+
+The first section is read, write, execute for owner, group, others.
 
 - The first column (drwxr-xr-x) shows the permissions.
   - ``d`` -> directory.
@@ -65,7 +69,7 @@ Combine them:
 - Group: ``r-x`` (5)
 - Others: ``r-x`` (5)
 
-#### Symbolic Mode
+#### Symbolic mode
 
 **Example:** ``chmod u+rwx,g+r,o-r filename``
 

@@ -711,7 +711,7 @@
           <li class="md-nav__item">
   <a href="#symbolic-mode" class="md-nav__link">
     <span class="md-ellipsis">
-      Symbolic Mode
+      Symbolic mode
     </span>
   </a>
   
@@ -840,7 +840,7 @@
           <li class="md-nav__item">
   <a href="#symbolic-mode" class="md-nav__link">
     <span class="md-ellipsis">
-      Symbolic Mode
+      Symbolic mode
     </span>
   </a>
   
@@ -890,7 +890,9 @@
 <li><code>ls -l</code> - view permissions of files in the directory.</li>
 <li><code>ls -ld</code> - view permissions of the directory itself.</li>
 </ul>
-<p>drwxr-xr-x  2 root root 4096 Feb 12 12:34 /srv/web_apps</p>
+<p>You will see something like below:</p>
+<p><code>drwxr-xr-x  2 root root 4096 Feb 12 12:34 /srv/web_apps</code></p>
+<p>The first section is read, write, execute for owner, group, others.</p>
 <ul>
 <li>The first column (drwxr-xr-x) shows the permissions.</li>
 <li><code>d</code> -&gt; directory.</li>
@@ -958,7 +960,7 @@ not in 'root' group, you cannot write.</p>
 <li>Group: <code>r-x</code> (5)</li>
 <li>Others: <code>r-x</code> (5)</li>
 </ul>
-<h4 id="symbolic-mode">Symbolic Mode</h4>
+<h4 id="symbolic-mode">Symbolic mode</h4>
 <p><strong>Example:</strong> <code>chmod u+rwx,g+r,o-r filename</code></p>
 <ul>
 <li><code>u+rwx</code> → Add read, write, execute for owner (<code>u</code>).</li>
