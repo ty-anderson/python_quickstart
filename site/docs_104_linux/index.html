@@ -696,6 +696,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Alter Permissions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#numeric-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      Numeric mode:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#symbolic-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      Symbolic Mode:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -801,6 +825,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Alter Permissions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#numeric-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      Numeric mode:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#symbolic-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      Symbolic Mode:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -891,6 +939,7 @@ If your user is not root, check if your in the root group <code>groups</code>. I
 not in 'root' group, you cannot write.</p>
 <h3 id="alter-permissions">Alter Permissions</h3>
 <p>Use <code>chmod</code>:</p>
+<h4 id="numeric-mode">Numeric mode:</h4>
 <p>Each permission type has a number:</p>
 <ul>
 <li>4 → Read (<code>r</code>)</li>
@@ -908,6 +957,13 @@ not in 'root' group, you cannot write.</p>
 <li>Owner: <code>rwx</code> (7)</li>
 <li>Group: <code>r-x</code> (5)</li>
 <li>Others: <code>r-x</code> (5)</li>
+</ul>
+<h4 id="symbolic-mode">Symbolic Mode:</h4>
+<p><strong>Example:</strong> <code>chmod u+rwx,g+r,o-r filename</code></p>
+<ul>
+<li><code>u+rwx</code> → Add read, write, execute for owner (<code>u</code>).</li>
+<li><code>g+r</code> → Add read for group (<code>g</code>).</li>
+<li><code>o-r</code> → Remove read for others (<code>o</code>).</li>
 </ul>
 <p>Change ownership: <code>sudo chown -R user:user /srv/web_apps</code></p>
 <h2 id="copy-directory">Copy Directory</h2>

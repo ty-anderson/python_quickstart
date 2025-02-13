@@ -45,6 +45,8 @@ not in 'root' group, you cannot write.
 
 Use ``chmod``:
 
+#### Numeric mode:
+
 Each permission type has a number:
 
 - 4 → Read (``r``)
@@ -62,6 +64,14 @@ Combine them:
 - Owner: ``rwx`` (7)
 - Group: ``r-x`` (5)
 - Others: ``r-x`` (5)
+
+#### Symbolic Mode:
+
+**Example:** ``chmod u+rwx,g+r,o-r filename``
+
+- ``u+rwx`` → Add read, write, execute for owner (``u``).
+- ``g+r`` → Add read for group (``g``).
+- ``o-r`` → Remove read for others (``o``).
 
 Change ownership: ``sudo chown -R user:user /srv/web_apps``
 
