@@ -9,10 +9,6 @@
       
       
       
-        <link rel="prev" href="../docs_3_writing_code/">
-      
-      
-        <link rel="next" href="../docs_5_advanced_topics/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +16,7 @@
     
     
       
-        <title>Building Large Projects - Tech Notes</title>
+        <title>Ollama - Tech Notes</title>
       
     
     
@@ -62,7 +58,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#building-large-projects" class="md-skip">
+        <a href="#ollama" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +94,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Building Large Projects
+              Ollama
             
           </span>
         </div>
@@ -208,19 +204,17 @@
       
   
   
-    
   
   
-  
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -234,7 +228,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Python
@@ -308,28 +302,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Building Large Projects
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../docs_4_building_large_projects/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -338,33 +314,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#building-large-projects" class="md-nav__link">
-    <span class="md-ellipsis">
-      Building Large Projects
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -749,23 +698,8 @@
   
   
   
+    
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#building-large-projects" class="md-nav__link">
-    <span class="md-ellipsis">
-      Building Large Projects
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -780,34 +714,17 @@
                   
 
 
-  <h1>Building Large Projects</h1>
-
-<h2 id="building-large-projects">Building Large Projects</h2>
-<p>Large python projects can be extremely powerful, but they must be organized a certain way to work properly.</p>
-<p>A project should always start with a root folder and other folders and files will be housed inside the root folder.</p>
-<p>The file structure of a project might look something like this:</p>
-<pre><code>/project_root
-   /db
-       __init__.py
-       model.py
-       connectors.py
-   /views
-       __init__.py
-       views.py
-   /reports
-       __init__.py
-       report_01.py
-       report_02.py
-   .env
-</code></pre>
-<p>Notice other directories have a file called <code>__init__.py</code>. This is a python file that tells python "this folder is
-a python module" which means you can put python files with code inside the folder and use it. With this structure, 
-you have code in the views.py file like:</p>
-<pre><code class="language-py">from db import model
-from reports import report_01
-</code></pre>
-<p>If there is code in the <code>__init__.py</code> file, you can just import the module name like <code>import db</code>. If there is
-a function inside the <code>__init__.py</code> file called <code>new_func</code> you could <code>from db import new_func</code></p>
+<h1 id="ollama">Ollama</h1>
+<p>Ollama is an open-source LLM runtime environment. </p>
+<p>Simply put:</p>
+<ol>
+<li>Rum Ollama</li>
+<li>Download the model you'd like to use (mistral, llama3, etc.)</li>
+<li>Go to the WebUI</li>
+<li>Select the model you want to use.</li>
+<li>Chat away!</li>
+</ol>
+<p>Download a model: <code>docker exec -it ollama ollama pull mistral</code> or <code>docker exec -it ollama ollama pull llama3</code></p>
 
 
 
