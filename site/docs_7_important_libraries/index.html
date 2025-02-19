@@ -1311,6 +1311,13 @@ be pieced together to achieve all desired features.</p>
 <li>Sync workers: ~50 - 100 concurrent users per worker.</li>
 <li>Async workers: ~500 - 1000+ concurrent users per worker.</li>
 </ul>
+<p>Running a flask server:</p>
+<ul>
+<li>Standard run Flask: <code>flask --app &lt;.py file&gt; run</code> like <code>flask --app app run</code></li>
+<li>Run Flask on different port: <code>flask --app app run --port 8080</code></li>
+<li>Run Flask and expose to network: <code>flask --app web_app/app run --host 0.0.0.0 --port 8080</code></li>
+<li>Run Flask in prod with gunicorn: <code>gunicorn -w 4 -b 0.0.0.0:8080 web_app.app:app</code></li>
+</ul>
 <h3 id="self-hosting">Self Hosting</h3>
 <p>Make sure to activate your python interpreter!</p>
 <p>If you want to host your own flask app, gunicorn is a WSGI pure python server used for production.

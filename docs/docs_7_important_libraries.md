@@ -266,6 +266,14 @@ Web workers rule of thumb:
 - Sync workers: ~50 - 100 concurrent users per worker.
 - Async workers: ~500 - 1000+ concurrent users per worker.
 
+Running a flask server:
+
+- Standard run Flask: ``flask --app <.py file> run`` like ``flask --app app run``
+- Run Flask on different port: ``flask --app app run --port 8080``
+- Run Flask and expose to network: ``flask --app web_app/app run --host 0.0.0.0 --port 8080``
+- Run Flask in prod with gunicorn: ``gunicorn -w 4 -b 0.0.0.0:8080 web_app.app:app``
+
+
 ### Self Hosting
 
 Make sure to activate your python interpreter!
