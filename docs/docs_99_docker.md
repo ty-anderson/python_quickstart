@@ -51,13 +51,42 @@ Upgrade container
 
 A Dockerfile is how to build an image. The contents might look something like this:
 
-*Dockerfile*
-FROM python:3.9-slim
+# simple python app
+```
+FROM python:3.12-slim
 WORKDIR /app
 COPY requirements.txt .
 RUN pip install -r requirements.txt
 COPY . .
 CMD ["python", "app.py"]
+```
+
+or
+
+# flask app
+```
+# Use a lightweight Python image
+FROM python:3.12-slim
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy app files to the container
+COPY . /app
+
+# Install dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Set environment variables
+ENV FLASK_ENV=production
+ENV PYTHONUNBUFFERED=1
+
+# Expose the port (optional if using Docker Compose)
+EXPOSE 8090
+
+# Run Gunicorn when the container starts
+CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:8090", "web_app.app:app"]
+```
 
 When your dockerfile is ready, run:
 ``docker build -t my-image-name:tag .``
