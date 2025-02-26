@@ -985,6 +985,10 @@ CMD [&quot;gunicorn&quot;, &quot;-w&quot;, &quot;4&quot;, &quot;-b&quot;, &quot;
 <p>• Replace my-image-name with the name you want to give your image.
 • Replace tag with an optional version (e.g., latest or v1.0).</p>
 <p>End example might look like <code>docker build -t my-flask-app:latest .</code></p>
+<p>If you are building on a Mac, but will run on Linux, when you build an image, specify to run on amd64:
+<code>docker build --platform linux/amd64 -t yt_download:latest .</code></p>
+<p>Save: <code>docker save -o /Users/tyleranderson/Downloads/yt_downloads_250226.tar yt_download:latest</code></p>
+<p>Load: <code>sudo docker load -i /srv/flask_yt_download/yt_downloads_250226.tar</code></p>
 <h4 id="when-you-use-docker-compose-with-your-image-you-have-two-options">When you use docker compose with your image, you have two options:</h4>
 <ol>
 <li>build image with docker compose is run, using the <code>build: .</code> option. 

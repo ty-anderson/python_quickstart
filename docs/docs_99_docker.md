@@ -96,6 +96,13 @@ When your dockerfile is ready, run:
 
 End example might look like ``docker build -t my-flask-app:latest .``
 
+If you are building on a Mac, but will run on Linux, when you build an image, specify to run on amd64:
+``docker build --platform linux/amd64 -t yt_download:latest .``
+
+Save: ``docker save -o /Users/tyleranderson/Downloads/yt_downloads_250226.tar yt_download:latest``
+
+Load: ``sudo docker load -i /srv/flask_yt_download/yt_downloads_250226.tar``
+
 #### When you use docker compose with your image, you have two options:
 
 1. build image with docker compose is run, using the ``build: .`` option. 
