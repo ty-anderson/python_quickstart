@@ -513,9 +513,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#when-you-use-docker-compose-with-your-image-you-have-two-options" class="md-nav__link">
+  <a href="#docker-compose-with-custom-images" class="md-nav__link">
     <span class="md-ellipsis">
-      When you use docker compose with your image, you have two options:
+      Docker Compose with Custom Images
     </span>
   </a>
   
@@ -850,9 +850,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#when-you-use-docker-compose-with-your-image-you-have-two-options" class="md-nav__link">
+  <a href="#docker-compose-with-custom-images" class="md-nav__link">
     <span class="md-ellipsis">
-      When you use docker compose with your image, you have two options:
+      Docker Compose with Custom Images
     </span>
   </a>
   
@@ -989,7 +989,8 @@ CMD [&quot;gunicorn&quot;, &quot;-w&quot;, &quot;4&quot;, &quot;-b&quot;, &quot;
 <code>docker build --platform linux/amd64 -t yt_download:latest .</code></p>
 <p>Save: <code>docker save -o /Users/tyleranderson/Downloads/yt_downloads_250226.tar yt_download:latest</code></p>
 <p>Load: <code>sudo docker load -i /srv/flask_yt_download/yt_downloads_250226.tar</code></p>
-<h4 id="when-you-use-docker-compose-with-your-image-you-have-two-options">When you use docker compose with your image, you have two options:</h4>
+<h4 id="docker-compose-with-custom-images">Docker Compose with Custom Images</h4>
+<p>When you use docker compose with your image, you have two options:</p>
 <ul>
 <li>Build image with docker compose is run, using the <code>build: .</code> option. 
 This builds the image from the Dockerfile in the directory.</li>
