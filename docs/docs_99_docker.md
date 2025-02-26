@@ -51,7 +51,7 @@ Upgrade container
 
 A Dockerfile is how to build an image. The contents might look something like this:
 
-# simple python app
+Simple python app:
 ```
 FROM python:3.12-slim
 WORKDIR /app
@@ -63,7 +63,7 @@ CMD ["python", "app.py"]
 
 or
 
-# flask app
+Flask app:
 ```
 # Use a lightweight Python image
 FROM python:3.12-slim
