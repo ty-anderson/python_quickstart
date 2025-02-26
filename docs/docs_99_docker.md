@@ -105,7 +105,7 @@ Load: ``sudo docker load -i /srv/flask_yt_download/yt_downloads_250226.tar``
 
 #### When you use docker compose with your image, you have two options:
 
-1. build image with docker compose is run, using the ``build: .`` option. 
+- Build image with docker compose is run, using the ``build: .`` option. 
 This builds the image from the Dockerfile in the directory.
     ```
     services:
@@ -116,7 +116,7 @@ This builds the image from the Dockerfile in the directory.
           - "8090:8090"
     
     ```
-2. If you already built the image with ``docker build -t myflaskapp:latest .`` then you can tell docker compose
+- If you already built the image with ``docker build -t myflaskapp:latest .`` then you can tell docker compose
 what image to use:
     ```
     services:
