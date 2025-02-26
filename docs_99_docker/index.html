@@ -990,9 +990,9 @@ CMD [&quot;gunicorn&quot;, &quot;-w&quot;, &quot;4&quot;, &quot;-b&quot;, &quot;
 <p>Save: <code>docker save -o /Users/tyleranderson/Downloads/yt_downloads_250226.tar yt_download:latest</code></p>
 <p>Load: <code>sudo docker load -i /srv/flask_yt_download/yt_downloads_250226.tar</code></p>
 <h4 id="when-you-use-docker-compose-with-your-image-you-have-two-options">When you use docker compose with your image, you have two options:</h4>
-<ol>
+<ul>
 <li>
-<p>build image with docker compose is run, using the <code>build: .</code> option. 
+<p>Build image with docker compose is run, using the <code>build: .</code> option. 
 This builds the image from the Dockerfile in the directory.
     ```
     services:
@@ -1001,7 +1001,7 @@ This builds the image from the Dockerfile in the directory.
         container_name: flask_gunicorn
         ports:
           - "8090:8090"</p>
-<p><code>2. If you already built the image with ``docker build -t myflaskapp:latest .`` then you can tell docker compose
+<p><code>- If you already built the image with ``docker build -t myflaskapp:latest .`` then you can tell docker compose
 what image to use:</code>
 services:
   flask_app:
@@ -1011,7 +1011,7 @@ services:
       - "8090:8090"</p>
 <p>```</p>
 </li>
-</ol>
+</ul>
 <h3 id="docker-image-files">Docker Image Files</h3>
 <p>Save image to file:
 <code>docker save -o /path/to/destination/image-name.tar my-image-name:tag</code></p>
