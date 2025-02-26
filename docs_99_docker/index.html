@@ -954,7 +954,32 @@ CMD [&quot;gunicorn&quot;, &quot;-w&quot;, &quot;4&quot;, &quot;-b&quot;, &quot;
 <code>docker build -t my-image-name:tag .</code></p>
 <p>• Replace my-image-name with the name you want to give your image.
 • Replace tag with an optional version (e.g., latest or v1.0).</p>
-<p>End example might look like <code>docker build -t my-flask-app:latest</code></p>
+<p>End example might look like <code>docker build -t my-flask-app:latest .</code></p>
+<p>When you use docker compose with your image, you have two options:</p>
+<ol>
+<li>build image with docker compose is run, using the <code>build: .</code> option. 
+This builds the image from the Dockerfile in the directory.</li>
+</ol>
+<pre><code>services:
+  flask_app:
+    build: .  # This tells Compose to use the Dockerfile in the current directory
+    container_name: flask_gunicorn
+    ports:
+      - &quot;8090:8090&quot;
+
+</code></pre>
+<ol>
+<li>If you already built the image with <code>docker build -t myflaskapp:latest .</code> then you can tell docker compose
+what image to use:</li>
+</ol>
+<pre><code>services:
+  flask_app:
+    image: my_flask_app  # Use the existing built image
+    container_name: flask_gunicorn
+    ports:
+      - &quot;8090:8090&quot;
+
+</code></pre>
 <h3 id="docker-image-files">Docker Image Files</h3>
 <p>Save image to file:
 <code>docker save -o /path/to/destination/image-name.tar my-image-name:tag</code></p>
