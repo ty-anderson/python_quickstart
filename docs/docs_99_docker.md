@@ -94,7 +94,32 @@ When your dockerfile is ready, run:
 • Replace my-image-name with the name you want to give your image.
 • Replace tag with an optional version (e.g., latest or v1.0).
 
-End example might look like ``docker build -t my-flask-app:latest``
+End example might look like ``docker build -t my-flask-app:latest .``
+
+When you use docker compose with your image, you have two options:
+
+1. build image with docker compose is run, using the ``build: .`` option. 
+This builds the image from the Dockerfile in the directory.
+```
+services:
+  flask_app:
+    build: .  # This tells Compose to use the Dockerfile in the current directory
+    container_name: flask_gunicorn
+    ports:
+      - "8090:8090"
+
+```
+2. If you already built the image with ``docker build -t myflaskapp:latest .`` then you can tell docker compose
+what image to use:
+```
+services:
+  flask_app:
+    image: my_flask_app  # Use the existing built image
+    container_name: flask_gunicorn
+    ports:
+      - "8090:8090"
+
+```
 
 ### Docker Image Files
 
