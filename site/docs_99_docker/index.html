@@ -511,6 +511,33 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#docker-image-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker Image Files
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#access-docker-container" class="md-nav__link">
+    <span class="md-ellipsis">
+      Access Docker Container
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker-volumes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker Volumes
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -806,6 +833,33 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#docker-image-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker Image Files
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#access-docker-container" class="md-nav__link">
+    <span class="md-ellipsis">
+      Access Docker Container
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker-volumes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker Volumes
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -900,18 +954,21 @@ CMD [&quot;gunicorn&quot;, &quot;-w&quot;, &quot;4&quot;, &quot;-b&quot;, &quot;
 <code>docker build -t my-image-name:tag .</code></p>
 <p>• Replace my-image-name with the name you want to give your image.
 • Replace tag with an optional version (e.g., latest or v1.0).</p>
+<p>End example might look like <code>docker build -t my-flask-app:latest</code></p>
+<h3 id="docker-image-files">Docker Image Files</h3>
 <p>Save image to file:
 <code>docker save -o /path/to/destination/image-name.tar my-image-name:tag</code></p>
 <p>Load image from file:
 <code>docker load -i /path/to/destination/image-name.tar</code></p>
-<p>Access docker container in terminal
-Access the container environment
+<h3 id="access-docker-container">Access Docker Container</h3>
+<p>Access the container environment
 <code>docker exec -it &lt;container-name-or-id&gt; /bin/sh</code></p>
 <p>/bin/sh is the terminal experience (shell in this case) you could do /bin/bash</p>
 <p>Access container logs
 <code>docker logs &lt;container name or id&gt;</code></p>
 <p>For continuously showing log output
 <code>docker logs -f &lt;container-name-or-id&gt;</code></p>
+<h3 id="docker-volumes">Docker Volumes</h3>
 <p>Files and Docker
 If you need to use files for anything involving docker, you need to configure volumes.</p>
 <p>Volumes are a mapping of the docker container file system to the host file system.</p>

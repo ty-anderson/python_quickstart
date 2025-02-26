@@ -94,6 +94,10 @@ When your dockerfile is ready, run:
 • Replace my-image-name with the name you want to give your image.
 • Replace tag with an optional version (e.g., latest or v1.0).
 
+End example might look like ``docker build -t my-flask-app:latest``
+
+### Docker Image Files
+
 Save image to file:
 ``docker save -o /path/to/destination/image-name.tar my-image-name:tag``
 
@@ -101,18 +105,20 @@ Load image from file:
 ``docker load -i /path/to/destination/image-name.tar``
 
 
-Access docker container in terminal
+### Access Docker Container
+
 Access the container environment
 ``docker exec -it <container-name-or-id> /bin/sh``
 
 /bin/sh is the terminal experience (shell in this case) you could do /bin/bash
-
 
 Access container logs
 ``docker logs <container name or id>``
 
 For continuously showing log output
 ``docker logs -f <container-name-or-id>``
+
+### Docker Volumes
 
 Files and Docker
 If you need to use files for anything involving docker, you need to configure volumes.
