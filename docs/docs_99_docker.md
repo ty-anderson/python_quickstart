@@ -103,7 +103,9 @@ Save: ``docker save -o /Users/tyleranderson/Downloads/yt_downloads_250226.tar yt
 
 Load: ``sudo docker load -i /srv/flask_yt_download/yt_downloads_250226.tar``
 
-#### When you use docker compose with your image, you have two options:
+#### Docker Compose with Custom Images
+
+When you use docker compose with your image, you have two options:
 
 - Build image with docker compose is run, using the ``build: .`` option. 
 This builds the image from the Dockerfile in the directory.
