@@ -490,10 +490,9 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Docker">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#docker-compose" class="md-nav__link">
     <span class="md-ellipsis">
       Docker Compose
@@ -501,8 +500,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#build-a-docker-image" class="md-nav__link">
     <span class="md-ellipsis">
       Build a Docker Image
@@ -525,8 +524,8 @@
     </nav>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#docker-image-files" class="md-nav__link">
     <span class="md-ellipsis">
       Docker Image Files
@@ -534,8 +533,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#access-docker-container" class="md-nav__link">
     <span class="md-ellipsis">
       Access Docker Container
@@ -543,18 +542,13 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#docker-volumes" class="md-nav__link">
     <span class="md-ellipsis">
       Docker Volumes
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -827,10 +821,9 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Docker">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#docker-compose" class="md-nav__link">
     <span class="md-ellipsis">
       Docker Compose
@@ -838,8 +831,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#build-a-docker-image" class="md-nav__link">
     <span class="md-ellipsis">
       Build a Docker Image
@@ -862,8 +855,8 @@
     </nav>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#docker-image-files" class="md-nav__link">
     <span class="md-ellipsis">
       Docker Image Files
@@ -871,8 +864,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#access-docker-container" class="md-nav__link">
     <span class="md-ellipsis">
       Access Docker Container
@@ -880,18 +873,13 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#docker-volumes" class="md-nav__link">
     <span class="md-ellipsis">
       Docker Volumes
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -931,7 +919,7 @@ Postgres example:
 <li>-p is for port mapping host computer port to image port (first is host, second is container)</li>
 <li>-e is for adding environment variables</li>
 </ul>
-<h3 id="docker-compose">Docker Compose</h3>
+<h2 id="docker-compose">Docker Compose</h2>
 <p>Make sure you have the latest version (currently V2).</p>
 <p>Docker compose V1 was built on python, V2 is built in Go. If you run <code>which docker compose</code> 
 and it shows the path <code>/usr/bin/docker-compose</code> then you still have V1. Remove it
@@ -946,7 +934,7 @@ Create a docker-compose.yaml file.</p>
 <code>docker compose down</code>
 <code>docker compose pull</code>
 <code>docker compose up -d</code></p>
-<h3 id="build-a-docker-image">Build a Docker Image</h3>
+<h2 id="build-a-docker-image">Build a Docker Image</h2>
 <p>A Dockerfile is how to build an image. The contents might look something like this:</p>
 <p>Simple python app:</p>
 <pre><code>FROM python:3.12-slim
@@ -989,7 +977,7 @@ CMD [&quot;gunicorn&quot;, &quot;-w&quot;, &quot;4&quot;, &quot;-b&quot;, &quot;
 <code>docker build --platform linux/amd64 -t yt_download:latest .</code></p>
 <p>Save: <code>docker save -o /Users/tyleranderson/Downloads/yt_downloads_250226.tar yt_download:latest</code></p>
 <p>Load: <code>sudo docker load -i /srv/flask_yt_download/yt_downloads_250226.tar</code></p>
-<h4 id="docker-compose-with-custom-images">Docker Compose with Custom Images</h4>
+<h3 id="docker-compose-with-custom-images">Docker Compose with Custom Images</h3>
 <p>When you use docker compose with your image, you have two options:</p>
 <ul>
 <li>Build image with docker compose is run, using the <code>build: .</code> option. 
@@ -1015,12 +1003,12 @@ what image to use:</li>
       - &quot;8090:8090&quot;
 
 </code></pre>
-<h3 id="docker-image-files">Docker Image Files</h3>
+<h2 id="docker-image-files">Docker Image Files</h2>
 <p>Save image to file:
 <code>docker save -o /path/to/destination/image-name.tar my-image-name:tag</code></p>
 <p>Load image from file:
 <code>docker load -i /path/to/destination/image-name.tar</code></p>
-<h3 id="access-docker-container">Access Docker Container</h3>
+<h2 id="access-docker-container">Access Docker Container</h2>
 <p>Access the container environment
 <code>docker exec -it &lt;container-name-or-id&gt; /bin/sh</code></p>
 <p>/bin/sh is the terminal experience (shell in this case) you could do /bin/bash</p>
@@ -1028,7 +1016,7 @@ what image to use:</li>
 <code>docker logs &lt;container name or id&gt;</code></p>
 <p>For continuously showing log output
 <code>docker logs -f &lt;container-name-or-id&gt;</code></p>
-<h3 id="docker-volumes">Docker Volumes</h3>
+<h2 id="docker-volumes">Docker Volumes</h2>
 <p>Files and Docker
 If you need to use files for anything involving docker, you need to configure volumes.</p>
 <p>Volumes are a mapping of the docker container file system to the host file system.</p>

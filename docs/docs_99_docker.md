@@ -24,7 +24,7 @@ Postgres example:
 - -e is for adding environment variables
 
 
-### Docker Compose
+## Docker Compose
 
 Make sure you have the latest version (currently V2).
 
@@ -47,7 +47,7 @@ Upgrade container
 ``docker compose up -d``
 
 
-### Build a Docker Image
+## Build a Docker Image
 
 A Dockerfile is how to build an image. The contents might look something like this:
 
@@ -103,7 +103,7 @@ Save: ``docker save -o /Users/tyleranderson/Downloads/yt_downloads_250226.tar yt
 
 Load: ``sudo docker load -i /srv/flask_yt_download/yt_downloads_250226.tar``
 
-#### Docker Compose with Custom Images
+### Docker Compose with Custom Images
 
 When you use docker compose with your image, you have two options:
 
@@ -130,7 +130,7 @@ services:
 
 ```
 
-### Docker Image Files
+## Docker Image Files
 
 Save image to file:
 ``docker save -o /path/to/destination/image-name.tar my-image-name:tag``
@@ -139,7 +139,7 @@ Load image from file:
 ``docker load -i /path/to/destination/image-name.tar``
 
 
-### Access Docker Container
+## Access Docker Container
 
 Access the container environment
 ``docker exec -it <container-name-or-id> /bin/sh``
@@ -152,7 +152,7 @@ Access container logs
 For continuously showing log output
 ``docker logs -f <container-name-or-id>``
 
-### Docker Volumes
+## Docker Volumes
 
 Files and Docker
 If you need to use files for anything involving docker, you need to configure volumes.
