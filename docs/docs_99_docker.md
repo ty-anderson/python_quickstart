@@ -107,26 +107,26 @@ Load: ``sudo docker load -i /srv/flask_yt_download/yt_downloads_250226.tar``
 
 - Build image with docker compose is run, using the ``build: .`` option. 
 This builds the image from the Dockerfile in the directory.
-    ```
-    services:
-      flask_app:
-        build: .  # This tells Compose to use the Dockerfile in the current directory
-        container_name: flask_gunicorn
-        ports:
-          - "8090:8090"
-    
-    ```
+```
+services:
+  flask_app:
+    build: .  # This tells Compose to use the Dockerfile in the current directory
+    container_name: flask_gunicorn
+    ports:
+      - "8090:8090"
+
+```
 - If you already built the image with ``docker build -t myflaskapp:latest .`` then you can tell docker compose
 what image to use:
-    ```
-    services:
-      flask_app:
-        image: my_flask_app  # Use the existing built image
-        container_name: flask_gunicorn
-        ports:
-          - "8090:8090"
-    
-    ```
+```
+services:
+  flask_app:
+    image: my_flask_app  # Use the existing built image
+    container_name: flask_gunicorn
+    ports:
+      - "8090:8090"
+
+```
 
 ### Docker Image Files
 
