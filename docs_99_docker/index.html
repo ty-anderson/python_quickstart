@@ -516,6 +516,24 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#simple-python-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      simple python app
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flask-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      flask app
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -811,6 +829,24 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#simple-python-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      simple python app
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flask-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      flask app
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -825,8 +861,6 @@
                 
                   
 
-
-  <h1>Docker</h1>
 
 <h2 id="docker">Docker</h2>
 <p>Docker uses images of a software to create containers that run them. They will create their own isolated environment on the host system. They are typically very easy to install and even easier to uninstall. They can enhance security by isolating the host system from the system running the software.</p>
@@ -864,13 +898,38 @@ Create a docker-compose.yaml file.</p>
 <code>docker compose up -d</code></p>
 <h3 id="build-a-docker-image">Build a Docker Image</h3>
 <p>A Dockerfile is how to build an image. The contents might look something like this:</p>
-<p><em>Dockerfile</em>
-FROM python:3.9-slim
+<h1 id="simple-python-app">simple python app</h1>
+<pre><code>FROM python:3.12-slim
 WORKDIR /app
 COPY requirements.txt .
 RUN pip install -r requirements.txt
 COPY . .
-CMD ["python", "app.py"]</p>
+CMD [&quot;python&quot;, &quot;app.py&quot;]
+</code></pre>
+<p>or</p>
+<h1 id="flask-app">flask app</h1>
+<pre><code># Use a lightweight Python image
+FROM python:3.12-slim
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy app files to the container
+COPY . /app
+
+# Install dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Set environment variables
+ENV FLASK_ENV=production
+ENV PYTHONUNBUFFERED=1
+
+# Expose the port (optional if using Docker Compose)
+EXPOSE 8090
+
+# Run Gunicorn when the container starts
+CMD [&quot;gunicorn&quot;, &quot;-w&quot;, &quot;4&quot;, &quot;-b&quot;, &quot;0.0.0.0:8090&quot;, &quot;web_app.app:app&quot;]
+</code></pre>
 <p>When your dockerfile is ready, run:
 <code>docker build -t my-image-name:tag .</code></p>
 <p>• Replace my-image-name with the name you want to give your image.
