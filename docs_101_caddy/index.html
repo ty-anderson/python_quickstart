@@ -888,20 +888,20 @@
 <span class="normal">11</span>
 <span class="normal">12</span>
 <span class="normal">13</span>
-<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code>services:
-  caddy:
-    image: caddy:latest
-    container_name: caddy
-    ports:
-      - &quot;80:80&quot;        # HTTP
-      - &quot;443:443&quot;
-      - &quot;8009:8009&quot;
-    volumes:
-      - ./Caddyfile:/etc/caddy/Caddyfile   # Mount your Caddyfile
-      - ./data:/data                       # Let’s Encrypt certificates
-      - ./config:/config                   # Caddy configuration
-      - /srv/web_apps/notes:/srv/web_apps/notes
-    restart: unless-stopped
+<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">services</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">caddy</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">caddy:latest</span>
+<span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">caddy</span>
+<span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;80:80&quot;</span><span class="w">        </span><span class="c1"># HTTP</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;443:443&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;8009:8009&quot;</span>
+<span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./Caddyfile:/etc/caddy/Caddyfile</span><span class="w">   </span><span class="c1"># Mount your Caddyfile</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./data:/data</span><span class="w">                       </span><span class="c1"># Let’s Encrypt certificates</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./config:/config</span><span class="w">                   </span><span class="c1"># Caddy configuration</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/srv/web_apps/notes:/srv/web_apps/notes</span>
+<span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unless-stopped</span>
 </code></pre></div></td></tr></table></div></p>
 <p>Don't forget to open the port(s) in the firewall.</p>
 <h2 id="reverse-proxy">Reverse-Proxy</h2>
@@ -909,18 +909,18 @@
 <p>Caddy is very simple and it comes with built in certificate management through Lets Encrypt. </p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>&lt;requested-domain&gt; {
-    reverse_proxy &lt;ip and port service is routed to&gt;
-}
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">&lt;requested-domain&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kn">reverse_proxy</span><span class="w"> </span><span class="s">&lt;ip</span><span class="w"> </span><span class="s">and</span><span class="w"> </span><span class="s">port</span><span class="w"> </span><span class="s">service</span><span class="w"> </span><span class="s">is</span><span class="w"> </span><span class="s">routed</span><span class="w"> </span><span class="s">to&gt;</span>
+<span class="err">}</span>
 </code></pre></div></td></tr></table></div>
 <h3 id="examples-using-caddy">Examples using Caddy:</h3>
 <p>Very simple config. This says using the host machine ip address, using the protocol on port 80 (http)
 respond with "Hello from Caddy".</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>:80 {
-    respond &quot;Hello from Caddy&quot;
-}
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">:80</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kn">respond</span><span class="w"> </span><span class="s">&quot;Hello</span><span class="w"> </span><span class="s">from</span><span class="w"> </span><span class="s">Caddy&quot;</span>
+<span class="err">}</span>
 </code></pre></div></td></tr></table></div>
 <p>Internal and localhost certificates
 If you configure sites with local or internal addresses, Caddy will serve them over HTTPS 
@@ -936,33 +936,33 @@ It even offers to install your unique root into your local trust stores for you.
 <span class="normal"> 8</span>
 <span class="normal"> 9</span>
 <span class="normal">10</span>
-<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code>localhost {
-    respond &quot;Hello from HTTPS!&quot;
-}
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">localhost</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kn">respond</span><span class="w"> </span><span class="s">&quot;Hello</span><span class="w"> </span><span class="s">from</span><span class="w"> </span><span class="s">HTTPS!&quot;</span>
+<span class="err">}</span>
 
-192.168.1.10 {
-    respond &quot;Also HTTPS!&quot;
-}
+<span class="mi">192</span><span class="s">.168.1.10</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kn">respond</span><span class="w"> </span><span class="s">&quot;Also</span><span class="w"> </span><span class="s">HTTPS!&quot;</span>
+<span class="err">}</span>
 
-http://localhost {
-    respond &quot;Plain HTTP&quot;
-}
+<span class="s">http://localhost</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kn">respond</span><span class="w"> </span><span class="s">&quot;Plain</span><span class="w"> </span><span class="s">HTTP&quot;</span>
+<span class="err">}</span>
 </code></pre></div></td></tr></table></div></p>
 <p>When requests go to example.com, it will get routed
 to this reverse proxy, which then pushes it to localhost:5000. Just be sure the DNS
 records are updated to route the domain to this IP address.
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>example.com {
-    reverse_proxy localhost:5000
-}
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">example.com</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kn">reverse_proxy</span><span class="w"> </span><span class="n">localhost</span><span class="p">:</span><span class="mi">5000</span>
+<span class="err">}</span>
 </code></pre></div></td></tr></table></div></p>
 <p>Here is Caddy as a reverse proxy doing load balancing, in a round-robin method.
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>example.com {
-    reverse_proxy backend1:5000 backend2:5000 backend3:5000
-}
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">example.com</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kn">reverse_proxy</span><span class="w"> </span><span class="n">backend1</span><span class="p">:</span><span class="mi">5000</span><span class="w"> </span><span class="n">backend2</span><span class="p">:</span><span class="mi">5000</span><span class="w"> </span><span class="n">backend3</span><span class="p">:</span><span class="mi">5000</span>
+<span class="err">}</span>
 </code></pre></div></td></tr></table></div></p>
 <p>You can do path based proxying to serve different backends based on the url path. In this 
 example <code>example.com/api</code> will go to one web server, while <code>example.com/static</code> goes to another.
@@ -970,11 +970,11 @@ example <code>example.com/api</code> will go to one web server, while <code>exam
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>example.com {
-    reverse_proxy /api backend1:5000
-    reverse_proxy /static backend2:5001
-    reverse_proxy /app backend3:5002
-}
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">example.com</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kn">reverse_proxy</span><span class="w"> </span><span class="s">/api</span><span class="w"> </span><span class="n">backend1</span><span class="p">:</span><span class="mi">5000</span>
+<span class="w">    </span><span class="s">reverse_proxy</span><span class="w"> </span><span class="s">/static</span><span class="w"> </span><span class="n">backend2</span><span class="p">:</span><span class="mi">5001</span>
+<span class="w">    </span><span class="s">reverse_proxy</span><span class="w"> </span><span class="s">/app</span><span class="w"> </span><span class="n">backend3</span><span class="p">:</span><span class="mi">5002</span>
+<span class="err">}</span>
 </code></pre></div></td></tr></table></div></p>
 <p>You can setup to route subdomains as well. This will retrieve an SSL certificate for all domains added.
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -983,28 +983,28 @@ example <code>example.com/api</code> will go to one web server, while <code>exam
 <span class="normal">4</span>
 <span class="normal">5</span>
 <span class="normal">6</span>
-<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>example.com {
-    reverse_proxy localhost:3000
-}
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">example.com</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kn">reverse_proxy</span><span class="w"> </span><span class="n">localhost</span><span class="p">:</span><span class="mi">3000</span>
+<span class="err">}</span>
 
-api.example.com {
-    reverse_proxy localhost:4000
-}
+<span class="s">api.example.com</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kn">reverse_proxy</span><span class="w"> </span><span class="n">localhost</span><span class="p">:</span><span class="mi">4000</span>
+<span class="err">}</span>
 </code></pre></div></td></tr></table></div></p>
 <p>You can also proxy to external services.
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>example.com {
-    reverse_proxy https:/api.example.com
-}
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">example.com</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kn">reverse_proxy</span><span class="w"> </span><span class="s">https:/api.example.com</span>
+<span class="err">}</span>
 </code></pre></div></td></tr></table></div></p>
 <p>You can also configure domains to redirect to one domain. In this example all requests to 
 www.example.com will be rerouted to example.com. 
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>example.com www.example.com {
-    reverse_proxy localhost:3000
-}
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">example.com</span><span class="w"> </span><span class="s">www.example.com</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kn">reverse_proxy</span><span class="w"> </span><span class="n">localhost</span><span class="p">:</span><span class="mi">3000</span>
+<span class="err">}</span>
 </code></pre></div></td></tr></table></div></p>
 <p>To run Caddy:</p>
 <ul>
@@ -1027,27 +1027,27 @@ www.example.com will be rerouted to example.com.
 <span class="normal"> 9</span>
 <span class="normal">10</span>
 <span class="normal">11</span>
-<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code>services:
-  caddy:
-    image: caddy:latest
-    container_name: caddy
-    ports:
-      - &quot;80:80&quot;        # HTTP
-      - &quot;443:443&quot;      # HTTPS
-    volumes:
-      - ./Caddyfile:/etc/caddy/Caddyfile   # Mount your Caddyfile
-      - ./data:/data                       # Let’s Encrypt certificates
-      - ./config:/config                   # Caddy configuration
-    restart: unless-stopped
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">services</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">caddy</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">caddy:latest</span>
+<span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">caddy</span>
+<span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;80:80&quot;</span><span class="w">        </span><span class="c1"># HTTP</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;443:443&quot;</span><span class="w">      </span><span class="c1"># HTTPS</span>
+<span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./Caddyfile:/etc/caddy/Caddyfile</span><span class="w">   </span><span class="c1"># Mount your Caddyfile</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./data:/data</span><span class="w">                       </span><span class="c1"># Let’s Encrypt certificates</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./config:/config</span><span class="w">                   </span><span class="c1"># Caddy configuration</span>
+<span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unless-stopped</span>
 </code></pre></div></td></tr></table></div></p>
 </li>
 <li>
 <p>Create your Caddyfile (make sure to create it in the same location your volume is pointed to).
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>example.com {
-    reverse_proxy backend:3000
-}
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">example.com</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kn">reverse_proxy</span><span class="w"> </span><span class="n">backend</span><span class="p">:</span><span class="mi">3000</span>
+<span class="err">}</span>
 </code></pre></div></td></tr></table></div></p>
 </li>
 <li>Run <code>docker compose up -d</code> to start the server.</li>
@@ -1061,9 +1061,9 @@ www.example.com will be rerouted to example.com.
 <p>You can also route ports directly.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>:8443 {
-    reverse_proxy 127.0.0.1:8000
-}
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">:8443</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kn">reverse_proxy</span><span class="w"> </span><span class="n">127.0.0.1</span><span class="p">:</span><span class="mi">8000</span>
+<span class="err">}</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="file-server">File Server</h2>
 <p>Caddy has an option to serve static files over HTTP. This is not a file server like sFTP
@@ -1071,10 +1071,10 @@ because it serves over http or https.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>healthfin.solutions {
-    root * /srv/website
-    file_server
-}
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">healthfin.solutions</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kn">root</span><span class="w"> </span><span class="s">*</span><span class="w"> </span><span class="s">/srv/website</span>
+<span class="w">    </span><span class="s">file_server</span>
+<span class="err">}</span>
 </code></pre></div></td></tr></table></div>
 <p>Serve different sites with different paths of the same domain.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -1089,19 +1089,19 @@ because it serves over http or https.</p>
 <span class="normal">10</span>
 <span class="normal">11</span>
 <span class="normal">12</span>
-<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code>healthfin.solutions {
-    handle_path /notes* {
-        root * /srv/web_apps/notes
-        file_server
-    }
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">healthfin.solutions</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kn">handle_path</span><span class="w"> </span><span class="s">/notes*</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kn">root</span><span class="w"> </span><span class="s">*</span><span class="w"> </span><span class="s">/srv/web_apps/notes</span>
+<span class="w">        </span><span class="s">file_server</span>
+<span class="w">    </span><span class="err">}</span>
 
-    reverse_proxy homeserver.home:8000
-}
+<span class="w">    </span><span class="s">reverse_proxy</span><span class="w"> </span><span class="n">homeserver.home</span><span class="p">:</span><span class="mi">8000</span>
+<span class="err">}</span>
 
-:8009 {
-    root * /srv/web_apps/notes
-    file_server
-}
+<span class="p">:</span><span class="mi">8009</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kn">root</span><span class="w"> </span><span class="s">*</span><span class="w"> </span><span class="s">/srv/web_apps/notes</span>
+<span class="w">    </span><span class="s">file_server</span>
+<span class="err">}</span>
 </code></pre></div></td></tr></table></div>
 <p>This config allows for access to the main server from the root domain, but 
 also changes to the static site when you add the /notes path.</p>
@@ -1111,11 +1111,11 @@ local domain DNS rewrite.</p>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>anderson.docs {
-    tls internal
-    root * /srv/web_apps/notes
-    file_server
-}
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">anderson.docs</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kn">tls</span><span class="w"> </span><span class="s">internal</span>
+<span class="w">    </span><span class="s">root</span><span class="w"> </span><span class="s">*</span><span class="w"> </span><span class="s">/srv/web_apps/notes</span>
+<span class="w">    </span><span class="s">file_server</span>
+<span class="err">}</span>
 </code></pre></div></td></tr></table></div>
 
 

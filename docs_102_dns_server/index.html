@@ -920,19 +920,19 @@ graph TD
 <span class="normal">10</span>
 <span class="normal">11</span>
 <span class="normal">12</span>
-<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code>services:
-  adguardhome:
-    container_name: adguardhome
-    image: adguard/adguardhome
-    restart: unless-stopped
-    ports:
-      - &quot;53:53/udp&quot;
-      - &quot;53:53/tcp&quot;
-      - &quot;3000:80/tcp&quot;   # Web UI
-#      - &quot;443:443/tcp&quot; # (Optional, for HTTPS UI)
-    volumes:
-      - ./workdir:/opt/adguardhome/work
-      - ./confdir:/opt/adguardhome/conf
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">services</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">adguardhome</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">adguardhome</span>
+<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">adguard/adguardhome</span>
+<span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unless-stopped</span>
+<span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;53:53/udp&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;53:53/tcp&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;3000:80/tcp&quot;</span><span class="w">   </span><span class="c1"># Web UI</span>
+<span class="c1">#      - &quot;443:443/tcp&quot; # (Optional, for HTTPS UI)</span>
+<span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./workdir:/opt/adguardhome/work</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./confdir:/opt/adguardhome/conf</span>
 </code></pre></div></td></tr></table></div>
 <p><code>sudo docker compose up -d</code> - you now have a DNS server running.</p>
 <p>To access the web UI you can go to <code>http://&lt;ip address&gt;:3000</code>.</p>
