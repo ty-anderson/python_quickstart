@@ -26,6 +26,9 @@
     
       <link rel="stylesheet" href="../assets/stylesheets/main.a40c8224.min.css">
       
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
       
 
 
@@ -43,6 +46,8 @@
       
     
     
+      <link rel="stylesheet" href="../extra.css">
+    
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -53,7 +58,14 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -104,6 +116,32 @@
         </div>
       </div>
     </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
     
     
       <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
@@ -1113,65 +1151,108 @@
 <h1 id="important-libraries-getting-started">Important Libraries - Getting Started</h1>
 <h2 id="pandas">Pandas</h2>
 <p>Pandas is a well-known data handling library. It has the ability to extract, manipulate, and load data.</p>
-<p>The central component to pandas is the DataFrame. This is where tabular data is loaded and lives in memory.</p>
-<pre><code class="language-py">import pandas as pd
+<p>The central component to pandas is the DataFrame. This is where tabular data is loaded and lives in memory.
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 
-# blank dataframe
-df = pd.DataFrame()
+<span class="c1"># blank dataframe</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
 
-# load a dict into a dataframe
-sample_data = {'id', [1, 2, 3], 'value', [200, 300, 400]}
-df = pd.DataFrame(sample_data)
+<span class="c1"># load a dict into a dataframe</span>
+<span class="n">sample_data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">200</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">400</span><span class="p">]}</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">sample_data</span><span class="p">)</span>
 
-# load direct from other formats
-df = pd.read_csv('path/to/csv/file.csv')
-df = pd.read_parquet('path')
-df = pd.read_excel('path')
-df = pd.read_json('path')
-df = pd.read_sql('sql statement', sqlalchemy_conn)
-df = pd.read_html('io')
-df = pd.read_xml('io')
-df = pd.read_clipboard()
-</code></pre>
+<span class="c1"># load direct from other formats</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;path/to/csv/file.csv&#39;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_parquet</span><span class="p">(</span><span class="s1">&#39;path&#39;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;path&#39;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_json</span><span class="p">(</span><span class="s1">&#39;path&#39;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span><span class="s1">&#39;sql statement&#39;</span><span class="p">,</span> <span class="n">sqlalchemy_conn</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_html</span><span class="p">(</span><span class="s1">&#39;io&#39;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_xml</span><span class="p">(</span><span class="s1">&#39;io&#39;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_clipboard</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div></p>
 <p>More here https://pandas.pydata.org/docs/reference/io.html</p>
 <h3 id="transformations">Transformations</h3>
 <p>Once you have data loaded into a dataframe, you can perform all kinds of operations on the values.
 There are generally two ways of performing modifications. Iterating through each value (not recommended) and
 across columns (called vectorization). A vectorized operation can look like this:</p>
-<pre><code class="language-py">df = pd.read_csv('path/to/file.csv') # sample data
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;path/to/file.csv&#39;</span><span class="p">)</span> <span class="c1"># sample data</span>
 
-# performing math computations across columns. You can overwrite existing columns or create new columns
-df['int_column_new'] = df['int_column_01'] + df['int_column_02']
-df['int_column_01'] = df['int_column_01'] - df['int_column_02']
-df['float_column_new'] = df['float_column_01'] * df['float_column_02']
-df['float_column_01'] = df['float_column_01'] / df['float_column_02']
+<span class="c1"># performing math computations across columns. You can overwrite existing columns or create new columns</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;int_column_new&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;int_column_01&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;int_column_02&#39;</span><span class="p">]</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;int_column_01&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;int_column_01&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;int_column_02&#39;</span><span class="p">]</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;float_column_new&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;float_column_01&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;float_column_02&#39;</span><span class="p">]</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;float_column_01&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;float_column_01&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;float_column_02&#39;</span><span class="p">]</span>
 
-# perform string operations
-df['string_col'] = df['string_col'].str.replace('-', '')
-</code></pre>
+<span class="c1"># perform string operations</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;string_col&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;string_col&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
 <h3 id="filtering">Filtering</h3>
-<pre><code class="language-py">df = pd.read_csv('path/to/file.csv') # sample data
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;path/to/file.csv&#39;</span><span class="p">)</span> <span class="c1"># sample data</span>
 
-# filter where column_name is equal to a value
-df = df[df['column_name'] == 'certain_value']
-# not equal
-df = df[df['column_name'] != 'certain_value']
-# substring
-df = df[df['column_name'].str.contains('partial_string_match')]
-# drop rows where column_name equals any of the list values
-df = df[~df['column_name'].isin(['list', 'of', 'values'])]
-</code></pre>
+<span class="c1"># filter where column_name is equal to a value</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;column_name&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;certain_value&#39;</span><span class="p">]</span>
+<span class="c1"># not equal</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;column_name&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;certain_value&#39;</span><span class="p">]</span>
+<span class="c1"># substring</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;column_name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;partial_string_match&#39;</span><span class="p">)]</span>
+<span class="c1"># drop rows where column_name equals any of the list values</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="o">~</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;column_name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s1">&#39;list&#39;</span><span class="p">,</span> <span class="s1">&#39;of&#39;</span><span class="p">,</span> <span class="s1">&#39;values&#39;</span><span class="p">])]</span>
+</code></pre></div></td></tr></table></div>
 <h3 id="change-data-types">Change Data Types</h3>
-<pre><code class="language-py">df = pd.read_csv('path/to/file.csv') # sample data
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;path/to/file.csv&#39;</span><span class="p">)</span> <span class="c1"># sample data</span>
 
-df['str_num_values'] = df['str_num_values'].astype(int)
-df['str_num_values'] = df['str_num_values'].astype(str)
-df['str_num_values'] = df['str_num_values'].astype(float)
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;str_num_values&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;str_num_values&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;str_num_values&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;str_num_values&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;str_num_values&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;str_num_values&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
 
-# dates
-df['date_str_values'] = pd.to_datetime(df['date_str_values'])  # gives datetime format
-df['date_str_values'] = pd.to_datetime(df['date_str_values']).dt.date  # gives just date, no time
-</code></pre>
+<span class="c1"># dates</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;date_str_values&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;date_str_values&#39;</span><span class="p">])</span>  <span class="c1"># gives datetime format</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;date_str_values&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;date_str_values&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">date</span>  <span class="c1"># gives just date, no time</span>
+</code></pre></div></td></tr></table></div>
 <p>Helpful functions:</p>
 <p><a href="https://pandas.pydata.org/docs/reference/api/pandas.merge.html">Merge (like SQL join)</a>
 <a href="https://pandas.pydata.org/docs/reference/api/pandas.melt.html">Melt (convert columns to rows)</a></p>
@@ -1182,71 +1263,119 @@ of managing connections with sessions. Generally Core is better for pure databas
 ORM is geared toward web applications.</p>
 <p>Has full compatibility with Postgres, MySQL, SQLite, SQL Server, and Oracle.</p>
 <p>Connection strings look like this:</p>
-<pre><code class="language-py">db_str = 'dialect+driver://username:password@host:port/database'
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">db_str</span> <span class="o">=</span> <span class="s1">&#39;dialect+driver://username:password@host:port/database&#39;</span>
 
-postgres = &quot;postgresql+psycopg2://scott:tiger@localhost/public&quot;
+<span class="n">postgres</span> <span class="o">=</span> <span class="s2">&quot;postgresql+psycopg2://scott:tiger@localhost/public&quot;</span>
 
-sql_server = 'mssql+pyodbc://host/database?trusted_connection=yes&amp;driver=ODBC+Driver+18+for+SQL+Server&amp;TrustServerCertificate=yes'
-</code></pre>
+<span class="n">sql_server</span> <span class="o">=</span> <span class="s1">&#39;mssql+pyodbc://host/database?trusted_connection=yes&amp;driver=ODBC+Driver+18+for+SQL+Server&amp;TrustServerCertificate=yes&#39;</span>
+</code></pre></div></td></tr></table></div>
 <p>Modeling Tables</p>
-<pre><code class="language-py">from sqlalchemy import (create_engine, Table, MetaData, Column, String, 
-                        Integer, Double, Date, DateTime, Boolean, func)
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">sqlalchemy</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span><span class="n">create_engine</span><span class="p">,</span> <span class="n">Table</span><span class="p">,</span> <span class="n">MetaData</span><span class="p">,</span> <span class="n">Column</span><span class="p">,</span> <span class="n">String</span><span class="p">,</span> 
+                        <span class="n">Integer</span><span class="p">,</span> <span class="n">Double</span><span class="p">,</span> <span class="n">Date</span><span class="p">,</span> <span class="n">DateTime</span><span class="p">,</span> <span class="n">Boolean</span><span class="p">,</span> <span class="n">func</span><span class="p">)</span>
 
-engine = create_engine('postgresql+psycopg2://scott:tiger@localhost/public')  # engines are what connects to the db
+<span class="n">engine</span> <span class="o">=</span> <span class="n">create_engine</span><span class="p">(</span><span class="s1">&#39;postgresql+psycopg2://scott:tiger@localhost/public&#39;</span><span class="p">)</span>  <span class="c1"># engines are what connects to the db</span>
 
-meta = MetaData()  # create a metadata object to attach tables to
+<span class="n">meta</span> <span class="o">=</span> <span class="n">MetaData</span><span class="p">()</span>  <span class="c1"># create a metadata object to attach tables to</span>
 
-# model out the table
-table1 = Table('table_name',
-               meta,
-               Column('id', Integer, primary_key=True),
-               Column('column1', String(255), unique=True),
-               Column('column2', Double),
-               Column('column3', Boolean, default=False),
-               Column('column4', Date),
-               Column('created_date', DateTime,
-                        server_default=func.now()),
-               schema='public'
-               )
+<span class="c1"># model out the table</span>
+<span class="n">table1</span> <span class="o">=</span> <span class="n">Table</span><span class="p">(</span><span class="s1">&#39;table_name&#39;</span><span class="p">,</span>
+               <span class="n">meta</span><span class="p">,</span>
+               <span class="n">Column</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="n">Integer</span><span class="p">,</span> <span class="n">primary_key</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+               <span class="n">Column</span><span class="p">(</span><span class="s1">&#39;column1&#39;</span><span class="p">,</span> <span class="n">String</span><span class="p">(</span><span class="mi">255</span><span class="p">),</span> <span class="n">unique</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+               <span class="n">Column</span><span class="p">(</span><span class="s1">&#39;column2&#39;</span><span class="p">,</span> <span class="n">Double</span><span class="p">),</span>
+               <span class="n">Column</span><span class="p">(</span><span class="s1">&#39;column3&#39;</span><span class="p">,</span> <span class="n">Boolean</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span>
+               <span class="n">Column</span><span class="p">(</span><span class="s1">&#39;column4&#39;</span><span class="p">,</span> <span class="n">Date</span><span class="p">),</span>
+               <span class="n">Column</span><span class="p">(</span><span class="s1">&#39;created_date&#39;</span><span class="p">,</span> <span class="n">DateTime</span><span class="p">,</span>
+                        <span class="n">server_default</span><span class="o">=</span><span class="n">func</span><span class="o">.</span><span class="n">now</span><span class="p">()),</span>
+               <span class="n">schema</span><span class="o">=</span><span class="s1">&#39;public&#39;</span>
+               <span class="p">)</span>
 
-meta.create_all(engine)  # create all the tables that are connected to the metadata object, in the database
-</code></pre>
+<span class="n">meta</span><span class="o">.</span><span class="n">create_all</span><span class="p">(</span><span class="n">engine</span><span class="p">)</span>  <span class="c1"># create all the tables that are connected to the metadata object, in the database</span>
+</code></pre></div></td></tr></table></div>
 <p>Once you have your model and engine ready, you can connect and start running operations:</p>
-<pre><code class="language-py">from sqlalchemy import create_engine, text
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">sqlalchemy</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_engine</span><span class="p">,</span> <span class="n">text</span>
 
-engine = create_engine('connection_string_to_db')
+<span class="n">engine</span> <span class="o">=</span> <span class="n">create_engine</span><span class="p">(</span><span class="s1">&#39;connection_string_to_db&#39;</span><span class="p">)</span>
 
-with engine.connect() as conn:
-    query = 'SELECT * FROM table_name'
-    result = conn.execute(text(query)).fetchall()
-</code></pre>
-<p>This will return a list of Row objects which contain the values in tuples (even if you only selected one column).
+<span class="k">with</span> <span class="n">engine</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span> <span class="k">as</span> <span class="n">conn</span><span class="p">:</span>
+    <span class="n">query</span> <span class="o">=</span> <span class="s1">&#39;SELECT * FROM table_name&#39;</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">text</span><span class="p">(</span><span class="n">query</span><span class="p">))</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
+This will return a list of Row objects which contain the values in tuples (even if you only selected one column).
 To pull these out of the nested tuples, you can use list comprehension.</p>
-<pre><code class="language-py">result = [r[0] for r in result]
-</code></pre>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">result</span> <span class="o">=</span> <span class="p">[</span><span class="n">r</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">result</span><span class="p">]</span>
+</code></pre></div></td></tr></table></div>
 <p>Note that to run a raw SQL query we had to put it into a text() function. This function will sanitize the query to 
 make sure there is no malicious injection happening. Sometimes it is difficult to transform data values in python
 into a raw SQL query. SQLAlchemy has objects that can perform the same database functions, but in a more pythonic way.</p>
-<pre><code class="language-py">from sqlalchemy import select, insert, update, delete
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">sqlalchemy</span><span class="w"> </span><span class="kn">import</span> <span class="n">select</span><span class="p">,</span> <span class="n">insert</span><span class="p">,</span> <span class="n">update</span><span class="p">,</span> <span class="n">delete</span>
 
-df = pd.DataFrame(values)
-data_dict = df.to_dict(orient='records')  # transform pandas dataframe into a dictionary of values
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
+<span class="n">data_dict</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(</span><span class="n">orient</span><span class="o">=</span><span class="s1">&#39;records&#39;</span><span class="p">)</span>  <span class="c1"># transform pandas dataframe into a dictionary of values</span>
 
-with engine.connect() as conn:                              # connect to database
-    insert_stmt = insert(table_object).values(data_dict)    # create the insert statement
-    conn.execute(insert_stmt)                               # execute the statement
-    conn.commit()                                           # commit the changes
+<span class="k">with</span> <span class="n">engine</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span> <span class="k">as</span> <span class="n">conn</span><span class="p">:</span>                              <span class="c1"># connect to database</span>
+    <span class="n">insert_stmt</span> <span class="o">=</span> <span class="n">insert</span><span class="p">(</span><span class="n">table_object</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">(</span><span class="n">data_dict</span><span class="p">)</span>    <span class="c1"># create the insert statement</span>
+    <span class="n">conn</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">insert_stmt</span><span class="p">)</span>                               <span class="c1"># execute the statement</span>
+    <span class="n">conn</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>                                           <span class="c1"># commit the changes</span>
 
-    value = conn.execute(select(table_object)).fetchone()
-    values = conn.execute(select(table_object)).fetchall()
+    <span class="n">value</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">select</span><span class="p">(</span><span class="n">table_object</span><span class="p">))</span><span class="o">.</span><span class="n">fetchone</span><span class="p">()</span>
+    <span class="n">values</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">select</span><span class="p">(</span><span class="n">table_object</span><span class="p">))</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
 
-    update_stmt = update(user_table).where(user_table.c.id == 5).values(name=&quot;user #5&quot;)
-    conn.execute(update_stmt)
+    <span class="n">update_stmt</span> <span class="o">=</span> <span class="n">update</span><span class="p">(</span><span class="n">user_table</span><span class="p">)</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">user_table</span><span class="o">.</span><span class="n">c</span><span class="o">.</span><span class="n">id</span> <span class="o">==</span> <span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;user #5&quot;</span><span class="p">)</span>
+    <span class="n">conn</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">update_stmt</span><span class="p">)</span>
 
-    delete_stmt = delete(user_table).where(user_table.c.id == 5)
-    conn.execute(delete_stmt)
-    conn.commit()
-</code></pre>
+    <span class="n">delete_stmt</span> <span class="o">=</span> <span class="n">delete</span><span class="p">(</span><span class="n">user_table</span><span class="p">)</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">user_table</span><span class="o">.</span><span class="n">c</span><span class="o">.</span><span class="n">id</span> <span class="o">==</span> <span class="mi">5</span><span class="p">)</span>
+    <span class="n">conn</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">delete_stmt</span><span class="p">)</span>
+    <span class="n">conn</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
 <h2 id="sqlite">SQLite</h2>
 <p>SQLite is an embeddable OLTP database. In other words, it is a database that can be run in memory or from a file.
 It is the most common database in the world being used in web apps, phone apps, IoT devices, and more.</p>
@@ -1261,44 +1390,64 @@ write queries on multiple separate databases
 <p>Spark is a distributed data handling library written in Java. It has a python API that allows users to
 use Spark with Pyspark. In some ways it is very similar to pandas, but it can directly read and write to
 Delta Lake tables, and it spreads the data handling tasks across multiple machines (distributed).</p>
-<pre><code class="language-py">df = spark.createDataFrame(data)
-current_records = spark.sql(&quot;SELECT COALESCE(MAX(created_date), '2000-01-01') FROM lh_gold_01.fact_cms_star_rating&quot;).first()[0]
-</code></pre>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">df</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="n">current_records</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s2">&quot;SELECT COALESCE(MAX(created_date), &#39;2000-01-01&#39;) FROM lh_gold_01.fact_cms_star_rating&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">first</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+</code></pre></div></td></tr></table></div>
 <h2 id="dotenv">dotenv</h2>
 <p>dotenv is a lightweight package that allows you to load environment variables into memory from a file. </p>
 <p><code>pip install python-dotenv</code></p>
 <p>Create a <code>.env</code> file in your project like:</p>
-<pre><code class="language-dotenv">ENV_VAR_NAME='ENV_VAR_VALUE'
-API_KEY_01='2JHDKFJH3KF'
-</code></pre>
-<pre><code class="language-py">import os
-from dotenv import load_dotenv
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>ENV_VAR_NAME=&#39;ENV_VAR_VALUE&#39;
+API_KEY_01=&#39;2JHDKFJH3KF&#39;
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dotenv</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_dotenv</span>
 
-load_dotenv()
+<span class="n">load_dotenv</span><span class="p">()</span>
 
-env_var = os.getenv('ENV_VAR_NAME')
-api_key = os.getenv('API_KEY_01')
-</code></pre>
+<span class="n">env_var</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;ENV_VAR_NAME&#39;</span><span class="p">)</span>
+<span class="n">api_key</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;API_KEY_01&#39;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
 <h2 id="requests">Requests</h2>
 <p>Requests is a user-friendly way to make HTTP calls. Very good for API's.</p>
 <p><code>pip install requests</code></p>
-<pre><code class="language-py">import requests
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
 
-url = 'https://data.cms.gov/provider-data/api/1/metastore/schemas/dataset/items/4pq5-n9py?show-reference-ids=false'
-response = requests.get(url)
-print(response.status_code)
-print(response.headers)
-print(response.text)
-</code></pre>
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://data.cms.gov/provider-data/api/1/metastore/schemas/dataset/items/4pq5-n9py?show-reference-ids=false&#39;</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">headers</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
 <p>Send post requests with auth details and payload.</p>
-<pre><code class="language-py">import requests
-from io import BytesIO
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">io</span><span class="w"> </span><span class="kn">import</span> <span class="n">BytesIO</span>
 
-response = requests.get(url, 
-                        auth={'user': 'username', 'password': 'password_here'},
-                        data={'payload_json': {'data': 'value'}},
-                        files={'file': BytesIO()})
-</code></pre>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> 
+                        <span class="n">auth</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;user&#39;</span><span class="p">:</span> <span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">:</span> <span class="s1">&#39;password_here&#39;</span><span class="p">},</span>
+                        <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;payload_json&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="s1">&#39;value&#39;</span><span class="p">}},</span>
+                        <span class="n">files</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;file&#39;</span><span class="p">:</span> <span class="n">BytesIO</span><span class="p">()})</span>
+</code></pre></div></td></tr></table></div>
 <h2 id="airflow">Airflow</h2>
 <p>Airflow is an orchestration tool to run and monitor jobs. It allows you to program it in a way that it can
 have dependencies. For example, only run one script after another has run successfully.</p>
@@ -1351,12 +1500,16 @@ on port 8000 (linux <code>sudo ufw allow 8000</code>). </p>
 <p>For a more stable production environment, a process manager is better.</p>
 <p>Create a systemd service file.</p>
 <p>Then you can enable/disable/start/stop the app as a service.</p>
-<pre><code>sudo systemctl enable gunicorn  # auto start on boot
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo systemctl enable gunicorn  # auto start on boot
 sudo systemctl start gunicorn  # prevent auto start on boot
 sudo systemctl status gunicorn
 sudo systemctl stop gunicorn
 sudo systemctl restart &lt;service-name&gt;
-</code></pre>
+</code></pre></div></td></tr></table></div>
 <p>When you make changes to a service file, you need to reload the service:</p>
 <p><code>sudo systemctl daemon-reload</code></p>
 <p><a href="https://flask.palletsprojects.com/en/stable/">Flask Docs</a></p>
@@ -1377,101 +1530,183 @@ for those who must make exhaustive use of the capabilities of the library when
 generating documents. For the rest of the cases, the low-level API that we will 
 describe in this article will suffice. However, you can find the official 
 documentation here <a href="https://docs.reportlab.com/">https://docs.reportlab.com/</a>.</p>
-<pre><code class="language-py">from reportlab.pdfgen import canvas
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">reportlab.pdfgen</span><span class="w"> </span><span class="kn">import</span> <span class="n">canvas</span>
 
-c = canvas.Canvas(&quot;hello-world.pdf&quot;)
-c.save()
-</code></pre>
-<pre><code class="language-py"># import the canvas object
-from reportlab.pdfgen import canvas
+<span class="n">c</span> <span class="o">=</span> <span class="n">canvas</span><span class="o">.</span><span class="n">Canvas</span><span class="p">(</span><span class="s2">&quot;hello-world.pdf&quot;</span><span class="p">)</span>
+<span class="n">c</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># import the canvas object</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">reportlab.pdfgen</span><span class="w"> </span><span class="kn">import</span> <span class="n">canvas</span>
 
-# create a Canvas object with a filename
-c = canvas.Canvas(&quot;rl-hello_again.pdf&quot;, pagesize=(595.27, 841.89))  # A4 pagesize
-# draw a string at x=100, y=800 points
-# point ~ standard desktop publishing (72 DPI)
-# coordinate system:
-#   y
-#   |
-#   |   page
-#   |
-#   |
-#   0-------x
-c.drawString(50, 780, &quot;Hello Again&quot;)
-# finish page
-c.showPage()
-# construct and save file to .pdf
-c.save()
-</code></pre>
+<span class="c1"># create a Canvas object with a filename</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">canvas</span><span class="o">.</span><span class="n">Canvas</span><span class="p">(</span><span class="s2">&quot;rl-hello_again.pdf&quot;</span><span class="p">,</span> <span class="n">pagesize</span><span class="o">=</span><span class="p">(</span><span class="mf">595.27</span><span class="p">,</span> <span class="mf">841.89</span><span class="p">))</span>  <span class="c1"># A4 pagesize</span>
+<span class="c1"># draw a string at x=100, y=800 points</span>
+<span class="c1"># point ~ standard desktop publishing (72 DPI)</span>
+<span class="c1"># coordinate system:</span>
+<span class="c1">#   y</span>
+<span class="c1">#   |</span>
+<span class="c1">#   |   page</span>
+<span class="c1">#   |</span>
+<span class="c1">#   |</span>
+<span class="c1">#   0-------x</span>
+<span class="n">c</span><span class="o">.</span><span class="n">drawString</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">780</span><span class="p">,</span> <span class="s2">&quot;Hello Again&quot;</span><span class="p">)</span>
+<span class="c1"># finish page</span>
+<span class="n">c</span><span class="o">.</span><span class="n">showPage</span><span class="p">()</span>
+<span class="c1"># construct and save file to .pdf</span>
+<span class="n">c</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
 <p>Use standard page sizes like letter, A4, and more.</p>
-<pre><code class="language-py">from reportlab.lib.pagesizes import letter
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">reportlab.lib.pagesizes</span><span class="w"> </span><span class="kn">import</span> <span class="n">letter</span>
 
-c = canvas.Canvas(&quot;hello-world.pdf&quot;, pagesize=letter)
-</code></pre>
+<span class="n">c</span> <span class="o">=</span> <span class="n">canvas</span><span class="o">.</span><span class="n">Canvas</span><span class="p">(</span><span class="s2">&quot;hello-world.pdf&quot;</span><span class="p">,</span> <span class="n">pagesize</span><span class="o">=</span><span class="n">letter</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
 <p>Make shapes in PDF.</p>
-<pre><code class="language-py">from reportlab.lib.pagesizes import A4
-from reportlab.pdfgen import canvas
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">reportlab.lib.pagesizes</span><span class="w"> </span><span class="kn">import</span> <span class="n">A4</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">reportlab.pdfgen</span><span class="w"> </span><span class="kn">import</span> <span class="n">canvas</span>
 
-w, h = A4
-c = canvas.Canvas(&quot;shapes.pdf&quot;, pagesize=A4)
-c.drawString(30, h - 50, &quot;Line&quot;)
-x = 120
-y = h - 45
-c.line(x, y, x + 100, y)
-c.drawString(30, h - 100, &quot;Rectangle&quot;)
-c.rect(x, h - 120, 100, 50)
-c.drawString(30, h - 170, &quot;Circle&quot;)
-c.circle(170, h - 165, 20)
-c.drawString(30, h - 240, &quot;Ellipse&quot;)
-c.ellipse(x, y - 170, x + 100, y - 220)
-c.showPage()
-c.save()
-</code></pre>
+<span class="n">w</span><span class="p">,</span> <span class="n">h</span> <span class="o">=</span> <span class="n">A4</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">canvas</span><span class="o">.</span><span class="n">Canvas</span><span class="p">(</span><span class="s2">&quot;shapes.pdf&quot;</span><span class="p">,</span> <span class="n">pagesize</span><span class="o">=</span><span class="n">A4</span><span class="p">)</span>
+<span class="n">c</span><span class="o">.</span><span class="n">drawString</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="n">h</span> <span class="o">-</span> <span class="mi">50</span><span class="p">,</span> <span class="s2">&quot;Line&quot;</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">120</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">h</span> <span class="o">-</span> <span class="mi">45</span>
+<span class="n">c</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">100</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">c</span><span class="o">.</span><span class="n">drawString</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="n">h</span> <span class="o">-</span> <span class="mi">100</span><span class="p">,</span> <span class="s2">&quot;Rectangle&quot;</span><span class="p">)</span>
+<span class="n">c</span><span class="o">.</span><span class="n">rect</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">h</span> <span class="o">-</span> <span class="mi">120</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<span class="n">c</span><span class="o">.</span><span class="n">drawString</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="n">h</span> <span class="o">-</span> <span class="mi">170</span><span class="p">,</span> <span class="s2">&quot;Circle&quot;</span><span class="p">)</span>
+<span class="n">c</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="mi">170</span><span class="p">,</span> <span class="n">h</span> <span class="o">-</span> <span class="mi">165</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">c</span><span class="o">.</span><span class="n">drawString</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="n">h</span> <span class="o">-</span> <span class="mi">240</span><span class="p">,</span> <span class="s2">&quot;Ellipse&quot;</span><span class="p">)</span>
+<span class="n">c</span><span class="o">.</span><span class="n">ellipse</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="mi">170</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">100</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="mi">220</span><span class="p">)</span>
+<span class="n">c</span><span class="o">.</span><span class="n">showPage</span><span class="p">()</span>
+<span class="n">c</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
 <p>You can make tables from a pandas dataframe</p>
-<pre><code class="language-py">from reportlab.lib.pagesizes import letter, landscape
-from reportlab.platypus import SimpleDocTemplate, Table, TableStyle
-from reportlab.lib import colors
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">reportlab.lib.pagesizes</span><span class="w"> </span><span class="kn">import</span> <span class="n">letter</span><span class="p">,</span> <span class="n">landscape</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">reportlab.platypus</span><span class="w"> </span><span class="kn">import</span> <span class="n">SimpleDocTemplate</span><span class="p">,</span> <span class="n">Table</span><span class="p">,</span> <span class="n">TableStyle</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">reportlab.lib</span><span class="w"> </span><span class="kn">import</span> <span class="n">colors</span>
 
-filename = &quot;landscape_table_fit.pdf&quot;
-doc = SimpleDocTemplate(filename, pagesize=landscape(letter))
+<span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;landscape_table_fit.pdf&quot;</span>
+<span class="n">doc</span> <span class="o">=</span> <span class="n">SimpleDocTemplate</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">pagesize</span><span class="o">=</span><span class="n">landscape</span><span class="p">(</span><span class="n">letter</span><span class="p">))</span>
 
-# Example DataFrame
-import pandas as pd
-df = pd.DataFrame({
-    &quot;Column 1&quot;: [&quot;A&quot;, &quot;B&quot;, &quot;C&quot;],
-    &quot;Column 2&quot;: [1, 2, 3],
-    &quot;Column 3&quot;: [4.5, 5.5, 6.5],
-    &quot;Column 4&quot;: [&quot;Long Text Example&quot;, &quot;Another Example&quot;, &quot;More Text&quot;],
-    &quot;Column 5&quot;: [&quot;X&quot;, &quot;Y&quot;, &quot;Z&quot;]
-})
+<span class="c1"># Example DataFrame</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s2">&quot;Column 1&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;Column 2&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+    <span class="s2">&quot;Column 3&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">4.5</span><span class="p">,</span> <span class="mf">5.5</span><span class="p">,</span> <span class="mf">6.5</span><span class="p">],</span>
+    <span class="s2">&quot;Column 4&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Long Text Example&quot;</span><span class="p">,</span> <span class="s2">&quot;Another Example&quot;</span><span class="p">,</span> <span class="s2">&quot;More Text&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;Column 5&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;X&quot;</span><span class="p">,</span> <span class="s2">&quot;Y&quot;</span><span class="p">,</span> <span class="s2">&quot;Z&quot;</span><span class="p">]</span>
+<span class="p">})</span>
 
-# Convert DataFrame to list of lists
-data = [df.columns.tolist()] + df.values.tolist()
+<span class="c1"># Convert DataFrame to list of lists</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()]</span> <span class="o">+</span> <span class="n">df</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
 
-# Calculate dynamic column widths to fit the page
-page_width = landscape(letter)[0]
-available_width = page_width - 40  # Subtract margins
-num_columns = len(df.columns)
-col_width = available_width / num_columns
+<span class="c1"># Calculate dynamic column widths to fit the page</span>
+<span class="n">page_width</span> <span class="o">=</span> <span class="n">landscape</span><span class="p">(</span><span class="n">letter</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">available_width</span> <span class="o">=</span> <span class="n">page_width</span> <span class="o">-</span> <span class="mi">40</span>  <span class="c1"># Subtract margins</span>
+<span class="n">num_columns</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+<span class="n">col_width</span> <span class="o">=</span> <span class="n">available_width</span> <span class="o">/</span> <span class="n">num_columns</span>
 
-# Create a table with fixed column widths
-table = Table(data, colWidths=[col_width] * num_columns)
-table.setStyle(TableStyle([
-    ('BACKGROUND', (0, 0), (-1, 0), colors.lightgrey),
-    ('TEXTCOLOR', (0, 0), (-1, 0), colors.black),
-    ('ALIGN', (0, 0), (-1, -1), 'CENTER'),
-    ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
-    ('BOTTOMPADDING', (0, 0), (-1, 0), 12),
-    ('GRID', (0, 0), (-1, -1), 1, colors.grey),
-]))
+<span class="c1"># Create a table with fixed column widths</span>
+<span class="n">table</span> <span class="o">=</span> <span class="n">Table</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">colWidths</span><span class="o">=</span><span class="p">[</span><span class="n">col_width</span><span class="p">]</span> <span class="o">*</span> <span class="n">num_columns</span><span class="p">)</span>
+<span class="n">table</span><span class="o">.</span><span class="n">setStyle</span><span class="p">(</span><span class="n">TableStyle</span><span class="p">([</span>
+    <span class="p">(</span><span class="s1">&#39;BACKGROUND&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">colors</span><span class="o">.</span><span class="n">lightgrey</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;TEXTCOLOR&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">colors</span><span class="o">.</span><span class="n">black</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;ALIGN&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="s1">&#39;CENTER&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;FONTNAME&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="s1">&#39;Helvetica-Bold&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;BOTTOMPADDING&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">12</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;GRID&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="mi">1</span><span class="p">,</span> <span class="n">colors</span><span class="o">.</span><span class="n">grey</span><span class="p">),</span>
+<span class="p">]))</span>
 
-# Add the table to the elements list
-elements = [table]
+<span class="c1"># Add the table to the elements list</span>
+<span class="n">elements</span> <span class="o">=</span> <span class="p">[</span><span class="n">table</span><span class="p">]</span>
 
-# Build the document
-doc.build(elements)
+<span class="c1"># Build the document</span>
+<span class="n">doc</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="n">elements</span><span class="p">)</span>
 
-print(f&quot;PDF saved as {filename}&quot;)
-</code></pre>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;PDF saved as </span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
 
 
 

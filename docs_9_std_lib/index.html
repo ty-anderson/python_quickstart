@@ -26,6 +26,9 @@
     
       <link rel="stylesheet" href="../assets/stylesheets/main.a40c8224.min.css">
       
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
       
 
 
@@ -43,6 +46,8 @@
       
     
     
+      <link rel="stylesheet" href="../extra.css">
+    
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -53,7 +58,14 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -104,6 +116,32 @@
         </div>
       </div>
     </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
     
     
       <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
@@ -924,71 +962,128 @@ the handling of text data is desired.</p>
 <p><code>f = io.BytesIO(b"some initial binary data: \x00\x01")</code></p>
 <h2 id="smtp-sending-emails">SMTP - Sending Emails</h2>
 <p>You can send emails directly through python using the simple mail transmission protocol.</p>
-<pre><code class="language-py">import smtplib
-from email.message import EmailMessage
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">smtplib</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">email.message</span><span class="w"> </span><span class="kn">import</span> <span class="n">EmailMessage</span>
 
-msg = EmailMessage()
-msg['From'] = 'email@address.com'
-msg['To'] = 'recipient@address.com'
-msg['Subject'] = 'This is an Email'
+<span class="n">msg</span> <span class="o">=</span> <span class="n">EmailMessage</span><span class="p">()</span>
+<span class="n">msg</span><span class="p">[</span><span class="s1">&#39;From&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;email@address.com&#39;</span>
+<span class="n">msg</span><span class="p">[</span><span class="s1">&#39;To&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;recipient@address.com&#39;</span>
+<span class="n">msg</span><span class="p">[</span><span class="s1">&#39;Subject&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;This is an Email&#39;</span>
 
-msg.set_content('Body of email here.')
+<span class="n">msg</span><span class="o">.</span><span class="n">set_content</span><span class="p">(</span><span class="s1">&#39;Body of email here.&#39;</span><span class="p">)</span>
 
-mailserver = smtplib.SMTP('smtp.office365.com', 587)  # connect to email service
-mailserver.starttls()  # starts TLS (security protocol that encrypts data sent over the internet
-mailserver.login(msg['From'], 'password')  # login to the email service account
-mailserver.sendmail(msg['From'], msg['To'], msg.as_string())  # send the email
-mailserver.quit()
-</code></pre>
+<span class="n">mailserver</span> <span class="o">=</span> <span class="n">smtplib</span><span class="o">.</span><span class="n">SMTP</span><span class="p">(</span><span class="s1">&#39;smtp.office365.com&#39;</span><span class="p">,</span> <span class="mi">587</span><span class="p">)</span>  <span class="c1"># connect to email service</span>
+<span class="n">mailserver</span><span class="o">.</span><span class="n">starttls</span><span class="p">()</span>  <span class="c1"># starts TLS (security protocol that encrypts data sent over the internet</span>
+<span class="n">mailserver</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="n">msg</span><span class="p">[</span><span class="s1">&#39;From&#39;</span><span class="p">],</span> <span class="s1">&#39;password&#39;</span><span class="p">)</span>  <span class="c1"># login to the email service account</span>
+<span class="n">mailserver</span><span class="o">.</span><span class="n">sendmail</span><span class="p">(</span><span class="n">msg</span><span class="p">[</span><span class="s1">&#39;From&#39;</span><span class="p">],</span> <span class="n">msg</span><span class="p">[</span><span class="s1">&#39;To&#39;</span><span class="p">],</span> <span class="n">msg</span><span class="o">.</span><span class="n">as_string</span><span class="p">())</span>  <span class="c1"># send the email</span>
+<span class="n">mailserver</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
 <p>Mail with attachment</p>
-<pre><code class="language-py">import os
-import smtplib
-from email.message import EmailMessage
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">smtplib</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">email.message</span><span class="w"> </span><span class="kn">import</span> <span class="n">EmailMessage</span>
 
-msg = EmailMessage()
-msg['From'] = 'email@address.com'
-msg['To'] = 'recipient@address.com'
-msg['Subject'] = 'This is an Email'
+<span class="n">msg</span> <span class="o">=</span> <span class="n">EmailMessage</span><span class="p">()</span>
+<span class="n">msg</span><span class="p">[</span><span class="s1">&#39;From&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;email@address.com&#39;</span>
+<span class="n">msg</span><span class="p">[</span><span class="s1">&#39;To&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;recipient@address.com&#39;</span>
+<span class="n">msg</span><span class="p">[</span><span class="s1">&#39;Subject&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;This is an Email&#39;</span>
 
-msg.set_content('Body of email here.')
+<span class="n">msg</span><span class="o">.</span><span class="n">set_content</span><span class="p">(</span><span class="s1">&#39;Body of email here.&#39;</span><span class="p">)</span>
 
-file = 'path/to/file.txt'
-extension = os.path.basename(file).split('.')[1]
-with open(file, 'rb') as f:
-    file_data = f.read()
-msg.add_attachment(file_data, maintype='application', subtype=extension, filename=os.path.basename(file))
+<span class="n">file</span> <span class="o">=</span> <span class="s1">&#39;path/to/file.txt&#39;</span>
+<span class="n">extension</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">file</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">file_data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="n">msg</span><span class="o">.</span><span class="n">add_attachment</span><span class="p">(</span><span class="n">file_data</span><span class="p">,</span> <span class="n">maintype</span><span class="o">=</span><span class="s1">&#39;application&#39;</span><span class="p">,</span> <span class="n">subtype</span><span class="o">=</span><span class="n">extension</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">file</span><span class="p">))</span>
 
-mailserver = smtplib.SMTP('smtp.office365.com', 587)  # connect to email service
-mailserver.starttls()  # starts TLS (security protocol that encrypts data sent over the internet
-mailserver.login(msg['From'], 'password')  # login to the email service account
-mailserver.sendmail(msg['From'], msg['To'], msg.as_string())  # send the email
-mailserver.quit()
-</code></pre>
+<span class="n">mailserver</span> <span class="o">=</span> <span class="n">smtplib</span><span class="o">.</span><span class="n">SMTP</span><span class="p">(</span><span class="s1">&#39;smtp.office365.com&#39;</span><span class="p">,</span> <span class="mi">587</span><span class="p">)</span>  <span class="c1"># connect to email service</span>
+<span class="n">mailserver</span><span class="o">.</span><span class="n">starttls</span><span class="p">()</span>  <span class="c1"># starts TLS (security protocol that encrypts data sent over the internet</span>
+<span class="n">mailserver</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="n">msg</span><span class="p">[</span><span class="s1">&#39;From&#39;</span><span class="p">],</span> <span class="s1">&#39;password&#39;</span><span class="p">)</span>  <span class="c1"># login to the email service account</span>
+<span class="n">mailserver</span><span class="o">.</span><span class="n">sendmail</span><span class="p">(</span><span class="n">msg</span><span class="p">[</span><span class="s1">&#39;From&#39;</span><span class="p">],</span> <span class="n">msg</span><span class="p">[</span><span class="s1">&#39;To&#39;</span><span class="p">],</span> <span class="n">msg</span><span class="o">.</span><span class="n">as_string</span><span class="p">())</span>  <span class="c1"># send the email</span>
+<span class="n">mailserver</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
 <p>You can also send nicely formatted HTML emails with MIME</p>
-<pre><code class="language-py">import smtplib
-from email.mime.multipart import MIMEMultipart
-from email.mime.text import MIMEText
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">smtplib</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">email.mime.multipart</span><span class="w"> </span><span class="kn">import</span> <span class="n">MIMEMultipart</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">email.mime.text</span><span class="w"> </span><span class="kn">import</span> <span class="n">MIMEText</span>
 
-msg = MIMEMultipart('mixed')
-msg['From'] = 'email@address.com'
-msg['To'] = 'recipient@address.com'
-msg['Subject'] = 'Subject Here'
+<span class="n">msg</span> <span class="o">=</span> <span class="n">MIMEMultipart</span><span class="p">(</span><span class="s1">&#39;mixed&#39;</span><span class="p">)</span>
+<span class="n">msg</span><span class="p">[</span><span class="s1">&#39;From&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;email@address.com&#39;</span>
+<span class="n">msg</span><span class="p">[</span><span class="s1">&#39;To&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;recipient@address.com&#39;</span>
+<span class="n">msg</span><span class="p">[</span><span class="s1">&#39;Subject&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Subject Here&#39;</span>
 
-html_body = MIMEMultipart('alternative')
+<span class="n">html_body</span> <span class="o">=</span> <span class="n">MIMEMultipart</span><span class="p">(</span><span class="s1">&#39;alternative&#39;</span><span class="p">)</span>
 
-html_body_text = MIMEText('&lt;html&gt;&lt;div&gt;HTML Content here&lt;/div&gt;&lt;/html&gt;', 'html')
-html_body.attach(html_body_text)
+<span class="n">html_body_text</span> <span class="o">=</span> <span class="n">MIMEText</span><span class="p">(</span><span class="s1">&#39;&lt;html&gt;&lt;div&gt;HTML Content here&lt;/div&gt;&lt;/html&gt;&#39;</span><span class="p">,</span> <span class="s1">&#39;html&#39;</span><span class="p">)</span>
+<span class="n">html_body</span><span class="o">.</span><span class="n">attach</span><span class="p">(</span><span class="n">html_body_text</span><span class="p">)</span>
 
-# Attach the multipart/alternative part to the multipart/mixed message
-msg.attach(html_body)
+<span class="c1"># Attach the multipart/alternative part to the multipart/mixed message</span>
+<span class="n">msg</span><span class="o">.</span><span class="n">attach</span><span class="p">(</span><span class="n">html_body</span><span class="p">)</span>
 
-# Remaining code for sending the email
-mailserver = smtplib.SMTP('smtp.office365.com', 587)
-mailserver.starttls()
-mailserver.login(msg['From'], 'password here')
-mailserver.send_message(msg)
-mailserver.quit()
-</code></pre>
+<span class="c1"># Remaining code for sending the email</span>
+<span class="n">mailserver</span> <span class="o">=</span> <span class="n">smtplib</span><span class="o">.</span><span class="n">SMTP</span><span class="p">(</span><span class="s1">&#39;smtp.office365.com&#39;</span><span class="p">,</span> <span class="mi">587</span><span class="p">)</span>
+<span class="n">mailserver</span><span class="o">.</span><span class="n">starttls</span><span class="p">()</span>
+<span class="n">mailserver</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="n">msg</span><span class="p">[</span><span class="s1">&#39;From&#39;</span><span class="p">],</span> <span class="s1">&#39;password here&#39;</span><span class="p">)</span>
+<span class="n">mailserver</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+<span class="n">mailserver</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
 <h2 id="python-http-server">Python HTTP Server</h2>
 <p>Python has an HTTP server built into the standard library.</p>
 <p>Serving static files: <code>python -m http.server 8008</code> this will look for an index.html
