@@ -40,7 +40,7 @@ with ``sudo rm /usr/bin/docker-compose``.
 
 Create a ``docker-compose.yaml`` file. Here's an example:
 
-```
+```yaml
 services:  # Defines the containers (services)
   app:
     image: my_flask_app:latest  # Use an existing image
@@ -88,7 +88,7 @@ Restart container: ``docker compose restart``
 A Dockerfile is how to build an image. The contents might look something like this:
 
 Simple python app:
-```
+```dockerfile
 FROM python:3.12-slim
 WORKDIR /app
 COPY requirements.txt .
@@ -98,7 +98,7 @@ CMD ["python", "app.py"]
 ```
 
 Flask app:
-```
+```dockerfile
 # Use a lightweight Python image
 FROM python:3.12-slim
 
@@ -143,7 +143,7 @@ When you use docker compose with an image, you have two options:
 
 - To build the image with docker compose when its run, use the ``build: .`` option. 
 This builds the image from the Dockerfile in the directory.
-```
+```yaml
 services:
   flask_app:
     build: .  # This tells Compose to use the Dockerfile in the current directory
@@ -154,7 +154,7 @@ services:
 ```
 - If you already built the image with ``docker build -t myflaskapp:latest .`` then you can tell docker compose
 what image to use:
-```
+```yaml
 services:
   flask_app:
     image: my_flask_app  # Use the existing built image

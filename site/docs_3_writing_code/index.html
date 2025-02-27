@@ -26,6 +26,9 @@
     
       <link rel="stylesheet" href="../assets/stylesheets/main.a40c8224.min.css">
       
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
       
 
 
@@ -43,6 +46,8 @@
       
     
     
+      <link rel="stylesheet" href="../extra.css">
+    
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -53,7 +58,14 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -104,6 +116,32 @@
         </div>
       </div>
     </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
     
     
       <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
@@ -914,9 +952,9 @@
 
 <h1 id="writing-python-code">Writing Python Code</h1>
 <p>Python uses white-space and tabs, instead of curly-braces and semicolons like other common languages.</p>
-<p>The simplest python script. This will print text to your terminal window.</p>
-<pre><code class="language-py">print('This is my first python script')
-</code></pre>
+<p>The simplest python script. This will print text to your terminal window.
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;This is my first python script&#39;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div></p>
 <h2 id="data-types">Data Types</h2>
 <p>Native data types in python include:</p>
 <ul>
@@ -930,11 +968,12 @@ list of integers <code>[1, 2, 3, 4]</code>. Tuples use parenthesis ie: <code>(1,
 <p>Dictionary methods:</p>
 <ul>
 <li>Get value from dictionary <code>dict_name['key_name']'</code> or <code>dict_name.get('key_name')</code></li>
-<li>Loop through the dict with:</li>
+<li>Loop through the dict with:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">dict_name</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+   <span class="nb">print</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> 
+</code></pre></div></td></tr></table></div></li>
 </ul>
-<pre><code class="language-py">for k, v in dict_name.items():
-   print(k, v) 
-</code></pre>
 <p>String methods:</p>
 <ul>
 <li>f-strings - inject variables into a string with curly braces <code>print(f'Variable = {x}')</code></li>
@@ -942,152 +981,235 @@ list of integers <code>[1, 2, 3, 4]</code>. Tuples use parenthesis ie: <code>(1,
 </ul>
 <h2 id="variables">Variables</h2>
 <p>Any of the data types can be loaded into a variable that can then be referenced later:</p>
-<pre><code class="language-py">x = 14
-variable_01 = 'This is a variable'
-also_a_variable = {'foo': 'bar'}
-</code></pre>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">x</span> <span class="o">=</span> <span class="mi">14</span>
+<span class="n">variable_01</span> <span class="o">=</span> <span class="s1">&#39;This is a variable&#39;</span>
+<span class="n">also_a_variable</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;foo&#39;</span><span class="p">:</span> <span class="s1">&#39;bar&#39;</span><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
 <p>Variables can be named almost anything, you just can't start a variable with a number and no special characters. </p>
 <p>You can perform mathematical operations, just like most programming languages.</p>
-<pre><code class="language-py">x = 5  # set variable
-x = x + 1  # add 1 to x variable
-x = x * 10  # multiply x by 10
-x = x / 4  # divide x by 4
-x = x ** 2  # raise x to the power of 2
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>  <span class="c1"># set variable</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>  <span class="c1"># add 1 to x variable</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">10</span>  <span class="c1"># multiply x by 10</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">/</span> <span class="mi">4</span>  <span class="c1"># divide x by 4</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span>  <span class="c1"># raise x to the power of 2</span>
 
-x = 7 // 3  # floor division (divide and round down to the nearest whole number)
-# output: 2.333 but rounds down to 2
-</code></pre>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">7</span> <span class="o">//</span> <span class="mi">3</span>  <span class="c1"># floor division (divide and round down to the nearest whole number)</span>
+<span class="c1"># output: 2.333 but rounds down to 2</span>
+</code></pre></div></td></tr></table></div>
 <p>You can also use the math library in the python standard library to perform more complex mathematical functions.</p>
 <p><a href="https://docs.python.org/3/library/math.html">Math Standard Library Docs</a></p>
 <h2 id="if-statements">If Statements</h2>
 <p>If statements are great for checking conditions and running code if certain conditions are met.</p>
-<pre><code class="language-py">x = 10
-if x &gt; 8:
-    print('x is greater than 8')
-elif x &lt;= 1:
-    print('x is less or equal to 1')
-else:
-    print('x is between 1 and 8')
-</code></pre>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">8</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x is greater than 8&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x is less or equal to 1&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x is between 1 and 8&#39;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
 <p>Keep in mind that checking equality should be done with two equal signs <code>==</code> because a single <code>=</code> is for assigning variables.</p>
-<pre><code class="language-py">x = 100
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">x</span> <span class="o">=</span> <span class="mi">100</span>
 
-if x == 100:
-    print('x is equal to 100')
-</code></pre>
+<span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">100</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x is equal to 100&#39;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
 <h2 id="loops">Loops</h2>
 <p>Types of loops:
 - For - iterate over an object.
 - While - loop until a condition is met.
 - List comprehension - single line loop over an object.</p>
-<p>For loop</p>
-<pre><code class="language-py">numbers = [2, 4, 6, 8, 10]
+<p>For loop
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
 
-for number in numbers:
-    print(number)  # will print each number in the list
-</code></pre>
-<p>While loop</p>
-<pre><code class="language-py">x = 0
-while x &lt; 10:
-    print(x)
-    x = x + 1  # add 1 to x on each loop
-    # this loop will terminate once x is greater than 10
-</code></pre>
-<p>List comprehension - this is like a single line for loop</p>
-<pre><code class="language-py">numbers = [2, 4, 6, 8, 10]
+<span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>  <span class="c1"># will print each number in the list</span>
+</code></pre></div></td></tr></table></div></p>
+<p>While loop
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>  <span class="c1"># add 1 to x on each loop</span>
+    <span class="c1"># this loop will terminate once x is greater than 10</span>
+</code></pre></div></td></tr></table></div></p>
+<p>List comprehension - this is like a single line for loop
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
 
-# if we want to do a simple change to all the numbers in this list, such as double the amounts, we can use list comprehension
-numbers = [number * 2 for number in numbers]
-</code></pre>
+<span class="c1"># if we want to do a simple change to all the numbers in this list, such as double the amounts, we can use list comprehension</span>
+<span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="n">number</span> <span class="o">*</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">]</span>
+</code></pre></div></td></tr></table></div></p>
 <h2 id="comments">Comments</h2>
 <p>Add comments to your code:</p>
 <ul>
 <li><code>#</code> - single line comments</li>
 <li><code>""" """</code> - multi-line comments</li>
 </ul>
-<pre><code class="language-python"># single line comment.
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># single line comment.</span>
 
-&quot;&quot;&quot;
-Multi like comment
-Use this to describe 
-many things.
-&quot;&quot;&quot;
-</code></pre>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Multi like comment</span>
+<span class="sd">Use this to describe </span>
+<span class="sd">many things.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+</code></pre></div></td></tr></table></div>
 <h2 id="importing-other-libraries">Importing other libraries</h2>
 <p>Python comes with the "Python Standard Library" which has a lot of powerful modules ready to go, no installing required.</p>
 <p><a href="https://docs.python.org/3/library/index.html">Python Standard Library Docs</a></p>
 <p>To use any of these, or to use any libraries installed with pip, they must be imported. This is typically done at the top of the .py file.</p>
-<pre><code class="language-py">import os  # standard library, lets you interact with objects on your operating system like files.
-import pandas as pd  # third-party library installed with pip. This imports the package and renames it as pd
-from sqlalchemy import select, insert  # this imports specific parts of the sqlalchemy library, avoiding importing everything.
-</code></pre>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>  <span class="c1"># standard library, lets you interact with objects on your operating system like files.</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>  <span class="c1"># third-party library installed with pip. This imports the package and renames it as pd</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sqlalchemy</span><span class="w"> </span><span class="kn">import</span> <span class="n">select</span><span class="p">,</span> <span class="n">insert</span>  <span class="c1"># this imports specific parts of the sqlalchemy library, avoiding importing everything.</span>
+</code></pre></div></td></tr></table></div>
 <p>Load a csv file into a DataFrame using pandas.</p>
-<pre><code class="language-py">import pandas as pd
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 
-df = pd.read_csv('path/to/file.csv')
-</code></pre>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;path/to/file.csv&#39;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
 <p>Connect to a database with sqlalchemy:</p>
-<pre><code class="language-py"># import library
-from sqlalchemy import create_engine, text
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># import library</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sqlalchemy</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_engine</span><span class="p">,</span> <span class="n">text</span>
 
-# create an engine object to connect
-engine = create_engine('postgresql+psycopg2://username:password@servername:port/database')
+<span class="c1"># create an engine object to connect</span>
+<span class="n">engine</span> <span class="o">=</span> <span class="n">create_engine</span><span class="p">(</span><span class="s1">&#39;postgresql+psycopg2://username:password@servername:port/database&#39;</span><span class="p">)</span>
 
-# connect to the database and query a table
-with engine.connect() as conn:
-    query = 'SELECT * FROM table'
-    result = conn.execute(text(query))
-</code></pre>
+<span class="c1"># connect to the database and query a table</span>
+<span class="k">with</span> <span class="n">engine</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span> <span class="k">as</span> <span class="n">conn</span><span class="p">:</span>
+    <span class="n">query</span> <span class="o">=</span> <span class="s1">&#39;SELECT * FROM table&#39;</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">text</span><span class="p">(</span><span class="n">query</span><span class="p">))</span>
+</code></pre></div></td></tr></table></div>
 <h2 id="functions">Functions</h2>
 <p>Use the <code>def</code> keyword to define a function. You can use parameters to pass data into the function, process the data, and return a result.</p>
-<pre><code class="language-py">def example_function():
-    pass
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">example_function</span><span class="p">():</span>
+    <span class="k">pass</span>
 
 
-def repeat(message):
-    print(f'You said {message}')  # this will print back your message and uses f-strings to inject your message to another string.
+<span class="k">def</span><span class="w"> </span><span class="nf">repeat</span><span class="p">(</span><span class="n">message</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;You said </span><span class="si">{</span><span class="n">message</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>  <span class="c1"># this will print back your message and uses f-strings to inject your message to another string.</span>
 
 
-def add_numbers(number_1, number_2):
-    return number_1 + number_2
+<span class="k">def</span><span class="w"> </span><span class="nf">add_numbers</span><span class="p">(</span><span class="n">number_1</span><span class="p">,</span> <span class="n">number_2</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">number_1</span> <span class="o">+</span> <span class="n">number_2</span>
+</code></pre></div></td></tr></table></div>
+<p>You can create dynamic parameters using <em>args and </em>*kwargs
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">add_numbers</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+    <span class="n">return_value</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">args</span><span class="p">:</span>
+        <span class="n">return_value</span> <span class="o">=</span> <span class="n">return_value</span> <span class="o">+</span> <span class="n">value</span>
 
-</code></pre>
-<p>You can create dynamic parameters using <em>args and </em>*kwargs</p>
-<pre><code class="language-py">def add_numbers(*args):
-    return_value = 0
-    for value in args:
-        return_value = return_value + value
-
-    return return_value
-</code></pre>
+    <span class="k">return</span> <span class="n">return_value</span>
+</code></pre></div></td></tr></table></div></p>
 <h2 id="classes">Classes</h2>
 <p>Classes are good for grouping similar data and functions into one object. 
 It's great for maintaining state of data, and performing certain operations on that data.</p>
-<pre><code class="language-py">import time
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
 
 
-class Car:
-  def __init__(self, year, make, model):
-    # This function runs when the class is first used. Good for loading data right at the beginning.
-    self.year = year
-    self.make = make
-    self.model = model
-    self.current_speed = 0
+<span class="k">class</span><span class="w"> </span><span class="nc">Car</span><span class="p">:</span>
+  <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">make</span><span class="p">,</span> <span class="n">model</span><span class="p">):</span>
+    <span class="c1"># This function runs when the class is first used. Good for loading data right at the beginning.</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">year</span> <span class="o">=</span> <span class="n">year</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">make</span> <span class="o">=</span> <span class="n">make</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">model</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">current_speed</span> <span class="o">=</span> <span class="mi">0</span>
 
-  def accelerate(self):
-    self.current_speed = 10
-    # make car go
+  <span class="k">def</span><span class="w"> </span><span class="nf">accelerate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">current_speed</span> <span class="o">=</span> <span class="mi">10</span>
+    <span class="c1"># make car go</span>
 
-  def stop(self):
-    self.current_speed = 0
-    # make care brake
+  <span class="k">def</span><span class="w"> </span><span class="nf">stop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">current_speed</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="c1"># make care brake</span>
 
 
-car = Car(2024, 'Tesla', 'Model Y')  # create the car object
-car.accelerate()                     # run the accelerate function (when it's in a class it's called a method)
-time.sleep(5)                        # wait 5 seconds
-car.stop()                           # run the stop method
-</code></pre>
+<span class="n">car</span> <span class="o">=</span> <span class="n">Car</span><span class="p">(</span><span class="mi">2024</span><span class="p">,</span> <span class="s1">&#39;Tesla&#39;</span><span class="p">,</span> <span class="s1">&#39;Model Y&#39;</span><span class="p">)</span>  <span class="c1"># create the car object</span>
+<span class="n">car</span><span class="o">.</span><span class="n">accelerate</span><span class="p">()</span>                     <span class="c1"># run the accelerate function (when it&#39;s in a class it&#39;s called a method)</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>                        <span class="c1"># wait 5 seconds</span>
+<span class="n">car</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>                           <span class="c1"># run the stop method</span>
+</code></pre></div></td></tr></table></div>
 
 
 
