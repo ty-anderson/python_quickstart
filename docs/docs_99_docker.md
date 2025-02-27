@@ -23,17 +23,51 @@ Postgres example:
 - -p is for port mapping host computer port to image port (first is host, second is container)
 - -e is for adding environment variables
 
+Remove an image by name and tag: ``docker rmi postgres:latest`` or by image id ``docker rmi 123456789abc``
+
 
 ## Docker Compose
 
-Make sure you have the latest version (currently V2).
+Docker compose is a handy way to run docker with configuration files.
+This is nice when you have more complex containers to run, and its a difficult to type all the config 
+every time you want to run it.
+
+*Important step:* Make sure you have the latest version (currently V2).
 
 Docker compose V1 was built on python, V2 is built in Go. If you run ``which docker compose`` 
 and it shows the path ``/usr/bin/docker-compose`` then you still have V1. Remove it
-with ``sudo rm /usr/bin/docker-compose``. 
+with ``sudo rm /usr/bin/docker-compose``.
 
-Docker compose is a handy way to run docker with certain settings in a yaml file
-Create a docker-compose.yaml file.
+Create a ``docker-compose.yaml`` file. Here's an example:
+
+```
+services:  # Defines the containers (services)
+  app:
+    image: my_flask_app:latest  # Use an existing image
+    build: .  # Or build from Dockerfile in the current directory
+    ports:
+      - "5000:5000"  # Map host port 5000 to container port 5000
+    volumes:
+      - ./app:/app  # Mount local folder to container folder
+    environment:
+      - FLASK_ENV=development  # Set environment variables
+    depends_on:
+      - db  # Wait for "db" service before starting
+
+  db:
+    image: postgres:15
+    restart: always  # Restart if it crashes
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: mydatabase
+    volumes:
+      - pg_data:/var/lib/postgresql/data  # Persistent storage for DB
+
+volumes:
+  pg_data:  # Named volume for PostgreSQL data
+
+```
 
 Run container
 ``docker compose up -d``
@@ -45,6 +79,8 @@ Upgrade container
 ``docker compose down``
 ``docker compose pull``
 ``docker compose up -d``
+
+Restart container: ``docker compose restart``
 
 
 ## Build a Docker Image
@@ -60,8 +96,6 @@ RUN pip install -r requirements.txt
 COPY . .
 CMD ["python", "app.py"]
 ```
-
-or
 
 Flask app:
 ```
@@ -88,8 +122,7 @@ EXPOSE 8090
 CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:8090", "web_app.app:app"]
 ```
 
-When your dockerfile is ready, run:
-``docker build -t my-image-name:tag .``
+When your dockerfile is ready, run: ``docker build -t my-image-name:tag .``
 
 • Replace my-image-name with the name you want to give your image.
 • Replace tag with an optional version (e.g., latest or v1.0).
@@ -99,15 +132,16 @@ End example might look like ``docker build -t my-flask-app:latest .``
 If you are building on a Mac, but will run on Linux, when you build an image, specify to run on amd64:
 ``docker build --platform linux/amd64 -t yt_download:latest .``
 
-Save: ``docker save -o /Users/tyleranderson/Downloads/yt_downloads_250226.tar yt_download:latest``
+Save the image to a tar file: 
+``docker save -o /Users/tyleranderson/Downloads/yt_downloads_250226.tar yt_download:latest``
 
-Load: ``sudo docker load -i /srv/flask_yt_download/yt_downloads_250226.tar``
+Load the file as an image: ``docker load -i /srv/flask_yt_download/yt_downloads_250226.tar``
 
-### Docker Compose with Custom Images
+## Docker Compose with Custom Images
 
-When you use docker compose with your image, you have two options:
+When you use docker compose with an image, you have two options:
 
-- Build image with docker compose is run, using the ``build: .`` option. 
+- To build the image with docker compose when its run, use the ``build: .`` option. 
 This builds the image from the Dockerfile in the directory.
 ```
 services:
@@ -141,9 +175,7 @@ Load image from file:
 
 ## Access Docker Container
 
-Access the container environment
-``docker exec -it <container-name-or-id> /bin/sh``
-
+Access the container environment ``docker exec -it <container-name-or-id> /bin/sh``
 /bin/sh is the terminal experience (shell in this case) you could do /bin/bash
 
 Access container logs
