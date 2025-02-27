@@ -508,20 +508,14 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Build a Docker Image">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#docker-compose-with-custom-images" class="md-nav__link">
     <span class="md-ellipsis">
       Docker Compose with Custom Images
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -839,20 +833,14 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Build a Docker Image">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#docker-compose-with-custom-images" class="md-nav__link">
     <span class="md-ellipsis">
       Docker Compose with Custom Images
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -919,13 +907,43 @@ Postgres example:
 <li>-p is for port mapping host computer port to image port (first is host, second is container)</li>
 <li>-e is for adding environment variables</li>
 </ul>
+<p>Remove an image by name and tag: <code>docker rmi postgres:latest</code> or by image id <code>docker rmi 123456789abc</code></p>
 <h2 id="docker-compose">Docker Compose</h2>
-<p>Make sure you have the latest version (currently V2).</p>
+<p>Docker compose is a handy way to run docker with configuration files.
+This is nice when you have more complex containers to run, and its a difficult to type all the config 
+every time you want to run it.</p>
+<p><em>Important step:</em> Make sure you have the latest version (currently V2).</p>
 <p>Docker compose V1 was built on python, V2 is built in Go. If you run <code>which docker compose</code> 
 and it shows the path <code>/usr/bin/docker-compose</code> then you still have V1. Remove it
-with <code>sudo rm /usr/bin/docker-compose</code>. </p>
-<p>Docker compose is a handy way to run docker with certain settings in a yaml file
-Create a docker-compose.yaml file.</p>
+with <code>sudo rm /usr/bin/docker-compose</code>.</p>
+<p>Create a <code>docker-compose.yaml</code> file. Here's an example:</p>
+<pre><code>services:  # Defines the containers (services)
+  app:
+    image: my_flask_app:latest  # Use an existing image
+    build: .  # Or build from Dockerfile in the current directory
+    ports:
+      - &quot;5000:5000&quot;  # Map host port 5000 to container port 5000
+    volumes:
+      - ./app:/app  # Mount local folder to container folder
+    environment:
+      - FLASK_ENV=development  # Set environment variables
+    depends_on:
+      - db  # Wait for &quot;db&quot; service before starting
+
+  db:
+    image: postgres:15
+    restart: always  # Restart if it crashes
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: mydatabase
+    volumes:
+      - pg_data:/var/lib/postgresql/data  # Persistent storage for DB
+
+volumes:
+  pg_data:  # Named volume for PostgreSQL data
+
+</code></pre>
 <p>Run container
 <code>docker compose up -d</code></p>
 <p>Stop container
@@ -934,6 +952,7 @@ Create a docker-compose.yaml file.</p>
 <code>docker compose down</code>
 <code>docker compose pull</code>
 <code>docker compose up -d</code></p>
+<p>Restart container: <code>docker compose restart</code></p>
 <h2 id="build-a-docker-image">Build a Docker Image</h2>
 <p>A Dockerfile is how to build an image. The contents might look something like this:</p>
 <p>Simple python app:</p>
@@ -944,7 +963,6 @@ RUN pip install -r requirements.txt
 COPY . .
 CMD [&quot;python&quot;, &quot;app.py&quot;]
 </code></pre>
-<p>or</p>
 <p>Flask app:</p>
 <pre><code># Use a lightweight Python image
 FROM python:3.12-slim
@@ -968,19 +986,19 @@ EXPOSE 8090
 # Run Gunicorn when the container starts
 CMD [&quot;gunicorn&quot;, &quot;-w&quot;, &quot;4&quot;, &quot;-b&quot;, &quot;0.0.0.0:8090&quot;, &quot;web_app.app:app&quot;]
 </code></pre>
-<p>When your dockerfile is ready, run:
-<code>docker build -t my-image-name:tag .</code></p>
+<p>When your dockerfile is ready, run: <code>docker build -t my-image-name:tag .</code></p>
 <p>• Replace my-image-name with the name you want to give your image.
 • Replace tag with an optional version (e.g., latest or v1.0).</p>
 <p>End example might look like <code>docker build -t my-flask-app:latest .</code></p>
 <p>If you are building on a Mac, but will run on Linux, when you build an image, specify to run on amd64:
 <code>docker build --platform linux/amd64 -t yt_download:latest .</code></p>
-<p>Save: <code>docker save -o /Users/tyleranderson/Downloads/yt_downloads_250226.tar yt_download:latest</code></p>
-<p>Load: <code>sudo docker load -i /srv/flask_yt_download/yt_downloads_250226.tar</code></p>
-<h3 id="docker-compose-with-custom-images">Docker Compose with Custom Images</h3>
-<p>When you use docker compose with your image, you have two options:</p>
+<p>Save the image to a tar file: 
+<code>docker save -o /Users/tyleranderson/Downloads/yt_downloads_250226.tar yt_download:latest</code></p>
+<p>Load the file as an image: <code>docker load -i /srv/flask_yt_download/yt_downloads_250226.tar</code></p>
+<h2 id="docker-compose-with-custom-images">Docker Compose with Custom Images</h2>
+<p>When you use docker compose with an image, you have two options:</p>
 <ul>
-<li>Build image with docker compose is run, using the <code>build: .</code> option. 
+<li>To build the image with docker compose when its run, use the <code>build: .</code> option. 
 This builds the image from the Dockerfile in the directory.</li>
 </ul>
 <pre><code>services:
@@ -1009,9 +1027,8 @@ what image to use:</li>
 <p>Load image from file:
 <code>docker load -i /path/to/destination/image-name.tar</code></p>
 <h2 id="access-docker-container">Access Docker Container</h2>
-<p>Access the container environment
-<code>docker exec -it &lt;container-name-or-id&gt; /bin/sh</code></p>
-<p>/bin/sh is the terminal experience (shell in this case) you could do /bin/bash</p>
+<p>Access the container environment <code>docker exec -it &lt;container-name-or-id&gt; /bin/sh</code>
+/bin/sh is the terminal experience (shell in this case) you could do /bin/bash</p>
 <p>Access container logs
 <code>docker logs &lt;container name or id&gt;</code></p>
 <p>For continuously showing log output
