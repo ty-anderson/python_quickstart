@@ -67,8 +67,38 @@ Here's an example with scp: ``scp -r ./site user@server:/srv/web_apps``.
 
 **rsync is typically recommended over scp.**
 
+Rsync usually comes on Linux and MacOS. 
+
+Commands: 
+
+- Basic = ``rsync -v /source/file/name.txt /dest/file``
+- Use literal string (preserve string for special characters) = ``rsync -v '/source/file/na$me.txt' /dest/file``
+- Send multiple files = ``rsync -v /source/file1.txt /source/file2.txt '/dest'``
+- Send over SSH = ``rsync -av /source/file/name.txt user@server:/dest/file``
+- Send over SSH with custom port ``rsync -avz -e "ssh -p 2222" /source/file/name.txt user@server:/dest/file``
+- Send over SSH with sudo command = ``rsync -v --rsync-path="sudo rsync" yt_download_image.tar tyler@anderson.home:/srv/flask_yt_download``
+- Send over entire directory = ``rsync -avz ``
+
+Flags: 
+
+- ``-v`` = verbose mode.
+- ``-a`` = archive mode. saves permissions and timestamps.
+- ``-z`` = compress files to transfer, lossless compression.
+- ``-e`` = execute specific command.
+- ``--progress`` = show transfer progress.
+- ``--delete`` = remove files from the backup if they were removed from the source.
+- ``--exclude`` = Exclude specific files like ``--exclude='*.log' --exclude='/cache/'``
+
 Copy directory into another:``rsync -av ./site user@server:/srv/web_apps/notes``
 
-Copy directory contents into another:``rsync -av ./site/ user@server:/srv/web_apps/notes/`` (trailing ``/``)
+Copy directory contents into another:``rsync -av ./site/ user@server:/srv/web_apps/notes/`` 
+(trailing ``/`` on the source. Trailing source on the destination doesn't matter)
 
+## Backups
 
+Options: Backup files/folders OR full system backup.
+
+Backup folders: daily ``rsync`` to a separate disk
+Full system: weekly ``dd`` or ``timeshift``
+
+Can setup with cron to run regularly.
