@@ -759,6 +759,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#backups" class="md-nav__link">
+    <span class="md-ellipsis">
+      Backups
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -893,6 +902,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#backups" class="md-nav__link">
+    <span class="md-ellipsis">
+      Backups
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -984,8 +1002,35 @@ Symbolic is more straight forward.</p>
 <p>Two baked-in commands are <code>scp</code> or <code>rsync</code>.</p>
 <p>Here's an example with scp: <code>scp -r ./site user@server:/srv/web_apps</code>.</p>
 <p><strong>rsync is typically recommended over scp.</strong></p>
+<p>Rsync usually comes on Linux and MacOS. </p>
+<p>Commands: </p>
+<ul>
+<li>Basic = <code>rsync -v /source/file/name.txt /dest/file</code></li>
+<li>Use literal string (preserve string for special characters) = <code>rsync -v '/source/file/na$me.txt' /dest/file</code></li>
+<li>Send multiple files = <code>rsync -v /source/file1.txt /source/file2.txt '/dest'</code></li>
+<li>Send over SSH = <code>rsync -av /source/file/name.txt user@server:/dest/file</code></li>
+<li>Send over SSH with custom port <code>rsync -avz -e "ssh -p 2222" /source/file/name.txt user@server:/dest/file</code></li>
+<li>Send over SSH with sudo command = <code>rsync -v --rsync-path="sudo rsync" yt_download_image.tar tyler@anderson.home:/srv/flask_yt_download</code></li>
+<li>Send over entire directory = <code>rsync -avz</code></li>
+</ul>
+<p>Flags: </p>
+<ul>
+<li><code>-v</code> = verbose mode.</li>
+<li><code>-a</code> = archive mode. saves permissions and timestamps.</li>
+<li><code>-z</code> = compress files to transfer, lossless compression.</li>
+<li><code>-e</code> = execute specific command.</li>
+<li><code>--progress</code> = show transfer progress.</li>
+<li><code>--delete</code> = remove files from the backup if they were removed from the source.</li>
+<li><code>--exclude</code> = Exclude specific files like <code>--exclude='*.log' --exclude='/cache/'</code></li>
+</ul>
 <p>Copy directory into another:<code>rsync -av ./site user@server:/srv/web_apps/notes</code></p>
-<p>Copy directory contents into another:<code>rsync -av ./site/ user@server:/srv/web_apps/notes/</code> (trailing <code>/</code>)</p>
+<p>Copy directory contents into another:<code>rsync -av ./site/ user@server:/srv/web_apps/notes/</code> 
+(trailing <code>/</code> on the source. Trailing source on the destination doesn't matter)</p>
+<h2 id="backups">Backups</h2>
+<p>Options: Backup files/folders OR full system backup.</p>
+<p>Backup folders: daily <code>rsync</code> to a separate disk
+Full system: weekly <code>dd</code> or <code>timeshift</code></p>
+<p>Can setup with cron to run regularly.</p>
 
 
 
