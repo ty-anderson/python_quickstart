@@ -1010,8 +1010,9 @@ Symbolic is more straight forward.</p>
 <li>Send multiple files = <code>rsync -v /source/file1.txt /source/file2.txt '/dest'</code></li>
 <li>Send over SSH = <code>rsync -av /source/file/name.txt user@server:/dest/file</code></li>
 <li>Send over SSH with custom port <code>rsync -avz -e "ssh -p 2222" /source/file/name.txt user@server:/dest/file</code></li>
-<li>Send over SSH with sudo command = <code>rsync -v --rsync-path="sudo rsync" yt_download_image.tar tyler@anderson.home:/srv/flask_yt_download</code></li>
-<li>Send over entire directory = <code>rsync -avz</code></li>
+<li>Send over SSH with sudo command = <code>rsync -v --rsync-path="sudo rsync" yt_download_image.tar user@server:/srv/flask_yt_download</code></li>
+<li>Send over entire directory = <code>rsync -avz /source/dir /dest/dir</code></li>
+<li>Send all files in directory = <code>rsync -avz /source/dir/ /dest/dir</code></li>
 </ul>
 <p>Flags: </p>
 <ul>
