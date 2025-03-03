@@ -775,6 +775,39 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Tar Files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#philosophy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Philosophy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#encryption" class="md-nav__link">
+    <span class="md-ellipsis">
+      Encryption
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removing-sensitive-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Removing Sensitive Data
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -798,6 +831,27 @@
   
   <span class="md-ellipsis">
     SSH
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs_199_backups/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Backups
   </span>
   
 
@@ -926,6 +980,39 @@
       Tar Files
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Tar Files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#philosophy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Philosophy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#encryption" class="md-nav__link">
+    <span class="md-ellipsis">
+      Encryption
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removing-sensitive-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Removing Sensitive Data
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1072,6 +1159,54 @@ in Linux and Unix based systems. Common for backups and transfers.</p>
 <li><code>-x</code> = Extract</li>
 <li><code>-z</code> = Compress with gzip</li>
 </ul>
+<h3 id="philosophy">Philosophy</h3>
+<p>Best practice for backing up files is called 3-2-1 backup strategy.</p>
+<ul>
+<li>3 copies of your data (original and two backups).</li>
+<li>2 different storage types (external drive, NAS, cloud storage, etc).</li>
+<li>1 off-site backup, a cloud backup or physical backup at a friends house.</li>
+</ul>
+<h3 id="encryption">Encryption</h3>
+<p><code>age</code> is a lightweight focused encryption software for files. 
+It uses modern cryptography making it more secure, but less featured 
+than something like <code>gpg</code>.</p>
+<p>Simple example, one file: <code>age -o secretfile.age -p secretfile.txt</code></p>
+<p>Simple example, directory (use tar): 
+    - <code>tar -czf myfolder.tar.gz myfolder/</code>
+    - <code>age -o myfolder.tar.gz.age -p myfolder.tar.gz</code></p>
+<ul>
+<li>MacOS Install: <code>brew install age</code></li>
+<li>Linux Ubuntu Install: <code>sudo apt install age</code></li>
+</ul>
+<h3 id="removing-sensitive-data">Removing Sensitive Data</h3>
+<p>Hard-Disk Drives:</p>
+<p>Securely delete a file with <code>shred</code>. This will overwrite the file with 
+random data mutliple times, renames the file multiple times to obscure 
+its original name, then deletes the file. This makes it very difficult 
+for data recovery tools to extract meaningful information from the files.</p>
+<p><code>shred -u secret.txt</code></p>
+<ul>
+<li><code>-u</code> = truncate and delete the file after shredding.</li>
+<li><code>-n</code> = number of times to overwrite (defualt is 3) <code>shred -n 10 secret.txt</code></li>
+</ul>
+<p>Solid-State Drives:</p>
+<ol>
+<li>Use <code>fstrim</code> (Best for Full SSD)
+✅ Best for clearing free space on an SSD</li>
+</ol>
+<p>Modern SSDs support TRIM, which tells the SSD to permanently erase deleted data</p>
+<p><code>sudo fstrim -v /</code></p>
+<ol>
+<li>Use srm or wipe (For File-Level Deletion)
+✅ Best for deleting a single file securely (better than <code>shred</code> on SSDs)</li>
+</ol>
+<p>🔹 Install srm (Secure Remove)</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo apt install secure-delete  # Debian/Ubuntu
+brew install srm               # macOS
+</code></pre></div></td></tr></table></div>
+<p>🔹 Securely delete a file = <code>srm -v my_secret_file.txt</code> </p>
+<p>🔹 Use wipe for Directories = <code>wipe -rf my_secret_folder/</code></p>
 
 
 
