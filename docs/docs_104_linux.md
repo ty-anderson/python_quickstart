@@ -76,8 +76,9 @@ Commands:
 - Send multiple files = ``rsync -v /source/file1.txt /source/file2.txt '/dest'``
 - Send over SSH = ``rsync -av /source/file/name.txt user@server:/dest/file``
 - Send over SSH with custom port ``rsync -avz -e "ssh -p 2222" /source/file/name.txt user@server:/dest/file``
-- Send over SSH with sudo command = ``rsync -v --rsync-path="sudo rsync" yt_download_image.tar tyler@anderson.home:/srv/flask_yt_download``
-- Send over entire directory = ``rsync -avz ``
+- Send over SSH with sudo command = ``rsync -v --rsync-path="sudo rsync" yt_download_image.tar user@server:/srv/flask_yt_download``
+- Send over entire directory = ``rsync -avz /source/dir /dest/dir``
+- Send all files in directory = ``rsync -avz /source/dir/ /dest/dir``
 
 Flags: 
 
