@@ -40,4 +40,5 @@ nav:
   - Linux and Other OS:
     - Linux: docs_104_linux.md
     - SSH: docs_103_ssh.md
+    - Backups: docs_199_backups.md
   - FFmpeg: docs_200_ffmpeg.md

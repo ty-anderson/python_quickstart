@@ -126,3 +126,63 @@ Flags:
 - ``-f`` = Specifies filename (archive.tar)
 - ``-x`` = Extract
 - ``-z`` = Compress with gzip
+
+### Philosophy
+
+Best practice for backing up files is called 3-2-1 backup strategy.
+
+- 3 copies of your data (original and two backups).
+- 2 different storage types (external drive, NAS, cloud storage, etc).
+- 1 off-site backup, a cloud backup or physical backup at a friends house.
+
+### Encryption
+
+``age`` is a lightweight focused encryption software for files. 
+It uses modern cryptography making it more secure, but less featured 
+than something like ``gpg``.
+
+Simple example, one file: ``age -o secretfile.age -p secretfile.txt``
+
+Simple example, directory (use tar): 
+    - ``tar -czf myfolder.tar.gz myfolder/``
+    - ``age -o myfolder.tar.gz.age -p myfolder.tar.gz``
+
+- MacOS Install: ``brew install age``
+- Linux Ubuntu Install: ``sudo apt install age``
+
+### Removing Sensitive Data
+
+Hard-Disk Drives:
+
+Securely delete a file with ``shred``. This will overwrite the file with 
+random data mutliple times, renames the file multiple times to obscure 
+its original name, then deletes the file. This makes it very difficult 
+for data recovery tools to extract meaningful information from the files.
+
+``shred -u secret.txt``
+
+- ``-u`` = truncate and delete the file after shredding.
+- ``-n`` = number of times to overwrite (defualt is 3) ``shred -n 10 secret.txt``
+
+Solid-State Drives:
+
+1. Use ``fstrim`` (Best for Full SSD)
+✅ Best for clearing free space on an SSD
+
+Modern SSDs support TRIM, which tells the SSD to permanently erase deleted data
+
+``sudo fstrim -v /``
+
+2. Use srm or wipe (For File-Level Deletion)
+✅ Best for deleting a single file securely (better than ``shred`` on SSDs)
+
+🔹 Install srm (Secure Remove)
+
+```
+sudo apt install secure-delete  # Debian/Ubuntu
+brew install srm               # macOS
+```
+
+🔹 Securely delete a file = ``srm -v my_secret_file.txt`` 
+
+🔹 Use wipe for Directories = ``wipe -rf my_secret_folder/``
