@@ -79,6 +79,8 @@ Commands:
 - Send over SSH with sudo command = ``rsync -v --rsync-path="sudo rsync" yt_download_image.tar user@server:/srv/flask_yt_download``
 - Send over entire directory = ``rsync -avz /source/dir /dest/dir``
 - Send all files in directory = ``rsync -avz /source/dir/ /dest/dir``
+- ``rsync -avz --rsync-path="sudo rsync" -e "ssh -p 2222" /Users/tyleranderson/Bonus tyler@anderson.home:/home/tyler/backup``
+- ``rsync -avz --rsync-path="sudo rsync" /Users/tyleranderson/Bonus tyler@anderson.home:/home/tyler/backup``
 
 Flags: 
 
@@ -103,3 +105,24 @@ Backup folders: daily ``rsync`` to a separate disk
 Full system: weekly ``dd`` or ``timeshift``
 
 Can setup with cron to run regularly.
+
+## Tar Files
+
+A tar file ``.tar`` is an archive file that stores multiple files and 
+directories together in one file, without compression. Very common
+in Linux and Unix based systems. Common for backups and transfers.
+
+- Create tar file = ``tar -cvf archive.tar /path/to/files/``
+- Extract tar file = ``tar -xvf archive.tar``
+- Create compressed tar file = ``tar -czvf archive.tar.gz /path/to/files/``
+- Extract compressed tar file = ``tar -xzvf archive.tar.gz``
+- List files in tar file = ``tar -tvf archive.tar``
+- Extract specific file from tar file = ``tar -xvf archive.tar file.txt``
+
+Flags:
+
+- ``-c`` = Crete new archive
+- ``-v`` = Verbose mode (shows progress)
+- ``-f`` = Specifies filename (archive.tar)
+- ``-x`` = Extract
+- ``-z`` = Compress with gzip

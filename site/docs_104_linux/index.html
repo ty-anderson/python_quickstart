@@ -768,6 +768,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#tar-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tar Files
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -911,6 +920,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#tar-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tar Files
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1013,6 +1031,8 @@ Symbolic is more straight forward.</p>
 <li>Send over SSH with sudo command = <code>rsync -v --rsync-path="sudo rsync" yt_download_image.tar user@server:/srv/flask_yt_download</code></li>
 <li>Send over entire directory = <code>rsync -avz /source/dir /dest/dir</code></li>
 <li>Send all files in directory = <code>rsync -avz /source/dir/ /dest/dir</code></li>
+<li><code>rsync -avz --rsync-path="sudo rsync" -e "ssh -p 2222" /Users/tyleranderson/Bonus tyler@anderson.home:/home/tyler/backup</code></li>
+<li><code>rsync -avz --rsync-path="sudo rsync" /Users/tyleranderson/Bonus tyler@anderson.home:/home/tyler/backup</code></li>
 </ul>
 <p>Flags: </p>
 <ul>
@@ -1032,6 +1052,26 @@ Symbolic is more straight forward.</p>
 <p>Backup folders: daily <code>rsync</code> to a separate disk
 Full system: weekly <code>dd</code> or <code>timeshift</code></p>
 <p>Can setup with cron to run regularly.</p>
+<h2 id="tar-files">Tar Files</h2>
+<p>A tar file <code>.tar</code> is an archive file that stores multiple files and 
+directories together in one file, without compression. Very common
+in Linux and Unix based systems. Common for backups and transfers.</p>
+<ul>
+<li>Create tar file = <code>tar -cvf archive.tar /path/to/files/</code></li>
+<li>Extract tar file = <code>tar -xvf archive.tar</code></li>
+<li>Create compressed tar file = <code>tar -czvf archive.tar.gz /path/to/files/</code></li>
+<li>Extract compressed tar file = <code>tar -xzvf archive.tar.gz</code></li>
+<li>List files in tar file = <code>tar -tvf archive.tar</code></li>
+<li>Extract specific file from tar file = <code>tar -xvf archive.tar file.txt</code></li>
+</ul>
+<p>Flags:</p>
+<ul>
+<li><code>-c</code> = Crete new archive</li>
+<li><code>-v</code> = Verbose mode (shows progress)</li>
+<li><code>-f</code> = Specifies filename (archive.tar)</li>
+<li><code>-x</code> = Extract</li>
+<li><code>-z</code> = Compress with gzip</li>
+</ul>
 
 
 
