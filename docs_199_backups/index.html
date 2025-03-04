@@ -1149,6 +1149,10 @@ for data recovery tools to extract meaningful information from the files.</p>
 <li><code>-u</code> = truncate and delete the file after shredding.</li>
 <li><code>-n</code> = number of times to overwrite (defualt is 3) <code>shred -n 10 secret.txt</code></li>
 </ul>
+<p>For entire directories, you can use <code>wipe</code>. </p>
+<p><code>sudo apt install wipe</code> and then <code>wipe -r /path/to/directory/</code> this will
+remove the directory as well. If you want to keep the directory use 
+<code>wipe -r /path/to/directory/*</code></p>
 <p>Solid-State Drives:</p>
 <ol>
 <li>Use <code>fstrim</code> (Best for Full SSD)
