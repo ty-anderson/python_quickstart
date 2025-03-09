@@ -1,4 +1,4 @@
-# ffmpeg
+# FFmpeg
 
 ffmpeg is a video editing command tool. 
 
