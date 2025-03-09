@@ -839,6 +839,81 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#dash-command-with-ffmpeg" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 DASH Command with FFmpeg
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎯 DASH Command with FFmpeg">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#explanation-of-flags" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔍 Explanation of Flags:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dash-output-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      📂 DASH Output Files
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#serving-dash-with-python-http-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      🖥️ Serving DASH with Python HTTP Server
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#play-dash-in-a-browser" class="md-nav__link">
+    <span class="md-ellipsis">
+      🌐 Play DASH in a Browser
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-dash-multi-bitrate-encoding" class="md-nav__link">
+    <span class="md-ellipsis">
+      📌 Advanced DASH: Multi-Bitrate Encoding
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📌 Advanced DASH: Multi-Bitrate Encoding">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚀 Summary
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -918,6 +993,81 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#dash-command-with-ffmpeg" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 DASH Command with FFmpeg
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎯 DASH Command with FFmpeg">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#explanation-of-flags" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔍 Explanation of Flags:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dash-output-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      📂 DASH Output Files
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#serving-dash-with-python-http-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      🖥️ Serving DASH with Python HTTP Server
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#play-dash-in-a-browser" class="md-nav__link">
+    <span class="md-ellipsis">
+      🌐 Play DASH in a Browser
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-dash-multi-bitrate-encoding" class="md-nav__link">
+    <span class="md-ellipsis">
+      📌 Advanced DASH: Multi-Bitrate Encoding
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📌 Advanced DASH: Multi-Bitrate Encoding">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚀 Summary
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -936,70 +1086,60 @@
 <h1 id="streaming">Streaming</h1>
 <p>The <strong>"best" streaming protocol</strong> depends on the use case. Here’s a breakdown of what’s ideal for different scenarios:</p>
 <h3 id="best-streaming-protocols-by-use-case"><strong>Best Streaming Protocols by Use Case</strong></h3>
-<ol>
-<li><strong>On-Demand Video Streaming (e.g., Netflix, YouTube)</strong></li>
+<p><strong>On-Demand Video Streaming (e.g., Netflix, YouTube)</strong></p>
+<ul>
 <li><strong>Best:</strong> <strong>DASH (MPEG-DASH) or HLS</strong></li>
 <li><strong>Why?</strong> Adaptive bitrate streaming (ABR) ensures smooth playback across different devices and network conditions.</li>
-<li>
-<p><strong>Used By:</strong> Netflix, YouTube (DASH), Apple (HLS), Amazon Prime Video (DASH + HLS)</p>
-</li>
-<li>
+<li><strong>Used By:</strong> Netflix, YouTube (DASH), Apple (HLS), Amazon Prime Video (DASH + HLS)</li>
+</ul>
 <p><strong>Live Streaming (e.g., Twitch, YouTube Live)</strong></p>
-</li>
+<ul>
 <li><strong>Best:</strong> <strong>HLS (Low-Latency), DASH (LL-DASH), or WebRTC for real-time interactivity</strong></li>
 <li><strong>Why?</strong> HLS and DASH offer scalability, while WebRTC provides ultra-low latency for live interaction.</li>
-<li>
-<p><strong>Used By:</strong> Twitch (RTMP for ingest, HLS for playback), YouTube Live (DASH + HLS)</p>
-</li>
-<li>
+<li><strong>Used By:</strong> Twitch (RTMP for ingest, HLS for playback), YouTube Live (DASH + HLS)</li>
+</ul>
 <p><strong>Real-Time Communication (e.g., Zoom, Google Meet)</strong></p>
-</li>
+<ul>
 <li><strong>Best:</strong> <strong>WebRTC</strong></li>
 <li><strong>Why?</strong> Peer-to-peer, ultra-low latency, no need for external servers.</li>
-<li>
-<p><strong>Used By:</strong> Google Meet, Zoom, Microsoft Teams</p>
-</li>
-<li>
+<li><strong>Used By:</strong> Google Meet, Zoom, Microsoft Teams</li>
+</ul>
 <p><strong>Professional Broadcast / Contribution (e.g., TV Networks, Sports)</strong></p>
-</li>
+<ul>
 <li><strong>Best:</strong> <strong>SRT or RTMP (for ingest)</strong></li>
 <li><strong>Why?</strong> SRT provides reliable, high-quality, low-latency transmission, while RTMP is still widely supported for ingestion.</li>
 <li><strong>Used By:</strong> ESPN, news networks, live sports broadcasting</li>
-</ol>
+</ul>
 <hr />
 <h3 id="what-does-netflix-use"><strong>What Does Netflix Use?</strong></h3>
-<p>Netflix uses <strong>MPEG-DASH</strong> for most of its streaming, alongside <strong>HLS for Apple devices</strong>. Their stack includes:
-- <strong>DASH (MPEG-DASH)</strong> – Adaptive bitrate streaming for optimal playback across devices.
-- <strong>HLS (HTTP Live Streaming)</strong> – For Apple devices, since Apple mandates HLS.
-- <strong>CDN Optimization</strong> – Uses its own <strong>Open Connect CDN</strong> to reduce latency and improve video delivery.
-- <strong>Per-Title Encoding</strong> – Dynamically adjusts compression based on the content to optimize quality vs. bandwidth.</p>
+<p>Netflix uses <strong>MPEG-DASH</strong> for most of its streaming, alongside <strong>HLS for Apple devices</strong>. Their stack includes:</p>
+<ul>
+<li><strong>DASH (MPEG-DASH)</strong> – Adaptive bitrate streaming for optimal playback across devices.</li>
+<li><strong>HLS (HTTP Live Streaming)</strong> – For Apple devices, since Apple mandates HLS.</li>
+<li><strong>CDN Optimization</strong> – Uses its own <strong>Open Connect CDN</strong> to reduce latency and improve video delivery.</li>
+<li><strong>Per-Title Encoding</strong> – Dynamically adjusts compression based on the content to optimize quality vs. bandwidth.</li>
+</ul>
 <p>So HLS can be used to stream an mp4 file to another device?</p>
 <p>Yes, <strong>HLS (HTTP Live Streaming)</strong> can be used to stream an <strong>MP4 file</strong> to another device, but it requires some processing first. </p>
 <h3 id="how-hls-streams-an-mp4-file"><strong>How HLS Streams an MP4 File</strong></h3>
-<ol>
-<li><strong>Segment the MP4 File</strong>  </li>
+<p><strong>Segment the MP4 File</strong>  </p>
+<ul>
 <li>HLS requires the video to be split into small chunks (typically <code>.ts</code> files, though newer versions support fragmented MP4 <code>.m4s</code>).</li>
-<li>
-<p>A tool like <strong>FFmpeg</strong> can do this.</p>
-</li>
-<li>
+<li>A tool like <strong>FFmpeg</strong> can do this.</li>
+</ul>
 <p><strong>Create an M3U8 Playlist</strong>  </p>
-</li>
+<ul>
 <li>HLS uses a <code>.m3u8</code> file (a playlist) that lists the segmented video files.</li>
-<li>
-<p>The player downloads and plays the segments in order.</p>
-</li>
-<li>
+<li>The player downloads and plays the segments in order.</li>
+</ul>
 <p><strong>Host the Segments &amp; Playlist on a Server</strong>  </p>
-</li>
-<li>
-<p>You need an <strong>HTTP server (e.g., Nginx, Apache, or a cloud service like S3)</strong> to serve the files.</p>
-</li>
-<li>
+<ul>
+<li>You need an <strong>HTTP server (e.g., Nginx, Apache, or a cloud service like S3)</strong> to serve the files.</li>
+</ul>
 <p><strong>Play the Stream on Another Device</strong>  </p>
-</li>
+<ul>
 <li>Open the <code>.m3u8</code> URL in a compatible player (e.g., <strong>Safari, VLC, ExoPlayer, or hls.js in a browser</strong>).</li>
-</ol>
+</ul>
 <hr />
 <h3 id="example-convert-mp4-to-hls-using-ffmpeg"><strong>Example: Convert MP4 to HLS Using FFmpeg</strong></h3>
 <p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>ffmpeg<span class="w"> </span>-i<span class="w"> </span>input.mp4<span class="w"> </span>-codec:<span class="w"> </span>copy<span class="w"> </span>-start_number<span class="w"> </span><span class="m">0</span><span class="w"> </span>-hls_time<span class="w"> </span><span class="m">10</span><span class="w"> </span>-hls_list_size<span class="w"> </span><span class="m">0</span><span class="w"> </span>-f<span class="w"> </span>hls<span class="w"> </span>output.m3u8
@@ -1010,15 +1150,94 @@
 <h3 id="how-to-serve-the-stream"><strong>How to Serve the Stream</strong></h3>
 <ol>
 <li>Move the <code>output.m3u8</code> and <code>.ts</code> files to a web server.</li>
-<li>Access the stream via:<br />
+<li>
+<p>Access the stream via:<br />
    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>http://yourserver.com/path/output.m3u8
-</code></pre></div></td></tr></table></div></li>
-<li>Play it in:</li>
-<li><strong>Web browser</strong> with <code>hls.js</code></li>
-<li><strong>VLC media player</strong> (Open Network Stream)</li>
-<li><strong>iOS Safari (built-in HLS support)</strong></li>
+</code></pre></div></td></tr></table></div></p>
+</li>
+<li>
+<p>Play it in:</p>
+</li>
 </ol>
-<p>Would you like an example of setting this up on a web server?</p>
+<p><strong>Web browser</strong> with <code>hls.js</code> OR
+   <strong>VLC media player</strong> (Open Network Stream) OR
+   <strong>iOS Safari (built-in HLS support)</strong></p>
+<hr />
+<h2 id="dash-command-with-ffmpeg"><strong>🎯 DASH Command with FFmpeg</strong></h2>
+<p>Run:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>ffmpeg<span class="w"> </span>-i<span class="w"> </span>vid_file.mp4<span class="w"> </span>-codec:<span class="w"> </span>copy<span class="w"> </span>-map<span class="w"> </span><span class="m">0</span><span class="w"> </span>-f<span class="w"> </span>dash<span class="w"> </span>output.mpd
+</code></pre></div></td></tr></table></div></p>
+<h3 id="explanation-of-flags"><strong>🔍 Explanation of Flags:</strong></h3>
+<ul>
+<li><code>-i vid_file.mp4</code> → Input video file.</li>
+<li><code>-codec: copy</code> → Copies the streams without re-encoding.</li>
+<li><code>-map 0</code> → Ensures all streams (audio &amp; video) are included.</li>
+<li><code>-f dash</code> → Specifies DASH output format.</li>
+<li><code>output.mpd</code> → The DASH manifest file.</li>
+</ul>
+<hr />
+<h2 id="dash-output-files"><strong>📂 DASH Output Files</strong></h2>
+<p>This will generate:</p>
+<ul>
+<li><strong><code>output.mpd</code></strong> → The DASH manifest (index) file.</li>
+<li><strong>Segmented <code>.m4s</code> video/audio chunks</strong>.</li>
+</ul>
+<hr />
+<h2 id="serving-dash-with-python-http-server"><strong>🖥️ Serving DASH with Python HTTP Server</strong></h2>
+<p>Just like HLS, you can serve DASH using:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>python3<span class="w"> </span>-m<span class="w"> </span>http.server<span class="w"> </span><span class="m">9000</span>
+</code></pre></div></td></tr></table></div>
+<p>Then play in VLC:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>http://localhost:9000/output.mpd
+</code></pre></div></td></tr></table></div>
+✔️ <strong>VLC supports DASH</strong>, so this should work without additional configuration.</p>
+<hr />
+<h2 id="play-dash-in-a-browser"><strong>🌐 Play DASH in a Browser</strong></h2>
+<p>Browsers don’t natively support DASH, so you need a <strong>DASH player</strong> like <a href="https://reference.dashif.org/dash.js/latest/samples/getting-started/basic-example.html">dash.js</a>.</p>
+<p>To embed DASH in HTML, use:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">video</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;dashPlayer&quot;</span> <span class="na">controls</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">source</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;http://localhost:9000/output.mpd&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;application/dash+xml&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">video</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdn.dashjs.org/latest/dash.all.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">player</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">dashjs</span><span class="p">.</span><span class="nx">MediaPlayer</span><span class="p">().</span><span class="nx">create</span><span class="p">();</span>
+<span class="w">    </span><span class="nx">player</span><span class="p">.</span><span class="nx">initialize</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;#dashPlayer&quot;</span><span class="p">),</span><span class="w"> </span><span class="s2">&quot;http://localhost:9000/output.mpd&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</code></pre></div></td></tr></table></div></p>
+<hr />
+<h2 id="advanced-dash-multi-bitrate-encoding"><strong>📌 Advanced DASH: Multi-Bitrate Encoding</strong></h2>
+<p>To <strong>support adaptive streaming</strong>, generate multiple bitrates:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>ffmpeg<span class="w"> </span>-i<span class="w"> </span>vid_file.mp4<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-map<span class="w"> </span><span class="m">0</span>:v<span class="w"> </span>-map<span class="w"> </span><span class="m">0</span>:a<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-b:v:0<span class="w"> </span>2000k<span class="w"> </span>-b:v:1<span class="w"> </span>1000k<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-s:v:0<span class="w"> </span>1920x1080<span class="w"> </span>-s:v:1<span class="w"> </span>1280x720<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-c:v<span class="w"> </span>libx264<span class="w"> </span>-c:a<span class="w"> </span>aac<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-f<span class="w"> </span>dash<span class="w"> </span>-seg_duration<span class="w"> </span><span class="m">4</span><span class="w"> </span>-use_timeline<span class="w"> </span><span class="m">1</span><span class="w"> </span>-use_template<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>output.mpd
+</code></pre></div></td></tr></table></div>
+<p>✔️ <strong>This creates multiple video quality options</strong> that DASH players can switch between dynamically.</p>
+<hr />
+<h3 id="summary"><strong>🚀 Summary</strong></h3>
+<ul>
+<li><strong>Basic DASH:</strong> <code>ffmpeg -i vid_file.mp4 -codec: copy -map 0 -f dash output.mpd</code></li>
+<li><strong>Serve DASH:</strong> <code>python3 -m http.server 9000</code></li>
+<li><strong>Play in VLC:</strong> <code>http://localhost:9000/output.mpd</code></li>
+<li><strong>Play in Browser:</strong> Use <code>dash.js</code></li>
+<li><strong>Adaptive Streaming:</strong> Encode multiple bitrates with <code>-b:v</code> and <code>-s:v</code></li>
+</ul>
 
 
 
