@@ -979,15 +979,21 @@
 <p>Yes, <strong>HLS (HTTP Live Streaming)</strong> can be used to stream an <strong>MP4 file</strong> to another device, but it requires some processing first. </p>
 <h3 id="how-hls-streams-an-mp4-file"><strong>How HLS Streams an MP4 File</strong></h3>
 <ol>
-<li><strong>Segment the MP4 File</strong>  </li>
-<li>HLS requires the video to be split into small chunks (typically <code>.ts</code> files, though newer versions support fragmented MP4 <code>.m4s</code>).</li>
+<li>
+<p><strong>Segment the MP4 File</strong>  </p>
+</li>
+<li>
+<p>HLS requires the video to be split into small chunks (typically <code>.ts</code> files, though newer versions support fragmented MP4 <code>.m4s</code>).</p>
+</li>
 <li>
 <p>A tool like <strong>FFmpeg</strong> can do this.</p>
 </li>
 <li>
 <p><strong>Create an M3U8 Playlist</strong>  </p>
 </li>
-<li>HLS uses a <code>.m3u8</code> file (a playlist) that lists the segmented video files.</li>
+<li>
+<p>HLS uses a <code>.m3u8</code> file (a playlist) that lists the segmented video files.</p>
+</li>
 <li>
 <p>The player downloads and plays the segments in order.</p>
 </li>
@@ -998,9 +1004,11 @@
 <p>You need an <strong>HTTP server (e.g., Nginx, Apache, or a cloud service like S3)</strong> to serve the files.</p>
 </li>
 <li>
-<p><strong>Play the Stream on Another Device</strong>  </p>
+<p><strong>Play the Stream on Another Device</strong> </p>
 </li>
-<li>Open the <code>.m3u8</code> URL in a compatible player (e.g., <strong>Safari, VLC, ExoPlayer, or hls.js in a browser</strong>).</li>
+<li>
+<p>Open the <code>.m3u8</code> URL in a compatible player (e.g., <strong>Safari, VLC, ExoPlayer, or hls.js in a browser</strong>).</p>
+</li>
 </ol>
 <hr />
 <h3 id="example-convert-mp4-to-hls-using-ffmpeg"><strong>Example: Convert MP4 to HLS Using FFmpeg</strong></h3>

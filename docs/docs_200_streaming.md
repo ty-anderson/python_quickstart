@@ -42,17 +42,21 @@ Yes, **HLS (HTTP Live Streaming)** can be used to stream an **MP4 file** to anot
 ### **How HLS Streams an MP4 File**
 
 1. **Segment the MP4 File**  
+
    - HLS requires the video to be split into small chunks (typically `.ts` files, though newer versions support fragmented MP4 `.m4s`).
    - A tool like **FFmpeg** can do this.
 
 2. **Create an M3U8 Playlist**  
+
    - HLS uses a `.m3u8` file (a playlist) that lists the segmented video files.
    - The player downloads and plays the segments in order.
 
 3. **Host the Segments & Playlist on a Server**  
+
    - You need an **HTTP server (e.g., Nginx, Apache, or a cloud service like S3)** to serve the files.
 
-4. **Play the Stream on Another Device**  
+4. **Play the Stream on Another Device** 
+
    - Open the `.m3u8` URL in a compatible player (e.g., **Safari, VLC, ExoPlayer, or hls.js in a browser**).
 
 ---
