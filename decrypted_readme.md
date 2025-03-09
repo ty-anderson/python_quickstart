@@ -1,1 +1,0 @@
-Docs are here: https://ty-anderson.github.io/python_quickstart/

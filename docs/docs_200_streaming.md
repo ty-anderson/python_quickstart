@@ -168,6 +168,7 @@ ffmpeg -i vid_file.mp4 \
 ---
 
 ### **🚀 Summary**
+
 - **Basic DASH:** `ffmpeg -i vid_file.mp4 -codec: copy -map 0 -f dash output.mpd`
 - **Serve DASH:** `python3 -m http.server 9000`
 - **Play in VLC:** `http://localhost:9000/output.mpd`
