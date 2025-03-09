@@ -831,6 +831,26 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs_200_streaming/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Streaming
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -988,7 +1008,7 @@ rsync<span class="w"> </span>-avz<span class="w"> </span>/source/dir<span class=
 rsync<span class="w"> </span>-avz<span class="w"> </span>/source/dir/<span class="w"> </span>/dest/dir
 
 <span class="c1"># actual use</span>
-rsync<span class="w"> </span>-avz<span class="w"> </span>--rsync-path<span class="o">=</span><span class="s2">&quot;sudo rsync&quot;</span><span class="w"> </span>/Users/tyleranderson/PycharmProjects<span class="w"> </span>tyler@anderson.home:/home/tyler/backup
+rsync<span class="w"> </span>-avz<span class="w"> </span>--rsync-path<span class="o">=</span><span class="s2">&quot;sudo rsync&quot;</span><span class="w"> </span>/Users/tyleranderson/PycharmProjects<span class="w"> </span>tyler@anderson.home:/srv/backup_media
 </code></pre></div></td></tr></table></div>
 <p>Flags: </p>
 <ul>
@@ -1020,11 +1040,11 @@ in Linux and Unix based systems. Common for backups and transfers.</p>
 <span class="normal">14</span>
 <span class="normal">15</span>
 <span class="normal">16</span>
-<span class="normal">17</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Create tar file</span>
-tar<span class="w"> </span>-cvf<span class="w"> </span>archive.tar<span class="w"> </span>/path/to/files/
+<span class="normal">17</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Create tar file (best to use relative path instead of absolute)</span>
+sudo<span class="w"> </span>tar<span class="w"> </span>-cvf<span class="w"> </span>archive.tar<span class="w"> </span>path/to/files/
 
 <span class="c1"># Extract tar file</span>
-tar<span class="w"> </span>-xvf<span class="w"> </span>archive.tar
+sudo<span class="w"> </span>tar<span class="w"> </span>-xvf<span class="w"> </span>archive.tar
 
 <span class="c1"># Create compressed tar file</span>
 tar<span class="w"> </span>-czvf<span class="w"> </span>archive.tar.gz<span class="w"> </span>/path/to/files/
@@ -1123,6 +1143,23 @@ tar<span class="w"> </span>-czf<span class="w"> </span>-<span class="w"> </span>
 
 <span class="c1"># decrypt and extract in one command.</span>
 age<span class="w"> </span>-d<span class="w"> </span>myfolder.tar.gz.age<span class="w"> </span><span class="p">|</span><span class="w"> </span>tar<span class="w"> </span>-xz
+</code></pre></div></td></tr></table></div>
+<p>Decrypt:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># decrypt .age file</span>
+age<span class="w"> </span>-d<span class="w"> </span>myfolder.tar.gz.age<span class="w"> </span>&gt;<span class="w"> </span>myfolder.tar.gz
+
+<span class="c1"># extract the file</span>
+tar<span class="w"> </span>-xzf<span class="w"> </span>myfolder.tar.gz
+
+<span class="c1"># delete archive file</span>
+shred<span class="w"> </span>-u<span class="w"> </span>myfolder.tar.gz
 </code></pre></div></td></tr></table></div>
 <p>Flags:</p>
 <ul>

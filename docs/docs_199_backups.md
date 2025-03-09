@@ -55,7 +55,7 @@ rsync -avz /source/dir /dest/dir
 rsync -avz /source/dir/ /dest/dir
 
 # actual use
-rsync -avz --rsync-path="sudo rsync" /Users/tyleranderson/PycharmProjects tyler@anderson.home:/home/tyler/backup
+rsync -avz --rsync-path="sudo rsync" /Users/tyleranderson/PycharmProjects tyler@anderson.home:/srv/backup_media
 ```
 
 Flags: 
@@ -75,11 +75,11 @@ directories together in one file, without compression. Very common
 in Linux and Unix based systems. Common for backups and transfers.
 
 ```bash
-# Create tar file
-tar -cvf archive.tar /path/to/files/
+# Create tar file (best to use relative path instead of absolute)
+sudo tar -cvf archive.tar path/to/files/
 
 # Extract tar file
-tar -xvf archive.tar
+sudo tar -xvf archive.tar
 
 # Create compressed tar file
 tar -czvf archive.tar.gz /path/to/files/
@@ -166,6 +166,19 @@ tar -czf - myfolder/ | age -o myfolder.tar.gz.age -p
 
 # decrypt and extract in one command.
 age -d myfolder.tar.gz.age | tar -xz
+```
+
+Decrypt:
+
+```bash
+# decrypt .age file
+age -d myfolder.tar.gz.age > myfolder.tar.gz
+
+# extract the file
+tar -xzf myfolder.tar.gz
+
+# delete archive file
+shred -u myfolder.tar.gz
 ```
 
 Flags:

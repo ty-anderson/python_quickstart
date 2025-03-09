@@ -42,3 +42,4 @@ nav:
     - SSH: docs_103_ssh.md
     - Backups: docs_199_backups.md
   - FFmpeg: docs_200_ffmpeg.md
+  - Streaming: docs_200_streaming.md
