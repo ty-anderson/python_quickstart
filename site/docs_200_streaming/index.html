@@ -968,32 +968,24 @@
 </ol>
 <hr />
 <h3 id="what-does-netflix-use"><strong>What Does Netflix Use?</strong></h3>
-<p>Netflix uses <strong>MPEG-DASH</strong> for most of its streaming, alongside <strong>HLS for Apple devices</strong>. Their stack includes:</p>
-<ul>
-<li><strong>DASH (MPEG-DASH)</strong> – Adaptive bitrate streaming for optimal playback across devices.</li>
-<li><strong>HLS (HTTP Live Streaming)</strong> – For Apple devices, since Apple mandates HLS.</li>
-<li><strong>CDN Optimization</strong> – Uses its own <strong>Open Connect CDN</strong> to reduce latency and improve video delivery.</li>
-<li><strong>Per-Title Encoding</strong> – Dynamically adjusts compression based on the content to optimize quality vs. bandwidth.</li>
-</ul>
+<p>Netflix uses <strong>MPEG-DASH</strong> for most of its streaming, alongside <strong>HLS for Apple devices</strong>. Their stack includes:
+- <strong>DASH (MPEG-DASH)</strong> – Adaptive bitrate streaming for optimal playback across devices.
+- <strong>HLS (HTTP Live Streaming)</strong> – For Apple devices, since Apple mandates HLS.
+- <strong>CDN Optimization</strong> – Uses its own <strong>Open Connect CDN</strong> to reduce latency and improve video delivery.
+- <strong>Per-Title Encoding</strong> – Dynamically adjusts compression based on the content to optimize quality vs. bandwidth.</p>
 <p>So HLS can be used to stream an mp4 file to another device?</p>
 <p>Yes, <strong>HLS (HTTP Live Streaming)</strong> can be used to stream an <strong>MP4 file</strong> to another device, but it requires some processing first. </p>
 <h3 id="how-hls-streams-an-mp4-file"><strong>How HLS Streams an MP4 File</strong></h3>
 <ol>
-<li>
-<p><strong>Segment the MP4 File</strong>  </p>
-</li>
-<li>
-<p>HLS requires the video to be split into small chunks (typically <code>.ts</code> files, though newer versions support fragmented MP4 <code>.m4s</code>).</p>
-</li>
+<li><strong>Segment the MP4 File</strong>  </li>
+<li>HLS requires the video to be split into small chunks (typically <code>.ts</code> files, though newer versions support fragmented MP4 <code>.m4s</code>).</li>
 <li>
 <p>A tool like <strong>FFmpeg</strong> can do this.</p>
 </li>
 <li>
 <p><strong>Create an M3U8 Playlist</strong>  </p>
 </li>
-<li>
-<p>HLS uses a <code>.m3u8</code> file (a playlist) that lists the segmented video files.</p>
-</li>
+<li>HLS uses a <code>.m3u8</code> file (a playlist) that lists the segmented video files.</li>
 <li>
 <p>The player downloads and plays the segments in order.</p>
 </li>
@@ -1004,21 +996,17 @@
 <p>You need an <strong>HTTP server (e.g., Nginx, Apache, or a cloud service like S3)</strong> to serve the files.</p>
 </li>
 <li>
-<p><strong>Play the Stream on Another Device</strong> </p>
+<p><strong>Play the Stream on Another Device</strong>  </p>
 </li>
-<li>
-<p>Open the <code>.m3u8</code> URL in a compatible player (e.g., <strong>Safari, VLC, ExoPlayer, or hls.js in a browser</strong>).</p>
-</li>
+<li>Open the <code>.m3u8</code> URL in a compatible player (e.g., <strong>Safari, VLC, ExoPlayer, or hls.js in a browser</strong>).</li>
 </ol>
 <hr />
 <h3 id="example-convert-mp4-to-hls-using-ffmpeg"><strong>Example: Convert MP4 to HLS Using FFmpeg</strong></h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>ffmpeg<span class="w"> </span>-i<span class="w"> </span>input.mp4<span class="w"> </span>-codec:<span class="w"> </span>copy<span class="w"> </span>-start_number<span class="w"> </span><span class="m">0</span><span class="w"> </span>-hls_time<span class="w"> </span><span class="m">10</span><span class="w"> </span>-hls_list_size<span class="w"> </span><span class="m">0</span><span class="w"> </span>-f<span class="w"> </span>hls<span class="w"> </span>output.m3u8
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>ffmpeg<span class="w"> </span>-i<span class="w"> </span>input.mp4<span class="w"> </span>-codec:<span class="w"> </span>copy<span class="w"> </span>-start_number<span class="w"> </span><span class="m">0</span><span class="w"> </span>-hls_time<span class="w"> </span><span class="m">10</span><span class="w"> </span>-hls_list_size<span class="w"> </span><span class="m">0</span><span class="w"> </span>-f<span class="w"> </span>hls<span class="w"> </span>output.m3u8
 </code></pre></div></td></tr></table></div>
-<ul>
-<li><code>-hls_time 10</code> → Splits video into <strong>10-second</strong> segments.</li>
-<li><code>-hls_list_size 0</code> → Keeps all segments in the playlist.</li>
-<li><code>output.m3u8</code> → The playlist file.</li>
-</ul>
+- <code>-hls_time 10</code> → Splits video into <strong>10-second</strong> segments.
+- <code>-hls_list_size 0</code> → Keeps all segments in the playlist.
+- <code>output.m3u8</code> → The playlist file.</p>
 <h3 id="how-to-serve-the-stream"><strong>How to Serve the Stream</strong></h3>
 <ol>
 <li>Move the <code>output.m3u8</code> and <code>.ts</code> files to a web server.</li>
