@@ -758,6 +758,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Streaming
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -767,6 +778,70 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#best-streaming-protocols-by-use-case" class="md-nav__link">
+    <span class="md-ellipsis">
+      Best Streaming Protocols by Use Case
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-does-netflix-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      What Does Netflix Use?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-hls-streams-an-mp4-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      How HLS Streams an MP4 File
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-convert-mp4-to-hls-using-ffmpeg" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: Convert MP4 to HLS Using FFmpeg
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-serve-the-stream" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Serve the Stream
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -792,6 +867,59 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#best-streaming-protocols-by-use-case" class="md-nav__link">
+    <span class="md-ellipsis">
+      Best Streaming Protocols by Use Case
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-does-netflix-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      What Does Netflix Use?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-hls-streams-an-mp4-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      How HLS Streams an MP4 File
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-convert-mp4-to-hls-using-ffmpeg" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: Convert MP4 to HLS Using FFmpeg
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-serve-the-stream" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Serve the Stream
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -806,6 +934,91 @@
 
 
 <h1 id="streaming">Streaming</h1>
+<p>The <strong>"best" streaming protocol</strong> depends on the use case. Here’s a breakdown of what’s ideal for different scenarios:</p>
+<h3 id="best-streaming-protocols-by-use-case"><strong>Best Streaming Protocols by Use Case</strong></h3>
+<ol>
+<li><strong>On-Demand Video Streaming (e.g., Netflix, YouTube)</strong></li>
+<li><strong>Best:</strong> <strong>DASH (MPEG-DASH) or HLS</strong></li>
+<li><strong>Why?</strong> Adaptive bitrate streaming (ABR) ensures smooth playback across different devices and network conditions.</li>
+<li>
+<p><strong>Used By:</strong> Netflix, YouTube (DASH), Apple (HLS), Amazon Prime Video (DASH + HLS)</p>
+</li>
+<li>
+<p><strong>Live Streaming (e.g., Twitch, YouTube Live)</strong></p>
+</li>
+<li><strong>Best:</strong> <strong>HLS (Low-Latency), DASH (LL-DASH), or WebRTC for real-time interactivity</strong></li>
+<li><strong>Why?</strong> HLS and DASH offer scalability, while WebRTC provides ultra-low latency for live interaction.</li>
+<li>
+<p><strong>Used By:</strong> Twitch (RTMP for ingest, HLS for playback), YouTube Live (DASH + HLS)</p>
+</li>
+<li>
+<p><strong>Real-Time Communication (e.g., Zoom, Google Meet)</strong></p>
+</li>
+<li><strong>Best:</strong> <strong>WebRTC</strong></li>
+<li><strong>Why?</strong> Peer-to-peer, ultra-low latency, no need for external servers.</li>
+<li>
+<p><strong>Used By:</strong> Google Meet, Zoom, Microsoft Teams</p>
+</li>
+<li>
+<p><strong>Professional Broadcast / Contribution (e.g., TV Networks, Sports)</strong></p>
+</li>
+<li><strong>Best:</strong> <strong>SRT or RTMP (for ingest)</strong></li>
+<li><strong>Why?</strong> SRT provides reliable, high-quality, low-latency transmission, while RTMP is still widely supported for ingestion.</li>
+<li><strong>Used By:</strong> ESPN, news networks, live sports broadcasting</li>
+</ol>
+<hr />
+<h3 id="what-does-netflix-use"><strong>What Does Netflix Use?</strong></h3>
+<p>Netflix uses <strong>MPEG-DASH</strong> for most of its streaming, alongside <strong>HLS for Apple devices</strong>. Their stack includes:
+- <strong>DASH (MPEG-DASH)</strong> – Adaptive bitrate streaming for optimal playback across devices.
+- <strong>HLS (HTTP Live Streaming)</strong> – For Apple devices, since Apple mandates HLS.
+- <strong>CDN Optimization</strong> – Uses its own <strong>Open Connect CDN</strong> to reduce latency and improve video delivery.
+- <strong>Per-Title Encoding</strong> – Dynamically adjusts compression based on the content to optimize quality vs. bandwidth.</p>
+<p>So HLS can be used to stream an mp4 file to another device?</p>
+<p>Yes, <strong>HLS (HTTP Live Streaming)</strong> can be used to stream an <strong>MP4 file</strong> to another device, but it requires some processing first. </p>
+<h3 id="how-hls-streams-an-mp4-file"><strong>How HLS Streams an MP4 File</strong></h3>
+<ol>
+<li><strong>Segment the MP4 File</strong>  </li>
+<li>HLS requires the video to be split into small chunks (typically <code>.ts</code> files, though newer versions support fragmented MP4 <code>.m4s</code>).</li>
+<li>
+<p>A tool like <strong>FFmpeg</strong> can do this.</p>
+</li>
+<li>
+<p><strong>Create an M3U8 Playlist</strong>  </p>
+</li>
+<li>HLS uses a <code>.m3u8</code> file (a playlist) that lists the segmented video files.</li>
+<li>
+<p>The player downloads and plays the segments in order.</p>
+</li>
+<li>
+<p><strong>Host the Segments &amp; Playlist on a Server</strong>  </p>
+</li>
+<li>
+<p>You need an <strong>HTTP server (e.g., Nginx, Apache, or a cloud service like S3)</strong> to serve the files.</p>
+</li>
+<li>
+<p><strong>Play the Stream on Another Device</strong>  </p>
+</li>
+<li>Open the <code>.m3u8</code> URL in a compatible player (e.g., <strong>Safari, VLC, ExoPlayer, or hls.js in a browser</strong>).</li>
+</ol>
+<hr />
+<h3 id="example-convert-mp4-to-hls-using-ffmpeg"><strong>Example: Convert MP4 to HLS Using FFmpeg</strong></h3>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>ffmpeg<span class="w"> </span>-i<span class="w"> </span>input.mp4<span class="w"> </span>-codec:<span class="w"> </span>copy<span class="w"> </span>-start_number<span class="w"> </span><span class="m">0</span><span class="w"> </span>-hls_time<span class="w"> </span><span class="m">10</span><span class="w"> </span>-hls_list_size<span class="w"> </span><span class="m">0</span><span class="w"> </span>-f<span class="w"> </span>hls<span class="w"> </span>output.m3u8
+</code></pre></div></td></tr></table></div>
+- <code>-hls_time 10</code> → Splits video into <strong>10-second</strong> segments.
+- <code>-hls_list_size 0</code> → Keeps all segments in the playlist.
+- <code>output.m3u8</code> → The playlist file.</p>
+<h3 id="how-to-serve-the-stream"><strong>How to Serve the Stream</strong></h3>
+<ol>
+<li>Move the <code>output.m3u8</code> and <code>.ts</code> files to a web server.</li>
+<li>Access the stream via:<br />
+   <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>http://yourserver.com/path/output.m3u8
+</code></pre></div></td></tr></table></div></li>
+<li>Play it in:</li>
+<li><strong>Web browser</strong> with <code>hls.js</code></li>
+<li><strong>VLC media player</strong> (Open Network Stream)</li>
+<li><strong>iOS Safari (built-in HLS support)</strong></li>
+</ol>
+<p>Would you like an example of setting this up on a web server?</p>
 
 
 
