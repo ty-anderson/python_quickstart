@@ -353,9 +353,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#download-python" class="md-nav__link">
+  <a href="#summary-steps" class="md-nav__link">
     <span class="md-ellipsis">
-      Download Python
+      Summary Steps
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running Python
     </span>
   </a>
   
@@ -904,9 +913,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#download-python" class="md-nav__link">
+  <a href="#summary-steps" class="md-nav__link">
     <span class="md-ellipsis">
-      Download Python
+      Summary Steps
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running Python
     </span>
   </a>
   
@@ -946,12 +964,55 @@
 
 
 <h1 id="how-to-use-python">How to use Python</h1>
-<h2 id="download-python">Download Python</h2>
+<h2 id="summary-steps">Summary Steps</h2>
 <ol>
-<li>Download the python interpreter from https://www.python.org/downloads/</li>
+<li>Create a virtual environment (venv).</li>
+<li>pip install any libraries to the venv.</li>
+<li>Write code in a .py file</li>
+<li>Run the .py file with the venv.</li>
+</ol>
+<p>Example:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># create venv</span>
+python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv<span class="w">  </span>
+
+<span class="c1"># activate venv</span>
+venv<span class="se">\S</span>cripts<span class="se">\a</span>ctivate<span class="w">  </span>
+
+<span class="c1"># install libraries to venv</span>
+pip<span class="w"> </span>install<span class="w"> </span>pandas<span class="w"> </span>sqlalchemy<span class="w"> </span>
+
+<span class="c1"># run your python file in your venv (if activated)</span>
+.<span class="w"> </span>python_file.py<span class="w">  </span>
+</code></pre></div></td></tr></table></div>
+<h2 id="running-python">Running Python</h2>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>[Python File]          1. write a .py file
+      |
+      v
+[Python Interpreter]   2. run .py file through interpreter
+      |
+      v
+  [Result]
+</code></pre></div></td></tr></table></div>
+<ol>
 <li>Python files end with <code>.py</code> for example <code>new_file.py</code>. Notice all lowercase and underscore format. 
 Python heavily uses this <strong>snake case</strong> formatting.</li>
-<li>In your <code>.py</code> file, you will write python code and then run it through the interpreter by using the terminal. </li>
+<li>In your <code>.py</code> file, write python code and then run it through the interpreter by using the terminal. </li>
 <li>Reference the interpreter and then the .py file like the example below.</li>
 <li>Example: <code>C:\username\python\bin\python.exe path\to\your\python\file.py</code></li>
 <li>Note you'll modify this to the correct paths on your computer.</li>

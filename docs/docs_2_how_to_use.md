@@ -1,12 +1,45 @@
 
 # How to use Python
 
-## Download Python
-1. Download the python interpreter from https://www.python.org/downloads/
-2. Python files end with ``.py`` for example ``new_file.py``. Notice all lowercase and underscore format. 
+## Summary Steps
+
+1. Create a virtual environment (venv).
+2. pip install any libraries to the venv.
+3. Write code in a .py file
+4. Run the .py file with the venv.
+
+Example:
+
+```bash
+# create venv
+python -m venv venv  
+
+# activate venv
+venv\Scripts\activate  
+
+# install libraries to venv
+pip install pandas sqlalchemy 
+
+# run your python file in your venv (if activated)
+. python_file.py  
+```
+
+## Running Python
+
+```
+[Python File]          1. write a .py file
+      |
+      v
+[Python Interpreter]   2. run .py file through interpreter
+      |
+      v
+  [Result]
+```
+
+1. Python files end with ``.py`` for example ``new_file.py``. Notice all lowercase and underscore format. 
 Python heavily uses this **snake case** formatting.
-3. In your ``.py`` file, you will write python code and then run it through the interpreter by using the terminal. 
-4. Reference the interpreter and then the .py file like the example below.
+2. In your ``.py`` file, write python code and then run it through the interpreter by using the terminal. 
+3. Reference the interpreter and then the .py file like the example below.
    - Example: ``C:\username\python\bin\python.exe path\to\your\python\file.py``
    - Note you'll modify this to the correct paths on your computer.
 
