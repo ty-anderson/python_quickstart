@@ -5,6 +5,6 @@ mkdocs build
 git add .
 git commit -m "update"
 git push
-rsync -av ./site/ tyler@anderson.home:/srv/web_apps/notes/
+rsync -av ./site/ tyler@192.168.1.104:/srv/web_apps/notes/
 .venv/bin/activate
 source python to_pdf.py
