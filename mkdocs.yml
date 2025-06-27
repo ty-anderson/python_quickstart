@@ -19,6 +19,9 @@ markdown_extensions:
       linenums: true
       use_pygments: true
   - pymdownx.superfences
+plugins:
+  - search
+  - print-site
 nav:
   - Home: index.md
   - Python:
