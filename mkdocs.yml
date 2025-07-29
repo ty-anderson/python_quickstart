@@ -47,3 +47,5 @@ nav:
   - Video Processing:
     - FFmpeg: docs_200_ffmpeg.md
     - Streaming: docs_200_streaming.md
+  - AI:
+      - Ollama: docs_105_local_llm.md
