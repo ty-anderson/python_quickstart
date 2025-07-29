@@ -38,8 +38,10 @@ More detailed steps:
    Issues = "https://github.com/pypa/sampleproject/issues"
    ```
 3. Make sure all relevant build libs are installed:
-   - ``pip install --upgrade build``
-   - ``pip install twine``
+   ```
+   pip install --upgrade build
+   pip install twine
+   ```
 4. Run the build - ``python -m build``
 5. Send to PyPI test - ``twine upload --repository testpypi dist/*``
 6. Send to PyPI - ``twine upload dist/*``
