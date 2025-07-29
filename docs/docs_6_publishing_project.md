@@ -37,7 +37,7 @@ classifiers = [
 Homepage = "https://github.com/pypa/sampleproject"
 Issues = "https://github.com/pypa/sampleproject/issues"
 ```
-3. Make sure all relevant build libs are installed:
+3. Make sure all relevant build libs are installed: \
    - ``pip install --upgrade build``
    - ``pip install twine``
 4. Run the build - ``python -m build``
