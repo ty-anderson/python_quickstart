@@ -2142,12 +2142,9 @@ your API keys. Once you have those established, you can create your project and 
 <li>Make sure all relevant build libs are installed:</li>
 <li><code>pip install --upgrade build</code></li>
 <li><code>pip install twine</code></li>
-<li>Run the build</li>
-<li><code>python -m build</code></li>
-<li>Send to PyPI test</li>
-<li><code>twine upload --repository testpypi dist/*</code></li>
-<li>Send to PyPI</li>
-<li><code>twine upload dist/*</code></li>
+<li>Run the build - <code>python -m build</code></li>
+<li>Send to PyPI test - <code>twine upload --repository testpypi dist/*</code></li>
+<li>Send to PyPI - <code>twine upload dist/*</code></li>
 </ol>
 <p>Make sure your build dependencies are not stored in your project dependencies.</p>
 <p>Another TOML file might look like this:</p>

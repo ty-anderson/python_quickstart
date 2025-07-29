@@ -38,14 +38,11 @@ Homepage = "https://github.com/pypa/sampleproject"
 Issues = "https://github.com/pypa/sampleproject/issues"
 ```
 3. Make sure all relevant build libs are installed:
-   1. ``pip install --upgrade build``
-   2. ``pip install twine``
-4. Run the build
-   1. ``python -m build``
-5. Send to PyPI test
-   1. ``twine upload --repository testpypi dist/*``
-6. Send to PyPI
-   1. ``twine upload dist/*``
+   - ``pip install --upgrade build``
+   - ``pip install twine``
+4. Run the build - ``python -m build``
+5. Send to PyPI test - ``twine upload --repository testpypi dist/*``
+6. Send to PyPI - ``twine upload dist/*``
 
 Make sure your build dependencies are not stored in your project dependencies.
 
