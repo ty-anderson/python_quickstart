@@ -13,31 +13,31 @@ More detailed steps:
 
 1. Make sure all of your files are created inside a folder structure
 2. Create pyproject.toml
-```toml
-[build-system] 
-requires = ["setuptools", "wheel"] 
-build-backend = "setuptools.build_meta"
-  
-[project]
-name = "example_package_YOUR_USERNAME_HERE"
-version = "0.0.1"
-authors = [
-{ name="Example Author", email="author@example.com" },
-]
-description = "A small example package"
-readme = "README.md"
-requires-python = ">=3.8"
-classifiers = [
-  "Programming Language :: Python :: 3",
-  "License :: OSI Approved :: MIT License",
-  "Operating System :: OS Independent",
-]
-		
-[project.urls]
-Homepage = "https://github.com/pypa/sampleproject"
-Issues = "https://github.com/pypa/sampleproject/issues"
-```
-3. Make sure all relevant build libs are installed: \
+   ```toml
+   [build-system] 
+   requires = ["setuptools", "wheel"] 
+   build-backend = "setuptools.build_meta"
+     
+   [project]
+   name = "example_package_YOUR_USERNAME_HERE"
+   version = "0.0.1"
+   authors = [
+   { name="Example Author", email="author@example.com" },
+   ]
+   description = "A small example package"
+   readme = "README.md"
+   requires-python = ">=3.8"
+   classifiers = [
+     "Programming Language :: Python :: 3",
+     "License :: OSI Approved :: MIT License",
+     "Operating System :: OS Independent",
+   ]
+           
+   [project.urls]
+   Homepage = "https://github.com/pypa/sampleproject"
+   Issues = "https://github.com/pypa/sampleproject/issues"
+   ```
+3. Make sure all relevant build libs are installed:
    - ``pip install --upgrade build``
    - ``pip install twine``
 4. Run the build - ``python -m build``
