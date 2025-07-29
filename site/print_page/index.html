@@ -2001,7 +2001,7 @@ your API keys. Once you have those established, you can create your project and 
 <p>Super summary:</p>
 <ol>
 <li>Create the pyproject.toml file and fill out the fields </li>
-<li>run py -m build </li>
+<li>run <code>python -m build</code></li>
 <li>use twine to send to pypi.</li>
 </ol>
 <p>More detailed steps:</p>
@@ -2053,13 +2053,55 @@ your API keys. Once you have those established, you can create your project and 
 <span class="n">Issues</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://github.com/pypa/sampleproject/issues&quot;</span>
 </code></pre></div></td></tr></table></div></li>
 <li>Make sure all relevant build libs are installed:</li>
-<li>pip install --upgrade build</li>
-<li>pip install twine</li>
+<li><code>pip install --upgrade build</code></li>
+<li><code>pip install twine</code></li>
 <li>Run the build</li>
-<li>py -m build</li>
+<li><code>python -m build</code></li>
+<li>Send to PyPI test</li>
+<li><code>twine upload --repository testpypi dist/*</code></li>
 <li>Send to PyPI</li>
-<li>py -m twine upload dist/*</li>
+<li><code>twine upload dist/*</code></li>
 </ol>
+<p>Make sure your build dependencies are not stored in your project dependencies.</p>
+<p>Another TOML file might look like this:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[build-system]</span>
+<span class="n">requires</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;setuptools&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;wheel&quot;</span><span class="p">]</span>
+<span class="n">build-backend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;setuptools.build_meta&quot;</span>
+
+<span class="k">[project]</span>
+<span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;py_simple_sharepoint&quot;</span><span class="w">  </span><span class="c1"># actual name that will get used for pip install.</span>
+<span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;0.1.1&quot;</span><span class="w">  </span><span class="c1"># anytime you submit an update to PyPI, you must change the version.</span>
+<span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;A SharePoint file management tool for python programs.&quot;</span>
+<span class="n">readme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;README.md&quot;</span>
+<span class="n">requires-python</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&gt;=3.10&quot;</span>
+<span class="n">dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w">  </span><span class="c1"># package dependencies, does install when pip installed</span>
+<span class="w">    </span><span class="s2">&quot;office365-rest-python-client&gt;=2.6.2&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="k">[project.optional-dependencies]</span><span class="w">  </span><span class="c1"># build dependencies (does not install when pip installed)</span>
+<span class="n">dev</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;build&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;twine&quot;</span>
+<span class="p">]</span>
+</code></pre></div></td></tr></table></div>
 <p>https://packaging.python.org/en/latest/tutorials/packaging-projects/#creating-the-package-files</p>
 <p>There are also new tools coming out such as poetry and uv. 
 The community has started to heavily embrace <a href="https://astral.sh/blog/uv">UV</a> due to its speed and tooling.</p></section><section class="print-page" id="docs_7_important_libraries" heading-number="2.7"><h1 id="docs_7_important_libraries-important-libraries-getting-started">Important Libraries - Getting Started</h1>

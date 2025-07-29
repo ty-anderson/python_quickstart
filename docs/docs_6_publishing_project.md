@@ -6,7 +6,7 @@ your API keys. Once you have those established, you can create your project and 
 Super summary:
 
 1. Create the pyproject.toml file and fill out the fields 
-2. run py -m build 
+2. run ``python -m build ``
 3. use twine to send to pypi.
 
 More detailed steps:
@@ -38,12 +38,40 @@ Homepage = "https://github.com/pypa/sampleproject"
 Issues = "https://github.com/pypa/sampleproject/issues"
 ```
 3. Make sure all relevant build libs are installed:
-   1. pip install --upgrade build
-   2. pip install twine
+   1. ``pip install --upgrade build``
+   2. ``pip install twine``
 4. Run the build
-   1. py -m build
-5. Send to PyPI
-   1. py -m twine upload dist/*
+   1. ``python -m build``
+5. Send to PyPI test
+   1. ``twine upload --repository testpypi dist/*``
+6. Send to PyPI
+   1. ``twine upload dist/*``
+
+Make sure your build dependencies are not stored in your project dependencies.
+
+Another TOML file might look like this:
+
+```toml
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "py_simple_sharepoint"  # actual name that will get used for pip install.
+version = "0.1.1"  # anytime you submit an update to PyPI, you must change the version.
+description = "A SharePoint file management tool for python programs."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [  # package dependencies, does install when pip installed
+    "office365-rest-python-client>=2.6.2",
+]
+
+[project.optional-dependencies]  # build dependencies (does not install when pip installed)
+dev = [
+    "build",
+    "twine"
+]
+```
 	
 https://packaging.python.org/en/latest/tutorials/packaging-projects/#creating-the-package-files
 
