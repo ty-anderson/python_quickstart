@@ -1,4 +1,6 @@
 site_name: Tech Notes
+site_url: https://healthfin.solutions/notes/
+use_directory_urls: true
 theme:
   name: material
   palette:
