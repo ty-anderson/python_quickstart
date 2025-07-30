@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <link rel="stylesheet" href="https://unpkg.com/easymde/dist/easymde.min.css">
+    <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+    <style>
+        #status {
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
+            background: #eee;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.9em;
+            color: #333;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+<div id="nav" class="button is-primary"><a href="/">Done</a></div>
+<form
+        hx-post="/notes/{{ note_name | replace('.md', '') }}/edit"
+        hx-target="#status"
+        hx-swap="outerHTML"
+>
+    <textarea id="editor" name="content">{{ content }}</textarea>
+</form>
+
+<div id="status">No Changes</div>
+
+<script src="https://unpkg.com/easymde/dist/easymde.min.js"></script>
+<script>
+    const form = document.querySelector("form");
+    const status = document.getElementById("status");
+    const easyMDE = new EasyMDE({ element: document.getElementById("editor") });
+
+    let timeout = null;
+
+    easyMDE.codemirror.on("change", () => {
+        status.textContent = "Typing...";
+        clearTimeout(timeout);
+        timeout = setTimeout(() => {
+            form.requestSubmit();  // HTMX will handle this and swap #status
+        }, 2000);
+    });
+</script>
+{% endblock %}

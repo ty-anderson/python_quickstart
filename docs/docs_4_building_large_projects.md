@@ -1,4 +1,4 @@
-## Building Large Projects
+# Building Large Projects
 
 Large python projects can be extremely powerful, but they must be organized a certain way to work properly.
 
@@ -31,4 +31,5 @@ from reports import report_01
 
 If there is code in the ``__init__.py`` file, you can just import the module name like ``import db``. If there is
 a function inside the ``__init__.py`` file called ``new_func`` you could ``from db import new_func``
+
 

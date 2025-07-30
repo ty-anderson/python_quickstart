@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="section">
+  <div class="container is-flex is-flex-wrap-wrap is-justify-content-center">
+    {% for key, val in random_amounts.items() %}
+    <div class="card m-2 has-text-centered"
+         id="card_{{ key }}"
+         hx-post="{{ url_for('guess_check') }}"
+         hx-vals='{"guess": "{{ key }}"}'
+         hx-target="this"
+         hx-swap="innerHTML"
+         hx-on:click="playSound()"
+         style="width: 120px; height: 100px; cursor: pointer;"
+    >
+        Click Me!
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+{% endblock %}

@@ -1,4 +1,5 @@
 site_name: Tech Notes
+#site_url: http://127.0.0.1:5007/notes/
 site_url: https://healthfin.solutions/notes/
 use_directory_urls: true
 theme:
