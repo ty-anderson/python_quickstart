@@ -1,5 +1,4 @@
 site_name: Tech Notes
-#site_url: http://127.0.0.1:5007/notes/
 site_url: https://healthfin.solutions/notes/
 use_directory_urls: true
 theme:
@@ -15,8 +14,9 @@ theme:
         name: Switch to light mode
 extra_javascript:
   - https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js
+  - files/inject_edit_page.js
 extra_css:
-  - extra.css
+  - files/extra.css
 markdown_extensions:
   - pymdownx.highlight:
       linenums: true
