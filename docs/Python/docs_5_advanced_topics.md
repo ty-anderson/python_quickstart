@@ -223,6 +223,7 @@ If you are running a module that imports another module that you've created, in 
 outside of the current directory, then you might need to add that directory to the sys.path. 
 
 - Option 1: Add a pth file in the virtual environment with the path you want to add.
+
   1. Go to venv/lib/python/site-packages/<create pth file like custom_path.pth>
   2. Add your path such as /home/tyranderson/snfStudyData
 	
@@ -237,21 +238,20 @@ More info here: https://help.pythonanywhere.com/pages/DebuggingImportError
 ## Run scripts in module mode
 
 You can run scripts from a venv 2 different ways:
-1. As a standalone script 
-   1. This is the format path/to/venv/bin/python path/to/script
-   2. If this script has imports to other files, it will have import errors. This is not the recommended way!!!!!!!
-2. In module mode 
-   1. Path/to/venv/bin/python -m path.to.script
 
-Using module mode is considered best practice because it allows all modules to import from the project root properly.
-If you have multiple python modules (.py files) you are importing from various directories within the project,
-you will likely have import errors if you try to run using the standalone method. This is why its considered
-best practice to run in module mode. (PyCharm does this for you when you run a script).
+```bash
+# standalone script
+path/to/venv/bin/python path/to/script
+# If this script has imports to other files, it will have import errors. NOT RECOMMENDED!
+
+# module mode. RECOMMENDED!!
+Path/to/venv/bin/python -m path.to.script
+```
 
 Linux
 ```bash
 cd path/to/project
-. venv/bin/activate -m path.to.Python.file
+. venv/bin/activate -m path.to.python.file
 ```
 
 Windows
@@ -259,6 +259,12 @@ Windows
 cd path\to\project
 venv\Scripts\activate -m path.to.python.file
 ```
+
+Using module mode is considered best practice because it allows all modules to import from the project root properly.
+If you have multiple python modules (.py files) you are importing from various directories within the project,
+you will likely have import errors if you try to run using the standalone method. This is why its considered
+best practice to run in module mode. (PyCharm does this for you when you run a script).
+
 
 ## Asyncio
 
