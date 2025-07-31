@@ -3124,7 +3124,38 @@ git<span class="w"> </span>reset<span class="w"> </span>--hard
 </code></pre></div></td></tr></table></div></p>
 <p>The location of the git files is a directory in the root directory of your project.
 Its usually <code>.git</code>. This is a <strong>directory not a file</strong>. Remotes will have similar
-naming like python_quickstart.git. </p></section><section class="print-page" id="git-remotes" heading-number="3.2"><h1 id="git-remotes-git-remotes">Git Remotes</h1>
+naming like python_quickstart.git. </p>
+<h2 id="git-basics-head">HEAD</h2>
+<p>HEAD in git is a pointer to which branch and commit you are on. 
+Typically, it is on the most recent commit of the selected branch.</p>
+<h2 id="git-basics-navigate-old-commits">Navigate Old Commits</h2>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>git<span class="w"> </span>checkout<span class="w"> </span>&lt;commit<span class="w"> </span>hash&gt;
+git<span class="w"> </span>checkout<span class="w"> </span>HEAD~1<span class="w">     </span><span class="c1"># 1 commit before current HEAD</span>
+git<span class="w"> </span>checkout<span class="w"> </span>HEAD~3<span class="w">     </span><span class="c1"># 3 commits before current HEAD</span>
+</code></pre></div></td></tr></table></div>
+<p>This puts you in a detached HEAD state which means any changes you make wont
+be tracked on any branch, they will just float. </p>
+<p>To safely work on an old commit:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>git<span class="w"> </span>checkout<span class="w"> </span>abc1234<span class="w">        </span><span class="c1"># Go to the commit</span>
+git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>fix/legacy-bug<span class="w">   </span><span class="c1"># Create a branch from it</span>
+</code></pre></div></td></tr></table></div></p>
+<p>What if you want to rollback a commit?</p>
+<p>If you haven't pushed to remote:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># undo commit but keep code changes.</span>
+git<span class="w"> </span>reset<span class="w"> </span>--soft<span class="w"> </span>HEAD~1
+
+<span class="c1"># completely remove the commit and rollback files to what the last commit was.</span>
+git<span class="w"> </span>reset<span class="w"> </span>--hard<span class="w"> </span>HEAD~1<span class="w"> </span><span class="c1"># USE WITH CAUTION</span>
+</code></pre></div></td></tr></table></div></p>
+<p>To get back to head just checkout the branch:
+<code>git checkout main</code></p></section><section class="print-page" id="git-remotes" heading-number="3.2"><h1 id="git-remotes-git-remotes">Git Remotes</h1>
 <p>A "remote" in the git environment is another location to 
 store a copy of your git project.</p>
 <p>GitHub is the most common remote.</p>
@@ -3182,6 +3213,22 @@ git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span
 </code></pre></div></td></tr></table></div></p></section><section class="print-page" id="git-branches" heading-number="3.3"><h1 id="git-branches-branches">Branches</h1>
 <p>A branch in git is a way to create different versions of your code and keep them
 separated.</p>
+<h2 id="git-branches-checkout">Checkout</h2>
+<p>Checkout is for switching branches: <code>git checkout main</code></p>
+<p>Checkout is also how you can create new branches:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>new_branch
+<span class="c1"># this is shorthand for</span>
+git<span class="w"> </span>branch<span class="w"> </span>new_branch
+git<span class="w"> </span>checkout<span class="w"> </span>new_branch
+</code></pre></div></td></tr></table></div></p>
+<p>You can use checkout to do a lot more:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># pull a file from another branch</span>
+git<span class="w"> </span>checkout<span class="w"> </span>main<span class="w"> </span>--<span class="w"> </span>README.md
+</code></pre></div></td></tr></table></div></p>
 <p>Below are some examples of some reasons to create a branch.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>

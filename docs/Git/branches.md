@@ -3,6 +3,25 @@
 A branch in git is a way to create different versions of your code and keep them
 separated.
 
+## Checkout
+
+Checkout is for switching branches: ``git checkout main``
+
+Checkout is also how you can create new branches:
+```bash
+git checkout -b new_branch
+# this is shorthand for
+git branch new_branch
+git checkout new_branch
+```
+
+You can use checkout to do a lot more:
+```bash
+# pull a file from another branch
+git checkout main -- README.md
+```
+
+
 Below are some examples of some reasons to create a branch.
 
 ```bash

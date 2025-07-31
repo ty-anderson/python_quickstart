@@ -574,6 +574,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Branches
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -583,6 +594,34 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#checkout" class="md-nav__link">
+    <span class="md-ellipsis">
+      Checkout
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1014,6 +1053,23 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#checkout" class="md-nav__link">
+    <span class="md-ellipsis">
+      Checkout
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1030,6 +1086,22 @@
 <h1 id="branches">Branches</h1>
 <p>A branch in git is a way to create different versions of your code and keep them
 separated.</p>
+<h2 id="checkout">Checkout</h2>
+<p>Checkout is for switching branches: <code>git checkout main</code></p>
+<p>Checkout is also how you can create new branches:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>new_branch
+<span class="c1"># this is shorthand for</span>
+git<span class="w"> </span>branch<span class="w"> </span>new_branch
+git<span class="w"> </span>checkout<span class="w"> </span>new_branch
+</code></pre></div></td></tr></table></div></p>
+<p>You can use checkout to do a lot more:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># pull a file from another branch</span>
+git<span class="w"> </span>checkout<span class="w"> </span>main<span class="w"> </span>--<span class="w"> </span>README.md
+</code></pre></div></td></tr></table></div></p>
 <p>Below are some examples of some reasons to create a branch.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>

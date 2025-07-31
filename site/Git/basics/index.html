@@ -532,6 +532,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Git Basics
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -541,6 +552,43 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#head" class="md-nav__link">
+    <span class="md-ellipsis">
+      HEAD
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#navigate-old-commits" class="md-nav__link">
+    <span class="md-ellipsis">
+      Navigate Old Commits
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1014,6 +1062,32 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#head" class="md-nav__link">
+    <span class="md-ellipsis">
+      HEAD
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#navigate-old-commits" class="md-nav__link">
+    <span class="md-ellipsis">
+      Navigate Old Commits
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1076,6 +1150,37 @@ git<span class="w"> </span>reset<span class="w"> </span>--hard
 <p>The location of the git files is a directory in the root directory of your project.
 Its usually <code>.git</code>. This is a <strong>directory not a file</strong>. Remotes will have similar
 naming like python_quickstart.git. </p>
+<h2 id="head">HEAD</h2>
+<p>HEAD in git is a pointer to which branch and commit you are on. 
+Typically, it is on the most recent commit of the selected branch.</p>
+<h2 id="navigate-old-commits">Navigate Old Commits</h2>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>git<span class="w"> </span>checkout<span class="w"> </span>&lt;commit<span class="w"> </span>hash&gt;
+git<span class="w"> </span>checkout<span class="w"> </span>HEAD~1<span class="w">     </span><span class="c1"># 1 commit before current HEAD</span>
+git<span class="w"> </span>checkout<span class="w"> </span>HEAD~3<span class="w">     </span><span class="c1"># 3 commits before current HEAD</span>
+</code></pre></div></td></tr></table></div>
+<p>This puts you in a detached HEAD state which means any changes you make wont
+be tracked on any branch, they will just float. </p>
+<p>To safely work on an old commit:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>git<span class="w"> </span>checkout<span class="w"> </span>abc1234<span class="w">        </span><span class="c1"># Go to the commit</span>
+git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>fix/legacy-bug<span class="w">   </span><span class="c1"># Create a branch from it</span>
+</code></pre></div></td></tr></table></div></p>
+<p>What if you want to rollback a commit?</p>
+<p>If you haven't pushed to remote:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># undo commit but keep code changes.</span>
+git<span class="w"> </span>reset<span class="w"> </span>--soft<span class="w"> </span>HEAD~1
+
+<span class="c1"># completely remove the commit and rollback files to what the last commit was.</span>
+git<span class="w"> </span>reset<span class="w"> </span>--hard<span class="w"> </span>HEAD~1<span class="w"> </span><span class="c1"># USE WITH CAUTION</span>
+</code></pre></div></td></tr></table></div></p>
+<p>To get back to head just checkout the branch:
+<code>git checkout main</code></p>
 
 
 
