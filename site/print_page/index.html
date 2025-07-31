@@ -3442,7 +3442,15 @@ If you want to push all from local to remote: <code>git push --all origin</code>
                         </h1>
                     <section class="print-page" id="docker-basics" heading-number="4.1"><h1 id="docker-basics-docker">Docker</h1>
 <h2 id="docker-basics-general">General</h2>
-<p>Docker uses images of a software to create containers that run them. They will create their own isolated environment on the host system. They are typically very easy to install and even easier to uninstall. They can enhance security by isolating the host system from the system running the software.</p>
+<p>Docker creates and runs containers - software bundled to run on a minimal isolated linux OS on the host system.
+Containers are greate because they are typically very easy to install and even easier to uninstall. 
+Allows for reproducing environments, avoiding the "it runs on my machine" problem.
+They can enhance security by isolating the host system from the system running the software.</p>
+<p>Terms:
+- Image: A copy of the software that is ready to run on docker.
+- Container: An instance of an image, specific to the image that has been setup to run. More simply, 
+a container is an image running on your machine. Can be turned on or off, etc.
+- Volume: A path that a container can use to access host file system.</p>
 <p>When you find an image you want to use do:
 <code>docker pull &lt;image_name&gt;</code></p>
 <p>To see images downloaded use:
@@ -3540,8 +3548,10 @@ with <code>sudo rm /usr/bin/docker-compose</code>.</p>
 <code>docker compose down</code>
 <code>docker compose pull</code>
 <code>docker compose up -d</code></p>
-<p>Restart container: <code>docker compose restart</code></p></section><section class="print-page" id="docker-docker_images" heading-number="4.3"><h1 id="docker-docker_images-build-a-docker-image">Build a Docker Image</h1>
+<p>Restart container: <code>docker compose restart</code></p>
+<p>Chain commands like <code>docker compose down &amp;&amp; docker compose up -d</code></p></section><section class="print-page" id="docker-docker_images" heading-number="4.3"><h1 id="docker-docker_images-build-a-docker-image">Build a Docker Image</h1>
 <p>A <strong>Dockerfile</strong> is how to build an image. The contents might look something like this:</p>
+<h2 id="docker-docker_images-build-dockerfile">Build Dockerfile</h2>
 <p>Simple python app:
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
@@ -3555,7 +3565,7 @@ with <code>sudo rm /usr/bin/docker-compose</code>.</p>
 <span class="k">COPY</span><span class="w"> </span>.<span class="w"> </span>.
 <span class="k">CMD</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;python&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;app.py&quot;</span><span class="p">]</span>
 </code></pre></div></td></tr></table></div></p>
-<p>Flask app:
+<p>Flask app (more complex):
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -3598,20 +3608,46 @@ with <code>sudo rm /usr/bin/docker-compose</code>.</p>
 <span class="c"># Run Gunicorn when the container starts</span>
 <span class="k">CMD</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;gunicorn&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;-w&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;4&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;-b&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;0.0.0.0:8090&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;web_app.app:app&quot;</span><span class="p">]</span>
 </code></pre></div></td></tr></table></div></p>
-<p>When your dockerfile is ready, run: <code>docker build -t my-image-name:tag .</code></p>
-<p>• Replace my-image-name with the name you want to give your image.
-• Replace tag with an optional version (e.g., latest or v1.0).</p>
-<p>End example might look like <code>docker build -t my-flask-app:latest .</code></p>
-<p>If you are building on a Mac, but will run on Linux, when you build an image, specify to run on amd64:
-<code>docker build --platform linux/amd64 -t yt_download:latest .</code></p>
-<p>Save the image to a tar file:
-<code>docker save -o /Users/tyleranderson/Downloads/yt_downloads_250226.tar yt_download:latest</code></p>
-<p>Load the file as an image: <code>docker load -i /srv/flask_yt_download/yt_downloads_250226.tar</code></p>
+<h2 id="docker-docker_images-build-image">Build Image</h2>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># build the image</span>
+docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>my-image-name:tag<span class="w"> </span>.<span class="w">  </span><span class="c1"># &lt;- don&#39;t forget that period</span>
+
+<span class="c1"># example 1</span>
+docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>my-flask-app:latest<span class="w"> </span>.
+
+<span class="c1"># example 2</span>
+docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>my-flask-app:v1.0<span class="w"> </span>.
+
+<span class="c1"># building on a Mac but will run on linux, specify to run on amd64.</span>
+docker<span class="w"> </span>build<span class="w"> </span>--platform<span class="w"> </span>linux/amd64<span class="w"> </span>-t<span class="w"> </span>yt_download:latest<span class="w"> </span>.
+
+<span class="c1"># once the image has been created:</span>
+<span class="c1"># save image to a tar file for sharing/copying</span>
+docker<span class="w"> </span>save<span class="w"> </span>-o<span class="w"> </span>/Users/tyleranderson/Downloads/yt_downloads_250226.tar<span class="w"> </span>yt_download:latest
+
+<span class="c1"># load the file as an image</span>
+docker<span class="w"> </span>load<span class="w"> </span>-i<span class="w"> </span>/srv/flask_yt_download/yt_downloads_250226.tar<span class="sb">`</span>
+</code></pre></div></td></tr></table></div>
 <h2 id="docker-docker_images-docker-compose-with-custom-images">Docker Compose with Custom Images</h2>
 <p>When you use docker compose with an image, you have two options:</p>
-<ul>
-<li>To build the image with docker compose when its run, use the <code>build: .</code> option.
-  This builds the image from the Dockerfile in the directory.
+<p>Build image as part of docker compose start up.
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -3623,9 +3659,8 @@ with <code>sudo rm /usr/bin/docker-compose</code>.</p>
 <span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">flask_gunicorn</span>
 <span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;8090:8090&quot;</span>
-</code></pre></div></td></tr></table></div></li>
-<li>If you already built the image with <code>docker build -t myflaskapp:latest .</code> then you can tell docker compose
-  what image to use:
+</code></pre></div></td></tr></table></div></p>
+<p>Run when image already exists.
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -3637,13 +3672,148 @@ with <code>sudo rm /usr/bin/docker-compose</code>.</p>
 <span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">flask_gunicorn</span>
 <span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;8090:8090&quot;</span>
-</code></pre></div></td></tr></table></div></li>
-</ul>
-<h2 id="docker-docker_images-docker-image-files">Docker Image Files</h2>
-<p>Save image to file:
-<code>docker save -o /path/to/destination/image-name.tar my-image-name:tag</code></p>
-<p>Load image from file:
-<code>docker load -i /path/to/destination/image-name.tar</code></p></section></section>
+</code></pre></div></td></tr></table></div></p>
+<h2 id="docker-docker_images-automating-build-and-deploy">Automating Build and Deploy</h2>
+<p>There are many steps when it comes to building and deploying. They can all be automated in one script.
+Here's an example:</p>
+<p>Dockerfile
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c"># Use a lightweight Python image</span>
+<span class="k">FROM</span><span class="w"> </span><span class="s">python:3.12-slim</span>
+
+<span class="c"># Set the working directory inside the container</span>
+<span class="k">WORKDIR</span><span class="w"> </span><span class="s">/app</span>
+
+<span class="c"># Install system dependencies, including ffmpeg</span>
+<span class="k">RUN</span><span class="w"> </span>apt-get<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>--no-install-recommends<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>ffmpeg<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="o">&amp;&amp;</span><span class="w"> </span>apt-get<span class="w"> </span>clean<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span>/var/lib/apt/lists/*
+
+<span class="k">RUN</span><span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>curl
+
+<span class="c"># Copy app files to the container</span>
+<span class="k">COPY</span><span class="w"> </span>.<span class="w"> </span>/app
+
+<span class="c"># Install dependencies</span>
+<span class="k">RUN</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--no-cache-dir<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+
+<span class="c"># Set environment variables</span>
+<span class="k">ENV</span><span class="w"> </span><span class="nv">FLASK_ENV</span><span class="o">=</span>production
+<span class="k">ENV</span><span class="w"> </span><span class="nv">PYTHONUNBUFFERED</span><span class="o">=</span><span class="m">1</span>
+
+<span class="c"># Expose the port (optional if using Docker Compose)</span>
+<span class="k">EXPOSE</span><span class="w"> </span><span class="s">8090</span>
+
+<span class="c"># Run Gunicorn when the container starts</span>
+<span class="k">CMD</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;gunicorn&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;-w&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;4&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;-b&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;0.0.0.0:8090&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;app:app&quot;</span><span class="p">]</span>
+</code></pre></div></td></tr></table></div></p>
+<p>Deployment script
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="ch">#!/usr/bin/env bash</span>
+
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Remove existing image to make a new one.&quot;</span>
+docker<span class="w"> </span>rmi<span class="w"> </span>yt_download:latest
+
+rm<span class="w"> </span>data.db<span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;No db to remove, moving on&quot;</span>
+
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Build image for Linux server.&quot;</span>
+docker<span class="w"> </span>build<span class="w"> </span>--platform<span class="w"> </span>linux/amd64<span class="w"> </span>-t<span class="w"> </span>yt_download:latest<span class="w"> </span>.<span class="w">  </span><span class="c1"># uses Dockerfile to build</span>
+docker<span class="w"> </span>save<span class="w"> </span>-o<span class="w"> </span>yt_download_image.tar<span class="w"> </span>yt_download:latest
+
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Transfer file to server.&quot;</span>
+rsync<span class="w"> </span>-v<span class="w"> </span>--rsync-path<span class="o">=</span><span class="s2">&quot;sudo rsync&quot;</span><span class="w"> </span>yt_download_image.tar<span class="w"> </span>tyler@anderson.home:/srv/flask_yt_download
+
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Remove local copy of Docker image and docker image file.&quot;</span>
+docker<span class="w"> </span>rmi<span class="w"> </span>yt_download:latest
+rm<span class="w"> </span>yt_download_image.tar
+
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Log into server and spin up image.&quot;</span>
+ssh<span class="w"> </span>tyler@anderson.home<span class="w"> </span><span class="s">&lt;&lt; &#39;EOF&#39;</span>
+<span class="s">cd /srv/flask_yt_download || { echo &quot;Directory not found&quot;; exit 1; }</span>
+
+<span class="s"># create database file</span>
+<span class="s">sudo touch data.db</span>
+
+<span class="s"># Spin down container if running</span>
+<span class="s">sudo docker compose down || echo &quot;No container running&quot;</span>
+
+<span class="s"># Remove old Docker image</span>
+<span class="s">sudo docker rmi yt_download || echo &quot;Image not found&quot;</span>
+
+<span class="s"># Load new image</span>
+<span class="s">sudo docker load -i yt_download_image.tar</span>
+
+<span class="s"># Remove the transferred image file</span>
+<span class="s">sudo rm yt_download_image.tar</span>
+
+<span class="s"># Restart the container</span>
+<span class="s">sudo docker compose up -d</span>
+<span class="s">EOF</span>
+</code></pre></div></td></tr></table></div></p></section></section>
                     <section class='print-page md-section' id='section-5' heading-number='5'>
                         <h1>Networking<a class='headerlink' href='#section-5' title='Permanent link'></a>
                         </h1>

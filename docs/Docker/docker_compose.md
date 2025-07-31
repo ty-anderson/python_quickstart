@@ -53,3 +53,5 @@ Upgrade container
 ``docker compose up -d``
 
 Restart container: ``docker compose restart``
+
+Chain commands like ``docker compose down && docker compose up -d``
