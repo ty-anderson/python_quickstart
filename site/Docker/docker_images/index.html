@@ -8,10 +8,10 @@
       
       
       
-        <link rel="canonical" href="https://healthfin.solutions/notes/Docker/docs_99_docker/">
+        <link rel="canonical" href="https://healthfin.solutions/notes/Docker/docker_images/">
       
       
-        <link rel="prev" href="../../Git/branches/">
+        <link rel="prev" href="../docker_compose/">
       
       
         <link rel="next" href="../../Networking/docs_100_networking/">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Docker - Tech Notes</title>
+        <title>Images (Dockerfile) - Tech Notes</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#docker" class="md-skip">
+        <a href="#build-a-docker-image" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Docker
+              Images (Dockerfile)
             
           </span>
         </div>
@@ -592,6 +592,85 @@
   
   
   
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Docker
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Docker
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../basics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docker_compose/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker Compose
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
     <li class="md-nav__item md-nav__item--active">
       
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
@@ -604,7 +683,7 @@
           
   
   <span class="md-ellipsis">
-    Docker
+    Images (Dockerfile)
   </span>
   
 
@@ -615,7 +694,7 @@
         
   
   <span class="md-ellipsis">
-    Docker
+    Images (Dockerfile)
   </span>
   
 
@@ -637,24 +716,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#docker-compose" class="md-nav__link">
-    <span class="md-ellipsis">
-      Docker Compose
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#build-a-docker-image" class="md-nav__link">
-    <span class="md-ellipsis">
-      Build a Docker Image
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#docker-compose-with-custom-images" class="md-nav__link">
     <span class="md-ellipsis">
       Docker Compose with Custom Images
@@ -672,27 +733,17 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#access-docker-container" class="md-nav__link">
-    <span class="md-ellipsis">
-      Access Docker Container
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#docker-volumes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Docker Volumes
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
       
     </li>
   
@@ -1103,24 +1154,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#docker-compose" class="md-nav__link">
-    <span class="md-ellipsis">
-      Docker Compose
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#build-a-docker-image" class="md-nav__link">
-    <span class="md-ellipsis">
-      Build a Docker Image
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#docker-compose-with-custom-images" class="md-nav__link">
     <span class="md-ellipsis">
       Docker Compose with Custom Images
@@ -1133,24 +1166,6 @@
   <a href="#docker-image-files" class="md-nav__link">
     <span class="md-ellipsis">
       Docker Image Files
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#access-docker-container" class="md-nav__link">
-    <span class="md-ellipsis">
-      Access Docker Container
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#docker-volumes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Docker Volumes
     </span>
   </a>
   
@@ -1171,96 +1186,8 @@
                   
 
 
-<h1 id="docker">Docker</h1>
-<p>Docker uses images of a software to create containers that run them. They will create their own isolated environment on the host system. They are typically very easy to install and even easier to uninstall. They can enhance security by isolating the host system from the system running the software.</p>
-<p>When you find an image you want to use do:
-<code>docker pull &lt;image_name&gt;</code></p>
-<p>To see images downloaded use:
-<code>docker images</code></p>
-<p>See containers:
-<code>docker ps</code></p>
-<p>Run container:
-<code>docker run image-name -d</code>
--d means run in detached mode so when the terminal is closed, the container continues to run</p>
-<p>Some containers need other info to run, which can be passed after the command:
-Postgres example:
-<code>docker run --name postgres_db -e POSTGRES_PASSWORD=postgres -p 5432:5432 -d postgres</code></p>
-<ul>
-<li>--name is what the container will be named</li>
-<li>-p is for port mapping host computer port to image port (first is host, second is container)</li>
-<li>-e is for adding environment variables</li>
-</ul>
-<p>Remove an image by name and tag: <code>docker rmi postgres:latest</code> or by image id <code>docker rmi 123456789abc</code></p>
-<h2 id="docker-compose">Docker Compose</h2>
-<p>Docker compose is a handy way to run docker with configuration files.
-This is nice when you have more complex containers to run, and its a difficult to type all the config 
-every time you want to run it.</p>
-<p><em>Important step:</em> Make sure you have the latest version (currently V2).</p>
-<p>Docker compose V1 was built on python, V2 is built in Go. If you run <code>which docker compose</code> 
-and it shows the path <code>/usr/bin/docker-compose</code> then you still have V1. Remove it
-with <code>sudo rm /usr/bin/docker-compose</code>.</p>
-<p>Create a <code>docker-compose.yaml</code> file. Here's an example:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">services</span><span class="p">:</span><span class="w"> </span><span class="c1"># Defines the containers (services)</span>
-<span class="w">  </span><span class="nt">app</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my_flask_app:latest</span><span class="w">  </span><span class="c1"># Use an existing image</span>
-<span class="w">    </span><span class="nt">build</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">..</span><span class="w">  </span><span class="c1"># Or build from Dockerfile in the current directory</span>
-<span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;5000:5000&quot;</span><span class="w">  </span><span class="c1"># Map host port 5000 to container port 5000</span>
-<span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./app:/app</span><span class="w">  </span><span class="c1"># Mount local folder to container folder</span>
-<span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">FLASK_ENV=development</span><span class="w">  </span><span class="c1"># Set environment variables</span>
-<span class="w">    </span><span class="nt">depends_on</span><span class="p">:</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">db</span><span class="w">  </span><span class="c1"># Wait for &quot;db&quot; service before starting</span>
-
-<span class="w">  </span><span class="nt">db</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">postgres:15</span>
-<span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">always</span><span class="w">  </span><span class="c1"># Restart if it crashes</span>
-<span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
-<span class="w">      </span><span class="nt">POSTGRES_USER</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">user</span>
-<span class="w">      </span><span class="nt">POSTGRES_PASSWORD</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">password</span>
-<span class="w">      </span><span class="nt">POSTGRES_DB</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mydatabase</span>
-<span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pg_data:/var/lib/postgresql/data</span><span class="w">  </span><span class="c1"># Persistent storage for DB</span>
-
-<span class="nt">volumes</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">pg_data</span><span class="p">:</span><span class="w">  </span><span class="c1"># Named volume for PostgreSQL data</span>
-</code></pre></div></td></tr></table></div>
-<p>Run container
-<code>docker compose up -d</code></p>
-<p>Stop container
-<code>docker compose down</code></p>
-<p>Upgrade container
-<code>docker compose down</code>
-<code>docker compose pull</code>
-<code>docker compose up -d</code></p>
-<p>Restart container: <code>docker compose restart</code></p>
-<h2 id="build-a-docker-image">Build a Docker Image</h2>
-<p>A Dockerfile is how to build an image. The contents might look something like this:</p>
+<h1 id="build-a-docker-image">Build a Docker Image</h1>
+<p>A <strong>Dockerfile</strong> is how to build an image. The contents might look something like this:</p>
 <p>Simple python app:
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
@@ -1323,14 +1250,14 @@ with <code>sudo rm /usr/bin/docker-compose</code>.</p>
 <p>End example might look like <code>docker build -t my-flask-app:latest .</code></p>
 <p>If you are building on a Mac, but will run on Linux, when you build an image, specify to run on amd64:
 <code>docker build --platform linux/amd64 -t yt_download:latest .</code></p>
-<p>Save the image to a tar file: 
+<p>Save the image to a tar file:
 <code>docker save -o /Users/tyleranderson/Downloads/yt_downloads_250226.tar yt_download:latest</code></p>
 <p>Load the file as an image: <code>docker load -i /srv/flask_yt_download/yt_downloads_250226.tar</code></p>
 <h2 id="docker-compose-with-custom-images">Docker Compose with Custom Images</h2>
 <p>When you use docker compose with an image, you have two options:</p>
 <ul>
-<li>To build the image with docker compose when its run, use the <code>build: .</code> option. 
-This builds the image from the Dockerfile in the directory.
+<li>To build the image with docker compose when its run, use the <code>build: .</code> option.
+  This builds the image from the Dockerfile in the directory.
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -1344,7 +1271,7 @@ This builds the image from the Dockerfile in the directory.
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;8090:8090&quot;</span>
 </code></pre></div></td></tr></table></div></li>
 <li>If you already built the image with <code>docker build -t myflaskapp:latest .</code> then you can tell docker compose
-what image to use:
+  what image to use:
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -1363,19 +1290,6 @@ what image to use:
 <code>docker save -o /path/to/destination/image-name.tar my-image-name:tag</code></p>
 <p>Load image from file:
 <code>docker load -i /path/to/destination/image-name.tar</code></p>
-<h2 id="access-docker-container">Access Docker Container</h2>
-<p>Access the container environment <code>docker exec -it &lt;container-name-or-id&gt; /bin/sh</code>
-/bin/sh is the terminal experience (shell in this case) you could do /bin/bash</p>
-<p>Access container logs
-<code>docker logs &lt;container name or id&gt;</code></p>
-<p>For continuously showing log output
-<code>docker logs -f &lt;container-name-or-id&gt;</code></p>
-<h2 id="docker-volumes">Docker Volumes</h2>
-<p>Files and Docker
-If you need to use files for anything involving docker, you need to configure volumes.</p>
-<p>Volumes are a mapping of the docker container file system to the host file system.</p>
-<p><code>-v /home/svr/immich:/usr/src/app/upload</code></p>
-<p>Just like port mapping, the first is host and second is container.</p>
 
 
 

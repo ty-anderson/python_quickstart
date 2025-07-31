@@ -41,7 +41,10 @@ nav:
   - Git Basics: Git/basics.md
   - Remotes: Git/remotes.md
   - Branches: Git/branches.md
-- Docker: Docker/docs_99_docker.md
+- Docker:
+  - Basics: Docker/basics.md
+  - Docker Compose: Docker/docker_compose.md
+  - Images (Dockerfile): Docker/docker_images.md
 - Networking:
   - General Networking: Networking/docs_100_networking.md
   - Servers: Networking/docs_100_servers.md
