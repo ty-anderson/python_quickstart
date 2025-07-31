@@ -5,6 +5,6 @@ mkdocs build
 # mkdocs gh-deploy
 git add .
 git commit -m "update"
-git push origin
-git push backup
+git push origin master
+git push backup master
 rsync -av --delete --rsync-path="sudo rsync" ./site/ tyler@192.168.1.104:/srv/web_apps/notes/
