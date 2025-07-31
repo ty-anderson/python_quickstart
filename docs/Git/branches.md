@@ -39,7 +39,7 @@ git checkout -b production
 git checkout -b development
 ```
 
-Example workflow:
+## Example Workflow
 ```bash
 # make new branch
 git checkout -b test_branch

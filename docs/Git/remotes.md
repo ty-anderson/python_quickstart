@@ -1,9 +1,12 @@
 # Git Remotes
 
 A "remote" in the git environment is another location to 
-store a copy of your git project.
+store a copy of your git project. It is great for backing up projects
+and sharing code/collaboration.
 
-GitHub is the most common remote.
+GitHub is the most common remote but there are many other options.
+
+## Using Remotes
 
 ```bash
 # To see all remotes that are in a project

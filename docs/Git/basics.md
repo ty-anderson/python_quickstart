@@ -6,7 +6,7 @@ changes to a code base (or any other text based files).
 There are many tools that can help with basic git functions. The power really
 comes from using it in the terminal.
 
-Common commands:
+## Common Commands
 ```bash
 # start a git project in working directory.
 git init

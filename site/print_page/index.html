@@ -3081,7 +3081,7 @@ interpreter and your code into a bundle that gets uploaded to the App store.</p>
 changes to a code base (or any other text based files).</p>
 <p>There are many tools that can help with basic git functions. The power really
 comes from using it in the terminal.</p>
-<p>Common commands:
+<h2 id="git-basics-common-commands">Common Commands</h2>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -3121,7 +3121,7 @@ git<span class="w"> </span>pull
 
 <span class="c1"># remove all uncommited changes (USE WITH CAUTION, NO RECOVERY OPTIONS)</span>
 git<span class="w"> </span>reset<span class="w"> </span>--hard
-</code></pre></div></td></tr></table></div></p>
+</code></pre></div></td></tr></table></div>
 <p>The location of the git files is a directory in the root directory of your project.
 Its usually <code>.git</code>. This is a <strong>directory not a file</strong>. Remotes will have similar
 naming like python_quickstart.git. </p>
@@ -3157,8 +3157,10 @@ git<span class="w"> </span>reset<span class="w"> </span>--hard<span class="w"> <
 <p>To get back to head just checkout the branch:
 <code>git checkout main</code></p></section><section class="print-page" id="git-remotes" heading-number="3.2"><h1 id="git-remotes-git-remotes">Git Remotes</h1>
 <p>A "remote" in the git environment is another location to 
-store a copy of your git project.</p>
-<p>GitHub is the most common remote.</p>
+store a copy of your git project. It is great for backing up projects
+and sharing code/collaboration.</p>
+<p>GitHub is the most common remote but there are many other options.</p>
+<h2 id="git-remotes-using-remotes">Using Remotes</h2>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -3254,7 +3256,7 @@ git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </
 git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>production
 git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>development
 </code></pre></div></td></tr></table></div>
-<p>Example workflow:
+<h2 id="git-branches-example-workflow">Example Workflow</h2>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -3314,7 +3316,7 @@ git<span class="w"> </span>branch<span class="w"> </span>-D<span class="w"> </sp
 
 <span class="c1"># (optional) clean up the remote</span>
 git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>--delete<span class="w"> </span>test_branch
-</code></pre></div></td></tr></table></div></p>
+</code></pre></div></td></tr></table></div>
 <p>Note: when you push to remote, you are only pushing the active branch.
 If you want to push all from local to remote: <code>git push --all origin</code> BE CAREFUL WITH THIS.</p></section></section><section class="print-page" id="docker-docs_99_docker" heading-number="4"><h1 id="docker-docs_99_docker-docker">Docker</h1>
 <p>Docker uses images of a software to create containers that run them. They will create their own isolated environment on the host system. They are typically very easy to install and even easier to uninstall. They can enhance security by isolating the host system from the system running the software.</p>
