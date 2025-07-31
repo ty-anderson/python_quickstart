@@ -40,6 +40,7 @@ nav:
 - Git & GitHub:
   - Git Basics: Git/basics.md
   - Remotes: Git/remotes.md
+  - Branches: Git/branches.md
 - Docker: Docker/docs_99_docker.md
 - Networking:
   - General Networking: Networking/docs_100_networking.md

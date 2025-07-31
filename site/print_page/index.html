@@ -558,6 +558,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Git/branches/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Branches
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1115,6 +1136,15 @@
   <a href="#git-remotes" class="md-nav__link">
     <span class="md-ellipsis">
       3.2 Remotes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-branches" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 Branches
     </span>
   </a>
   
@@ -3149,6 +3179,94 @@ git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span
 <span class="c1"># origin is name of remote, change to whatever you want. </span>
 <span class="c1"># main is name of branch, change to whatever branch you want to commit.</span>
 <span class="c1"># the -u sets this remote as the active one for tracking. </span>
+</code></pre></div></td></tr></table></div></p></section><section class="print-page" id="git-branches" heading-number="3.3"><h1 id="git-branches-branches">Branches</h1>
+<p>A branch in git is a way to create different versions of your code and keep them
+separated.</p>
+<p>Below are some examples of some reasons to create a branch.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># create a new branch for a feature</span>
+git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>feature/login-form
+
+<span class="c1"># create a branch for a bug fix</span>
+git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>fix/issue-123-crash
+
+<span class="c1"># create a branch for experiments</span>
+git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>experiment/redesign
+
+<span class="c1"># separate production from development</span>
+git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>production
+git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>development
+</code></pre></div></td></tr></table></div>
+<p>Example workflow:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># make new branch</span>
+git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>test_branch
+
+<span class="c1"># make change to file</span>
+
+<span class="c1"># commit the change.</span>
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;update message&quot;</span>
+
+<span class="c1"># (optional) push to remote</span>
+git<span class="w"> </span>push
+<span class="c1"># or</span>
+git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>test_branch
+
+<span class="c1"># switch back to main so we can merge the new branch</span>
+git<span class="w"> </span>checkout<span class="w"> </span>main
+
+<span class="c1"># make sure main is update to date</span>
+git<span class="w"> </span>pull
+
+<span class="c1"># merge the branch into main</span>
+git<span class="w"> </span>merge<span class="w"> </span>test_branch
+
+<span class="c1"># you can also delete the branch afterward if you do not expect to use it</span>
+git<span class="w"> </span>branch<span class="w"> </span>-d<span class="w"> </span>test_branch
+
+<span class="c1"># if it wasn&#39;t merged and you still want to delete</span>
+git<span class="w"> </span>branch<span class="w"> </span>-D<span class="w"> </span>test_branch
+
+<span class="c1"># (optional) clean up the remote</span>
+git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>--delete<span class="w"> </span>test_branch
 </code></pre></div></td></tr></table></div></p></section></section><section class="print-page" id="docker-docs_99_docker" heading-number="4"><h1 id="docker-docs_99_docker-docker">Docker</h1>
 <p>Docker uses images of a software to create containers that run them. They will create their own isolated environment on the host system. They are typically very easy to install and even easier to uninstall. They can enhance security by isolating the host system from the system running the software.</p>
 <p>When you find an image you want to use do:
@@ -4497,6 +4615,11 @@ Important for compression, compatability, and streaming efficiency.</p>
 
                 .print-site-enumerate-headings #git-remotes h2:before { content: '3.2.' counter(counter-git-remotes-2) ' ' }
                 .print-site-enumerate-headings #git-remotes h2 {  counter-increment: counter-git-remotes-2 }
+            
+.print-site-enumerate-headings #git-branches > h1:before { content: '3.3 ' }
+
+                .print-site-enumerate-headings #git-branches h2:before { content: '3.3.' counter(counter-git-branches-2) ' ' }
+                .print-site-enumerate-headings #git-branches h2 {  counter-increment: counter-git-branches-2 }
             
 .print-site-enumerate-headings #docker-docs_99_docker > h1:before { content: '4 ' }
 
