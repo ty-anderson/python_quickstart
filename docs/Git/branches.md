@@ -54,3 +54,6 @@ git branch -D test_branch
 git push origin --delete test_branch
 ```
 
+Note: when you push to remote, you are only pushing the active branch.
+If you want to push all from local to remote: ``git push --all origin`` BE CAREFUL WITH THIS.
+
