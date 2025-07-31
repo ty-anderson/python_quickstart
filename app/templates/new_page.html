@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<form action="/notes/new_page" method="post">
+  <label for="folder">Folder:</label>
+  <select name="folder">
+    {% for page in top_level %}
+      <option value="{{ page }}">{{ page }}</option>
+    {% endfor %}
+  </select>
+
+  <label for="title">Page Name:</label>
+  <input type="text" name="title" placeholder="Page Name" required>
+
+  <button type="submit">Create Page</button>
+</form>
+
+
+{% endblock %}
