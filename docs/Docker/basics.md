@@ -13,7 +13,7 @@ Terms:
 a container is an image running on your machine. Can be turned on or off, etc.
 - Volume: A path that a container can use to access host file system.
 
-
+## Common Commands
 ```bash
 # When you find an image you want to use do
 docker pull <image_name>
