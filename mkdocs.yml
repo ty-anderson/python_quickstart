@@ -39,6 +39,7 @@ nav:
   - Standard Library Gems: Python/docs_9_std_lib.md
 - Git & GitHub:
   - Git Basics: Git/basics.md
+  - Remotes: Git/remotes.md
 - Docker: Docker/docs_99_docker.md
 - Networking:
   - General Networking: Networking/docs_100_networking.md

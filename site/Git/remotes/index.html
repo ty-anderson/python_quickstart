@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://healthfin.solutions/notes/Linux/docs_199_backups/">
+        <link rel="canonical" href="https://healthfin.solutions/notes/Git/remotes/">
       
       
-        <link rel="prev" href="../docs_103_ssh/">
+        <link rel="prev" href="../basics/">
       
       
-        <link rel="next" href="../../Video%20Processing/docs_200_ffmpeg/">
+        <link rel="next" href="../../Docker/docs_99_docker/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Backups - Tech Notes</title>
+        <title>Remotes - Tech Notes</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#backups" class="md-skip">
+        <a href="#git-remotes" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Backups
+              Remotes
             
           </span>
         </div>
@@ -483,17 +483,19 @@
       
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -507,7 +509,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Git & GitHub
@@ -521,7 +523,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Git/basics/" class="md-nav__link">
+      <a href="../basics/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -539,10 +541,19 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../Git/remotes/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -551,6 +562,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -713,19 +725,17 @@
       
   
   
-    
   
   
-  
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
         
           
           <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
@@ -739,7 +749,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             Linux and Other OS
@@ -753,7 +763,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../docs_104_linux/" class="md-nav__link">
+      <a href="../../Linux/docs_104_linux/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -774,7 +784,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../docs_103_ssh/" class="md-nav__link">
+      <a href="../../Linux/docs_103_ssh/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -792,30 +802,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Backups
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../Linux/docs_199_backups/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -824,71 +814,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#philosophy" class="md-nav__link">
-    <span class="md-ellipsis">
-      Philosophy
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#copy-directory" class="md-nav__link">
-    <span class="md-ellipsis">
-      Copy Directory
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tar-files" class="md-nav__link">
-    <span class="md-ellipsis">
-      Tar Files
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#encryption" class="md-nav__link">
-    <span class="md-ellipsis">
-      Encryption
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#removing-sensitive-data" class="md-nav__link">
-    <span class="md-ellipsis">
-      Removing Sensitive Data
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1068,59 +993,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#philosophy" class="md-nav__link">
-    <span class="md-ellipsis">
-      Philosophy
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#copy-directory" class="md-nav__link">
-    <span class="md-ellipsis">
-      Copy Directory
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tar-files" class="md-nav__link">
-    <span class="md-ellipsis">
-      Tar Files
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#encryption" class="md-nav__link">
-    <span class="md-ellipsis">
-      Encryption
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#removing-sensitive-data" class="md-nav__link">
-    <span class="md-ellipsis">
-      Removing Sensitive Data
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1134,277 +1006,10 @@
                   
 
 
-<h1 id="backups">Backups</h1>
-<p>Options: Backup files/folders OR full system backup.</p>
-<p>Backup folders: daily <code>rsync</code> to a separate disk
-Full system: weekly <code>dd</code> or <code>timeshift</code></p>
-<p>Can setup with cron to run regularly.</p>
-<h2 id="philosophy">Philosophy</h2>
-<p>Best practice for backing up files is called 3-2-1 backup strategy.</p>
-<ul>
-<li>3 copies of your data (original and two backups).</li>
-<li>2 different storage types (external drive, NAS, cloud storage, etc).</li>
-<li>1 off-site backup, a cloud backup or physical backup at a friends house.</li>
-</ul>
-<h2 id="copy-directory">Copy Directory</h2>
-<p>Two baked-in commands are <code>scp</code> or <code>rsync</code>.</p>
-<p>Here's an example with scp: <code>scp -r ./site user@server:/srv/web_apps</code>.</p>
-<p><strong>rsync is typically recommended over scp.</strong></p>
-<p><code>rsync</code> usually comes on Linux and MacOS, it is lightweight, fast, can detect
-changes in files to do an incremental backup. </p>
-<p>Commands: </p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Basic save file to another folder</span>
-rsync<span class="w"> </span>-v<span class="w"> </span>/source/file/name.txt<span class="w"> </span>/dest/file
-
-<span class="c1"># Use literal string (preserve string for special characters)</span>
-rsync<span class="w"> </span>-v<span class="w"> </span><span class="s1">&#39;/source/file/na$me.txt&#39;</span><span class="w"> </span>/dest/file
-
-<span class="c1"># Send multiple files</span>
-rsync<span class="w"> </span>-v<span class="w"> </span>/source/file1.txt<span class="w"> </span>/source/file2.txt<span class="w"> </span><span class="s1">&#39;/dest&#39;</span>
-
-<span class="c1"># Send over SSH</span>
-rsync<span class="w"> </span>-av<span class="w"> </span>/source/file/name.txt<span class="w"> </span>user@server:/dest/file
-
-<span class="c1"># Send over SSH with custom port</span>
-rsync<span class="w"> </span>-avz<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;ssh -p 2222&quot;</span><span class="w"> </span>/source/file/name.txt<span class="w"> </span>user@server:/dest/file
-
-<span class="c1"># Send over SSH with sudo command</span>
-rsync<span class="w"> </span>-v<span class="w"> </span>--rsync-path<span class="o">=</span><span class="s2">&quot;sudo rsync&quot;</span><span class="w"> </span>yt_download_image.tar<span class="w"> </span>user@server:/srv/flask_yt_download
-
-<span class="c1"># Send over entire directory</span>
-rsync<span class="w"> </span>-avz<span class="w"> </span>/source/dir<span class="w"> </span>/dest/dir
-
-<span class="c1"># Send all files in directory. Trailing slash. </span>
-<span class="c1"># Trailing slash only matters on source, it doesn&#39;t matter on dest</span>
-rsync<span class="w"> </span>-avz<span class="w"> </span>/source/dir/<span class="w"> </span>/dest/dir
-
-<span class="c1"># actual use</span>
-rsync<span class="w"> </span>-avz<span class="w"> </span>--rsync-path<span class="o">=</span><span class="s2">&quot;sudo rsync&quot;</span><span class="w"> </span>/Users/tyleranderson/PycharmProjects<span class="w"> </span>tyler@anderson.home:/srv/backup_media
-</code></pre></div></td></tr></table></div>
-<p>Flags: </p>
-<ul>
-<li><code>-v</code> = verbose mode.</li>
-<li><code>-a</code> = archive mode. saves permissions and timestamps.</li>
-<li><code>-z</code> = compress files to transfer, lossless compression.</li>
-<li><code>-e</code> = execute specific command.</li>
-<li><code>--progress</code> = show transfer progress.</li>
-<li><code>--delete</code> = remove files from the backup if they were removed from the source.</li>
-<li><code>--exclude</code> = Exclude specific files like <code>--exclude='*.log' --exclude='/cache/'</code></li>
-</ul>
-<h2 id="tar-files">Tar Files</h2>
-<p>A tar file <code>.tar</code> is an archive file that stores multiple files and 
-directories together in one file, without compression. Very common
-in Linux and Unix based systems. Common for backups and transfers.</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Create tar file (best to use relative path instead of absolute)</span>
-sudo<span class="w"> </span>tar<span class="w"> </span>-cvf<span class="w"> </span>archive.tar<span class="w"> </span>path/to/files/
-
-<span class="c1"># Extract tar file</span>
-sudo<span class="w"> </span>tar<span class="w"> </span>-xvf<span class="w"> </span>archive.tar
-
-<span class="c1"># Create compressed tar file</span>
-tar<span class="w"> </span>-czvf<span class="w"> </span>archive.tar.gz<span class="w"> </span>/path/to/files/
-
-<span class="c1"># Extract compressed tar file</span>
-tar<span class="w"> </span>-xzvf<span class="w"> </span>archive.tar.gz
-
-<span class="c1"># List files in tar file</span>
-tar<span class="w"> </span>-tvf<span class="w"> </span>archive.tar
-
-<span class="c1"># Extract specific file from tar file</span>
-tar<span class="w"> </span>-xvf<span class="w"> </span>archive.tar<span class="w"> </span>file.txt
-</code></pre></div></td></tr></table></div>
-<p>Flags:</p>
-<ul>
-<li><code>-c</code> = Crete new archive</li>
-<li><code>-v</code> = Verbose mode (shows progress)</li>
-<li><code>-f</code> = Specifies filename (archive.tar)</li>
-<li><code>-x</code> = Extract</li>
-<li><code>-z</code> = Compress with gzip</li>
-</ul>
-<h2 id="encryption">Encryption</h2>
-<p><code>age</code> is a lightweight focused encryption software for files. 
-It uses modern cryptography making it more secure, but less featured 
-than something like <code>gpg</code>. Age  lets you use passwords or key files.</p>
-<p>Install:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Install</span>
-brew<span class="w"> </span>install<span class="w"> </span>age<span class="w">  </span><span class="c1"># MacOS</span>
-sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>age<span class="w"> </span><span class="c1"># Linux</span>
-</code></pre></div></td></tr></table></div>
-<p>How to use - you have 2 options for encryption.</p>
-<ol>
-<li>Password - best for quick encryption, no need to manage keys. Less secure and harder to automate.</li>
-</ol>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># encrypt with password, prompt will ask for password</span>
-age<span class="w"> </span>-o<span class="w"> </span>myfile.txt.age<span class="w"> </span>-p<span class="w"> </span>myfile.txt
-
-<span class="c1"># decrypt with password</span>
-age<span class="w"> </span>-d<span class="w"> </span>myfile.txt.age<span class="w"> </span>&gt;<span class="w"> </span>myfile.txt
-</code></pre></div></td></tr></table></div>
-<ol>
-<li>Public/Private key Encryption - Most secure and good for automation.</li>
-</ol>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span>
-<span class="normal">8</span>
-<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># generate a key file</span>
-age-keygen<span class="w"> </span>-o<span class="w"> </span>~/.age-key.txt<span class="w">  </span><span class="c1"># stores key in ~/.age-key.txt</span>
-<span class="c1"># This file contains a public and private key that you can use to encrypt files.</span>
-
-<span class="c1"># encrypt file using public key (replace PUBLIC_KEY with your public key in the file)</span>
-age<span class="w"> </span>-r<span class="w"> </span>PUBLIC_KEY<span class="w"> </span>-o<span class="w"> </span>myfile.txt.age<span class="w"> </span>myfile.txt
-
-<span class="c1"># decrypt using private key</span>
-age<span class="w"> </span>-d<span class="w"> </span>-i<span class="w"> </span>~/.age-key.txt<span class="w"> </span>myfile.txt.age<span class="w"> </span>&gt;<span class="w"> </span>myfile.txt
-</code></pre></div></td></tr></table></div>
-<p>To use the file directly instead of copying the public key:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># use head to extract the public key</span>
-age<span class="w"> </span>-r<span class="w"> </span><span class="k">$(</span>head<span class="w"> </span>-n<span class="w"> </span><span class="m">1</span><span class="w"> </span>~/.age-key.txt<span class="k">)</span><span class="w"> </span>-o<span class="w"> </span>myfile.txt.age<span class="w"> </span>myfile.txt
-
-<span class="c1"># decrypt</span>
-age<span class="w"> </span>-d<span class="w"> </span>-i<span class="w"> </span>~/.age-key.txt<span class="w"> </span>myfile.txt.age<span class="w"> </span>&gt;<span class="w"> </span>myfile.txt
-</code></pre></div></td></tr></table></div>
-<p>Encrypt directory by turning into tar file, then encrypting that file.</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Simple example, directory (use tar).</span>
-tar<span class="w"> </span>-czf<span class="w"> </span>myfolder.tar.gz<span class="w"> </span>myfolder/
-age<span class="w"> </span>-o<span class="w"> </span>myfolder.tar.gz.age<span class="w"> </span>-p<span class="w"> </span>myfolder.tar.gz
-
-<span class="c1"># convert folder to tar file, encrypt it with age, one command,</span>
-<span class="c1"># no intermediate file created.</span>
-tar<span class="w"> </span>-czf<span class="w"> </span>-<span class="w"> </span>myfolder/<span class="w"> </span><span class="p">|</span><span class="w"> </span>age<span class="w"> </span>-o<span class="w"> </span>myfolder.tar.gz.age<span class="w"> </span>-p
-
-<span class="c1"># decrypt and extract in one command.</span>
-age<span class="w"> </span>-d<span class="w"> </span>myfolder.tar.gz.age<span class="w"> </span><span class="p">|</span><span class="w"> </span>tar<span class="w"> </span>-xz
-</code></pre></div></td></tr></table></div>
-<p>Decrypt:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span>
-<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># decrypt .age file</span>
-age<span class="w"> </span>-d<span class="w"> </span>myfolder.tar.gz.age<span class="w"> </span>&gt;<span class="w"> </span>myfolder.tar.gz
-
-<span class="c1"># extract the file</span>
-tar<span class="w"> </span>-xzf<span class="w"> </span>myfolder.tar.gz
-
-<span class="c1"># delete archive file</span>
-shred<span class="w"> </span>-u<span class="w"> </span>myfolder.tar.gz
-</code></pre></div></td></tr></table></div>
-<p>Flags:</p>
-<ul>
-<li><code>-o &lt;output&gt;</code> = output file name.</li>
-<li><code>-d</code> = decrypts an encrypted file.</li>
-<li><code>-p</code> = uses password encryption.</li>
-<li><code>-r &lt;public-key&gt;</code> = Encrypts using public key.</li>
-<li><code>-i &lt;identity-file&gt;</code> = uses private key for decryption. </li>
-</ul>
-<p>Other notes:</p>
-<ul>
-<li>The key file contains both public and private keys.</li>
-<li>Encryption uses only the public key. </li>
-<li>Decryption uses both keys</li>
-</ul>
-<h2 id="removing-sensitive-data">Removing Sensitive Data</h2>
-<p>Hard-Disk Drives:</p>
-<p>Securely delete a file with <code>shred</code>. This will overwrite the file with 
-random data mutliple times, renames the file multiple times to obscure 
-its original name, then deletes the file. This makes it very difficult 
-for data recovery tools to extract meaningful information from the files.</p>
-<p><code>shred -u secret.txt</code></p>
-<ul>
-<li><code>-u</code> = truncate and delete the file after shredding.</li>
-<li><code>-n</code> = number of times to overwrite (defualt is 3) <code>shred -n 10 secret.txt</code></li>
-</ul>
-<p>For entire directories, you can use <code>wipe</code>. </p>
-<p><code>sudo apt install wipe</code> and then <code>wipe -r /path/to/directory/</code> this will
-remove the directory as well. If you want to keep the directory use 
-<code>wipe -r /path/to/directory/*</code></p>
-<p>Solid-State Drives:</p>
-<ol>
-<li>Use <code>fstrim</code> (Best for Full SSD)
-✅ Best for clearing free space on an SSD</li>
-</ol>
-<p>Modern SSDs support TRIM, which tells the SSD to permanently erase deleted data</p>
-<p><code>sudo fstrim -v /</code></p>
-<ol>
-<li>Use srm or wipe (For File-Level Deletion)
-✅ Best for deleting a single file securely (better than <code>shred</code> on SSDs)</li>
-</ol>
-<p>🔹 Install srm (Secure Remove)</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo apt install secure-delete  # Debian/Ubuntu
-brew install srm               # macOS
-</code></pre></div></td></tr></table></div>
-<p>🔹 Securely delete a file = <code>srm -v my_secret_file.txt</code> </p>
-<p>🔹 Use wipe for Directories = <code>wipe -rf my_secret_folder/</code></p>
+<h1 id="git-remotes">Git Remotes</h1>
+<p>A "remote" in the git environment is another location to 
+store a copy of your git project.</p>
+<p>GitHub is the most common remote.</p>
 
 
 
