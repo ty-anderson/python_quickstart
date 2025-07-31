@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 mkdocs build
-.venv/bin/python to_pdf.py
-#mkdocs gh-deploy
+#.venv/bin/python to_pdf.py
+# mkdocs gh-deploy
 git add .
 git commit -m "update"
 git push

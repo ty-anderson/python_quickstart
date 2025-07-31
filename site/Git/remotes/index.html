@@ -553,6 +553,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Remotes
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -562,6 +573,34 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#self-hosted-git-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      Self Hosted Git Server
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -993,6 +1032,23 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#self-hosted-git-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      Self Hosted Git Server
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1010,6 +1066,58 @@
 <p>A "remote" in the git environment is another location to 
 store a copy of your git project.</p>
 <p>GitHub is the most common remote.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># To see all remotes that are in a project</span>
+git<span class="w"> </span>remote<span class="w"> </span>-v
+
+<span class="c1"># to push commited updates to remote</span>
+git<span class="w"> </span>push
+</code></pre></div></td></tr></table></div>
+<p>You can setup multiple remotes on one git project.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>&lt;name<span class="w"> </span>of<span class="w"> </span>remote&gt;<span class="w"> </span>&lt;server<span class="w"> </span>uri&gt;
+
+<span class="c1"># for example:</span>
+git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>https://github.com/ty-anderson/python_quickstart.git
+git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>backup<span class="w"> </span>ssh://user@yourserver:/srv/git/myproject.git
+
+<span class="c1"># when pushing be explicit to which remote</span>
+git<span class="w"> </span>push<span class="w"> </span>&lt;remote<span class="w"> </span>name&gt;<span class="w"> </span>&lt;branch&gt;
+git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>main
+git<span class="w"> </span>push<span class="w"> </span>backup<span class="w"> </span>master
+</code></pre></div></td></tr></table></div>
+<h2 id="self-hosted-git-server">Self Hosted Git Server</h2>
+<p>If you want to store your git projects on your own server, its pretty simple.</p>
+<p>Steps:</p>
+<p>On your server:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>mkdir<span class="w"> </span>-p<span class="w"> </span>/srv/git/myproject.git
+<span class="nb">cd</span><span class="w"> </span>/srv/git/myproject.git
+git<span class="w"> </span>init<span class="w"> </span>--bare
+</code></pre></div></td></tr></table></div></p>
+<p>On your local machine:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>ssh://user@yourserver:/srv/git/myproject.git
+git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>main
+<span class="c1"># origin is name of remote, change to whatever you want. </span>
+<span class="c1"># main is name of branch, change to whatever branch you want to commit.</span>
+<span class="c1"># the -u sets this remote as the active one for tracking. </span>
+</code></pre></div></td></tr></table></div></p>
 
 
 

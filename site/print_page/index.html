@@ -3046,10 +3046,104 @@ interpreter and your code into a bundle that gets uploaded to the App store.</p>
                     <section class='print-page md-section' id='section-3' heading-number='3'>
                         <h1>Git & GitHub<a class='headerlink' href='#section-3' title='Permanent link'></a>
                         </h1>
-                    <section class="print-page" id="git-basics" heading-number="3.1"><h1 id="git-basics-git-basics">Git Basics</h1></section><section class="print-page" id="git-remotes" heading-number="3.2"><h1 id="git-remotes-git-remotes">Git Remotes</h1>
+                    <section class="print-page" id="git-basics" heading-number="3.1"><h1 id="git-basics-git-basics">Git Basics</h1>
+<p>Git is a code repository and version control system. It's great for tracking
+changes to a code base (or any other text based files).</p>
+<p>There are many tools that can help with basic git functions. The power really
+comes from using it in the terminal.</p>
+<p>Common commands:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># start a git project in working directory.</span>
+git<span class="w"> </span>init
+
+<span class="c1"># add all files in the directory to git.</span>
+git<span class="w"> </span>add<span class="w"> </span>.
+
+<span class="c1"># commit your changes.</span>
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Write a message here&quot;</span>
+
+<span class="c1"># send your commited git changes to your active remote.</span>
+git<span class="w"> </span>push
+
+<span class="c1"># retrieve commited changes from remote that are not in your local repo.</span>
+git<span class="w"> </span>pull
+
+<span class="c1"># remove all uncommited changes (USE WITH CAUTION, NO RECOVERY OPTIONS)</span>
+git<span class="w"> </span>reset<span class="w"> </span>--hard
+</code></pre></div></td></tr></table></div></p>
+<p>The location of the git files is a directory in the root directory of your project.
+Its usually <code>.git</code>. This is a <strong>directory</strong> not a file. Remotes will have similar
+naming like python_quickstart.git. </p></section><section class="print-page" id="git-remotes" heading-number="3.2"><h1 id="git-remotes-git-remotes">Git Remotes</h1>
 <p>A "remote" in the git environment is another location to 
 store a copy of your git project.</p>
-<p>GitHub is the most common remote.</p></section></section><section class="print-page" id="docker-docs_99_docker" heading-number="4"><h1 id="docker-docs_99_docker-docker">Docker</h1>
+<p>GitHub is the most common remote.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># To see all remotes that are in a project</span>
+git<span class="w"> </span>remote<span class="w"> </span>-v
+
+<span class="c1"># to push commited updates to remote</span>
+git<span class="w"> </span>push
+</code></pre></div></td></tr></table></div>
+<p>You can setup multiple remotes on one git project.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>&lt;name<span class="w"> </span>of<span class="w"> </span>remote&gt;<span class="w"> </span>&lt;server<span class="w"> </span>uri&gt;
+
+<span class="c1"># for example:</span>
+git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>https://github.com/ty-anderson/python_quickstart.git
+git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>backup<span class="w"> </span>ssh://user@yourserver:/srv/git/myproject.git
+
+<span class="c1"># when pushing be explicit to which remote</span>
+git<span class="w"> </span>push<span class="w"> </span>&lt;remote<span class="w"> </span>name&gt;<span class="w"> </span>&lt;branch&gt;
+git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>main
+git<span class="w"> </span>push<span class="w"> </span>backup<span class="w"> </span>master
+</code></pre></div></td></tr></table></div>
+<h2 id="git-remotes-self-hosted-git-server">Self Hosted Git Server</h2>
+<p>If you want to store your git projects on your own server, its pretty simple.</p>
+<p>Steps:</p>
+<p>On your server:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>mkdir<span class="w"> </span>-p<span class="w"> </span>/srv/git/myproject.git
+<span class="nb">cd</span><span class="w"> </span>/srv/git/myproject.git
+git<span class="w"> </span>init<span class="w"> </span>--bare
+</code></pre></div></td></tr></table></div></p>
+<p>On your local machine:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>ssh://user@yourserver:/srv/git/myproject.git
+git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>main
+<span class="c1"># origin is name of remote, change to whatever you want. </span>
+<span class="c1"># main is name of branch, change to whatever branch you want to commit.</span>
+<span class="c1"># the -u sets this remote as the active one for tracking. </span>
+</code></pre></div></td></tr></table></div></p></section></section><section class="print-page" id="docker-docs_99_docker" heading-number="4"><h1 id="docker-docs_99_docker-docker">Docker</h1>
 <p>Docker uses images of a software to create containers that run them. They will create their own isolated environment on the host system. They are typically very easy to install and even easier to uninstall. They can enhance security by isolating the host system from the system running the software.</p>
 <p>When you find an image you want to use do:
 <code>docker pull &lt;image_name&gt;</code></p>
