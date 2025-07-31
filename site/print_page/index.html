@@ -3446,36 +3446,80 @@ If you want to push all from local to remote: <code>git push --all origin</code>
 Containers are greate because they are typically very easy to install and even easier to uninstall. 
 Allows for reproducing environments, avoiding the "it runs on my machine" problem.
 They can enhance security by isolating the host system from the system running the software.</p>
-<p>Terms:
-- Image: A copy of the software that is ready to run on docker.
-- Container: An instance of an image, specific to the image that has been setup to run. More simply, 
-a container is an image running on your machine. Can be turned on or off, etc.
-- Volume: A path that a container can use to access host file system.</p>
-<p>When you find an image you want to use do:
-<code>docker pull &lt;image_name&gt;</code></p>
-<p>To see images downloaded use:
-<code>docker images</code></p>
-<p>See containers:
-<code>docker ps</code></p>
-<p>Run container:
-<code>docker run image-name -d</code>
--d means run in detached mode so when the terminal is closed, the container continues to run</p>
-<p>Some containers need other info to run, which can be passed after the command:
-Postgres example:
-<code>docker run --name postgres_db -e POSTGRES_PASSWORD=postgres -p 5432:5432 -d postgres</code></p>
+<p>Terms:</p>
 <ul>
-<li>--name is what the container will be named</li>
-<li>-p is for port mapping host computer port to image port (first is host, second is container)</li>
-<li>-e is for adding environment variables</li>
+<li>Image: A copy of the software that is ready to run on docker.</li>
+<li>Container: An instance of an image, specific to the image that has been setup to run. More simply, 
+a container is an image running on your machine. Can be turned on or off, etc.</li>
+<li>Volume: A path that a container can use to access host file system.</li>
 </ul>
-<p>Remove an image by name and tag: <code>docker rmi postgres:latest</code> or by image id <code>docker rmi 123456789abc</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># When you find an image you want to use do</span>
+docker<span class="w"> </span>pull<span class="w"> </span>&lt;image_name&gt;
+
+<span class="c1"># To see images downloaded use</span>
+docker<span class="w"> </span>images
+
+<span class="c1"># see containers</span>
+docker<span class="w"> </span>ps
+
+<span class="c1"># run container. </span>
+docker<span class="w"> </span>run<span class="w"> </span>image-name<span class="w"> </span>-d
+<span class="c1"># -d means run in detached mode so when the terminal is closed, the container continues to run</span>
+
+<span class="c1"># Some containers need other info to run, which can be passed after the command</span>
+docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> </span>postgres_db<span class="w"> </span>-e<span class="w"> </span><span class="nv">POSTGRES_PASSWORD</span><span class="o">=</span>postgres<span class="w"> </span>-p<span class="w"> </span><span class="m">5432</span>:5432<span class="w"> </span>-d<span class="w"> </span>postgres
+<span class="c1"># --name is what the container will be named</span>
+<span class="c1"># -p is for port mapping host computer port to image port (first is host, second is container)</span>
+<span class="c1"># -e is for adding environment variables</span>
+
+<span class="c1"># remove an image by name and tag</span>
+docker<span class="w"> </span>rmi<span class="w"> </span>postgres:latest
+<span class="c1"># or by container hash id</span>
+docker<span class="w"> </span>rmi<span class="w"> </span>123456789abc
+</code></pre></div></td></tr></table></div>
 <h2 id="docker-basics-access-docker-container">Access Docker Container</h2>
-<p>Access the container environment <code>docker exec -it &lt;container-name-or-id&gt; /bin/sh</code>
-/bin/sh is the terminal experience (shell in this case) you could do /bin/bash</p>
-<p>Access container logs
-<code>docker logs &lt;container name or id&gt;</code></p>
-<p>For continuously showing log output
-<code>docker logs -f &lt;container-name-or-id&gt;</code></p>
+<p>Docker containers have their own sort of operating system. Because of this, you can run commands just like
+any OS on the terminal.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># to shell into the container</span>
+docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>&lt;container-name-or-id&gt;<span class="w"> </span>/bin/sh
+<span class="c1"># /bin/sh is the terminal experience (shell in this case) you could do /bin/bash</span>
+
+<span class="c1"># access container logs</span>
+docker<span class="w"> </span>logs<span class="w"> </span>&lt;container<span class="w"> </span>name<span class="w"> </span>or<span class="w"> </span>id&gt;
+
+<span class="c1"># continously showing log output</span>
+docker<span class="w"> </span>logs<span class="w"> </span>-f<span class="w"> </span>&lt;container-name-or-id&gt;
+</code></pre></div></td></tr></table></div>
 <h2 id="docker-basics-docker-volumes">Docker Volumes</h2>
 <p>Files and Docker
 If you need to use files for anything involving docker, you need to configure volumes.</p>
