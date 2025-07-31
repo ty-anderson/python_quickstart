@@ -57,7 +57,7 @@ git push origin test_branch
 # switch back to main so we can merge the new branch
 git checkout main
 
-# make sure main is update to date
+# make sure main is up-to-date
 git pull
 
 # merge the branch into main
