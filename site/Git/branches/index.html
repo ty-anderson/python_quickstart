@@ -8,13 +8,9 @@
       
       
       
-        <link rel="canonical" href="https://healthfin.solutions/notes/Git/basics/">
+        <link rel="canonical" href="https://healthfin.solutions/notes/Git/branches/">
       
       
-        <link rel="prev" href="../../Python/docs_9_std_lib/">
-      
-      
-        <link rel="next" href="../remotes/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -22,7 +18,7 @@
     
     
       
-        <title>Git Basics - Tech Notes</title>
+        <title>Branches - Tech Notes</title>
       
     
     
@@ -80,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#git-basics" class="md-skip">
+        <a href="#branches" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Git Basics
+              Branches
             
           </span>
         </div>
@@ -483,19 +479,17 @@
       
   
   
-    
   
   
-  
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -509,7 +503,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Git & GitHub
@@ -520,19 +514,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../basics/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -541,7 +526,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -1006,12 +990,35 @@
                   
 
 
-<h1 id="git-basics">Git Basics</h1>
-<p>Git is a code repository and version control system. It's great for tracking
-changes to a code base (or any other text based files).</p>
-<p>There are many tools that can help with basic git functions. The power really
-comes from using it in the terminal.</p>
-<p>Common commands:
+<h1 id="branches">Branches</h1>
+<p>A branch in git is a way to create different versions of your code and keep them
+separated.</p>
+<p>Below are some examples of some reasons to create a branch.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># create a new branch for a feature</span>
+git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>feature/login-form
+
+<span class="c1"># create a branch for a bug fix</span>
+git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>fix/issue-123-crash
+
+<span class="c1"># create a branch for experiments</span>
+git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>experiment/redesign
+
+<span class="c1"># separate production from development</span>
+git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>production
+git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>development
+</code></pre></div></td></tr></table></div>
+<p>Example workflow:
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -1031,30 +1038,47 @@ comes from using it in the terminal.</p>
 <span class="normal">17</span>
 <span class="normal">18</span>
 <span class="normal">19</span>
-<span class="normal">20</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># start a git project in working directory.</span>
-git<span class="w"> </span>init
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># make new branch</span>
+git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>test_branch
 
-<span class="c1"># add a file to git.</span>
-git<span class="w"> </span>add<span class="w"> </span>main.py
+<span class="c1"># make change to file</span>
 
-<span class="c1"># add all files in the directory to git.</span>
-git<span class="w"> </span>add<span class="w"> </span>.
+<span class="c1"># commit the change.</span>
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;update message&quot;</span>
 
-<span class="c1"># commit your changes.</span>
-git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Write a message here&quot;</span>
-
-<span class="c1"># send your commited git changes to your active remote.</span>
+<span class="c1"># (optional) push to remote</span>
 git<span class="w"> </span>push
+<span class="c1"># or</span>
+git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>test_branch
 
-<span class="c1"># retrieve commited changes from remote that are not in your local repo.</span>
+<span class="c1"># switch back to main so we can merge the new branch</span>
+git<span class="w"> </span>checkout<span class="w"> </span>main
+
+<span class="c1"># make sure main is update to date</span>
 git<span class="w"> </span>pull
 
-<span class="c1"># remove all uncommited changes (USE WITH CAUTION, NO RECOVERY OPTIONS)</span>
-git<span class="w"> </span>reset<span class="w"> </span>--hard
+<span class="c1"># merge the branch into main</span>
+git<span class="w"> </span>merge<span class="w"> </span>test_branch
+
+<span class="c1"># you can also delete the branch afterward if you do not expect to use it</span>
+git<span class="w"> </span>branch<span class="w"> </span>-d<span class="w"> </span>test_branch
+
+<span class="c1"># if it wasn&#39;t merged and you still want to delete</span>
+git<span class="w"> </span>branch<span class="w"> </span>-D<span class="w"> </span>test_branch
+
+<span class="c1"># (optional) clean up the remote</span>
+git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>--delete<span class="w"> </span>test_branch
 </code></pre></div></td></tr></table></div></p>
-<p>The location of the git files is a directory in the root directory of your project.
-Its usually <code>.git</code>. This is a <strong>directory not a file</strong>. Remotes will have similar
-naming like python_quickstart.git. </p>
 
 
 

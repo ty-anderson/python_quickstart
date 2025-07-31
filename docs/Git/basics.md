@@ -11,6 +11,9 @@ Common commands:
 # start a git project in working directory.
 git init
 
+# add a file to git.
+git add main.py
+
 # add all files in the directory to git.
 git add .
 
@@ -30,5 +33,5 @@ git reset --hard
 ```
 
 The location of the git files is a directory in the root directory of your project.
-Its usually ``.git``. This is a **directory** not a file. Remotes will have similar
+Its usually ``.git``. This is a **directory not a file**. Remotes will have similar
 naming like python_quickstart.git. 
