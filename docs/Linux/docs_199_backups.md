@@ -237,3 +237,32 @@ brew install srm               # macOS
 🔹 Securely delete a file = ``srm -v my_secret_file.txt`` 
 
 🔹 Use wipe for Directories = ``wipe -rf my_secret_folder/``
+
+
+## In Practice
+
+The best way to backup files are as follows:
+
+Backup files: 
+
+- ``rsync`` - command line, good for copying files incrementally to other folders 
+or over ssh.
+- ``rclone`` - just like ``rsync`` but for the cloud. Works with over 50 cloud providers
+like Google Drive, Dropbox, OneDrive, etc.
+- ``syncthing`` - Realtime file sync between your devices. Creates its own files
+on each device and syncs changes between all devices. It is direct peer-to-peer file
+sync, meaning there is no server hosting the files and copying between devices.
+
+Good system:
+
+1. Daily file backups to a local device like USB drive with ``rsync``.
+2. Daily or weekly backups of files to remote with ``rclone``.
+
+```cron
+# backup to local drive
+0 2 * * * rsync -rv --delete /srv/ /mnt/usb_backup/
+
+# backup to cloud
+0 3 * * * rclone sync /srv/ gdrive:server-backup --log-file=/var/log/rclone.log
+
+```

@@ -4743,7 +4743,34 @@ remove the directory as well. If you want to keep the directory use
 brew install srm               # macOS
 </code></pre></div></td></tr></table></div>
 <p>🔹 Securely delete a file = <code>srm -v my_secret_file.txt</code> </p>
-<p>🔹 Use wipe for Directories = <code>wipe -rf my_secret_folder/</code></p></section></section>
+<p>🔹 Use wipe for Directories = <code>wipe -rf my_secret_folder/</code></p>
+<h2 id="linux-docs_199_backups-in-practice">In Practice</h2>
+<p>The best way to backup files are as follows:</p>
+<p>Backup files: </p>
+<ul>
+<li><code>rsync</code> - command line, good for copying files incrementally to other folders 
+or over ssh.</li>
+<li><code>rclone</code> - just like <code>rsync</code> but for the cloud. Works with over 50 cloud providers
+like Google Drive, Dropbox, OneDrive, etc.</li>
+<li><code>syncthing</code> - Realtime file sync between your devices. Creates its own files
+on each device and syncs changes between all devices. It is direct peer-to-peer file
+sync, meaning there is no server hosting the files and copying between devices.</li>
+</ul>
+<p>Good system:</p>
+<ol>
+<li>Daily file backups to a local device like USB drive with <code>rsync</code>.</li>
+<li>Daily or weekly backups of files to remote with <code>rclone</code>.</li>
+</ol>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code># backup to local drive
+0 2 * * * rsync -rv --delete /srv/ /mnt/usb_backup/
+
+# backup to cloud
+0 3 * * * rclone sync /srv/ gdrive:server-backup --log-file=/var/log/rclone.log
+</code></pre></div></td></tr></table></div></section></section>
                     <section class='print-page md-section' id='section-7' heading-number='7'>
                         <h1>Video Processing<a class='headerlink' href='#section-7' title='Permanent link'></a>
                         </h1>
