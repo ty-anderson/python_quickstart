@@ -345,6 +345,25 @@ When you make changes to a service file, you need to reload the service:
 
 FastAPI is one of the most performant web frameworks available for python.
 
+## Pyinstaller
+
+Pyinstaller is a great way to create executable files. This makes your python program run
+without needing python on the host machine. Great for sharing a python program with others
+who do not have python on their computer.
+
+```bash
+# install
+pip install pyinstaller
+
+# create executable in one file.
+pyinstaller --onefile script_name.py
+
+# there are several flags that can be used
+pyinstaller --onefile --noconsole --icon=your_icon.ico --add-data "config.json;." script_name.py
+```
+
+Pyinstaller will capture other .py files if you have more than one and they are imported.
+
 
 
 ## Other Interesting Libraries

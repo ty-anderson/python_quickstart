@@ -20,16 +20,16 @@ def home():
 
 @app.route("/notes/")
 def serve_index():
-    return send_from_directory(SITE_DIR, "index.html")
+    return send_from_directory(SITE_DIR, "index2.html")
 
 
 @app.route("/notes/<path:filename>")
 def serve_notes_static(filename):
-    # If it's a directory, append "index.html"
+    # If it's a directory, append "index2.html"
     full_path = os.path.join(SITE_DIR, filename)
 
     if os.path.isdir(full_path):
-        full_path = os.path.join(full_path, "index.html")
+        full_path = os.path.join(full_path, "index2.html")
         filename = os.path.relpath(full_path, SITE_DIR)
 
     if not os.path.exists(os.path.join(SITE_DIR, filename)):

@@ -602,6 +602,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#pyinstaller" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pyinstaller
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#other-interesting-libraries" class="md-nav__link">
     <span class="md-ellipsis">
       Other Interesting Libraries
@@ -1445,6 +1454,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#pyinstaller" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pyinstaller
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#other-interesting-libraries" class="md-nav__link">
     <span class="md-ellipsis">
       Other Interesting Libraries
@@ -1859,6 +1877,27 @@ sudo systemctl restart &lt;service-name&gt;
 <p><a href="https://flask.palletsprojects.com/en/stable/">Flask Docs</a></p>
 <h2 id="fastapi">FastAPI</h2>
 <p>FastAPI is one of the most performant web frameworks available for python.</p>
+<h2 id="pyinstaller">Pyinstaller</h2>
+<p>Pyinstaller is a great way to create executable files. This makes your python program run
+without needing python on the host machine. Great for sharing a python program with others
+who do not have python on their computer.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># install</span>
+pip<span class="w"> </span>install<span class="w"> </span>pyinstaller
+
+<span class="c1"># create executable in one file.</span>
+pyinstaller<span class="w"> </span>--onefile<span class="w"> </span>script_name.py
+
+<span class="c1"># there are several flags that can be used</span>
+pyinstaller<span class="w"> </span>--onefile<span class="w"> </span>--noconsole<span class="w"> </span>--icon<span class="o">=</span>your_icon.ico<span class="w"> </span>--add-data<span class="w"> </span><span class="s2">&quot;config.json;.&quot;</span><span class="w"> </span>script_name.py
+</code></pre></div></td></tr></table></div>
+<p>Pyinstaller will capture other .py files if you have more than one and they are imported.</p>
 <h2 id="other-interesting-libraries">Other Interesting Libraries</h2>
 <h3 id="locust">Locust</h3>
 <p>Locust is a load testing framework that can send millions of requests.</p>
