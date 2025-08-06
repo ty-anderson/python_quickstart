@@ -3508,7 +3508,10 @@ a container is an image running on your machine. Can be turned on or off, etc.</
 <span class="normal">20</span>
 <span class="normal">21</span>
 <span class="normal">22</span>
-<span class="normal">23</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># When you find an image you want to use do</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># When you find an image you want to use do</span>
 docker<span class="w"> </span>pull<span class="w"> </span>&lt;image_name&gt;
 
 <span class="c1"># To see images downloaded use</span>
@@ -3526,6 +3529,9 @@ docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> 
 <span class="c1"># --name is what the container will be named</span>
 <span class="c1"># -p is for port mapping host computer port to image port (first is host, second is container)</span>
 <span class="c1"># -e is for adding environment variables</span>
+
+<span class="c1"># stop docker container</span>
+docker<span class="w"> </span>stop<span class="w"> </span>image-name
 
 <span class="c1"># remove an image by name and tag</span>
 docker<span class="w"> </span>rmi<span class="w"> </span>postgres:latest
@@ -4552,6 +4558,8 @@ rsync<span class="w"> </span>-avz<span class="w"> </span>--rsync-path<span class
 <li><code>-a</code> = archive mode. saves permissions and timestamps.</li>
 <li><code>-z</code> = compress files to transfer, lossless compression.</li>
 <li><code>-e</code> = execute specific command.</li>
+<li><code>-r</code> = copy directories recursively. Meaning all files in subfolders as well.</li>
+<li><code>-h</code> = human readable file sizes while coping</li>
 <li><code>--progress</code> = show transfer progress.</li>
 <li><code>--delete</code> = remove files from the backup if they were removed from the source.</li>
 <li><code>--exclude</code> = Exclude specific files like <code>--exclude='*.log' --exclude='/cache/'</code></li>
@@ -4766,11 +4774,58 @@ sync, meaning there is no server hosting the files and copying between devices.<
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code># backup to local drive
-0 2 * * * rsync -rv --delete /srv/ /mnt/usb_backup/
+0 2 * * * rsync -rv --delete /srv/plex_media /mnt/usb/plex_media_backup
 
 # backup to cloud
 0 3 * * * rclone sync /srv/ gdrive:server-backup --log-file=/var/log/rclone.log
-</code></pre></div></td></tr></table></div></section></section>
+</code></pre></div></td></tr></table></div>
+<h3 id="linux-docs_199_backups-setup-rclone">Setup rclone</h3>
+<p>Create a config file to login to cloud provider:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># run rclone config wizard</span>
+rclone<span class="w"> </span>config
+</code></pre></div></td></tr></table></div>
+<p>Creamy Soup</p>
+<p>Here’s a basic, adaptable creamy soup recipe that you can use as a foundation for almost any type (e.g. potato, mushroom, chicken, broccoli, etc.):
+⸻</p>
+<p>🥣 Basic Creamy Soup Recipe</p>
+<p>🧾 Ingredients:
+•   2 tbsp butter
+•   1 small onion, diced
+•   2 cloves garlic, minced
+•   2–3 cups vegetables or meat of choice (e.g. diced potatoes, mushrooms, broccoli, shredded chicken)
+•   3 cups broth (chicken, vegetable, or beef)
+•   1 cup heavy cream or half-and-half
+•   2 tbsp flour (or cornstarch slurry if gluten-free)
+•   Salt and pepper, to taste
+•   Optional: thyme, bay leaf, paprika, shredded cheese</p>
+<p>🔪 Instructions:
+1.  Sauté aromatics:
+•   In a pot over medium heat, melt butter.
+•   Add onion and cook until soft (about 5 minutes).
+•   Add garlic and cook 30 seconds more.
+2.  Add main ingredient:
+•   Stir in your chopped vegetables or cooked meat.
+3.  Create base:
+•   Sprinkle flour over everything, stir to coat.
+•   Cook 1–2 minutes to remove flour taste.
+4.  Simmer:
+•   Slowly add broth while stirring.
+•   Bring to a boil, then reduce heat and simmer until vegetables are soft (10–20 min depending on type).
+5.  Add cream:
+•   Stir in cream (or milk).
+•   Heat through—don’t boil.
+6.  Blend (optional):
+•   Use an immersion blender to make it smooth, or leave it chunky.
+7.  Season:
+•   Taste and adjust seasoning. Add herbs or cheese if using.</p>
+<p>⸻</p>
+<p>🍲 Popular Variations:
+•   Cream of Mushroom: use mushrooms + thyme + a splash of white wine
+•   Creamy Potato Leek: use potatoes + leeks, blend smooth
+•   Broccoli Cheddar: use broccoli + sharp cheddar
+•   Chicken Corn Chowder: add corn, diced potatoes, and shredded chicken</p>
+<p>Would you like a version tailored to a specific vegetable or meat you have on hand?</p></section></section>
                     <section class='print-page md-section' id='section-7' heading-number='7'>
                         <h1>Video Processing<a class='headerlink' href='#section-7' title='Permanent link'></a>
                         </h1>

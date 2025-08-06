@@ -34,6 +34,9 @@ docker run --name postgres_db -e POSTGRES_PASSWORD=postgres -p 5432:5432 -d post
 # -p is for port mapping host computer port to image port (first is host, second is container)
 # -e is for adding environment variables
 
+# stop docker container
+docker stop image-name
+
 # remove an image by name and tag
 docker rmi postgres:latest
 # or by container hash id
