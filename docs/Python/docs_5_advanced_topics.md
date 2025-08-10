@@ -373,6 +373,24 @@ a bit of a double-edged sword because it achieves thread safety, but it also mak
 everything on one thread. Python 3.13 has introduced an experimental mode where the GIL can be deactivated.
 The most important thing here for now is to know it exists.
 
+## Mixin
+
+A Mixin is a class that is built for the purpose of being inhereted.
+It adds functionality of one class to another. If you write
+several classes and all of them need the same methods, you 
+can make a Mixin class and then have the other classes
+inherit the Mixin.
+
+```py
+class UserMixin:
+    def login_user(self):
+        login()
+
+
+class User(UserMixin):
+    
+```
+
 ## Other Helpful Tips
 
 **Unpacking Iterables** is a useful trick. If you have a list or other iterable that you want to perform an operation on

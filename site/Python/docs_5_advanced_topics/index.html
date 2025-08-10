@@ -355,6 +355,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../python_uv/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python uv
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../docs_4_building_large_projects/" class="md-nav__link">
         
   
@@ -512,6 +533,15 @@
   <a href="#global-interpreter-lock-gil" class="md-nav__link">
     <span class="md-ellipsis">
       Global Interpreter Lock (GIL)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mixin" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mixin
     </span>
   </a>
   
@@ -1337,6 +1367,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#mixin" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mixin
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#other-helpful-tips" class="md-nav__link">
     <span class="md-ellipsis">
       Other Helpful Tips
@@ -1818,6 +1857,24 @@ run python setup.py build_ext --inplace</p>
 a bit of a double-edged sword because it achieves thread safety, but it also makes python slower due to running
 everything on one thread. Python 3.13 has introduced an experimental mode where the GIL can be deactivated.
 The most important thing here for now is to know it exists.</p>
+<h2 id="mixin">Mixin</h2>
+<p>A Mixin is a class that is built for the purpose of being inhereted.
+It adds functionality of one class to another. If you write
+several classes and all of them need the same methods, you 
+can make a Mixin class and then have the other classes
+inherit the Mixin.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">UserMixin</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">login_user</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">login</span><span class="p">()</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">User</span><span class="p">(</span><span class="n">UserMixin</span><span class="p">):</span>
+</code></pre></div></td></tr></table></div>
 <h2 id="other-helpful-tips">Other Helpful Tips</h2>
 <p><strong>Unpacking Iterables</strong> is a useful trick. If you have a list or other iterable that you want to perform an operation on
 you can unpack it with an asterisk.</p>

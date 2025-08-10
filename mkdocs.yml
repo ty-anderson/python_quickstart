@@ -31,6 +31,7 @@ nav:
   - What is Python: Python/docs_1_what_is_python.md
   - How to Use: Python/docs_2_how_to_use.md
   - Writing Code: Python/docs_3_writing_code.md
+  - Python uv: Python/python_uv.md
   - Building Large Projects: Python/docs_4_building_large_projects.md
   - Advanced Topics: Python/docs_5_advanced_topics.md
   - Publishing Projects: Python/docs_6_publishing_project.md
