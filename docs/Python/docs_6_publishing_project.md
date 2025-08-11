@@ -9,6 +9,52 @@ Super summary:
 2. run ``python -m build ``
 3. use twine to send to pypi.
 
+
+## With UV
+
+```toml
+[project]
+name = "wws-api"
+version = "0.1.0"
+description = "Simplifies the process for calling the Workday Web Services API asyncronously."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+   "aiohttp>=3.12.15",
+   "lxml>=6.0.0",
+   "pyarrow>=21.0.0",
+   "xmltodict>=0.14.2",
+]
+
+[build-system]
+requires = ["uv_build>=0.8.7,<0.9.0"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+# module name is the normalized project name (dash -> underscore)
+module-name = "wws_api"
+# module root "" = repo root (i.e., not using src/)
+module-root = ""
+
+[[tool.uv.index]]
+name = "testpypi"
+url = "https://test.pypi.org/simple/"
+publish-url = "https://test.pypi.org/legacy/"
+explicit = true
+```
+
+Build wheel file with uv build system:
+``uv build``
+
+Publish project to test PyPI
+``uv publish --index testpypi --token <api token>``
+
+Publish project to production PyPI
+``uv publish --token <api token>``
+
+
+## Without UV
+
 More detailed steps:
 
 1. Make sure all of your files are created inside a folder structure

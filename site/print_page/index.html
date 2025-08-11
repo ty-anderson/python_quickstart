@@ -397,11 +397,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Python/docs_5_advanced_topics/" class="md-nav__link">
+      <a href="../Python/docs_6_publishing_project/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Advanced Topics
+    Publishing Projects
   </span>
   
 
@@ -418,11 +418,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Python/docs_6_publishing_project/" class="md-nav__link">
+      <a href="../Python/docs_5_advanced_topics/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Publishing Projects
+    Advanced Coding Topics
   </span>
   
 
@@ -1179,18 +1179,18 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#python-docs_5_advanced_topics" class="md-nav__link">
+  <a href="#python-docs_6_publishing_project" class="md-nav__link">
     <span class="md-ellipsis">
-      2.6 Advanced Topics
+      2.6 Publishing Projects
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#python-docs_6_publishing_project" class="md-nav__link">
+  <a href="#python-docs_5_advanced_topics" class="md-nav__link">
     <span class="md-ellipsis">
-      2.7 Publishing Projects
+      2.7 Advanced Coding Topics
     </span>
   </a>
   
@@ -1957,6 +1957,7 @@ and it will hot reload. </p>
 <span class="c1"># this creates a command line command. Replace with a command and path to what gets executed.</span>
 </code></pre></div></td></tr></table></div></li>
 <li>Call like <code>package_name</code> if you want a terminal command.</li>
+<li></li>
 </ol>
 <h2 id="python-docs_4_building_large_projects-a-more-modern-system">A More Modern System</h2>
 <h2 id="python-docs_4_building_large_projects-goals-of-a-good-structure">Goals of a good structure</h2>
@@ -2236,7 +2237,179 @@ python<span class="w"> </span>-m<span class="w"> </span>build<span class="w">   
 <span class="c1"># use the CLI after install</span>
 your-cli<span class="w"> </span>--help
 </code></pre></div></td></tr></table></div>
-<hr /></section><section class="print-page" id="python-docs_5_advanced_topics" heading-number="2.6"><h1 id="python-docs_5_advanced_topics-advanced-topics">Advanced Topics</h1>
+<hr /></section><section class="print-page" id="python-docs_6_publishing_project" heading-number="2.6"><h1 id="python-docs_6_publishing_project-publishing-a-project">Publishing a Project</h1>
+<p>You can create your own python library and publish it to PyPI. First you'll need to create an account and download
+your API keys. Once you have those established, you can create your project and then:</p>
+<p>Super summary:</p>
+<ol>
+<li>Create the pyproject.toml file and fill out the fields </li>
+<li>run <code>python -m build</code></li>
+<li>use twine to send to pypi.</li>
+</ol>
+<h2 id="python-docs_6_publishing_project-with-uv">With UV</h2>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[project]</span>
+<span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;wws-api&quot;</span>
+<span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;0.1.0&quot;</span>
+<span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Simplifies the process for calling the Workday Web Services API asyncronously.&quot;</span>
+<span class="n">readme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;README.md&quot;</span>
+<span class="n">requires-python</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&gt;=3.11&quot;</span>
+<span class="n">dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">   </span><span class="s2">&quot;aiohttp&gt;=3.12.15&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="s2">&quot;lxml&gt;=6.0.0&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="s2">&quot;pyarrow&gt;=21.0.0&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="s2">&quot;xmltodict&gt;=0.14.2&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="k">[build-system]</span>
+<span class="n">requires</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;uv_build&gt;=0.8.7,&lt;0.9.0&quot;</span><span class="p">]</span>
+<span class="n">build-backend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;uv_build&quot;</span>
+
+<span class="k">[tool.uv.build-backend]</span>
+<span class="c1"># module name is the normalized project name (dash -&gt; underscore)</span>
+<span class="n">module-name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;wws_api&quot;</span>
+<span class="c1"># module root &quot;&quot; = repo root (i.e., not using src/)</span>
+<span class="n">module-root</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+
+<span class="k">[[tool.uv.index]]</span>
+<span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;testpypi&quot;</span>
+<span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://test.pypi.org/simple/&quot;</span>
+<span class="n">publish-url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://test.pypi.org/legacy/&quot;</span>
+<span class="n">explicit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+</code></pre></div></td></tr></table></div>
+<p>Build wheel file with uv build system:
+<code>uv build</code></p>
+<p>Publish project to test PyPI
+<code>uv publish --index testpypi --token &lt;api token&gt;</code></p>
+<p>Publish project to production PyPI
+<code>uv publish --token &lt;api token&gt;</code></p>
+<h2 id="python-docs_6_publishing_project-without-uv">Without UV</h2>
+<p>More detailed steps:</p>
+<ol>
+<li>Make sure all of your files are created inside a folder structure</li>
+<li>Create pyproject.toml
+   <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[build-system]</span><span class="w"> </span>
+<span class="n">requires</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;setuptools&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;wheel&quot;</span><span class="p">]</span><span class="w"> </span>
+<span class="n">build-backend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;setuptools.build_meta&quot;</span>
+
+<span class="k">[project]</span>
+<span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;example_package_YOUR_USERNAME_HERE&quot;</span>
+<span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;0.0.1&quot;</span>
+<span class="n">authors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="p">=</span><span class="s2">&quot;Example Author&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="p">=</span><span class="s2">&quot;author@example.com&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="p">]</span>
+<span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;A small example package&quot;</span>
+<span class="n">readme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;README.md&quot;</span>
+<span class="n">requires-python</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&gt;=3.8&quot;</span>
+<span class="n">classifiers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="s2">&quot;Programming Language :: Python :: 3&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">&quot;License :: OSI Approved :: MIT License&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">&quot;Operating System :: OS Independent&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="k">[project.urls]</span>
+<span class="n">Homepage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://github.com/pypa/sampleproject&quot;</span>
+<span class="n">Issues</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://github.com/pypa/sampleproject/issues&quot;</span>
+</code></pre></div></td></tr></table></div></li>
+<li>Make sure all relevant build libs are installed:
+   <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>pip install --upgrade build
+pip install twine
+</code></pre></div></td></tr></table></div></li>
+<li>Run the build - <code>python -m build</code></li>
+<li>Send to PyPI test - <code>twine upload --repository testpypi dist/*</code></li>
+<li>Send to PyPI - <code>twine upload dist/*</code></li>
+</ol>
+<p>Make sure your build dependencies are not stored in your project dependencies.</p>
+<p>Another TOML file might look like this:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[build-system]</span>
+<span class="n">requires</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;setuptools&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;wheel&quot;</span><span class="p">]</span>
+<span class="n">build-backend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;setuptools.build_meta&quot;</span>
+
+<span class="k">[project]</span>
+<span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;py_simple_sharepoint&quot;</span><span class="w">  </span><span class="c1"># actual name that will get used for pip install.</span>
+<span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;0.1.1&quot;</span><span class="w">  </span><span class="c1"># anytime you submit an update to PyPI, you must change the version.</span>
+<span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;A SharePoint file management tool for python programs.&quot;</span>
+<span class="n">readme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;README.md&quot;</span>
+<span class="n">requires-python</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&gt;=3.10&quot;</span>
+<span class="n">dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w">  </span><span class="c1"># package dependencies, does install when pip installed</span>
+<span class="w">    </span><span class="s2">&quot;office365-rest-python-client&gt;=2.6.2&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="k">[project.optional-dependencies]</span><span class="w">  </span><span class="c1"># build dependencies (does not install when pip installed)</span>
+<span class="n">dev</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;build&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;twine&quot;</span>
+<span class="p">]</span>
+</code></pre></div></td></tr></table></div>
+<p>https://packaging.python.org/en/latest/tutorials/packaging-projects/#creating-the-package-files</p>
+<p>There are also new tools coming out such as poetry and uv. 
+The community has started to heavily embrace <a href="https://astral.sh/blog/uv">UV</a> due to its speed and tooling.</p></section><section class="print-page" id="python-docs_5_advanced_topics" heading-number="2.7"><h1 id="python-docs_5_advanced_topics-advanced-topics">Advanced Topics</h1>
 <h2 id="python-docs_5_advanced_topics-dynamic-function-parameters">Dynamic Function Parameters</h2>
 <p>If you have a function and you want to be able to pass any number of arguments
 or keyword arguments, you can use args and kwargs.</p>
@@ -2746,115 +2919,7 @@ they are used in functions with args and kwargs.</p>
 
 
 <span class="n">function_name</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">item_01</span><span class="o">=</span><span class="s1">&#39;value 1&#39;</span><span class="p">,</span> <span class="n">item_02</span><span class="o">=</span><span class="s1">&#39;value 2&#39;</span><span class="p">)</span>
-</code></pre></div></td></tr></table></div></section><section class="print-page" id="python-docs_6_publishing_project" heading-number="2.7"><h1 id="python-docs_6_publishing_project-publishing-a-project">Publishing a Project</h1>
-<p>You can create your own python library and publish it to PyPI. First you'll need to create an account and download
-your API keys. Once you have those established, you can create your project and then:</p>
-<p>Super summary:</p>
-<ol>
-<li>Create the pyproject.toml file and fill out the fields </li>
-<li>run <code>python -m build</code></li>
-<li>use twine to send to pypi.</li>
-</ol>
-<p>More detailed steps:</p>
-<ol>
-<li>Make sure all of your files are created inside a folder structure</li>
-<li>Create pyproject.toml
-   <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[build-system]</span><span class="w"> </span>
-<span class="n">requires</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;setuptools&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;wheel&quot;</span><span class="p">]</span><span class="w"> </span>
-<span class="n">build-backend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;setuptools.build_meta&quot;</span>
-
-<span class="k">[project]</span>
-<span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;example_package_YOUR_USERNAME_HERE&quot;</span>
-<span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;0.0.1&quot;</span>
-<span class="n">authors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
-<span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="p">=</span><span class="s2">&quot;Example Author&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="p">=</span><span class="s2">&quot;author@example.com&quot;</span><span class="w"> </span><span class="p">},</span>
-<span class="p">]</span>
-<span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;A small example package&quot;</span>
-<span class="n">readme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;README.md&quot;</span>
-<span class="n">requires-python</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&gt;=3.8&quot;</span>
-<span class="n">classifiers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
-<span class="w">  </span><span class="s2">&quot;Programming Language :: Python :: 3&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="s2">&quot;License :: OSI Approved :: MIT License&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="s2">&quot;Operating System :: OS Independent&quot;</span><span class="p">,</span>
-<span class="p">]</span>
-
-<span class="k">[project.urls]</span>
-<span class="n">Homepage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://github.com/pypa/sampleproject&quot;</span>
-<span class="n">Issues</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://github.com/pypa/sampleproject/issues&quot;</span>
-</code></pre></div></td></tr></table></div></li>
-<li>Make sure all relevant build libs are installed:
-   <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>pip install --upgrade build
-pip install twine
-</code></pre></div></td></tr></table></div></li>
-<li>Run the build - <code>python -m build</code></li>
-<li>Send to PyPI test - <code>twine upload --repository testpypi dist/*</code></li>
-<li>Send to PyPI - <code>twine upload dist/*</code></li>
-</ol>
-<p>Make sure your build dependencies are not stored in your project dependencies.</p>
-<p>Another TOML file might look like this:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[build-system]</span>
-<span class="n">requires</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;setuptools&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;wheel&quot;</span><span class="p">]</span>
-<span class="n">build-backend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;setuptools.build_meta&quot;</span>
-
-<span class="k">[project]</span>
-<span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;py_simple_sharepoint&quot;</span><span class="w">  </span><span class="c1"># actual name that will get used for pip install.</span>
-<span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;0.1.1&quot;</span><span class="w">  </span><span class="c1"># anytime you submit an update to PyPI, you must change the version.</span>
-<span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;A SharePoint file management tool for python programs.&quot;</span>
-<span class="n">readme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;README.md&quot;</span>
-<span class="n">requires-python</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&gt;=3.10&quot;</span>
-<span class="n">dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w">  </span><span class="c1"># package dependencies, does install when pip installed</span>
-<span class="w">    </span><span class="s2">&quot;office365-rest-python-client&gt;=2.6.2&quot;</span><span class="p">,</span>
-<span class="p">]</span>
-
-<span class="k">[project.optional-dependencies]</span><span class="w">  </span><span class="c1"># build dependencies (does not install when pip installed)</span>
-<span class="n">dev</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
-<span class="w">    </span><span class="s2">&quot;build&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="s2">&quot;twine&quot;</span>
-<span class="p">]</span>
-</code></pre></div></td></tr></table></div>
-<p>https://packaging.python.org/en/latest/tutorials/packaging-projects/#creating-the-package-files</p>
-<p>There are also new tools coming out such as poetry and uv. 
-The community has started to heavily embrace <a href="https://astral.sh/blog/uv">UV</a> due to its speed and tooling.</p></section><section class="print-page" id="python-docs_7_important_libraries" heading-number="2.8"><h1 id="python-docs_7_important_libraries-important-libraries-getting-started">Important Libraries - Getting Started</h1>
+</code></pre></div></td></tr></table></div></section><section class="print-page" id="python-docs_7_important_libraries" heading-number="2.8"><h1 id="python-docs_7_important_libraries-important-libraries-getting-started">Important Libraries - Getting Started</h1>
 <h2 id="python-docs_7_important_libraries-pandas">Pandas</h2>
 <p>Pandas is a well-known data handling library. It has the ability to extract, manipulate, and load data.</p>
 <p>The central component to pandas is the DataFrame. This is where tabular data is loaded and lives in memory.
@@ -5470,15 +5535,15 @@ Important for compression, compatability, and streaming efficiency.</p>
                 .print-site-enumerate-headings #python-docs_4_building_large_projects h2:before { content: '2.5.' counter(counter-python-docs_4_building_large_projects-2) ' ' }
                 .print-site-enumerate-headings #python-docs_4_building_large_projects h2 {  counter-increment: counter-python-docs_4_building_large_projects-2 }
             
-.print-site-enumerate-headings #python-docs_5_advanced_topics > h1:before { content: '2.6 ' }
+.print-site-enumerate-headings #python-docs_6_publishing_project > h1:before { content: '2.6 ' }
 
-                .print-site-enumerate-headings #python-docs_5_advanced_topics h2:before { content: '2.6.' counter(counter-python-docs_5_advanced_topics-2) ' ' }
-                .print-site-enumerate-headings #python-docs_5_advanced_topics h2 {  counter-increment: counter-python-docs_5_advanced_topics-2 }
-            
-.print-site-enumerate-headings #python-docs_6_publishing_project > h1:before { content: '2.7 ' }
-
-                .print-site-enumerate-headings #python-docs_6_publishing_project h2:before { content: '2.7.' counter(counter-python-docs_6_publishing_project-2) ' ' }
+                .print-site-enumerate-headings #python-docs_6_publishing_project h2:before { content: '2.6.' counter(counter-python-docs_6_publishing_project-2) ' ' }
                 .print-site-enumerate-headings #python-docs_6_publishing_project h2 {  counter-increment: counter-python-docs_6_publishing_project-2 }
+            
+.print-site-enumerate-headings #python-docs_5_advanced_topics > h1:before { content: '2.7 ' }
+
+                .print-site-enumerate-headings #python-docs_5_advanced_topics h2:before { content: '2.7.' counter(counter-python-docs_5_advanced_topics-2) ' ' }
+                .print-site-enumerate-headings #python-docs_5_advanced_topics h2 {  counter-increment: counter-python-docs_5_advanced_topics-2 }
             
 .print-site-enumerate-headings #python-docs_7_important_libraries > h1:before { content: '2.8 ' }
 

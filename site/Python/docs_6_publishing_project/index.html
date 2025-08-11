@@ -11,10 +11,10 @@
         <link rel="canonical" href="https://healthfin.solutions/notes/Python/docs_6_publishing_project/">
       
       
-        <link rel="prev" href="../docs_5_advanced_topics/">
+        <link rel="prev" href="../docs_4_building_large_projects/">
       
       
-        <link rel="next" href="../docs_7_important_libraries/">
+        <link rel="next" href="../docs_5_advanced_topics/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -394,27 +394,6 @@
                 
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../docs_5_advanced_topics/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Advanced Topics
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
@@ -427,6 +406,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Publishing Projects
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -437,6 +427,64 @@
 
       </a>
       
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#with-uv" class="md-nav__link">
+    <span class="md-ellipsis">
+      With UV
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#without-uv" class="md-nav__link">
+    <span class="md-ellipsis">
+      Without UV
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs_5_advanced_topics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Advanced Coding Topics
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1120,6 +1168,32 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#with-uv" class="md-nav__link">
+    <span class="md-ellipsis">
+      With UV
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#without-uv" class="md-nav__link">
+    <span class="md-ellipsis">
+      Without UV
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1142,6 +1216,70 @@ your API keys. Once you have those established, you can create your project and 
 <li>run <code>python -m build</code></li>
 <li>use twine to send to pypi.</li>
 </ol>
+<h2 id="with-uv">With UV</h2>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[project]</span>
+<span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;wws-api&quot;</span>
+<span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;0.1.0&quot;</span>
+<span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Simplifies the process for calling the Workday Web Services API asyncronously.&quot;</span>
+<span class="n">readme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;README.md&quot;</span>
+<span class="n">requires-python</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&gt;=3.11&quot;</span>
+<span class="n">dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">   </span><span class="s2">&quot;aiohttp&gt;=3.12.15&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="s2">&quot;lxml&gt;=6.0.0&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="s2">&quot;pyarrow&gt;=21.0.0&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="s2">&quot;xmltodict&gt;=0.14.2&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="k">[build-system]</span>
+<span class="n">requires</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;uv_build&gt;=0.8.7,&lt;0.9.0&quot;</span><span class="p">]</span>
+<span class="n">build-backend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;uv_build&quot;</span>
+
+<span class="k">[tool.uv.build-backend]</span>
+<span class="c1"># module name is the normalized project name (dash -&gt; underscore)</span>
+<span class="n">module-name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;wws_api&quot;</span>
+<span class="c1"># module root &quot;&quot; = repo root (i.e., not using src/)</span>
+<span class="n">module-root</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+
+<span class="k">[[tool.uv.index]]</span>
+<span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;testpypi&quot;</span>
+<span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://test.pypi.org/simple/&quot;</span>
+<span class="n">publish-url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://test.pypi.org/legacy/&quot;</span>
+<span class="n">explicit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+</code></pre></div></td></tr></table></div>
+<p>Build wheel file with uv build system:
+<code>uv build</code></p>
+<p>Publish project to test PyPI
+<code>uv publish --index testpypi --token &lt;api token&gt;</code></p>
+<p>Publish project to production PyPI
+<code>uv publish --token &lt;api token&gt;</code></p>
+<h2 id="without-uv">Without UV</h2>
 <p>More detailed steps:</p>
 <ol>
 <li>Make sure all of your files are created inside a folder structure</li>

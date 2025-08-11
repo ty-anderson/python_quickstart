@@ -33,8 +33,8 @@ nav:
   - Writing Code: Python/docs_3_writing_code.md
   - Python uv: Python/python_uv.md
   - Building Large Projects: Python/docs_4_building_large_projects.md
-  - Advanced Topics: Python/docs_5_advanced_topics.md
   - Publishing Projects: Python/docs_6_publishing_project.md
+  - Advanced Coding Topics: Python/docs_5_advanced_topics.md
   - Important Libraries: Python/docs_7_important_libraries.md
   - Documentation Libraries: Python/docs_8_documentation.md
   - Standard Library Gems: Python/docs_9_std_lib.md
