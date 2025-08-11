@@ -1957,7 +1957,6 @@ and it will hot reload. </p>
 <span class="c1"># this creates a command line command. Replace with a command and path to what gets executed.</span>
 </code></pre></div></td></tr></table></div></li>
 <li>Call like <code>package_name</code> if you want a terminal command.</li>
-<li></li>
 </ol>
 <h2 id="python-docs_4_building_large_projects-a-more-modern-system">A More Modern System</h2>
 <h2 id="python-docs_4_building_large_projects-goals-of-a-good-structure">Goals of a good structure</h2>
@@ -2274,7 +2273,11 @@ your API keys. Once you have those established, you can create your project and 
 <span class="normal">25</span>
 <span class="normal">26</span>
 <span class="normal">27</span>
-<span class="normal">28</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[project]</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[project]</span>
 <span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;wws-api&quot;</span>
 <span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;0.1.0&quot;</span>
 <span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Simplifies the process for calling the Workday Web Services API asyncronously.&quot;</span>
@@ -2293,9 +2296,13 @@ your API keys. Once you have those established, you can create your project and 
 
 <span class="k">[tool.uv.build-backend]</span>
 <span class="c1"># module name is the normalized project name (dash -&gt; underscore)</span>
-<span class="n">module-name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;wws_api&quot;</span>
+<span class="n">module-name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;wws_api&quot;</span><span class="w">  </span><span class="c1"># folder to reference if src is not there</span>
 <span class="c1"># module root &quot;&quot; = repo root (i.e., not using src/)</span>
 <span class="n">module-root</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+
+<span class="k">[project.scripts]</span>
+<span class="c1"># cli commands such as</span>
+<span class="n">wws_api</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;wws_api.cli:main&#39;</span><span class="w"> </span><span class="c1"># folder.directory:function</span>
 
 <span class="k">[[tool.uv.index]]</span>
 <span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;testpypi&quot;</span>

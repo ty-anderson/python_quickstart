@@ -32,9 +32,13 @@ build-backend = "uv_build"
 
 [tool.uv.build-backend]
 # module name is the normalized project name (dash -> underscore)
-module-name = "wws_api"
+module-name = "wws_api"  # folder to reference if src is not there
 # module root "" = repo root (i.e., not using src/)
 module-root = ""
+
+[project.scripts]
+# cli commands such as
+wws_api = 'wws_api.cli:main' # folder.directory:function
 
 [[tool.uv.index]]
 name = "testpypi"

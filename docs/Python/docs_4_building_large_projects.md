@@ -64,7 +64,6 @@ package_name = "module:callable"
 # this creates a command line command. Replace with a command and path to what gets executed.
 ```
 4. Call like ``package_name`` if you want a terminal command.
-5. 
 
 ## A More Modern System
 
