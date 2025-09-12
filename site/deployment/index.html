@@ -8,28 +8,24 @@
       
       
       
-        <link rel="canonical" href="https://healthfin.solutions/notes/Python/docs_6_publishing_project/">
+        <link rel="canonical" href="https://healthfin.solutions/notes/deployment/">
       
       
-        <link rel="prev" href="../docs_4_building_large_projects/">
       
       
-        <link rel="next" href="../docs_5_advanced_topics/">
-      
-      
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.50">
     
     
       
-        <title>Publishing Projects - Tech Notes</title>
+        <title>Deployment - Tech Notes</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.a40c8224.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.a40c8224.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -48,13 +44,13 @@
       
     
     
-      <link rel="stylesheet" href="../../css/print-site.css">
+      <link rel="stylesheet" href="../css/print-site.css">
     
-      <link rel="stylesheet" href="../../css/print-site-material.css">
+      <link rel="stylesheet" href="../css/print-site-material.css">
     
-      <link rel="stylesheet" href="../../files/extra.css">
+      <link rel="stylesheet" href="../files/extra.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -80,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#publishing-a-project" class="md-skip">
+        <a href="#deployment" class="md-skip">
           Skip to content
         </a>
       
@@ -96,7 +92,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Tech Notes" class="md-header__button md-logo" aria-label="Tech Notes" data-md-component="logo">
+    <a href=".." title="Tech Notes" class="md-header__button md-logo" aria-label="Tech Notes" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -116,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Publishing Projects
+              Deployment
             
           </span>
         </div>
@@ -217,7 +213,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Tech Notes" class="md-nav__button md-logo" aria-label="Tech Notes" data-md-component="logo">
+    <a href=".." title="Tech Notes" class="md-nav__button md-logo" aria-label="Tech Notes" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -235,7 +231,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href=".." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -252,19 +248,17 @@
       
   
   
-    
   
   
-  
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -278,7 +272,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Python
@@ -292,7 +286,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../docs_1_what_is_python/" class="md-nav__link">
+      <a href="../Python/docs_1_what_is_python/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -313,7 +307,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../docs_2_how_to_use/" class="md-nav__link">
+      <a href="../Python/docs_2_how_to_use/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -334,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../docs_3_writing_code/" class="md-nav__link">
+      <a href="../Python/docs_3_writing_code/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -355,7 +349,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../python_uv/" class="md-nav__link">
+      <a href="../Python/python_uv/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -376,7 +370,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../docs_4_building_large_projects/" class="md-nav__link">
+      <a href="../Python/docs_4_building_large_projects/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -394,30 +388,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Publishing Projects
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../Python/docs_6_publishing_project/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -426,44 +400,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#with-uv" class="md-nav__link">
-    <span class="md-ellipsis">
-      With UV
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#without-uv" class="md-nav__link">
-    <span class="md-ellipsis">
-      Without UV
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -476,7 +412,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../docs_5_advanced_topics/" class="md-nav__link">
+      <a href="../Python/docs_5_advanced_topics/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -497,7 +433,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../docs_7_important_libraries/" class="md-nav__link">
+      <a href="../Python/docs_7_important_libraries/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -518,7 +454,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../docs_8_documentation/" class="md-nav__link">
+      <a href="../Python/docs_8_documentation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -539,7 +475,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../docs_9_std_lib/" class="md-nav__link">
+      <a href="../Python/docs_9_std_lib/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -602,7 +538,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Git/basics/" class="md-nav__link">
+      <a href="../Git/basics/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -623,7 +559,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Git/remotes/" class="md-nav__link">
+      <a href="../Git/remotes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -644,7 +580,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Git/branches/" class="md-nav__link">
+      <a href="../Git/branches/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -707,7 +643,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Docker/basics/" class="md-nav__link">
+      <a href="../Docker/basics/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -728,7 +664,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Docker/docker_compose/" class="md-nav__link">
+      <a href="../Docker/docker_compose/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -749,7 +685,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Docker/docker_images/" class="md-nav__link">
+      <a href="../Docker/docker_images/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -812,7 +748,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Networking/docs_100_networking/" class="md-nav__link">
+      <a href="../Networking/docs_100_networking/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -833,7 +769,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Networking/docs_100_servers/" class="md-nav__link">
+      <a href="../Networking/docs_100_servers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -854,7 +790,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Networking/docs_101_caddy/" class="md-nav__link">
+      <a href="../Networking/docs_101_caddy/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -875,7 +811,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Networking/docs_102_dns_server/" class="md-nav__link">
+      <a href="../Networking/docs_102_dns_server/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -938,7 +874,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Linux/docs_104_linux/" class="md-nav__link">
+      <a href="../Linux/docs_104_linux/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -959,7 +895,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Linux/docs_103_ssh/" class="md-nav__link">
+      <a href="../Linux/docs_103_ssh/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -980,7 +916,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Linux/docs_199_backups/" class="md-nav__link">
+      <a href="../Linux/docs_199_backups/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1043,7 +979,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Video%20Processing/docs_200_ffmpeg/" class="md-nav__link">
+      <a href="../Video%20Processing/docs_200_ffmpeg/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1064,7 +1000,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Video%20Processing/docs_200_streaming/" class="md-nav__link">
+      <a href="../Video%20Processing/docs_200_streaming/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1127,7 +1063,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../AI/docs_105_local_llm/" class="md-nav__link">
+      <a href="../AI/docs_105_local_llm/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1175,18 +1111,63 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#with-uv" class="md-nav__link">
+  <a href="#1-local-script-cron-job" class="md-nav__link">
     <span class="md-ellipsis">
-      With UV
+      🚀 1. Local Script / Cron Job
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#without-uv" class="md-nav__link">
+  <a href="#2-installable-package" class="md-nav__link">
     <span class="md-ellipsis">
-      Without UV
+      📦 2. Installable Package
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-docker-container" class="md-nav__link">
+    <span class="md-ellipsis">
+      🐳 3. Docker Container
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-decision-tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚡️ Quick Decision Tree
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#typical-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      Typical Pattern
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-this-approach-works-well" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why This Approach Works Well
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alternatives" class="md-nav__link">
+    <span class="md-ellipsis">
+      Alternatives
     </span>
   </a>
   
@@ -1207,203 +1188,158 @@
                   
 
 
-<h1 id="publishing-a-project">Publishing a Project</h1>
-<p>You can create your own python library and publish it to PyPI. First you'll need to create an account and download
-your API keys. Once you have those established, you can create your project and then:</p>
-<p>Super summary:</p>
-<ol>
-<li>Create the pyproject.toml file and fill out the fields </li>
-<li>Build the project with <code>uv build</code></li>
-<li>Publish the project to PyPI with <code>uv publish</code></li>
-</ol>
-<h2 id="with-uv">With UV</h2>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[project]</span>
-<span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;wws-api&quot;</span>
-<span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;0.1.0&quot;</span>
-<span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Simplifies the process for calling the Workday Web Services API asyncronously.&quot;</span>
-<span class="n">readme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;README.md&quot;</span>
-<span class="n">requires-python</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&gt;=3.11&quot;</span>
-<span class="n">dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
-<span class="w">   </span><span class="s2">&quot;aiohttp&gt;=3.12.15&quot;</span><span class="p">,</span>
-<span class="w">   </span><span class="s2">&quot;lxml&gt;=6.0.0&quot;</span><span class="p">,</span>
-<span class="w">   </span><span class="s2">&quot;pyarrow&gt;=21.0.0&quot;</span><span class="p">,</span>
-<span class="w">   </span><span class="s2">&quot;xmltodict&gt;=0.14.2&quot;</span><span class="p">,</span>
-<span class="p">]</span>
-
-<span class="k">[build-system]</span>
-<span class="n">requires</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;uv_build&gt;=0.8.7,&lt;0.9.0&quot;</span><span class="p">]</span>
-<span class="n">build-backend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;uv_build&quot;</span>
-
-<span class="k">[tool.uv.build-backend]</span>
-<span class="c1"># module name is the normalized project name (dash -&gt; underscore)</span>
-<span class="n">module-name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;wws_api&quot;</span><span class="w">  </span><span class="c1"># folder to reference if src is not there</span>
-<span class="c1"># module root &quot;&quot; = repo root (i.e., not using src/)</span>
-<span class="n">module-root</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
-
-<span class="k">[project.scripts]</span>
-<span class="c1"># optional: cli commands such as</span>
-<span class="n">wws_api</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;wws_api.cli:main&#39;</span><span class="w"> </span><span class="c1"># folder.directory:function</span>
-
-<span class="k">[[tool.uv.index]]</span>
-<span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;testpypi&quot;</span>
-<span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://test.pypi.org/simple/&quot;</span>
-<span class="n">publish-url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://test.pypi.org/legacy/&quot;</span>
-<span class="n">explicit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
-</code></pre></div></td></tr></table></div>
-<p>Build wheel file with uv build system:
-<code>uv build</code></p>
-<p>Publish project to test PyPI
-<code>uv publish --index testpypi --token &lt;api token&gt;</code></p>
-<p>Publish project to production PyPI
-<code>uv publish --token &lt;api token&gt;</code></p>
-<p>Bump your project version automatically:
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>uv<span class="w"> </span>version<span class="w"> </span>--bump<span class="w"> </span>major
-uv<span class="w"> </span>version<span class="w"> </span>--bump<span class="w"> </span>minor
-uv<span class="w"> </span>version<span class="w"> </span>--bump<span class="w"> </span>patch
-</code></pre></div></td></tr></table></div></p>
-<p>Script to do the full build:
+<h1 id="deployment">Deployment</h1>
+<p>Deployment of a python program depends on what type of program you are deploying. Desktop apps, web apps, ETL scripts,
+API's, internal tools, etc. all have different requirements.</p>
+<p>Here are some practical deployment approaches for smaller projects, depending on how simple or complex they are:</p>
+<hr />
+<h2 id="1-local-script-cron-job">🚀 1. Local Script / Cron Job</h2>
+<p>Best for <strong>simple scripts</strong> (ETL, backups, notifications, etc.)</p>
+<ul>
+<li><strong>Deploy</strong>: copy code to server (via <code>git clone</code>, <code>scp</code>, or syncing)</li>
+<li><strong>Env</strong>: use a virtual environment (<code>uv venv</code>, <code>python -m venv</code>, or <code>conda</code>)</li>
+<li><strong>Run</strong>: directly with <code>python script.py</code> or via cron/systemd</li>
+</ul>
+<p>👉 Example:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>rm<span class="w"> </span>-rf<span class="w"> </span>dist/
-uv<span class="w"> </span>version<span class="w"> </span>--bump<span class="w"> </span>minor
-uv<span class="w"> </span>build
-uv<span class="w"> </span>publish<span class="w"> </span>--token
-</code></pre></div></td></tr></table></div></p>
-<h2 id="without-uv">Without UV</h2>
-<p>More detailed steps:</p>
-<ol>
-<li>Make sure all of your files are created inside a folder structure</li>
-<li>Create pyproject.toml
-   <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[build-system]</span><span class="w"> </span>
-<span class="n">requires</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;setuptools&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;wheel&quot;</span><span class="p">]</span><span class="w"> </span>
-<span class="n">build-backend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;setuptools.build_meta&quot;</span>
-
-<span class="k">[project]</span>
-<span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;example_package_YOUR_USERNAME_HERE&quot;</span>
-<span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;0.0.1&quot;</span>
-<span class="n">authors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
-<span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="p">=</span><span class="s2">&quot;Example Author&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="p">=</span><span class="s2">&quot;author@example.com&quot;</span><span class="w"> </span><span class="p">},</span>
-<span class="p">]</span>
-<span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;A small example package&quot;</span>
-<span class="n">readme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;README.md&quot;</span>
-<span class="n">requires-python</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&gt;=3.8&quot;</span>
-<span class="n">classifiers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
-<span class="w">  </span><span class="s2">&quot;Programming Language :: Python :: 3&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="s2">&quot;License :: OSI Approved :: MIT License&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="s2">&quot;Operating System :: OS Independent&quot;</span><span class="p">,</span>
-<span class="p">]</span>
-
-<span class="k">[project.urls]</span>
-<span class="n">Homepage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://github.com/pypa/sampleproject&quot;</span>
-<span class="n">Issues</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://github.com/pypa/sampleproject/issues&quot;</span>
-</code></pre></div></td></tr></table></div></li>
-<li>Make sure all relevant build libs are installed:
-   <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>pip install --upgrade build
-pip install twine
-</code></pre></div></td></tr></table></div></li>
-<li>Run the build - <code>python -m build</code></li>
-<li>Send to PyPI test - <code>twine upload --repository testpypi dist/*</code></li>
-<li>Send to PyPI - <code>twine upload dist/*</code></li>
-</ol>
-<p>Make sure your build dependencies are not stored in your project dependencies.</p>
-<p>Another TOML file might look like this:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[build-system]</span>
-<span class="n">requires</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;setuptools&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;wheel&quot;</span><span class="p">]</span>
-<span class="n">build-backend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;setuptools.build_meta&quot;</span>
-
-<span class="k">[project]</span>
-<span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;py_simple_sharepoint&quot;</span><span class="w">  </span><span class="c1"># actual name that will get used for pip install.</span>
-<span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;0.1.1&quot;</span><span class="w">  </span><span class="c1"># anytime you submit an update to PyPI, you must change the version.</span>
-<span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;A SharePoint file management tool for python programs.&quot;</span>
-<span class="n">readme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;README.md&quot;</span>
-<span class="n">requires-python</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&gt;=3.10&quot;</span>
-<span class="n">dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w">  </span><span class="c1"># package dependencies, does install when pip installed</span>
-<span class="w">    </span><span class="s2">&quot;office365-rest-python-client&gt;=2.6.2&quot;</span><span class="p">,</span>
-<span class="p">]</span>
-
-<span class="k">[project.optional-dependencies]</span><span class="w">  </span><span class="c1"># build dependencies (does not install when pip installed)</span>
-<span class="n">dev</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
-<span class="w">    </span><span class="s2">&quot;build&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="s2">&quot;twine&quot;</span>
-<span class="p">]</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>~/my_project
+uv<span class="w"> </span>venv
+<span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+python<span class="w"> </span>my_job.py
 </code></pre></div></td></tr></table></div>
-<p>https://packaging.python.org/en/latest/tutorials/packaging-projects/#creating-the-package-files</p>
-<p>There are also new tools coming out such as poetry and uv. 
-The community has started to heavily embrace <a href="https://astral.sh/blog/uv">UV</a> due to its speed and tooling.</p>
+<p>Pros: simple, fast.
+Cons: less portable, harder to reproduce if env drifts.</p>
+<hr />
+<h2 id="2-installable-package">📦 2. Installable Package</h2>
+<p>Best for projects you’ll re-use across multiple places.</p>
+<ul>
+<li><strong>Deploy</strong>: build into a wheel or sdist</li>
+<li><strong>Install</strong>: <code>pip install my_package-0.1.0-py3-none-any.whl</code></li>
+<li><strong>Run</strong>: <code>python -m my_package</code> or a CLI entry point</li>
+</ul>
+<p>👉 Works well when you want:</p>
+<ul>
+<li>Versioning (<code>0.1.0</code>, <code>0.2.0</code> …)</li>
+<li>To install on multiple servers without manually copying source</li>
+</ul>
+<hr />
+<h2 id="3-docker-container">🐳 3. Docker Container</h2>
+<p>Best for services you want <strong>consistent across dev/prod</strong>.</p>
+<ul>
+<li>Write a Dockerfile:</li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">FROM</span><span class="w"> </span><span class="s">python:3.12-slim</span>
+<span class="k">WORKDIR</span><span class="w"> </span><span class="s">/app</span>
+<span class="k">COPY</span><span class="w"> </span>requirements.txt<span class="w"> </span>.
+<span class="k">RUN</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+<span class="k">COPY</span><span class="w"> </span>.<span class="w"> </span>.
+<span class="k">CMD</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;python&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;my_job.py&quot;</span><span class="p">]</span>
+</code></pre></div></td></tr></table></div>
+<ul>
+<li><strong>Deploy</strong>: <code>docker build -t my_job .</code> then <code>docker run my_job</code></li>
+<li><strong>Schedule</strong>: cron on the host, or Kubernetes Job</li>
+</ul>
+<p>Pros: consistent, portable.
+Cons: more setup overhead than bare venv.</p>
+<h2 id="quick-decision-tree">⚡️ Quick Decision Tree</h2>
+<ul>
+<li><strong>One-off script</strong> → copy + venv</li>
+<li><strong>Reusable internal library</strong> → package + pip install</li>
+<li><strong>Service/API that should “just work”</strong> → Docker container</li>
+</ul>
+<hr />
+<p>In most modern setups, if you have a Python package that contains multiple ETL jobs, 
+the <strong>common pattern is to containerize the entire package</strong> and then deploy that image wherever you run jobs.</p>
+<p>The differences are in <strong>how you execute the individual jobs</strong> inside that container and how you <strong>manage orchestration</strong>.</p>
+<hr />
+<h2 id="typical-pattern"><strong>Typical Pattern</strong></h2>
+<ol>
+<li>
+<p><strong>Single container image</strong></p>
+<ul>
+<li>You build one Docker image for your Python package (with all dependencies baked in).</li>
+<li>This image is versioned and pushed to a container registry (e.g., AWS ECR, GCP Artifact Registry, Docker Hub).</li>
+<li>Keeps dependencies consistent across jobs.</li>
+</ul>
+</li>
+<li>
+<p><strong>Multiple entry points / commands</strong></p>
+<ul>
+<li>Each ETL job is exposed via a CLI entry point in your <code>pyproject.toml</code> or <code>setup.py</code></li>
+</ul>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[project.scripts]</span>
+<span class="n">etl_job_a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;my_package.jobs.job_a:main&quot;</span>
+<span class="n">etl_job_b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;my_package.jobs.job_b:main&quot;</span>
+</code></pre></div></td></tr></table></div>
+* At runtime, the orchestrator decides which command to run:</p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>my-etl-image:1.0<span class="w"> </span>etl_job_a
+</code></pre></div></td></tr></table></div>
+* This avoids rebuilding multiple images for each job.</p>
+</li>
+<li>
+<p><strong>Orchestrator triggers containers</strong></p>
+<ul>
+<li><strong>Airflow</strong>, <strong>Prefect</strong>, <strong>Dagster</strong>, or Kubernetes <strong>CronJobs</strong> call the container with the appropriate arguments or entry point.</li>
+<li>Example in Airflow’s <code>DockerOperator</code>:</li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">DockerOperator</span><span class="p">(</span>
+    <span class="n">task_id</span><span class="o">=</span><span class="s2">&quot;run_etl_job_a&quot;</span><span class="p">,</span>
+    <span class="n">image</span><span class="o">=</span><span class="s2">&quot;my-etl-image:1.0&quot;</span><span class="p">,</span>
+    <span class="n">command</span><span class="o">=</span><span class="s2">&quot;etl_job_a&quot;</span><span class="p">,</span>
+    <span class="o">...</span>
+<span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+</li>
+</ol>
+<hr />
+<h2 id="why-this-approach-works-well"><strong>Why This Approach Works Well</strong></h2>
+<ul>
+<li><strong>Reusability</strong> — One image can run all jobs, avoiding duplication.</li>
+<li><strong>Consistency</strong> — All jobs share the same dependency versions and base environment.</li>
+<li><strong>Smaller CI/CD surface</strong> — You only need to build and push one image per release.</li>
+<li><strong>Version control</strong> — The image tag maps directly to your package release.</li>
+</ul>
+<hr />
+<h2 id="alternatives"><strong>Alternatives</strong></h2>
+<ul>
+<li>
+<p><strong>One image per job</strong></p>
+<ul>
+<li>Sometimes used if jobs have wildly different dependencies or resource requirements.</li>
+<li>Downside: more images to maintain and slower builds if you change common code.</li>
+<li>
+<p><strong>Shared base + thin job layers</strong></p>
+</li>
+<li>
+<p>You create a common base image for your package and layer job-specific commands/images on top.</p>
+</li>
+<li>Speeds up rebuilds for large pipelines.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<p>💡 <strong>Rule of thumb:</strong>
+If all ETL jobs share most dependencies and code, <strong>use one container image</strong> with multiple entry points.
+If jobs have very different stacks or run in completely different runtime environments, <strong>split them into separate images</strong>.</p>
+<hr />
+<p>If you want, I can draw you a <strong>container + orchestrator diagram</strong> showing how a single Python package with 
+multiple ETL jobs gets deployed and triggered. That’s usually the easiest way to visualize it.</p>
 
 
 
@@ -1450,16 +1386,16 @@ The community has started to heavily embrace <a href="https://astral.sh/blog/uv"
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.60a45f97.min.js"></script>
+      <script src="../assets/javascripts/bundle.60a45f97.min.js"></script>
       
-        <script src="../../js/print-site.js"></script>
+        <script src="../js/print-site.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
       
-        <script src="../../files/inject_edit_page.js"></script>
+        <script src="../files/inject_edit_page.js"></script>
       
     
   </body>

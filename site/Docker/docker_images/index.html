@@ -772,6 +772,24 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#add-uv-to-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add uv to image
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multi-stage-build" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multi-Stage build
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1228,6 +1246,24 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#add-uv-to-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add uv to image
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multi-stage-build" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multi-Stage build
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1508,6 +1544,47 @@ ssh<span class="w"> </span>tyler@anderson.home<span class="w"> </span><span clas
 <span class="s">sudo docker compose up -d</span>
 <span class="s">EOF</span>
 </code></pre></div></td></tr></table></div></p>
+<h2 id="add-uv-to-image">Add uv to image</h2>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c"># build a wheel file inside a docker image</span>
+<span class="k">FROM</span><span class="w"> </span><span class="s">python:3.13</span>
+<span class="k">COPY</span><span class="w"> </span>--from<span class="o">=</span>ghcr.io/astral-sh/uv:latest<span class="w"> </span>/uv<span class="w"> </span>/bin/uv
+</code></pre></div></td></tr></table></div>
+<h2 id="multi-stage-build">Multi-Stage build</h2>
+<p>You can build an image in stages. 
+It creates separate images during the build. 
+The last one that runs becomes the actual image.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c"># Build stage</span>
+<span class="k">FROM</span><span class="w"> </span><span class="s">python:3.13</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="s">builder</span>
+<span class="k">COPY</span><span class="w"> </span>--from<span class="o">=</span>ghcr.io/astral-sh/uv:latest<span class="w"> </span>/uv<span class="w"> </span>/bin/uv
+<span class="k">COPY</span><span class="w"> </span>.<span class="w"> </span>/src
+<span class="k">WORKDIR</span><span class="w"> </span><span class="s">/src</span>
+<span class="k">RUN</span><span class="w"> </span>uv<span class="w"> </span>build
+
+<span class="c"># Runtime stage</span>
+<span class="k">FROM</span><span class="w"> </span><span class="s">python:3.13-slim</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="s">runtime</span>
+<span class="k">COPY</span><span class="w"> </span>--from<span class="o">=</span>ghcr.io/astral-sh/uv:latest<span class="w"> </span>/uv<span class="w"> </span>/bin/uv
+<span class="k">COPY</span><span class="w"> </span>--from<span class="o">=</span>builder<span class="w"> </span>/src/dist/*.whl<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>rm<span class="w"> </span>/tmp/*.whl
+
+<span class="k">RUN</span><span class="w"> </span>uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--system<span class="w"> </span>/tmp/*.whl<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>rm<span class="w"> </span>/tmp/*.whl
+
+<span class="k">CMD</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;invoice_start&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;--sharepoint&quot;</span><span class="p">]</span>
+</code></pre></div></td></tr></table></div>
 
 
 

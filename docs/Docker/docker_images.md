@@ -167,3 +167,35 @@ sudo rm yt_download_image.tar
 sudo docker compose up -d
 EOF
 ```
+
+## Add uv to image
+
+```dockerfile
+# build a wheel file inside a docker image
+FROM python:3.13
+COPY --from=ghcr.io/astral-sh/uv:latest /uv /bin/uv
+```
+
+## Multi-Stage build
+
+You can build an image in stages. 
+It creates separate images during the build. 
+The last one that runs becomes the actual image.
+
+```dockerfile
+# Build stage
+FROM python:3.13 as builder
+COPY --from=ghcr.io/astral-sh/uv:latest /uv /bin/uv
+COPY . /src
+WORKDIR /src
+RUN uv build
+
+# Runtime stage
+FROM python:3.13-slim as runtime
+COPY --from=ghcr.io/astral-sh/uv:latest /uv /bin/uv
+COPY --from=builder /src/dist/*.whl && rm /tmp/*.whl
+
+RUN uv pip install --system /tmp/*.whl && rm /tmp/*.whl
+
+CMD ["invoice_start", "--sharepoint"]
+```

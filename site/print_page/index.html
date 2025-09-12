@@ -2242,8 +2242,8 @@ your API keys. Once you have those established, you can create your project and 
 <p>Super summary:</p>
 <ol>
 <li>Create the pyproject.toml file and fill out the fields </li>
-<li>run <code>python -m build</code></li>
-<li>use twine to send to pypi.</li>
+<li>Build the project with <code>uv build</code></li>
+<li>Publish the project to PyPI with <code>uv publish</code></li>
 </ol>
 <h2 id="python-docs_6_publishing_project-with-uv">With UV</h2>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -2301,7 +2301,7 @@ your API keys. Once you have those established, you can create your project and 
 <span class="n">module-root</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
 
 <span class="k">[project.scripts]</span>
-<span class="c1"># cli commands such as</span>
+<span class="c1"># optional: cli commands such as</span>
 <span class="n">wws_api</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;wws_api.cli:main&#39;</span><span class="w"> </span><span class="c1"># folder.directory:function</span>
 
 <span class="k">[[tool.uv.index]]</span>
@@ -2316,6 +2316,22 @@ your API keys. Once you have those established, you can create your project and 
 <code>uv publish --index testpypi --token &lt;api token&gt;</code></p>
 <p>Publish project to production PyPI
 <code>uv publish --token &lt;api token&gt;</code></p>
+<p>Bump your project version automatically:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>uv<span class="w"> </span>version<span class="w"> </span>--bump<span class="w"> </span>major
+uv<span class="w"> </span>version<span class="w"> </span>--bump<span class="w"> </span>minor
+uv<span class="w"> </span>version<span class="w"> </span>--bump<span class="w"> </span>patch
+</code></pre></div></td></tr></table></div></p>
+<p>Script to do the full build:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>rm<span class="w"> </span>-rf<span class="w"> </span>dist/
+uv<span class="w"> </span>version<span class="w"> </span>--bump<span class="w"> </span>minor
+uv<span class="w"> </span>build
+uv<span class="w"> </span>publish<span class="w"> </span>--token
+</code></pre></div></td></tr></table></div></p>
 <h2 id="python-docs_6_publishing_project-without-uv">Without UV</h2>
 <p>More detailed steps:</p>
 <ol>
@@ -4352,7 +4368,48 @@ ssh<span class="w"> </span>tyler@anderson.home<span class="w"> </span><span clas
 <span class="s"># Restart the container</span>
 <span class="s">sudo docker compose up -d</span>
 <span class="s">EOF</span>
-</code></pre></div></td></tr></table></div></p></section></section>
+</code></pre></div></td></tr></table></div></p>
+<h2 id="docker-docker_images-add-uv-to-image">Add uv to image</h2>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c"># build a wheel file inside a docker image</span>
+<span class="k">FROM</span><span class="w"> </span><span class="s">python:3.13</span>
+<span class="k">COPY</span><span class="w"> </span>--from<span class="o">=</span>ghcr.io/astral-sh/uv:latest<span class="w"> </span>/uv<span class="w"> </span>/bin/uv
+</code></pre></div></td></tr></table></div>
+<h2 id="docker-docker_images-multi-stage-build">Multi-Stage build</h2>
+<p>You can build an image in stages. 
+It creates separate images during the build. 
+The last one that runs becomes the actual image.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c"># Build stage</span>
+<span class="k">FROM</span><span class="w"> </span><span class="s">python:3.13</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="s">builder</span>
+<span class="k">COPY</span><span class="w"> </span>--from<span class="o">=</span>ghcr.io/astral-sh/uv:latest<span class="w"> </span>/uv<span class="w"> </span>/bin/uv
+<span class="k">COPY</span><span class="w"> </span>.<span class="w"> </span>/src
+<span class="k">WORKDIR</span><span class="w"> </span><span class="s">/src</span>
+<span class="k">RUN</span><span class="w"> </span>uv<span class="w"> </span>build
+
+<span class="c"># Runtime stage</span>
+<span class="k">FROM</span><span class="w"> </span><span class="s">python:3.13-slim</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="s">runtime</span>
+<span class="k">COPY</span><span class="w"> </span>--from<span class="o">=</span>ghcr.io/astral-sh/uv:latest<span class="w"> </span>/uv<span class="w"> </span>/bin/uv
+<span class="k">COPY</span><span class="w"> </span>--from<span class="o">=</span>builder<span class="w"> </span>/src/dist/*.whl<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>rm<span class="w"> </span>/tmp/*.whl
+
+<span class="k">RUN</span><span class="w"> </span>uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--system<span class="w"> </span>/tmp/*.whl<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>rm<span class="w"> </span>/tmp/*.whl
+
+<span class="k">CMD</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;invoice_start&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;--sharepoint&quot;</span><span class="p">]</span>
+</code></pre></div></td></tr></table></div></section></section>
                     <section class='print-page md-section' id='section-5' heading-number='5'>
                         <h1>Networking<a class='headerlink' href='#section-5' title='Permanent link'></a>
                         </h1>
@@ -5240,48 +5297,7 @@ sync, meaning there is no server hosting the files and copying between devices.<
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># run rclone config wizard</span>
 rclone<span class="w"> </span>config
-</code></pre></div></td></tr></table></div>
-<p>Creamy Soup</p>
-<p>Here’s a basic, adaptable creamy soup recipe that you can use as a foundation for almost any type (e.g. potato, mushroom, chicken, broccoli, etc.):
-⸻</p>
-<p>🥣 Basic Creamy Soup Recipe</p>
-<p>🧾 Ingredients:
-•   2 tbsp butter
-•   1 small onion, diced
-•   2 cloves garlic, minced
-•   2–3 cups vegetables or meat of choice (e.g. diced potatoes, mushrooms, broccoli, shredded chicken)
-•   3 cups broth (chicken, vegetable, or beef)
-•   1 cup heavy cream or half-and-half
-•   2 tbsp flour (or cornstarch slurry if gluten-free)
-•   Salt and pepper, to taste
-•   Optional: thyme, bay leaf, paprika, shredded cheese</p>
-<p>🔪 Instructions:
-1.  Sauté aromatics:
-•   In a pot over medium heat, melt butter.
-•   Add onion and cook until soft (about 5 minutes).
-•   Add garlic and cook 30 seconds more.
-2.  Add main ingredient:
-•   Stir in your chopped vegetables or cooked meat.
-3.  Create base:
-•   Sprinkle flour over everything, stir to coat.
-•   Cook 1–2 minutes to remove flour taste.
-4.  Simmer:
-•   Slowly add broth while stirring.
-•   Bring to a boil, then reduce heat and simmer until vegetables are soft (10–20 min depending on type).
-5.  Add cream:
-•   Stir in cream (or milk).
-•   Heat through—don’t boil.
-6.  Blend (optional):
-•   Use an immersion blender to make it smooth, or leave it chunky.
-7.  Season:
-•   Taste and adjust seasoning. Add herbs or cheese if using.</p>
-<p>⸻</p>
-<p>🍲 Popular Variations:
-•   Cream of Mushroom: use mushrooms + thyme + a splash of white wine
-•   Creamy Potato Leek: use potatoes + leeks, blend smooth
-•   Broccoli Cheddar: use broccoli + sharp cheddar
-•   Chicken Corn Chowder: add corn, diced potatoes, and shredded chicken</p>
-<p>Would you like a version tailored to a specific vegetable or meat you have on hand?</p></section></section>
+</code></pre></div></td></tr></table></div></section></section>
                     <section class='print-page md-section' id='section-7' heading-number='7'>
                         <h1>Video Processing<a class='headerlink' href='#section-7' title='Permanent link'></a>
                         </h1>

@@ -6,9 +6,8 @@ your API keys. Once you have those established, you can create your project and 
 Super summary:
 
 1. Create the pyproject.toml file and fill out the fields 
-2. run ``python -m build ``
-3. use twine to send to pypi.
-
+2. Build the project with ``uv build``
+3. Publish the project to PyPI with ``uv publish``
 
 ## With UV
 
@@ -37,7 +36,7 @@ module-name = "wws_api"  # folder to reference if src is not there
 module-root = ""
 
 [project.scripts]
-# cli commands such as
+# optional: cli commands such as
 wws_api = 'wws_api.cli:main' # folder.directory:function
 
 [[tool.uv.index]]
@@ -55,6 +54,21 @@ Publish project to test PyPI
 
 Publish project to production PyPI
 ``uv publish --token <api token>``
+
+Bump your project version automatically:
+```bash
+uv version --bump major
+uv version --bump minor
+uv version --bump patch
+```
+
+Script to do the full build:
+```bash
+rm -rf dist/
+uv version --bump minor
+uv build
+uv publish --token
+```
 
 
 ## Without UV
