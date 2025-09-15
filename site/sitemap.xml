@@ -2,114 +2,118 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://healthfin.solutions/notes/</loc>
-         <lastmod>2025-09-12</lastmod>
-    </url>
-    <url>
-         <loc>https://healthfin.solutions/notes/deployment/</loc>
-         <lastmod>2025-09-12</lastmod>
+         <lastmod>2025-09-15</lastmod>
     </url>
     <url>
          <loc>https://healthfin.solutions/notes/AI/docs_105_local_llm/</loc>
-         <lastmod>2025-09-12</lastmod>
+         <lastmod>2025-09-15</lastmod>
     </url>
     <url>
          <loc>https://healthfin.solutions/notes/Docker/basics/</loc>
-         <lastmod>2025-09-12</lastmod>
+         <lastmod>2025-09-15</lastmod>
     </url>
     <url>
          <loc>https://healthfin.solutions/notes/Docker/docker_compose/</loc>
-         <lastmod>2025-09-12</lastmod>
+         <lastmod>2025-09-15</lastmod>
     </url>
     <url>
          <loc>https://healthfin.solutions/notes/Docker/docker_images/</loc>
-         <lastmod>2025-09-12</lastmod>
+         <lastmod>2025-09-15</lastmod>
+    </url>
+    <url>
+         <loc>https://healthfin.solutions/notes/Docker/intro/</loc>
+         <lastmod>2025-09-15</lastmod>
     </url>
     <url>
          <loc>https://healthfin.solutions/notes/Git/basics/</loc>
-         <lastmod>2025-09-12</lastmod>
+         <lastmod>2025-09-15</lastmod>
     </url>
     <url>
          <loc>https://healthfin.solutions/notes/Git/branches/</loc>
-         <lastmod>2025-09-12</lastmod>
+         <lastmod>2025-09-15</lastmod>
     </url>
     <url>
          <loc>https://healthfin.solutions/notes/Git/remotes/</loc>
-         <lastmod>2025-09-12</lastmod>
+         <lastmod>2025-09-15</lastmod>
     </url>
     <url>
          <loc>https://healthfin.solutions/notes/Linux/docs_103_ssh/</loc>
-         <lastmod>2025-09-12</lastmod>
+         <lastmod>2025-09-15</lastmod>
     </url>
     <url>
          <loc>https://healthfin.solutions/notes/Linux/docs_104_linux/</loc>
-         <lastmod>2025-09-12</lastmod>
+         <lastmod>2025-09-15</lastmod>
     </url>
     <url>
          <loc>https://healthfin.solutions/notes/Linux/docs_199_backups/</loc>
-         <lastmod>2025-09-12</lastmod>
+         <lastmod>2025-09-15</lastmod>
     </url>
     <url>
          <loc>https://healthfin.solutions/notes/Networking/docs_100_networking/</loc>
-         <lastmod>2025-09-12</lastmod>
+         <lastmod>2025-09-15</lastmod>
     </url>
     <url>
          <loc>https://healthfin.solutions/notes/Networking/docs_100_servers/</loc>
-         <lastmod>2025-09-12</lastmod>
+         <lastmod>2025-09-15</lastmod>
     </url>
     <url>
          <loc>https://healthfin.solutions/notes/Networking/docs_101_caddy/</loc>
-         <lastmod>2025-09-12</lastmod>
+         <lastmod>2025-09-15</lastmod>
     </url>
     <url>
          <loc>https://healthfin.solutions/notes/Networking/docs_102_dns_server/</loc>
-         <lastmod>2025-09-12</lastmod>
+         <lastmod>2025-09-15</lastmod>
+    </url>
+    <url>
+         <loc>https://healthfin.solutions/notes/Python/deployment/</loc>
+         <lastmod>2025-09-15</lastmod>
     </url>
     <url>
          <loc>https://healthfin.solutions/notes/Python/docs_1_what_is_python/</loc>
-         <lastmod>2025-09-12</lastmod>
+         <lastmod>2025-09-15</lastmod>
     </url>
     <url>
          <loc>https://healthfin.solutions/notes/Python/docs_2_how_to_use/</loc>
-         <lastmod>2025-09-12</lastmod>
+         <lastmod>2025-09-15</lastmod>
     </url>
     <url>
          <loc>https://healthfin.solutions/notes/Python/docs_3_writing_code/</loc>
-         <lastmod>2025-09-12</lastmod>
+         <lastmod>2025-09-15</lastmod>
     </url>
     <url>
          <loc>https://healthfin.solutions/notes/Python/docs_4_building_large_projects/</loc>
-         <lastmod>2025-09-12</lastmod>
+         <lastmod>2025-09-15</lastmod>
     </url>
     <url>
          <loc>https://healthfin.solutions/notes/Python/docs_5_advanced_topics/</loc>
-         <lastmod>2025-09-12</lastmod>
+         <lastmod>2025-09-15</lastmod>
     </url>
     <url>
          <loc>https://healthfin.solutions/notes/Python/docs_6_publishing_project/</loc>
-         <lastmod>2025-09-12</lastmod>
+         <lastmod>2025-09-15</lastmod>
     </url>
     <url>
          <loc>https://healthfin.solutions/notes/Python/docs_7_important_libraries/</loc>
-         <lastmod>2025-09-12</lastmod>
+         <lastmod>2025-09-15</lastmod>
     </url>
     <url>
          <loc>https://healthfin.solutions/notes/Python/docs_8_documentation/</loc>
-         <lastmod>2025-09-12</lastmod>
+         <lastmod>2025-09-15</lastmod>
     </url>
     <url>
          <loc>https://healthfin.solutions/notes/Python/docs_9_std_lib/</loc>
-         <lastmod>2025-09-12</lastmod>
+         <lastmod>2025-09-15</lastmod>
     </url>
     <url>
          <loc>https://healthfin.solutions/notes/Python/python_uv/</loc>
-         <lastmod>2025-09-12</lastmod>
+         <lastmod>2025-09-15</lastmod>
     </url>
     <url>
          <loc>https://healthfin.solutions/notes/Video%20Processing/docs_200_ffmpeg/</loc>
-         <lastmod>2025-09-12</lastmod>
+         <lastmod>2025-09-15</lastmod>
     </url>
     <url>
          <loc>https://healthfin.solutions/notes/Video%20Processing/docs_200_streaming/</loc>
-         <lastmod>2025-09-12</lastmod>
+         <lastmod>2025-09-15</lastmod>
     </url>
 </urlset>

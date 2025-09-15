@@ -11,7 +11,7 @@
         <link rel="canonical" href="https://healthfin.solutions/notes/Docker/basics/">
       
       
-        <link rel="prev" href="../../Git/branches/">
+        <link rel="prev" href="../intro/">
       
       
         <link rel="next" href="../docker_compose/">
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#docker" class="md-skip">
+        <a href="#common-commands" class="md-skip">
           Skip to content
         </a>
       
@@ -493,6 +493,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/deployment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Deploying Python Programs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -646,6 +667,27 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../intro/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Intro
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -658,17 +700,6 @@
         
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Basics
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -678,61 +709,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#general" class="md-nav__link">
-    <span class="md-ellipsis">
-      General
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#common-commands" class="md-nav__link">
-    <span class="md-ellipsis">
-      Common Commands
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#access-docker-container" class="md-nav__link">
-    <span class="md-ellipsis">
-      Access Docker Container
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#docker-volumes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Docker Volumes
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -1186,50 +1162,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#general" class="md-nav__link">
-    <span class="md-ellipsis">
-      General
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#common-commands" class="md-nav__link">
-    <span class="md-ellipsis">
-      Common Commands
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#access-docker-container" class="md-nav__link">
-    <span class="md-ellipsis">
-      Access Docker Container
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#docker-volumes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Docker Volumes
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1243,20 +1175,7 @@
                   
 
 
-<h1 id="docker">Docker</h1>
-<h2 id="general">General</h2>
-<p>Docker creates and runs containers - software bundled to run on a minimal isolated linux OS on the host system.
-Containers are greate because they are typically very easy to install and even easier to uninstall. 
-Allows for reproducing environments, avoiding the "it runs on my machine" problem.
-They can enhance security by isolating the host system from the system running the software.</p>
-<p>Terms:</p>
-<ul>
-<li>Image: A copy of the software that is ready to run on docker.</li>
-<li>Container: An instance of an image, specific to the image that has been setup to run. More simply, 
-a container is an image running on your machine. Can be turned on or off, etc.</li>
-<li>Volume: A path that a container can use to access host file system.</li>
-</ul>
-<h2 id="common-commands">Common Commands</h2>
+<h1 id="common-commands">Common Commands</h1>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -1282,7 +1201,18 @@ a container is an image running on your machine. Can be turned on or off, etc.</
 <span class="normal">23</span>
 <span class="normal">24</span>
 <span class="normal">25</span>
-<span class="normal">26</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># When you find an image you want to use do</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># When you find an image you want to use do</span>
 docker<span class="w"> </span>pull<span class="w"> </span>&lt;image_name&gt;
 
 <span class="c1"># To see images downloaded use</span>
@@ -1308,19 +1238,9 @@ docker<span class="w"> </span>stop<span class="w"> </span>image-name
 docker<span class="w"> </span>rmi<span class="w"> </span>postgres:latest
 <span class="c1"># or by container hash id</span>
 docker<span class="w"> </span>rmi<span class="w"> </span>123456789abc
-</code></pre></div></td></tr></table></div>
-<h2 id="access-docker-container">Access Docker Container</h2>
-<p>Docker containers have their own sort of operating system. Because of this, you can run commands just like
-any OS on the terminal.</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span>
-<span class="normal">8</span>
-<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># to shell into the container</span>
+
+<span class="c1"># Docker containers are their own sort of OS and SSH into it.</span>
+<span class="c1"># to shell into the container</span>
 docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>&lt;container-name-or-id&gt;<span class="w"> </span>/bin/sh
 <span class="c1"># /bin/sh is the terminal experience (shell in this case) you could do /bin/bash</span>
 
@@ -1330,12 +1250,6 @@ docker<span class="w"> </span>logs<span class="w"> </span>&lt;container<span cla
 <span class="c1"># continously showing log output</span>
 docker<span class="w"> </span>logs<span class="w"> </span>-f<span class="w"> </span>&lt;container-name-or-id&gt;
 </code></pre></div></td></tr></table></div>
-<h2 id="docker-volumes">Docker Volumes</h2>
-<p>Files and Docker
-If you need to use files for anything involving docker, you need to configure volumes.</p>
-<p>Volumes are a mapping of the docker container file system to the host file system.</p>
-<p><code>-v /home/svr/immich:/usr/src/app/upload</code></p>
-<p>Just like port mapping, the first is host and second is container.</p>
 
 
 

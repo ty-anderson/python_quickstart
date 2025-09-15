@@ -493,6 +493,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/deployment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Deploying Python Programs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -641,6 +662,27 @@
             Docker
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intro/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Intro
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -1570,14 +1612,14 @@ The last one that runs becomes the actual image.</p>
 <span class="normal">13</span>
 <span class="normal">14</span>
 <span class="normal">15</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c"># Build stage</span>
-<span class="k">FROM</span><span class="w"> </span><span class="s">python:3.13</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="s">builder</span>
+<span class="k">FROM</span><span class="w"> </span><span class="s">python:3.13</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s">builder</span>
 <span class="k">COPY</span><span class="w"> </span>--from<span class="o">=</span>ghcr.io/astral-sh/uv:latest<span class="w"> </span>/uv<span class="w"> </span>/bin/uv
 <span class="k">COPY</span><span class="w"> </span>.<span class="w"> </span>/src
 <span class="k">WORKDIR</span><span class="w"> </span><span class="s">/src</span>
 <span class="k">RUN</span><span class="w"> </span>uv<span class="w"> </span>build
 
 <span class="c"># Runtime stage</span>
-<span class="k">FROM</span><span class="w"> </span><span class="s">python:3.13-slim</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="s">runtime</span>
+<span class="k">FROM</span><span class="w"> </span><span class="s">python:3.13-slim</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s">runtime</span>
 <span class="k">COPY</span><span class="w"> </span>--from<span class="o">=</span>ghcr.io/astral-sh/uv:latest<span class="w"> </span>/uv<span class="w"> </span>/bin/uv
 <span class="k">COPY</span><span class="w"> </span>--from<span class="o">=</span>builder<span class="w"> </span>/src/dist/*.whl<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>rm<span class="w"> </span>/tmp/*.whl
 

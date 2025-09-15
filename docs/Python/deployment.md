@@ -1,14 +1,18 @@
-# Deployment
+# Deploying Python Programs
 
 Deployment of a python program depends on what type of program you are deploying. Desktop apps, web apps, ETL scripts,
 API's, internal tools, etc. all have different requirements.
 
-Here are some practical deployment approaches for smaller projects, depending on how simple or complex they are:
+There are 3 main forms:
+
+1. Standard script/venv.
+2. Docker container.
+3. Executable file.
 
 ---
 
-## 🚀 1. Local Script / Cron Job
-
+## 🚀 Local Script / Cron Job
+ 
 Best for **simple scripts** (ETL, backups, notifications, etc.)
 
 * **Deploy**: copy code to server (via `git clone`, `scp`, or syncing)
@@ -25,29 +29,23 @@ uv pip install -r requirements.txt
 python my_job.py
 ```
 
-Pros: simple, fast.
-Cons: less portable, harder to reproduce if env drifts.
+Setup a bash command:
+
+```bash
+crontab -e
+
+# save this in the crontab file that opens
+0/20 * * * * source /Users/tyleranderson/PyCharmProjects/project/backup_tmp_dir.sh 
+```
+
+- Pros: simple, fast.
+- Cons: less portable, harder to reproduce if env drifts.
 
 ---
 
-## 📦 2. Installable Package
+## 🐳 Docker Container
 
-Best for projects you’ll re-use across multiple places.
-
-* **Deploy**: build into a wheel or sdist
-* **Install**: `pip install my_package-0.1.0-py3-none-any.whl`
-* **Run**: `python -m my_package` or a CLI entry point
-
-👉 Works well when you want:
-
-* Versioning (`0.1.0`, `0.2.0` …)
-* To install on multiple servers without manually copying source
-
----
-
-## 🐳 3. Docker Container
-
-Best for services you want **consistent across dev/prod**.
+Best for services you want **consistent across dev/prod**. Much more robust.
 
 * Write a Dockerfile:
 
@@ -56,7 +54,7 @@ FROM python:3.12-slim
 WORKDIR /app
 COPY requirements.txt .
 RUN pip install -r requirements.txt
-COPY . .
+COPY .. .
 CMD ["python", "my_job.py"]
 ```
 
@@ -66,13 +64,15 @@ CMD ["python", "my_job.py"]
 Pros: consistent, portable.
 Cons: more setup overhead than bare venv.
 
-## ⚡️ Quick Decision Tree
+## Executable File
 
-* **One-off script** → copy + venv
-* **Reusable internal library** → package + pip install
-* **Service/API that should “just work”** → Docker container
+You can also use pyinstaller (or other libraries that freeze your python code) to create an
+executable file. This would be a good idea for a desktop app or something that a user chooses
+to run on their own. 
 
----
+Pro: no need for user to have python installed on their computer, easy to distribute.
+
+## Docker, Python, and Multiple Execution Points
 
 In most modern setups, if you have a Python package that contains multiple ETL jobs, 
 the **common pattern is to containerize the entire package** and then deploy that image wherever you run jobs.
@@ -130,24 +130,6 @@ The differences are in **how you execute the individual jobs** inside that conta
 
 ---
 
-## **Alternatives**
-
-* **One image per job**
-
-    * Sometimes used if jobs have wildly different dependencies or resource requirements.
-    * Downside: more images to maintain and slower builds if you change common code.
-* **Shared base + thin job layers**
-
-    * You create a common base image for your package and layer job-specific commands/images on top.
-    * Speeds up rebuilds for large pipelines.
-
----
-
 💡 **Rule of thumb:**
 If all ETL jobs share most dependencies and code, **use one container image** with multiple entry points.
 If jobs have very different stacks or run in completely different runtime environments, **split them into separate images**.
-
----
-
-If you want, I can draw you a **container + orchestrator diagram** showing how a single Python package with 
-multiple ETL jobs gets deployed and triggered. That’s usually the easiest way to visualize it.

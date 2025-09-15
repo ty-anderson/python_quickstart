@@ -184,14 +184,14 @@ The last one that runs becomes the actual image.
 
 ```dockerfile
 # Build stage
-FROM python:3.13 as builder
+FROM python:3.13 AS builder
 COPY --from=ghcr.io/astral-sh/uv:latest /uv /bin/uv
 COPY . /src
 WORKDIR /src
 RUN uv build
 
 # Runtime stage
-FROM python:3.13-slim as runtime
+FROM python:3.13-slim AS runtime
 COPY --from=ghcr.io/astral-sh/uv:latest /uv /bin/uv
 COPY --from=builder /src/dist/*.whl && rm /tmp/*.whl
 
