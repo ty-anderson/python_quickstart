@@ -3757,6 +3757,7 @@ interpreter and your code into a bundle that gets uploaded to the App store.</p>
 <p>Here is the offical docs <a href="https://docs.python.org/3/using/ios.html">https://docs.python.org/3/using/ios.html</a></p></section><section class="print-page" id="python-deployment" heading-number="2.11"><h1 id="python-deployment-deploying-python-programs">Deploying Python Programs</h1>
 <p>Deployment of a python program depends on what type of program you are deploying. Desktop apps, web apps, ETL scripts,
 API's, internal tools, etc. all have different requirements.</p>
+<h2 id="python-deployment-deployment-types">Deployment Types</h2>
 <p>There are 3 main forms:</p>
 <ol>
 <li>Standard script/venv.</li>
@@ -3764,7 +3765,7 @@ API's, internal tools, etc. all have different requirements.</p>
 <li>Executable file.</li>
 </ol>
 <hr />
-<h2 id="python-deployment-local-script-cron-job">🚀 Local Script / Cron Job</h2>
+<h3 id="python-deployment-local-script-cron-job">🚀 Local Script / Cron Job</h3>
 <p>Best for <strong>simple scripts</strong> (ETL, backups, notifications, etc.)</p>
 <ul>
 <li><strong>Deploy</strong>: copy code to server (via <code>git clone</code>, <code>scp</code>, or syncing)</li>
@@ -3796,7 +3797,7 @@ python<span class="w"> </span>my_job.py
 <li>Cons: less portable, harder to reproduce if env drifts.</li>
 </ul>
 <hr />
-<h2 id="python-deployment-docker-container">🐳 Docker Container</h2>
+<h3 id="python-deployment-docker-container">🐳 Docker Container</h3>
 <p>Best for services you want <strong>consistent across dev/prod</strong>. Much more robust.</p>
 <ul>
 <li>Write a Dockerfile:</li>
@@ -3819,7 +3820,7 @@ python<span class="w"> </span>my_job.py
 </ul>
 <p>Pros: consistent, portable.
 Cons: more setup overhead than bare venv.</p>
-<h2 id="python-deployment-executable-file">Executable File</h2>
+<h3 id="python-deployment-executable-file">Executable File</h3>
 <p>You can also use pyinstaller (or other libraries that freeze your python code) to create an
 executable file. This would be a good idea for a desktop app or something that a user chooses
 to run on their own. </p>
@@ -3829,7 +3830,7 @@ to run on their own. </p>
 the <strong>common pattern is to containerize the entire package</strong> and then deploy that image wherever you run jobs.</p>
 <p>The differences are in <strong>how you execute the individual jobs</strong> inside that container and how you <strong>manage orchestration</strong>.</p>
 <hr />
-<h2 id="python-deployment-typical-pattern"><strong>Typical Pattern</strong></h2>
+<h3 id="python-deployment-typical-pattern"><strong>Typical Pattern</strong></h3>
 <ol>
 <li>
 <p><strong>Single container image</strong></p>
@@ -3876,7 +3877,7 @@ the <strong>common pattern is to containerize the entire package</strong> and th
 </li>
 </ol>
 <hr />
-<h2 id="python-deployment-why-this-approach-works-well"><strong>Why This Approach Works Well</strong></h2>
+<h3 id="python-deployment-why-this-approach-works-well"><strong>Why This Approach Works Well</strong></h3>
 <ul>
 <li><strong>Reusability</strong> — One image can run all jobs, avoiding duplication.</li>
 <li><strong>Consistency</strong> — All jobs share the same dependency versions and base environment.</li>

@@ -3,6 +3,8 @@
 Deployment of a python program depends on what type of program you are deploying. Desktop apps, web apps, ETL scripts,
 API's, internal tools, etc. all have different requirements.
 
+## Deployment Types
+
 There are 3 main forms:
 
 1. Standard script/venv.
@@ -11,7 +13,7 @@ There are 3 main forms:
 
 ---
 
-## 🚀 Local Script / Cron Job
+### 🚀 Local Script / Cron Job
  
 Best for **simple scripts** (ETL, backups, notifications, etc.)
 
@@ -43,7 +45,7 @@ crontab -e
 
 ---
 
-## 🐳 Docker Container
+### 🐳 Docker Container
 
 Best for services you want **consistent across dev/prod**. Much more robust.
 
@@ -64,7 +66,7 @@ CMD ["python", "my_job.py"]
 Pros: consistent, portable.
 Cons: more setup overhead than bare venv.
 
-## Executable File
+### Executable File
 
 You can also use pyinstaller (or other libraries that freeze your python code) to create an
 executable file. This would be a good idea for a desktop app or something that a user chooses
@@ -81,7 +83,7 @@ The differences are in **how you execute the individual jobs** inside that conta
 
 ---
 
-## **Typical Pattern**
+### **Typical Pattern**
 
 1. **Single container image**
 
@@ -121,7 +123,7 @@ The differences are in **how you execute the individual jobs** inside that conta
 
 ---
 
-## **Why This Approach Works Well**
+### **Why This Approach Works Well**
 
 * **Reusability** — One image can run all jobs, avoiding duplication.
 * **Consistency** — All jobs share the same dependency versions and base environment.

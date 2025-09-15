@@ -548,6 +548,16 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#deployment-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deployment Types
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deployment Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#local-script-cron-job" class="md-nav__link">
     <span class="md-ellipsis">
       🚀 Local Script / Cron Job
@@ -555,8 +565,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#docker-container" class="md-nav__link">
     <span class="md-ellipsis">
       🐳 Docker Container
@@ -564,13 +574,18 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#executable-file" class="md-nav__link">
     <span class="md-ellipsis">
       Executable File
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -581,9 +596,10 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="Docker, Python, and Multiple Execution Points">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#typical-pattern" class="md-nav__link">
     <span class="md-ellipsis">
       Typical Pattern
@@ -591,13 +607,18 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#why-this-approach-works-well" class="md-nav__link">
     <span class="md-ellipsis">
       Why This Approach Works Well
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1253,6 +1274,16 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#deployment-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deployment Types
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deployment Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#local-script-cron-job" class="md-nav__link">
     <span class="md-ellipsis">
       🚀 Local Script / Cron Job
@@ -1260,8 +1291,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#docker-container" class="md-nav__link">
     <span class="md-ellipsis">
       🐳 Docker Container
@@ -1269,13 +1300,18 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#executable-file" class="md-nav__link">
     <span class="md-ellipsis">
       Executable File
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1286,9 +1322,10 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="Docker, Python, and Multiple Execution Points">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#typical-pattern" class="md-nav__link">
     <span class="md-ellipsis">
       Typical Pattern
@@ -1296,13 +1333,18 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#why-this-approach-works-well" class="md-nav__link">
     <span class="md-ellipsis">
       Why This Approach Works Well
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1324,6 +1366,7 @@
 <h1 id="deploying-python-programs">Deploying Python Programs</h1>
 <p>Deployment of a python program depends on what type of program you are deploying. Desktop apps, web apps, ETL scripts,
 API's, internal tools, etc. all have different requirements.</p>
+<h2 id="deployment-types">Deployment Types</h2>
 <p>There are 3 main forms:</p>
 <ol>
 <li>Standard script/venv.</li>
@@ -1331,7 +1374,7 @@ API's, internal tools, etc. all have different requirements.</p>
 <li>Executable file.</li>
 </ol>
 <hr />
-<h2 id="local-script-cron-job">🚀 Local Script / Cron Job</h2>
+<h3 id="local-script-cron-job">🚀 Local Script / Cron Job</h3>
 <p>Best for <strong>simple scripts</strong> (ETL, backups, notifications, etc.)</p>
 <ul>
 <li><strong>Deploy</strong>: copy code to server (via <code>git clone</code>, <code>scp</code>, or syncing)</li>
@@ -1363,7 +1406,7 @@ python<span class="w"> </span>my_job.py
 <li>Cons: less portable, harder to reproduce if env drifts.</li>
 </ul>
 <hr />
-<h2 id="docker-container">🐳 Docker Container</h2>
+<h3 id="docker-container">🐳 Docker Container</h3>
 <p>Best for services you want <strong>consistent across dev/prod</strong>. Much more robust.</p>
 <ul>
 <li>Write a Dockerfile:</li>
@@ -1386,7 +1429,7 @@ python<span class="w"> </span>my_job.py
 </ul>
 <p>Pros: consistent, portable.
 Cons: more setup overhead than bare venv.</p>
-<h2 id="executable-file">Executable File</h2>
+<h3 id="executable-file">Executable File</h3>
 <p>You can also use pyinstaller (or other libraries that freeze your python code) to create an
 executable file. This would be a good idea for a desktop app or something that a user chooses
 to run on their own. </p>
@@ -1396,7 +1439,7 @@ to run on their own. </p>
 the <strong>common pattern is to containerize the entire package</strong> and then deploy that image wherever you run jobs.</p>
 <p>The differences are in <strong>how you execute the individual jobs</strong> inside that container and how you <strong>manage orchestration</strong>.</p>
 <hr />
-<h2 id="typical-pattern"><strong>Typical Pattern</strong></h2>
+<h3 id="typical-pattern"><strong>Typical Pattern</strong></h3>
 <ol>
 <li>
 <p><strong>Single container image</strong></p>
@@ -1443,7 +1486,7 @@ the <strong>common pattern is to containerize the entire package</strong> and th
 </li>
 </ol>
 <hr />
-<h2 id="why-this-approach-works-well"><strong>Why This Approach Works Well</strong></h2>
+<h3 id="why-this-approach-works-well"><strong>Why This Approach Works Well</strong></h3>
 <ul>
 <li><strong>Reusability</strong> — One image can run all jobs, avoiding duplication.</li>
 <li><strong>Consistency</strong> — All jobs share the same dependency versions and base environment.</li>
