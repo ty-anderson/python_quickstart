@@ -62,3 +62,4 @@ nav:
   - Streaming: Video Processing/docs_200_streaming.md
 - AI:
   - Ollama: AI/docs_105_local_llm.md
+  - MCP: AI/mcp.md
