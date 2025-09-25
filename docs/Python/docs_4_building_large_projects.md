@@ -53,7 +53,7 @@ You can avoid these issues by doing ``pip install -e .`` which installs your pac
 in edit mode. Edit mode means you can make changes to the installed package
 and it will hot reload. 
 
-## The Workflow
+### The Workflow
 
 1. Build your project. 
 2. Install your project ``pip install -e .``
@@ -67,14 +67,14 @@ package_name = "module:callable"
 
 ## A More Modern System
 
-## Goals of a good structure
+### Goals of a good structure
 
 * **Separation of concerns:** isolate domain logic, I/O, and interfaces.
 * **Testability & maintainability:** easy to unit test and refactor.
 * **Distributable:** buildable wheel, clean dependency metadata.
 * **Usability:** clear public API, stable CLI, sensible configuration.
 
-## Canonical layout (src/ structure)
+### Canonical layout (src/ structure)
 
 ```
 your-project/
@@ -113,7 +113,7 @@ Why `src/`? It prevents tests from accidentally importing
 your **working directory** instead of the installed package, 
 catching packaging/import mistakes early.
 
-## pyproject.toml (modern packaging)
+### pyproject.toml (modern packaging)
 
 Use PEP 621 metadata; pick a backend (e.g., Hatchling, Setuptools).
 
@@ -147,7 +147,7 @@ packages = ["src/your_package"]
 * **\[project.scripts]** wires a **console script** (entry point). It points to a callable (e.g., `def main(): ...`).
 * Prefer **runtime deps** under `[project.dependencies]` and dev tools under an optional extra (e.g., `pip install .[dev]`).
 
-## Public API design
+### Public API design
 
 * Use `__init__.py` to **re-export** the small, stable surface you commit to:
 
@@ -160,7 +160,7 @@ packages = ["src/your_package"]
   ```
 * Keep internal modules private-ish (don’t re-export them) so refactors don’t break users.
 
-## Layers that scale
+### Layers that scale
 
 * **core/**: pure business rules, no network/filesystem. Most unit tests live here.
 * **adapters/**: concrete I/O implementations (Postgres, S3, HTTP, etc.).
@@ -169,7 +169,7 @@ packages = ["src/your_package"]
 
 This “ports & adapters” (hexagonal) approach keeps logic decoupled from I/O so you can swap adapters (e.g., SQLite → Postgres) or test with fakes.
 
-## Configuration & secrets
+### Configuration & secrets
 
 * Read config **from environment** first, with optional `.env` during development.
 * Centralize in `app/config.py`:
@@ -187,7 +187,7 @@ This “ports & adapters” (hexagonal) approach keeps logic decoupled from I/O 
   ```
 * Avoid global state; pass `settings` into your app wiring or use a small container.
 
-## Logging
+### Logging
 
 * Configure once in `app/logging.py` and call it from your CLI entry:
 
@@ -202,33 +202,22 @@ This “ports & adapters” (hexagonal) approach keeps logic decoupled from I/O 
       )
   ```
 
-## Testing strategy
+### Testing strategy
 
 * **pytest** with `tests/unit` for pure logic and `tests/integration` for external systems.
 * Use fakes or fixtures for adapters; avoid hitting the network in unit tests.
 * Keep test imports identical to users: `from your_package import Service`.
 
-## Types, linting, formatting
-
-* **Type hints** everywhere; enforce with **mypy** (or pyright).
-* **ruff** for lint; **black** for formatting.
-* Run in CI (pre-commit is nice).
-
-## Versioning & metadata
-
-* Use **SemVer**. For libs exposed to others, keep breaking changes behind major bumps.
-* Store version in one place (pyproject or `your_package/__init__.py`) and, if helpful, use tools that auto-bump and tag (hatch, setuptools-scm).
-
-## Data and resources
+### Data and resources
 
 * Keep runtime data in the package only if truly needed; prefer external files or embedded resources loaded via `importlib.resources` rather than relative paths.
 * For large assets, ship them separately or fetch at runtime.
 
-## CLI vs library
+### CLI vs library
 
 * Treat the **package as a library** first; keep the CLI thin. That makes automation and testing easier and lets others use your code programmatically.
 
-## Common pitfalls to avoid
+### Common pitfalls to avoid
 
 * **Logic in scripts**: move code out of `if __name__ == "__main__":` into functions/classes.
 * **Tight coupling to I/O**: keep core pure; push side effects to adapters.
@@ -252,22 +241,3 @@ def main():
     setup_logging(args.log_level)
     Service().run()
 ```
-
-## Build, install, run
-
-```bash
-# dev install
-pip install -e ".[dev]"
-
-# run tests/type checks
-pytest -q
-mypy src
-
-# build a wheel/sdist
-python -m build    # or hatch build
-
-# use the CLI after install
-your-cli --help
-```
-
----

@@ -6,12 +6,18 @@ docker pull <image_name>
 # To see images downloaded use
 docker images
 
-# see containers
+# see running containers
 docker ps
 
-# run container. 
+# see all containers
+docker ps -a
+
+# run a new container.
 docker run image-name -d
 # -d means run in detached mode so when the terminal is closed, the container continues to run
+
+# run existing container 
+docker start container-name
 
 # Some containers need other info to run, which can be passed after the command
 docker run --name postgres_db -e POSTGRES_PASSWORD=postgres -p 5432:5432 -d postgres

@@ -24,20 +24,53 @@ Best for **simple scripts** (ETL, backups, notifications, etc.)
 👉 Example:
 
 ```bash
-cd ~/my_project
-uv venv
-source .venv/bin/activate
-uv pip install -r requirements.txt
+cd ~/my_project                       # create folder
+uv venv                               # create the venv
+source .venv/bin/activate             # activate the venv
+uv pip install -r requirements.txt    # install dependencies
+
+# run the script like
 python my_job.py
+# or 
+python -m my_job
 ```
 
-Setup a bash command:
+From here you can setup to run with a cronjob or another program. 
 
+Cronjob:
 ```bash
 crontab -e
 
 # save this in the crontab file that opens
 0/20 * * * * source /Users/tyleranderson/PyCharmProjects/project/backup_tmp_dir.sh 
+```
+
+or Airflow:
+```python
+import subprocess
+import datetime
+from airflow.decorators import dag, task
+
+@dag(default_args={"owner": "airflow"},
+     schedule_interval="*/10 * * * *",
+     dagrun_timeout=datetime.timedelta(hours=1),
+     max_active_runs=1,
+     max_active_tasks=1,
+     start_date=datetime.datetime(2025, 5, 1),
+     catchup=False)
+def run_job():
+    @task
+    def job_1():
+        subprocess.run(["bash", "-c", "source /path/to/file"], check=True)
+        
+    @task
+    def job_2():
+        subprocess.run(["bash", "-c", "source /path/to/another_file"], check=True)
+        
+    job_1 >> job_2
+
+        
+run_job()
 ```
 
 - Pros: simple, fast.
@@ -66,7 +99,7 @@ CMD ["python", "my_job.py"]
 Pros: consistent, portable.
 Cons: more setup overhead than bare venv.
 
-### Executable File
+### 🤖Executable File
 
 You can also use pyinstaller (or other libraries that freeze your python code) to create an
 executable file. This would be a good idea for a desktop app or something that a user chooses

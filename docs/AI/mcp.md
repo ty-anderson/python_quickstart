@@ -1,11 +1,11 @@
-MCP
+# MCP
 ---
 
 * It’s the **decision-making + orchestration layer** between an LLM and the outside world.
 * Whether it’s a server, a local script, or a function call depends on your use case.
 
 ---
-MCP is simply a decision making AI process.
+## MCP is simply a decision making AI process.
 ---
 
 Conceptually, **MCP is simply a decision‑making AI process** that:
@@ -32,7 +32,7 @@ Whether it lives in:
 …doesn’t change the concept — the “MCP” part is the **orchestration brain**.
 
 ---
-Use Cases
+## Use Cases
 ---
 
 * MCP is a great decision-maker when things are ambiguous or user-driven.
@@ -40,7 +40,7 @@ Use Cases
 
 
 ---
-Simple How-To
+## Simple How-To
 ---
 
 1. Pick your LLM you want to use for MCP.
@@ -51,7 +51,7 @@ Simple How-To
 Demo....
 
 ---------------------------------------
-What kind of server is an MCP server?
+## What kind of server is an MCP server?
 ---------------------------------------
 
 An **MCP server** is not as complex as you might think. It's really just:

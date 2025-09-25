@@ -28,17 +28,22 @@ plugins:
 nav:
 - Home: index.md
 - Python:
-  - What is Python: Python/docs_1_what_is_python.md
-  - How to Use: Python/docs_2_how_to_use.md
-  - Writing Code: Python/docs_3_writing_code.md
-  - Python uv: Python/python_uv.md
-  - Building Large Projects: Python/docs_4_building_large_projects.md
-  - Publishing Projects: Python/docs_6_publishing_project.md
-  - Advanced Coding Topics: Python/docs_5_advanced_topics.md
-  - Important Libraries: Python/docs_7_important_libraries.md
-  - Documentation Libraries: Python/docs_8_documentation.md
-  - Standard Library Gems: Python/docs_9_std_lib.md
-  - Deploying Python Programs: Python/deployment.md
+  - Intro:
+    - What is Python: Python/docs_1_what_is_python.md
+    - How to Use: Python/docs_2_how_to_use.md
+    - Writing Code: Python/docs_3_writing_code.md
+  - Advanced Coding:
+    - Advanced Coding Topics: Python/docs_5_advanced_topics.md
+    - Important Libraries: Python/docs_7_important_libraries.md
+    - Standard Library Gems: Python/docs_9_std_lib.md
+  - Execution and Deployment:
+    - Building Large Projects: Python/docs_4_building_large_projects.md
+    - Deploying Python Programs: Python/deployment.md
+    - Publishing Projects: Python/docs_6_publishing_project.md
+  - Other Tools:
+    - Python uv: Python/python_uv.md
+    - Documentation Libraries: Python/docs_8_documentation.md
+
 - Git & GitHub:
   - Git Basics: Git/basics.md
   - Remotes: Git/remotes.md
