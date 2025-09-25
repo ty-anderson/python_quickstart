@@ -6029,7 +6029,7 @@ Important for compression, compatability, and streaming efficiency.</p>
 <li>Chat away!</li>
 </ol>
 <p>Download a model: <code>docker exec -it ollama ollama pull mistral</code> or <code>docker exec -it ollama ollama pull llama3</code></p>
-<p>Here is a docker compose file that runs it:</p>
+<p>Here is a docker compose file that runs it all:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -6076,7 +6076,8 @@ Important for compression, compatability, and streaming efficiency.</p>
 <span class="nt">volumes</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">ollama_data</span><span class="p">:</span>
 </code></pre></div></td></tr></table></div>
-<p>Once this is running you can use the API for Ollama like:</p>
+<p>You can go to https://localhost:3000 to use the web ui or you can use the API.</p>
+<p>API call:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -6113,6 +6114,21 @@ Important for compression, compatability, and streaming efficiency.</p>
     <span class="k">if</span> <span class="n">line</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span>
 </code></pre></div></td></tr></table></div>
+<p>Available models can be found here:
+https://registry.ollama.ai/search</p>
+<p>To download other models:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="err">POST http://localhost:11434/api/pull</span>
+<span class="err">Content-Type: application/json</span>
+
+<span class="err">{</span>
+<span class="err">  &quot;name&quot;: &quot;mistral&quot;</span>
+<span class="err">}</span>
+</code></pre></div></td></tr></table></div></p>
 <p>For more info on the REST API definition: https://github.com/ollama/ollama/blob/main/docs/api.md</p></section><section class="print-page" id="ai-mcp" heading-number="8.2"><h1 id="ai-mcp-mcp">MCP</h1>
 <hr />
 <ul>

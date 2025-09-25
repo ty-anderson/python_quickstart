@@ -12,7 +12,7 @@ Simply put:
 
 Download a model: ``docker exec -it ollama ollama pull mistral`` or ``docker exec -it ollama ollama pull llama3``
 
-Here is a docker compose file that runs it:
+Here is a docker compose file that runs it all:
 
 ```yaml
 services:
@@ -40,7 +40,9 @@ volumes:
   ollama_data:
 ```
 
-Once this is running you can use the API for Ollama like:
+You can go to https://localhost:3000 to use the web ui or you can use the API.
+
+API call:
 
 ```http
 ### Generate text with llama3
@@ -64,6 +66,19 @@ response = requests.post(
 for line in response.iter_lines():
     if line:
         print(line.decode())
+```
+
+Available models can be found here:
+https://registry.ollama.ai/search
+
+To download other models:
+```http
+POST http://localhost:11434/api/pull
+Content-Type: application/json
+
+{
+  "name": "mistral"
+}
 ```
 
 For more info on the REST API definition: https://github.com/ollama/ollama/blob/main/docs/api.md
