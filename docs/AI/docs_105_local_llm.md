@@ -40,7 +40,7 @@ volumes:
   ollama_data:
 ```
 
-You can go to https://localhost:3000 to use the web ui or you can use the API.
+You can go to [https://localhost:3000](https://localhost:3000) to use the web ui or you can use the API.
 
 API call:
 
