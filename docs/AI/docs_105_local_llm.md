@@ -38,5 +38,33 @@ services:
 
 volumes:
   ollama_data:
-
 ```
+
+Once this is running you can use the API for Ollama like:
+
+```http
+### Generate text with llama3
+POST http://localhost:11434/api/generate
+Content-Type: application/json
+
+{
+  "model": "llama3",
+  "prompt": "Write a haiku about data pipelines"
+}
+```
+
+```python
+import requests
+
+response = requests.post(
+    "http://localhost:11434/api/generate",
+    json={"model": "llama3", "prompt": "Hello from PyCharm!"}
+)
+
+for line in response.iter_lines():
+    if line:
+        print(line.decode())
+```
+
+For more info on the REST API definition: https://github.com/ollama/ollama/blob/main/docs/api.md
+
