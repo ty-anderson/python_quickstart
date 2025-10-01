@@ -4623,7 +4623,9 @@ They can enhance security by isolating the host system from the system running t
 <span class="normal">33</span>
 <span class="normal">34</span>
 <span class="normal">35</span>
-<span class="normal">36</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># When you find an image you want to use do</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># When you find an image you want to use do</span>
 docker<span class="w"> </span>pull<span class="w"> </span>&lt;image_name&gt;
 
 <span class="c1"># To see images downloaded use</span>
@@ -4647,8 +4649,10 @@ docker<span class="w"> </span>stop<span class="w"> </span>image-name
 
 <span class="c1"># remove an image by name and tag</span>
 docker<span class="w"> </span>rmi<span class="w"> </span>postgres:latest
-<span class="c1"># or by container hash id</span>
-docker<span class="w"> </span>rmi<span class="w"> </span>123456789abc
+
+<span class="c1"># remove a container by ID or name</span>
+docker<span class="w"> </span>rm<span class="w"> </span>123456789abc
+docker<span class="w"> </span>rm<span class="w"> </span>container_01
 
 <span class="c1"># Docker containers are their own sort of OS. You can SSH into it.</span>
 docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>&lt;container-name-or-id&gt;<span class="w"> </span>/bin/sh

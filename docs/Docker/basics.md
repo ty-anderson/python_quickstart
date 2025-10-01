@@ -24,8 +24,10 @@ docker stop image-name
 
 # remove an image by name and tag
 docker rmi postgres:latest
-# or by container hash id
-docker rmi 123456789abc
+
+# remove a container by ID or name
+docker rm 123456789abc
+docker rm container_01
 
 # Docker containers are their own sort of OS. You can SSH into it.
 docker exec -it <container-name-or-id> /bin/sh
