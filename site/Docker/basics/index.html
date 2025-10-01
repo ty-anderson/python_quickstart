@@ -487,6 +487,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/testing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Testing Code
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -872,6 +893,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Basics
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -881,6 +913,76 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#run-a-container-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Run a Container Examples
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connecting-resources-to-host" class="md-nav__link">
+    <span class="md-ellipsis">
+      Connecting Resources to Host
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Connecting Resources to Host">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#docker-ports" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker Ports
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker-volumes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker Volumes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list-of-flags" class="md-nav__link">
+    <span class="md-ellipsis">
+      List of Flags
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1335,6 +1437,26 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/rust01/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Rust
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -1354,6 +1476,65 @@
   
     
   
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#run-a-container-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Run a Container Examples
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connecting-resources-to-host" class="md-nav__link">
+    <span class="md-ellipsis">
+      Connecting Resources to Host
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Connecting Resources to Host">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#docker-ports" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker Ports
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker-volumes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker Volumes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list-of-flags" class="md-nav__link">
+    <span class="md-ellipsis">
+      List of Flags
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1404,14 +1585,7 @@
 <span class="normal">33</span>
 <span class="normal">34</span>
 <span class="normal">35</span>
-<span class="normal">36</span>
-<span class="normal">37</span>
-<span class="normal">38</span>
-<span class="normal">39</span>
-<span class="normal">40</span>
-<span class="normal">41</span>
-<span class="normal">42</span>
-<span class="normal">43</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># When you find an image you want to use do</span>
+<span class="normal">36</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># When you find an image you want to use do</span>
 docker<span class="w"> </span>pull<span class="w"> </span>&lt;image_name&gt;
 
 <span class="c1"># To see images downloaded use</span>
@@ -1430,12 +1604,6 @@ docker<span class="w"> </span>run<span class="w"> </span>image-name<span class="
 <span class="c1"># run existing container </span>
 docker<span class="w"> </span>start<span class="w"> </span>container-name
 
-<span class="c1"># Some containers need other info to run, which can be passed after the command</span>
-docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> </span>postgres_db<span class="w"> </span>-e<span class="w"> </span><span class="nv">POSTGRES_PASSWORD</span><span class="o">=</span>postgres<span class="w"> </span>-p<span class="w"> </span><span class="m">5432</span>:5432<span class="w"> </span>-d<span class="w"> </span>postgres
-<span class="c1"># --name is what the container will be named</span>
-<span class="c1"># -p is for port mapping host computer port to image port (first is host, second is container)</span>
-<span class="c1"># -e is for adding environment variables</span>
-
 <span class="c1"># stop docker container</span>
 docker<span class="w"> </span>stop<span class="w"> </span>image-name
 
@@ -1444,17 +1612,68 @@ docker<span class="w"> </span>rmi<span class="w"> </span>postgres:latest
 <span class="c1"># or by container hash id</span>
 docker<span class="w"> </span>rmi<span class="w"> </span>123456789abc
 
-<span class="c1"># Docker containers are their own sort of OS and SSH into it.</span>
-<span class="c1"># to shell into the container</span>
+<span class="c1"># Docker containers are their own sort of OS. You can SSH into it.</span>
 docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>&lt;container-name-or-id&gt;<span class="w"> </span>/bin/sh
 <span class="c1"># /bin/sh is the terminal experience (shell in this case) you could do /bin/bash</span>
 
 <span class="c1"># access container logs</span>
 docker<span class="w"> </span>logs<span class="w"> </span>&lt;container<span class="w"> </span>name<span class="w"> </span>or<span class="w"> </span>id&gt;
 
-<span class="c1"># continously showing log output</span>
+<span class="c1"># continuously showing log output</span>
 docker<span class="w"> </span>logs<span class="w"> </span>-f<span class="w"> </span>&lt;container-name-or-id&gt;
 </code></pre></div></td></tr></table></div>
+<h2 id="run-a-container-examples">Run a Container Examples</h2>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># simplest docker image run</span>
+docker<span class="w"> </span>run<span class="w"> </span>hello-world
+
+<span class="c1"># run alpine linux (tiny image). sh lets you explore inside the container</span>
+docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span>alpine<span class="w"> </span>sh
+
+<span class="c1"># Some containers need other info to run, which can be passed after the command</span>
+<span class="c1"># --name is what the container will be named</span>
+<span class="c1"># -p is for port mapping host computer port to image port (first is host, second is container)</span>
+<span class="c1"># -e is for adding environment variables</span>
+docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> </span>postgres_db<span class="w"> </span>-e<span class="w"> </span><span class="nv">POSTGRES_PASSWORD</span><span class="o">=</span>postgres<span class="w"> </span>-p<span class="w"> </span><span class="m">5432</span>:5432<span class="w"> </span>-d<span class="w"> </span>postgres
+</code></pre></div></td></tr></table></div>
+<h2 id="connecting-resources-to-host">Connecting Resources to Host</h2>
+<h3 id="docker-ports">Docker Ports</h3>
+<p>Accessing endpoints from the host machine is typically done through ports. You can map the 
+host machine port to the port that is being used in the docker container.</p>
+<p><code>docker run -p 5432:5432 -d &lt;image_name&gt;</code></p>
+<h3 id="docker-volumes">Docker Volumes</h3>
+<p>Files and Docker
+If you need to use files for anything involving docker, you need to configure volumes.</p>
+<p>Volumes are a mapping of the docker container file system to the host file system.</p>
+<p><code>-v /home/svr/immich:/usr/src/app/upload</code></p>
+<p>Just like port mapping, the first is host and second is container.</p>
+<h2 id="list-of-flags">List of Flags</h2>
+<p>These are the ones you’ll use 90% of the time:</p>
+<ul>
+<li><code>-d</code> → Run in <strong>detached mode</strong> (in the background).</li>
+<li><code>-it</code> → Interactive + TTY (keeps a terminal open).</li>
+<li><code>--name &lt;name&gt;</code> → Give your container a name.</li>
+<li><code>-p &lt;host:container&gt;</code> → Publish ports (e.g., <code>-p 8080:80</code>).</li>
+<li><code>-e &lt;KEY=VALUE&gt;</code> → Set environment variables.</li>
+<li><code>-v &lt;host:container&gt;</code> → Mount a volume (bind mount or Docker volume).</li>
+<li><code>--rm</code> → Automatically remove the container when it exits.</li>
+<li><code>--network &lt;network&gt;</code> → Connect to a specific network.</li>
+<li><code>--restart &lt;policy&gt;</code> → Restart policy (<code>no</code>, <code>always</code>, <code>on-failure</code>, <code>unless-stopped</code>).</li>
+<li><code>--cpus</code>, <code>--memory</code> → Limit CPU/memory usage.</li>
+<li><code>--entrypoint &lt;command&gt;</code> → Override the default entrypoint.</li>
+<li><code>--workdir &lt;dir&gt;</code> → Set working directory inside the container.</li>
+<li><code>--user &lt;uid:gid&gt;</code> → Run as a different user.</li>
+</ul>
+<hr />
 
 
 

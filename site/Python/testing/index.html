@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://healthfin.solutions/notes/AI/mcp/">
+        <link rel="canonical" href="https://healthfin.solutions/notes/Python/testing/">
       
       
-        <link rel="prev" href="../docs_105_local_llm/">
+        <link rel="prev" href="../docs_9_std_lib/">
       
       
-        <link rel="next" href="../../Rust/rust01/">
+        <link rel="next" href="../docs_4_building_large_projects/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>MCP - Tech Notes</title>
+        <title>Testing Code - Tech Notes</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#mcp" class="md-skip">
+        <a href="#testing" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              MCP
+              Testing Code
             
           </span>
         </div>
@@ -252,17 +252,19 @@
       
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -276,7 +278,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Python
@@ -325,7 +327,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Python/docs_1_what_is_python/" class="md-nav__link">
+      <a href="../docs_1_what_is_python/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -346,7 +348,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Python/docs_2_how_to_use/" class="md-nav__link">
+      <a href="../docs_2_how_to_use/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -367,7 +369,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Python/docs_3_writing_code/" class="md-nav__link">
+      <a href="../docs_3_writing_code/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -393,17 +395,19 @@
                 
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
@@ -417,7 +421,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_2">
             <span class="md-nav__icon md-icon"></span>
             Advanced Coding
@@ -431,7 +435,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Python/docs_5_advanced_topics/" class="md-nav__link">
+      <a href="../docs_5_advanced_topics/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -452,7 +456,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Python/docs_7_important_libraries/" class="md-nav__link">
+      <a href="../docs_7_important_libraries/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -473,7 +477,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Python/docs_9_std_lib/" class="md-nav__link">
+      <a href="../docs_9_std_lib/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -491,10 +495,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../Python/testing/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Testing Code
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -503,6 +527,77 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pytest" class="md-nav__link">
+    <span class="md-ellipsis">
+      pytest
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="pytest">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install" class="md-nav__link">
+    <span class="md-ellipsis">
+      Install
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quickstart" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quickstart
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Strategy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Commands
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -558,7 +653,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Python/docs_4_building_large_projects/" class="md-nav__link">
+      <a href="../docs_4_building_large_projects/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -579,7 +674,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Python/deployment/" class="md-nav__link">
+      <a href="../deployment/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -600,7 +695,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Python/docs_6_publishing_project/" class="md-nav__link">
+      <a href="../docs_6_publishing_project/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -664,7 +759,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Python/python_uv/" class="md-nav__link">
+      <a href="../python_uv/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -685,7 +780,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Python/docs_8_documentation/" class="md-nav__link">
+      <a href="../docs_8_documentation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1264,19 +1359,17 @@
       
   
   
-    
   
   
-  
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
         
           
           <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
@@ -1290,7 +1383,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
             AI
@@ -1304,7 +1397,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../docs_105_local_llm/" class="md-nav__link">
+      <a href="../../AI/docs_105_local_llm/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1322,30 +1415,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    MCP
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../AI/mcp/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1354,86 +1427,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#mcp-is-simply-a-decision-making-ai-process" class="md-nav__link">
-    <span class="md-ellipsis">
-      MCP is simply a decision making AI process.
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#use-cases" class="md-nav__link">
-    <span class="md-ellipsis">
-      Use Cases
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#simple-how-to" class="md-nav__link">
-    <span class="md-ellipsis">
-      Simple How-To
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#what-kind-of-server-is-an-mcp-server" class="md-nav__link">
-    <span class="md-ellipsis">
-      What kind of server is an MCP server?
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="What kind of server is an MCP server?">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#why-you-might-make-mcp-into-a-server" class="md-nav__link">
-    <span class="md-ellipsis">
-      Why you might make MCP into a server
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#what-it-looks-like" class="md-nav__link">
-    <span class="md-ellipsis">
-      What it looks like
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1493,55 +1486,46 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#mcp-is-simply-a-decision-making-ai-process" class="md-nav__link">
+  <a href="#pytest" class="md-nav__link">
     <span class="md-ellipsis">
-      MCP is simply a decision making AI process.
+      pytest
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#use-cases" class="md-nav__link">
-    <span class="md-ellipsis">
-      Use Cases
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#simple-how-to" class="md-nav__link">
-    <span class="md-ellipsis">
-      Simple How-To
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#what-kind-of-server-is-an-mcp-server" class="md-nav__link">
-    <span class="md-ellipsis">
-      What kind of server is an MCP server?
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="What kind of server is an MCP server?">
+    <nav class="md-nav" aria-label="pytest">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#why-you-might-make-mcp-into-a-server" class="md-nav__link">
+  <a href="#install" class="md-nav__link">
     <span class="md-ellipsis">
-      Why you might make MCP into a server
+      Install
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#what-it-looks-like" class="md-nav__link">
+  <a href="#quickstart" class="md-nav__link">
     <span class="md-ellipsis">
-      What it looks like
+      Quickstart
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Strategy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Commands
     </span>
   </a>
   
@@ -1567,203 +1551,86 @@
                   
 
 
-<h1 id="mcp">MCP</h1>
-<hr />
-<ul>
-<li>It’s the <strong>decision-making + orchestration layer</strong> between an LLM and the outside world.</li>
-<li>Whether it’s a server, a local script, or a function call depends on your use case.</li>
-</ul>
-<hr />
-<h2 id="mcp-is-simply-a-decision-making-ai-process">MCP is simply a decision making AI process.</h2>
-<hr />
-<p>Conceptually, <strong>MCP is simply a decision‑making AI process</strong> that:</p>
-<ol>
-<li><strong>Receives a request</strong> from the user.</li>
-<li><strong>Understands the available capabilities</strong> (tools, APIs, data).</li>
-<li><strong>Chooses what to do</strong> — which tools to use, in what order, and with what parameters.</li>
-<li><strong>Executes those tools</strong> and feeds results back into the reasoning loop.</li>
-<li><strong>Produces the final answer or action</strong>.</li>
-</ol>
-<hr />
-<p>You can think of it like:</p>
-<ul>
-<li><strong>Without MCP</strong> → LLM just chats, no actions.</li>
-<li><strong>With MCP</strong> → LLM chats <em>and</em> decides how to use other resources to accomplish a goal.</li>
-</ul>
-<p>Whether it lives in:</p>
-<ul>
-<li>A <strong>local script</strong></li>
-<li>A <strong>web server</strong></li>
-<li>A <strong>cloud service</strong></li>
-</ul>
-<p>…doesn’t change the concept — the “MCP” part is the <strong>orchestration brain</strong>.</p>
-<hr />
-<h2 id="use-cases">Use Cases</h2>
-<hr />
-<ul>
-<li>MCP is a great decision-maker when things are ambiguous or user-driven.</li>
-<li>But in a strict, well-bounded pipeline, procedural code will always win for speed, cost, and control.</li>
-</ul>
-<hr />
-<h2 id="simple-how-to">Simple How-To</h2>
-<hr />
-<ol>
-<li>Pick your LLM you want to use for MCP.</li>
-<li>Define the tools you want the model to have access to (python functions).</li>
-<li>Give the model access to those tools.</li>
-<li>Run.</li>
-</ol>
-<p>Demo....</p>
-<hr />
-<h2 id="what-kind-of-server-is-an-mcp-server">What kind of server is an MCP server?</h2>
-<hr />
-<p>An <strong>MCP server</strong> is not as complex as you might think. It's really just:</p>
-<blockquote>
-<p>A <strong>web server</strong> that hosts your MCP logic and exposes it over an API so other apps (or people) can use it.</p>
-</blockquote>
-<hr />
-<h3 id="why-you-might-make-mcp-into-a-server">Why you might make MCP into a server</h3>
-<ul>
-<li>You want <strong>multiple clients</strong> (web apps, mobile apps, scripts) to use the same tools and orchestration logic.</li>
-<li>You want a <strong>centralized place</strong> to manage:<ul>
-<li>API keys</li>
-<li>Data sources</li>
-<li>Permissions</li>
-<li>Logging and monitoring of tool calls</li>
-</ul>
-</li>
-<li>You want it <strong>always running</strong> instead of firing up the Python script each time.</li>
-</ul>
-<hr />
-<h3 id="what-it-looks-like">What it looks like</h3>
-<p>If we turned our current LangGraph example into a server:</p>
-<ul>
-<li>The LangGraph agent would still decide which tools to run.</li>
-<li>The tools would still be Python functions calling APIs or databases.</li>
-<li>But instead of calling <code>.invoke()</code> in a local script, you’d send a POST request like:</li>
-</ul>
+<h1 id="testing">Testing</h1>
+<p>Testing is a powerful way to catch any errors in your code, with code. Instead of 
+trying to run your code and catch errors, testing libraries can help catch things
+faster.</p>
+<h2 id="pytest">pytest</h2>
+<p><code>pytest</code> is a 3rd party library, built on the standard library <code>unittest</code>.</p>
+<h3 id="install">Install</h3>
+<p><code>pip install pytest</code> or <code>uv add pytest</code></p>
+<h3 id="quickstart">Quickstart</h3>
+<p>In your project create a folder called <code>test</code>. Add a test module for each 
+module you want to test. Make sure to include the word "test" before
+or after the name, like below.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="err">POST /ask</span>
-<span class="err">{</span>
-<span class="err">  &quot;question&quot;: &quot;What&#39;s the population of Chicago and the weather there?&quot;</span>
-<span class="err">}</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code>- project
+  - src
+    - adapters
+    - app
+      - my_module.py
+      - utils
+      - tests
+        - test_my_module.py
+  - pyproject.toml
 </code></pre></div></td></tr></table></div>
-<p>And the server would respond with the final text answer.</p>
-<hr />
-<p>So yes — an “MCP server” is basically:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>Web server + MCP logic + LLM + tools
+<p>Inside the module you can add functions or classes/methods that do the testing.
+Here is a simple example:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># my_module.py</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">add_numbers</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
-<p>The “MCP” part is still the <strong>decision-making layer</strong>, the “server” part is just about how it’s deployed.</p>
-<hr />
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span>
-<span class="normal">33</span>
-<span class="normal">34</span>
-<span class="normal">35</span>
-<span class="normal">36</span>
-<span class="normal">37</span>
-<span class="normal">38</span>
-<span class="normal">39</span>
-<span class="normal">40</span>
-<span class="normal">41</span>
-<span class="normal">42</span>
-<span class="normal">43</span>
-<span class="normal">44</span>
-<span class="normal">45</span>
-<span class="normal">46</span>
-<span class="normal">47</span>
-<span class="normal">48</span>
-<span class="normal">49</span>
-<span class="normal">50</span>
-<span class="normal">51</span>
-<span class="normal">52</span>
-<span class="normal">53</span>
-<span class="normal">54</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">MCP Demo</span>
-<span class="sd">--------</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># test_my_module.py</span>
 
-<span class="sd">This is a demo of how to use LangChain with MCP.</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">my_module</span><span class="w"> </span><span class="kn">import</span> <span class="n">add_numbers</span>
 
-<span class="sd">To run this demo, first install the dependencies: ``uv add langchain-anthropic python-dotenv langgraph``</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">test_add_numbers</span><span class="p">():</span>
+    <span class="k">assert</span> <span class="n">add_numbers</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="mi">3</span>
+</code></pre></div></td></tr></table></div>
+<p>Once your tests are built, run <code>pytest</code>. Pytest will search recursively for:</p>
+<ul>
+<li>All modules named <code>test_*.py</code> or <code>*_test.py</code> and then inside they look for...</li>
+<li>functions that start with <code>test_</code></li>
+<li>Classes with Test (that don't have an <strong>init</strong>)</li>
+<li>Methods inside those classes that start with <code>test_</code></li>
+</ul>
+<p>Then run those tests.</p>
+<h3 id="strategy">Strategy</h3>
+<p>It's best practice to write tests and run as you go. If you add new logic, create a test for it.
+Otherwise you'll accumulate too much technical debt and it will be a big job to 
+write tests for everything. Higher chance of missing something. </p>
+<h3 id="commands">Commands</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># run all tests</span>
+pytest
 
+<span class="c1"># run single test file</span>
+pytest<span class="w"> </span>tests/test_my_module.py
 
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">dotenv</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_dotenv</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">langchain_anthropic</span><span class="w"> </span><span class="kn">import</span> <span class="n">ChatAnthropic</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">langchain_core.tools</span><span class="w"> </span><span class="kn">import</span> <span class="n">tool</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">langgraph.prebuilt</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_react_agent</span>
-
-<span class="n">load_dotenv</span><span class="p">()</span>
-
-<span class="c1"># 1. Define your LLM</span>
-<span class="n">llm</span> <span class="o">=</span> <span class="n">ChatAnthropic</span><span class="p">(</span>
-    <span class="n">model</span><span class="o">=</span><span class="s2">&quot;claude-3-opus-20240229&quot;</span><span class="p">,</span>
-    <span class="n">api_key</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;ANTHROPIC_API_KEY&quot;</span><span class="p">),</span>
-    <span class="n">temperature</span><span class="o">=</span><span class="mi">0</span>  <span class="c1"># tells the llm how varied responses should be. 0=always same answer (highest probability).</span>
-<span class="p">)</span>
-
-<span class="c1"># 2. Define a tool</span>
-<span class="nd">@tool</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">get_weather</span><span class="p">(</span><span class="n">city</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Gets the weather for a given city.&quot;&quot;&quot;</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[Tool] Getting weather for </span><span class="si">{</span><span class="n">city</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;The weather in </span><span class="si">{</span><span class="n">city</span><span class="si">}</span><span class="s2"> is sunny.&quot;</span>
-
-<span class="nd">@tool</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">get_population</span><span class="p">(</span><span class="n">city</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Gets the population of a given city.&quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;The population of </span><span class="si">{</span><span class="n">city</span><span class="si">}</span><span class="s2"> is about 3 million.&quot;</span>
-
-
-<span class="nd">@tool</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">get_latitude_and_longitude</span><span class="p">(</span><span class="n">city</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Gets the latitude and longitude of a given city.&quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;The population of </span><span class="si">{</span><span class="n">city</span><span class="si">}</span><span class="s2"> is about 3 million.&quot;</span>
-
-
-
-<span class="c1"># 3. Create the agent (LangGraph style)</span>
-<span class="n">agent</span> <span class="o">=</span> <span class="n">create_react_agent</span><span class="p">(</span><span class="n">llm</span><span class="p">,</span> <span class="p">[</span><span class="n">get_weather</span><span class="p">,</span> <span class="n">get_population</span><span class="p">,</span> <span class="n">get_latitude_and_longitude</span><span class="p">],</span> <span class="n">debug</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-<span class="c1"># 4. Invoke it</span>
-<span class="n">result</span> <span class="o">=</span> <span class="n">agent</span><span class="o">.</span><span class="n">invoke</span><span class="p">({</span><span class="s2">&quot;messages&quot;</span><span class="p">:</span> <span class="p">[{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;What is the weather like in San Francisco?.&quot;</span><span class="p">}]})</span>
-
-<span class="c1"># Get the last message</span>
-<span class="n">last_message</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="s2">&quot;messages&quot;</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">last_message</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+<span class="c1"># run single test function</span>
+pytests<span class="w"> </span>tests/test_my_module.py::test_add_numbers
 </code></pre></div></td></tr></table></div>
 
 
