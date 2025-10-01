@@ -940,6 +940,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AI/docs_105_local_llm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Host an LLM
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1308,7 +1329,7 @@
         
   
   <span class="md-ellipsis">
-    Ollama
+    Host an LLM
   </span>
   
 
@@ -1670,6 +1691,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#ai-docs_105_local_llm" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.5 Host an LLM
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1814,7 +1844,7 @@
           <li class="md-nav__item">
   <a href="#ai-docs_105_local_llm" class="md-nav__link">
     <span class="md-ellipsis">
-      8.1 Ollama
+      8.1 Host an LLM
     </span>
   </a>
   
@@ -5088,7 +5118,118 @@ The last one that runs becomes the actual image.</p>
 <span class="k">RUN</span><span class="w"> </span>uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--system<span class="w"> </span>/tmp/*.whl<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>rm<span class="w"> </span>/tmp/*.whl
 
 <span class="k">CMD</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;invoice_start&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;--sharepoint&quot;</span><span class="p">]</span>
-</code></pre></div></td></tr></table></div></section></section>
+</code></pre></div></td></tr></table></div></section><section class="print-page" id="ai-docs_105_local_llm" heading-number="4.5"><h1 id="ai-docs_105_local_llm-ollama">Ollama</h1>
+<p>Ollama is an open-source LLM runtime environment. </p>
+<p>Simply put:</p>
+<ol>
+<li>Rum Ollama</li>
+<li>Download the model you'd like to use (mistral, llama3, etc.)</li>
+<li>Go to the WebUI</li>
+<li>Select the model you want to use.</li>
+<li>Chat away!</li>
+</ol>
+<p>Download a model: <code>docker exec -it ollama ollama pull mistral</code> or <code>docker exec -it ollama ollama pull llama3</code></p>
+<p>Here is a docker compose file that runs it all:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">services</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">ollama</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ollama/ollama:latest</span>
+<span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ollama</span>
+<span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unless-stopped</span>
+<span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;11434:11434&quot;</span><span class="w">   </span><span class="c1"># Ollama API exposed</span>
+<span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ollama_data:/root/.ollama</span><span class="w">  </span><span class="c1"># Persist models</span>
+
+<span class="w">  </span><span class="nt">open-webui</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/open-webui/open-webui:main</span>
+<span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">open-webui</span>
+<span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unless-stopped</span>
+<span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;3000:8080&quot;</span><span class="w">   </span><span class="c1"># WebUI runs here</span>
+<span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">OLLAMA_API_BASE_URL=http://ollama:11434</span>
+<span class="w">    </span><span class="nt">depends_on</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ollama</span>
+
+<span class="nt">volumes</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">ollama_data</span><span class="p">:</span>
+</code></pre></div></td></tr></table></div>
+<p>You can go to <a href="https://localhost:3000">https://localhost:3000</a> to use the web ui or you can use the API.</p>
+<p>API call:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="err">### Generate text with llama3</span>
+<span class="err">POST http://localhost:11434/api/generate</span>
+<span class="err">Content-Type: application/json</span>
+
+<span class="err">{</span>
+<span class="err">  &quot;model&quot;: &quot;llama3&quot;,</span>
+<span class="err">  &quot;prompt&quot;: &quot;Write a haiku about data pipelines&quot;</span>
+<span class="err">}</span>
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+    <span class="s2">&quot;http://localhost:11434/api/generate&quot;</span><span class="p">,</span>
+    <span class="n">json</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="s2">&quot;llama3&quot;</span><span class="p">,</span> <span class="s2">&quot;prompt&quot;</span><span class="p">:</span> <span class="s2">&quot;Hello from PyCharm!&quot;</span><span class="p">}</span>
+<span class="p">)</span>
+
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">iter_lines</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">line</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span>
+</code></pre></div></td></tr></table></div>
+<p>Available models can be found here:
+https://registry.ollama.ai/search</p>
+<p>To download other models:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="err">POST http://localhost:11434/api/pull</span>
+<span class="err">Content-Type: application/json</span>
+
+<span class="err">{</span>
+<span class="err">  &quot;name&quot;: &quot;mistral&quot;</span>
+<span class="err">}</span>
+</code></pre></div></td></tr></table></div></p>
+<p>For more info on the REST API definition: https://github.com/ollama/ollama/blob/main/docs/api.md</p></section></section>
                     <section class='print-page md-section' id='section-5' heading-number='5'>
                         <h1>Networking<a class='headerlink' href='#section-5' title='Permanent link'></a>
                         </h1>
@@ -7545,6 +7686,11 @@ If you're creating a function or struct, anything with a data type, you can use 
 
                 .print-site-enumerate-headings #docker-docker_images h2:before { content: '4.4.' counter(counter-docker-docker_images-2) ' ' }
                 .print-site-enumerate-headings #docker-docker_images h2 {  counter-increment: counter-docker-docker_images-2 }
+            
+.print-site-enumerate-headings #ai-docs_105_local_llm > h1:before { content: '4.5 ' }
+
+                .print-site-enumerate-headings #ai-docs_105_local_llm h2:before { content: '4.5.' counter(counter-ai-docs_105_local_llm-2) ' ' }
+                .print-site-enumerate-headings #ai-docs_105_local_llm h2 {  counter-increment: counter-ai-docs_105_local_llm-2 }
             
 .print-site-enumerate-headings #section-5 > h1:before { content: '5 ' }
 .print-site-enumerate-headings #networking-docs_100_networking > h1:before { content: '5.1 ' }

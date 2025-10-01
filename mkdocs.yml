@@ -54,6 +54,7 @@ nav:
   - Basics: Docker/basics.md
   - Docker Compose: Docker/docker_compose.md
   - Creating Images (Dockerfile): Docker/docker_images.md
+  - Host an LLM: AI/docs_105_local_llm.md
 - Networking:
   - General Networking: Networking/docs_100_networking.md
   - Servers: Networking/docs_100_servers.md
