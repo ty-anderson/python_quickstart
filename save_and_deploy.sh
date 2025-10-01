@@ -8,3 +8,4 @@ git commit -m "update"
 git push origin master
 git push backup master
 rsync -av --delete --rsync-path="sudo rsync" ./site/ tyler@192.168.1.104:/srv/web_apps/notes/
+rsync -av --delete --rsync-path="sudo rsync" ./site/ tyler@192.168.1.104:/srv/web_apps/public_notes/

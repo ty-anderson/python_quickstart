@@ -53,7 +53,7 @@ nav:
   - Intro: Docker/intro.md
   - Basics: Docker/basics.md
   - Docker Compose: Docker/docker_compose.md
-  - Images (Dockerfile): Docker/docker_images.md
+  - Creating Images (Dockerfile): Docker/docker_images.md
 - Networking:
   - General Networking: Networking/docs_100_networking.md
   - Servers: Networking/docs_100_servers.md
