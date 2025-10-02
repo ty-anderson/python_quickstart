@@ -14,4 +14,5 @@ mv mkdocs.yml mkdocs_original.yml
 mv mkdocs_public.yml mkdocs.yml
 mkdocs build
 rsync -av --delete --rsync-path="sudo rsync" ./site/ tyler@192.168.1.104:/srv/web_apps/public_notes/
+mv mkdocs.yml mkdocs_public.yml
 mv mkdocs_original.yml mkdocs.yml
