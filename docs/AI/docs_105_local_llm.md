@@ -2,6 +2,8 @@
 
 Ollama is an open-source LLM runtime environment.
 
+## Run with Docker Compose
+
 Here is a docker compose that runs it all. 
 Save this to a file called ``docker-compose.yaml``.
 
@@ -33,9 +35,13 @@ volumes:
 
 Run the docker compose file with ``docker compose up -d``.
 
-You can go to [https://localhost:3000](https://localhost:3000) to use the web ui or you can use the API.
+## Access via WebUI
 
-API call:
+You can go to [https://localhost:3000](https://localhost:3000) to use the web ui.
+
+## API Call
+
+### Raw API Call
 
 ```http
 ### Generate text with llama3
@@ -48,23 +54,36 @@ Content-Type: application/json
 }
 ```
 
+### Python API Call
+
 ```python
+import json
 import requests
 
-response = requests.post(
-    "http://localhost:11434/api/generate",
-    json={"model": "llama3", "prompt": "Hello from PyCharm!"}
-)
+
+def ask_ai(prompt):
+   """Ask local AI model a question and get a streaming response."""
+   url = "http://localhost:11434/api/generate"
+   payload = {
+       "model": "llama3",
+       "prompt": prompt
+   }
+   headers = {"Content-Type": "application/json"}
+   return requests.post(url, json=payload, headers=headers, stream=True)
+
+response = ask_ai("What is the number pi?")
 
 for line in response.iter_lines():
-    if line:
-        print(line.decode())
+   if line:
+       decoded_json = json.loads(line.decode("utf-8"))
+       print(decoded_json['response'], end='')
 ```
+
+## Download Other Models
 
 Available models can be found here:
 https://registry.ollama.ai/search
 
-To download other models:
 ```http
 POST http://localhost:11434/api/pull
 Content-Type: application/json
@@ -78,6 +97,7 @@ or download a model with the docker command:
 ```bash
 # download mistral model
 docker exec -it ollama ollama pull mistral
+
 # download llama3 model
 docker exec -it ollama ollama pull llama3
 ```
