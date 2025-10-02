@@ -62,9 +62,12 @@ docker save -o /Users/tyleranderson/Downloads/yt_downloads_250226.tar yt_downloa
 docker load -i /srv/flask_yt_download/yt_downloads_250226.tar`
 ```
 
-## Docker Compose with Custom Images
+## Docker Compose Build on Run
 
 When you use docker compose with an image, you have two options:
+
+1. Build the image on run.
+2. Run from an existing image.
 
 Build image as part of docker compose start up.
 ```yaml

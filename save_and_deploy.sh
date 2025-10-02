@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+# full version, protected by caddy auth
 mkdocs build
 #.venv/bin/python to_pdf.py
 # mkdocs gh-deploy

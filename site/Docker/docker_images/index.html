@@ -990,9 +990,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#docker-compose-with-custom-images" class="md-nav__link">
+  <a href="#docker-compose-build-on-run" class="md-nav__link">
     <span class="md-ellipsis">
-      Docker Compose with Custom Images
+      Docker Compose Build on Run
     </span>
   </a>
   
@@ -1526,9 +1526,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#docker-compose-with-custom-images" class="md-nav__link">
+  <a href="#docker-compose-build-on-run" class="md-nav__link">
     <span class="md-ellipsis">
-      Docker Compose with Custom Images
+      Docker Compose Build on Run
     </span>
   </a>
   
@@ -1672,8 +1672,12 @@ docker<span class="w"> </span>save<span class="w"> </span>-o<span class="w"> </s
 <span class="c1"># load the file as an image</span>
 docker<span class="w"> </span>load<span class="w"> </span>-i<span class="w"> </span>/srv/flask_yt_download/yt_downloads_250226.tar<span class="sb">`</span>
 </code></pre></div></td></tr></table></div>
-<h2 id="docker-compose-with-custom-images">Docker Compose with Custom Images</h2>
+<h2 id="docker-compose-build-on-run">Docker Compose Build on Run</h2>
 <p>When you use docker compose with an image, you have two options:</p>
+<ol>
+<li>Build the image on run.</li>
+<li>Run from an existing image.</li>
+</ol>
 <p>Build image as part of docker compose start up.
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
