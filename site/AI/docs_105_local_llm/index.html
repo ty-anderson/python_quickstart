@@ -1545,7 +1545,14 @@ https://registry.ollama.ai/search</p>
 <span class="err">}</span>
 </code></pre></div></td></tr></table></div></p>
 <p>or download a model with the docker command: 
-<code>docker exec -it ollama ollama pull mistral</code> or <code>docker exec -it ollama ollama pull llama3</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># download mistral model</span>
+docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>ollama<span class="w"> </span>ollama<span class="w"> </span>pull<span class="w"> </span>mistral
+<span class="c1"># download llama3 model</span>
+docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>ollama<span class="w"> </span>ollama<span class="w"> </span>pull<span class="w"> </span>llama3
+</code></pre></div></td></tr></table></div></p>
 <p>For more info on the REST API definition: https://github.com/ollama/ollama/blob/main/docs/api.md</p>
 
 

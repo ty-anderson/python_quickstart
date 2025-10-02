@@ -75,7 +75,12 @@ Content-Type: application/json
 ```
 
 or download a model with the docker command: 
-``docker exec -it ollama ollama pull mistral`` or ``docker exec -it ollama ollama pull llama3``
+```bash
+# download mistral model
+docker exec -it ollama ollama pull mistral
+# download llama3 model
+docker exec -it ollama ollama pull llama3
+```
 
 For more info on the REST API definition: https://github.com/ollama/ollama/blob/main/docs/api.md
 
