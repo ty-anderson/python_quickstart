@@ -1441,17 +1441,9 @@
 
 
 <h1 id="ollama">Ollama</h1>
-<p>Ollama is an open-source LLM runtime environment. </p>
-<p>Simply put:</p>
-<ol>
-<li>Rum Ollama</li>
-<li>Download the model you'd like to use (mistral, llama3, etc.)</li>
-<li>Go to the WebUI</li>
-<li>Select the model you want to use.</li>
-<li>Chat away!</li>
-</ol>
-<p>Download a model: <code>docker exec -it ollama ollama pull mistral</code> or <code>docker exec -it ollama ollama pull llama3</code></p>
-<p>Here is a docker compose file that runs it all:</p>
+<p>Ollama is an open-source LLM runtime environment.</p>
+<p>Here is a docker compose that runs it all. 
+Save this to a file called <code>docker-compose.yaml</code>.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -1498,6 +1490,7 @@
 <span class="nt">volumes</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">ollama_data</span><span class="p">:</span>
 </code></pre></div></td></tr></table></div>
+<p>Run the docker compose file with <code>docker compose up -d</code>.</p>
 <p>You can go to <a href="https://localhost:3000">https://localhost:3000</a> to use the web ui or you can use the API.</p>
 <p>API call:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -1551,6 +1544,8 @@ https://registry.ollama.ai/search</p>
 <span class="err">  &quot;name&quot;: &quot;mistral&quot;</span>
 <span class="err">}</span>
 </code></pre></div></td></tr></table></div></p>
+<p>or download a model with the docker command: 
+<code>docker exec -it ollama ollama pull mistral</code> or <code>docker exec -it ollama ollama pull llama3</code></p>
 <p>For more info on the REST API definition: https://github.com/ollama/ollama/blob/main/docs/api.md</p>
 
 
