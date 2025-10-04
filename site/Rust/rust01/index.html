@@ -11,7 +11,7 @@
         <link rel="canonical" href="https://healthfin.solutions/notes/Rust/rust01/">
       
       
-        <link rel="prev" href="../../AI/mcp/">
+        <link rel="prev" href="../../Low%20Level/drivers/">
       
       
       
@@ -1347,6 +1347,90 @@
   
   <span class="md-ellipsis">
     MCP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Low-Level
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Low-Level
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Low%20Level/foundations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Learning Paths
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Low%20Level/drivers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Drivers
   </span>
   
 
@@ -2726,8 +2810,7 @@ This is because if statements evaluate to a value and are actually called <stron
 <h4 id="moving-variables">Moving Variables</h4>
 <p>When setting a variable equal to a new variable, Rust invalidates the first variable.
 This is to prevent double free errors which are when the ownership model tries to drop one of the variables but not the other that is also referencing the same memory.</p>
-<p><img alt="img.png" src="images/memory-pointing.png" />
-s1 becomes invalid when s2 is assigned to s1.  This is because s1 and s2 are both pointing to the same memory address.  When s2 is assigned to s1, s1 is no longer valid because it is no longer the only owner of the memory address.</p>
+<p>s1 becomes invalid when s2 is assigned to s1.  This is because s1 and s2 are both pointing to the same memory address.  When s2 is assigned to s1, s1 is no longer valid because it is no longer the only owner of the memory address.</p>
 <h4 id="stack-data-copy">Stack Data - Copy</h4>
 <p>Data that is stored on the stack is so efficient that its not a problem to manage.  As a convience, Rust is not afraid to duplicate data that’s stored on the stack.  In other words, references on the stack that point to data on the heap need much more management which is why there are more rules and limiations to follow. Like moving variables,</p>
 <p>For stack data, there's no differences between shallow and deep copys because of something called the copy trait.  Variables that hold data with types that have the copy trait, are copied instead of moved so they are still valid after the copy.</p>

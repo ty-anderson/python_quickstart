@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://healthfin.solutions/notes/Docker/basics/">
+        <link rel="canonical" href="https://healthfin.solutions/notes/Low%20Level/foundations/">
       
       
-        <link rel="prev" href="../intro/">
+        <link rel="prev" href="../../AI/mcp/">
       
       
-        <link rel="next" href="../docker_compose/">
+        <link rel="next" href="../drivers/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Basics - Tech Notes</title>
+        <title>Learning Paths - Tech Notes</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#common-commands" class="md-skip">
+        <a href="#foundations" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Basics
+              Learning Paths
             
           </span>
         </div>
@@ -823,19 +823,17 @@
       
   
   
-    
   
   
-  
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
@@ -849,7 +847,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Docker
@@ -863,7 +861,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../intro/" class="md-nav__link">
+      <a href="../../Docker/intro/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -881,30 +879,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Basics
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../Docker/basics/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -913,77 +891,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#run-a-container-examples" class="md-nav__link">
-    <span class="md-ellipsis">
-      Run a Container Examples
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#connecting-resources-to-host" class="md-nav__link">
-    <span class="md-ellipsis">
-      Connecting Resources to Host
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Connecting Resources to Host">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#docker-ports" class="md-nav__link">
-    <span class="md-ellipsis">
-      Docker Ports
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#docker-volumes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Docker Volumes
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#list-of-flags" class="md-nav__link">
-    <span class="md-ellipsis">
-      List of Flags
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -996,7 +903,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../docker_compose/" class="md-nav__link">
+      <a href="../../Docker/docker_compose/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1017,7 +924,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../docker_images/" class="md-nav__link">
+      <a href="../../Docker/docker_images/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1462,17 +1369,19 @@
       
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
         
           
           <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
@@ -1486,7 +1395,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_9">
             <span class="md-nav__icon md-icon"></span>
             Low-Level
@@ -1497,10 +1406,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../Low%20Level/foundations/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Learning Paths
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1509,6 +1438,71 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#cpu-instructions" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹 CPU &amp; Instructions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operating-system-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹 Operating System Concepts
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hardware-io" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹 Hardware &amp; I/O
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#systems-programming" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹 Systems Programming
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cool-projects-to-learn-by-doing" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹 Cool Projects to Learn By Doing
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1521,7 +1515,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Low%20Level/drivers/" class="md-nav__link">
+      <a href="../drivers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1589,51 +1583,45 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#run-a-container-examples" class="md-nav__link">
+  <a href="#cpu-instructions" class="md-nav__link">
     <span class="md-ellipsis">
-      Run a Container Examples
+      🔹 CPU &amp; Instructions
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#connecting-resources-to-host" class="md-nav__link">
+  <a href="#operating-system-concepts" class="md-nav__link">
     <span class="md-ellipsis">
-      Connecting Resources to Host
+      🔹 Operating System Concepts
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Connecting Resources to Host">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#docker-ports" class="md-nav__link">
-    <span class="md-ellipsis">
-      Docker Ports
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#docker-volumes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Docker Volumes
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#list-of-flags" class="md-nav__link">
+  <a href="#hardware-io" class="md-nav__link">
     <span class="md-ellipsis">
-      List of Flags
+      🔹 Hardware &amp; I/O
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#systems-programming" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹 Systems Programming
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cool-projects-to-learn-by-doing" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹 Cool Projects to Learn By Doing
     </span>
   </a>
   
@@ -1654,135 +1642,55 @@
                   
 
 
-<h1 id="common-commands">Common Commands</h1>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span>
-<span class="normal">33</span>
-<span class="normal">34</span>
-<span class="normal">35</span>
-<span class="normal">36</span>
-<span class="normal">37</span>
-<span class="normal">38</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># When you find an image you want to use do</span>
-docker<span class="w"> </span>pull<span class="w"> </span>&lt;image_name&gt;
-
-<span class="c1"># To see images downloaded use</span>
-docker<span class="w"> </span>images
-
-<span class="c1"># see running containers</span>
-docker<span class="w"> </span>ps
-
-<span class="c1"># see all containers</span>
-docker<span class="w"> </span>ps<span class="w"> </span>-a
-
-<span class="c1"># run a new container.</span>
-docker<span class="w"> </span>run<span class="w"> </span>image-name<span class="w"> </span>-d
-<span class="c1"># -d means run in detached mode so when the terminal is closed, the container continues to run</span>
-
-<span class="c1"># run existing container </span>
-docker<span class="w"> </span>start<span class="w"> </span>container-name
-
-<span class="c1"># stop docker container</span>
-docker<span class="w"> </span>stop<span class="w"> </span>image-name
-
-<span class="c1"># remove an image by name and tag</span>
-docker<span class="w"> </span>rmi<span class="w"> </span>postgres:latest
-
-<span class="c1"># remove a container by ID or name</span>
-docker<span class="w"> </span>rm<span class="w"> </span>123456789abc
-docker<span class="w"> </span>rm<span class="w"> </span>container_01
-
-<span class="c1"># Docker containers are their own sort of OS. You can SSH into it.</span>
-docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>&lt;container-name-or-id&gt;<span class="w"> </span>/bin/sh
-<span class="c1"># /bin/sh is the terminal experience (shell in this case) you could do /bin/bash</span>
-
-<span class="c1"># access container logs</span>
-docker<span class="w"> </span>logs<span class="w"> </span>&lt;container<span class="w"> </span>name<span class="w"> </span>or<span class="w"> </span>id&gt;
-
-<span class="c1"># continuously showing log output</span>
-docker<span class="w"> </span>logs<span class="w"> </span>-f<span class="w"> </span>&lt;container-name-or-id&gt;
-</code></pre></div></td></tr></table></div>
-<h2 id="run-a-container-examples">Run a Container Examples</h2>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># simplest docker image run</span>
-docker<span class="w"> </span>run<span class="w"> </span>hello-world
-
-<span class="c1"># run alpine linux (tiny image). sh lets you explore inside the container</span>
-docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span>alpine<span class="w"> </span>sh
-
-<span class="c1"># Some containers need other info to run, which can be passed after the command</span>
-<span class="c1"># --name is what the container will be named</span>
-<span class="c1"># -p is for port mapping host computer port to image port (first is host, second is container)</span>
-<span class="c1"># -e is for adding environment variables</span>
-docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> </span>postgres_db<span class="w"> </span>-e<span class="w"> </span><span class="nv">POSTGRES_PASSWORD</span><span class="o">=</span>postgres<span class="w"> </span>-p<span class="w"> </span><span class="m">5432</span>:5432<span class="w"> </span>-d<span class="w"> </span>postgres
-</code></pre></div></td></tr></table></div>
-<h2 id="connecting-resources-to-host">Connecting Resources to Host</h2>
-<h3 id="docker-ports">Docker Ports</h3>
-<p>Accessing endpoints from the host machine is typically done through ports. You can map the 
-host machine port to the port that is being used in the docker container.</p>
-<p><code>docker run -p 5432:5432 -d &lt;image_name&gt;</code></p>
-<h3 id="docker-volumes">Docker Volumes</h3>
-<p>Files and Docker
-If you need to use files for anything involving docker, you need to configure volumes.</p>
-<p>Volumes are a mapping of the docker container file system to the host file system.</p>
-<p><code>-v /home/svr/immich:/usr/src/app/upload</code></p>
-<p>Just like port mapping, the first is host and second is container.</p>
-<h2 id="list-of-flags">List of Flags</h2>
-<p>These are the ones you’ll use 90% of the time:</p>
+<h1 id="foundations">🔹 Foundations</h1>
 <ul>
-<li><code>-d</code> → Run in <strong>detached mode</strong> (in the background).</li>
-<li><code>-it</code> → Interactive + TTY (keeps a terminal open).</li>
-<li><code>--name &lt;name&gt;</code> → Give your container a name.</li>
-<li><code>-p &lt;host:container&gt;</code> → Publish ports (e.g., <code>-p 8080:80</code>).</li>
-<li><code>-e &lt;KEY=VALUE&gt;</code> → Set environment variables.</li>
-<li><code>-v &lt;host:container&gt;</code> → Mount a volume (bind mount or Docker volume).</li>
-<li><code>--rm</code> → Automatically remove the container when it exits.</li>
-<li><code>--network &lt;network&gt;</code> → Connect to a specific network.</li>
-<li><code>--restart &lt;policy&gt;</code> → Restart policy (<code>no</code>, <code>always</code>, <code>on-failure</code>, <code>unless-stopped</code>).</li>
-<li><code>--cpus</code>, <code>--memory</code> → Limit CPU/memory usage.</li>
-<li><code>--entrypoint &lt;command&gt;</code> → Override the default entrypoint.</li>
-<li><code>--workdir &lt;dir&gt;</code> → Set working directory inside the container.</li>
-<li><code>--user &lt;uid:gid&gt;</code> → Run as a different user.</li>
+<li><strong>Binary &amp; Hexadecimal</strong> → how computers represent data.</li>
+<li><strong>Boolean logic &amp; gates</strong> → the “math” of 0s and 1s.</li>
+<li><strong>Memory addressing</strong> → how data lives in RAM and how the CPU finds it.</li>
 </ul>
 <hr />
+<h3 id="cpu-instructions">🔹 CPU &amp; Instructions</h3>
+<ul>
+<li><strong>Assembly language</strong> → the CPU’s direct instructions (add, move, jump).</li>
+<li><strong>Instruction set architectures (ISA)</strong> → x86 vs ARM vs RISC-V.</li>
+<li><strong>Registers &amp; stack</strong> → tiny but super-fast memory inside the CPU.</li>
+<li><strong>Interrupts</strong> → how hardware says “hey CPU, stop and listen to me.”</li>
+</ul>
+<hr />
+<h3 id="operating-system-concepts">🔹 Operating System Concepts</h3>
+<ul>
+<li><strong>System calls</strong> → how user programs ask the OS to do privileged work (like file access).</li>
+<li><strong>Processes &amp; threads</strong> → how the OS runs multiple programs “at once.”</li>
+<li><strong>Virtual memory</strong> → how programs see their own memory space, even though RAM is shared.</li>
+<li><strong>Scheduling</strong> → how the OS decides which process runs next.</li>
+<li><strong>Device drivers</strong> → how the OS talks to hardware.</li>
+</ul>
+<hr />
+<h3 id="hardware-io">🔹 Hardware &amp; I/O</h3>
+<ul>
+<li><strong>Buses &amp; ports</strong> → how components (CPU, RAM, GPU, disk) communicate.</li>
+<li><strong>Storage devices</strong> → how disks store and retrieve data.</li>
+<li><strong>Networking</strong> → packets, NICs, how TCP/IP actually leaves your computer.</li>
+<li><strong>Keyboard/mouse (HID), display, GPU basics</strong> → common hardware roles.</li>
+</ul>
+<hr />
+<h3 id="systems-programming">🔹 Systems Programming</h3>
+<ul>
+<li><strong>Memory management</strong> → stack vs heap, allocation, fragmentation.</li>
+<li><strong>Pointers &amp; references</strong> → how languages like C and Rust directly manipulate memory.</li>
+<li><strong>Concurrency</strong> → threads, locks, atomics, deadlocks.</li>
+<li><strong>File systems</strong> → how bytes on disk become folders/files.</li>
+<li><strong>Compilers &amp; interpreters</strong> → how code becomes machine instructions.</li>
+</ul>
+<hr />
+<h3 id="cool-projects-to-learn-by-doing">🔹 Cool Projects to Learn By Doing</h3>
+<ul>
+<li>Write a tiny program in <strong>assembly</strong>.</li>
+<li>Implement a <strong>toy memory allocator</strong> in C or Rust.</li>
+<li>Build a very simple <strong>command-line shell</strong>.</li>
+<li>Follow an OS tutorial (like “write your own kernel in Rust” → <a href="https://os.phil-opp.com/">Phil Opp’s blog</a>).</li>
+<li>Write a basic <strong>network packet sniffer</strong>.</li>
+</ul>
 
 
 

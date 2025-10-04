@@ -69,4 +69,7 @@ nav:
 - AI:
   - Ollama: AI/docs_105_local_llm.md
   - MCP: AI/mcp.md
+- Low-Level:
+  - Learning Paths: Low Level/foundations.md
+  - Drivers: Low Level/drivers.md
 - Rust: Rust/rust01.md

@@ -465,7 +465,7 @@ The example above is ok because by the time r3 (the mutable referece) is created
 When setting a variable equal to a new variable, Rust invalidates the first variable.
 This is to prevent double free errors which are when the ownership model tries to drop one of the variables but not the other that is also referencing the same memory.
 
-![img.png](images/memory-pointing.png)
+[//]: # (![img.png]&#40;images/memory-pointing.png&#41;)
 s1 becomes invalid when s2 is assigned to s1.  This is because s1 and s2 are both pointing to the same memory address.  When s2 is assigned to s1, s1 is no longer valid because it is no longer the only owner of the memory address.
 
 #### Stack Data - Copy

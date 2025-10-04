@@ -1373,6 +1373,90 @@
   
   
   
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Low-Level
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Low-Level
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Low%20Level/foundations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Learning Paths
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Low%20Level/drivers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Drivers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
     <li class="md-nav__item">
       <a href="../Rust/rust01/" class="md-nav__link">
         
@@ -1865,9 +1949,42 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#section-9" class="md-nav__link">
+    <span class="md-ellipsis">
+      9 Low-Level
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9 Low-Level">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#low%20level-foundations" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.1 Learning Paths
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#low%20level-drivers" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.2 Drivers
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#rust-rust01" class="md-nav__link">
     <span class="md-ellipsis">
-      9 Rust
+      10 Rust
     </span>
   </a>
   
@@ -6715,7 +6832,72 @@ docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </spa
 <span class="c1"># Get the last message</span>
 <span class="n">last_message</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="s2">&quot;messages&quot;</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">last_message</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
-</code></pre></div></td></tr></table></div></section></section><section class="print-page" id="rust-rust01" heading-number="9"><h1 id="rust-rust01-rust-notes">Rust Notes</h1>
+</code></pre></div></td></tr></table></div></section></section>
+                    <section class='print-page md-section' id='section-9' heading-number='9'>
+                        <h1>Low-Level<a class='headerlink' href='#section-9' title='Permanent link'></a>
+                        </h1>
+                    <section class="print-page" id="low%20level-foundations" heading-number="9.1"><h1 id="low%20level-foundations-foundations">🔹 Foundations</h1>
+<ul>
+<li><strong>Binary &amp; Hexadecimal</strong> → how computers represent data.</li>
+<li><strong>Boolean logic &amp; gates</strong> → the “math” of 0s and 1s.</li>
+<li><strong>Memory addressing</strong> → how data lives in RAM and how the CPU finds it.</li>
+</ul>
+<hr />
+<h3 id="low%20level-foundations-cpu-instructions">🔹 CPU &amp; Instructions</h3>
+<ul>
+<li><strong>Assembly language</strong> → the CPU’s direct instructions (add, move, jump).</li>
+<li><strong>Instruction set architectures (ISA)</strong> → x86 vs ARM vs RISC-V.</li>
+<li><strong>Registers &amp; stack</strong> → tiny but super-fast memory inside the CPU.</li>
+<li><strong>Interrupts</strong> → how hardware says “hey CPU, stop and listen to me.”</li>
+</ul>
+<hr />
+<h3 id="low%20level-foundations-operating-system-concepts">🔹 Operating System Concepts</h3>
+<ul>
+<li><strong>System calls</strong> → how user programs ask the OS to do privileged work (like file access).</li>
+<li><strong>Processes &amp; threads</strong> → how the OS runs multiple programs “at once.”</li>
+<li><strong>Virtual memory</strong> → how programs see their own memory space, even though RAM is shared.</li>
+<li><strong>Scheduling</strong> → how the OS decides which process runs next.</li>
+<li><strong>Device drivers</strong> → how the OS talks to hardware.</li>
+</ul>
+<hr />
+<h3 id="low%20level-foundations-hardware-io">🔹 Hardware &amp; I/O</h3>
+<ul>
+<li><strong>Buses &amp; ports</strong> → how components (CPU, RAM, GPU, disk) communicate.</li>
+<li><strong>Storage devices</strong> → how disks store and retrieve data.</li>
+<li><strong>Networking</strong> → packets, NICs, how TCP/IP actually leaves your computer.</li>
+<li><strong>Keyboard/mouse (HID), display, GPU basics</strong> → common hardware roles.</li>
+</ul>
+<hr />
+<h3 id="low%20level-foundations-systems-programming">🔹 Systems Programming</h3>
+<ul>
+<li><strong>Memory management</strong> → stack vs heap, allocation, fragmentation.</li>
+<li><strong>Pointers &amp; references</strong> → how languages like C and Rust directly manipulate memory.</li>
+<li><strong>Concurrency</strong> → threads, locks, atomics, deadlocks.</li>
+<li><strong>File systems</strong> → how bytes on disk become folders/files.</li>
+<li><strong>Compilers &amp; interpreters</strong> → how code becomes machine instructions.</li>
+</ul>
+<hr />
+<h3 id="low%20level-foundations-cool-projects-to-learn-by-doing">🔹 Cool Projects to Learn By Doing</h3>
+<ul>
+<li>Write a tiny program in <strong>assembly</strong>.</li>
+<li>Implement a <strong>toy memory allocator</strong> in C or Rust.</li>
+<li>Build a very simple <strong>command-line shell</strong>.</li>
+<li>Follow an OS tutorial (like “write your own kernel in Rust” → <a href="https://os.phil-opp.com/">Phil Opp’s blog</a>).</li>
+<li>Write a basic <strong>network packet sniffer</strong>.</li>
+</ul></section><section class="print-page" id="low%20level-drivers" heading-number="9.2"><h1 id="low%20level-drivers-drivers">Drivers</h1>
+<p>A driver is a special kind of program that acts as the "translator"
+between the OS and a piece of hardware.</p>
+<p>The hardware speaks its own low-level language (signals, registers, protocols).
+The OS needs a way to understand that language in a consistent way.</p>
+<p>Because it needs to interact with the OS, good drivers are written with
+a language that compiles to machine code (C, Rust, Zig, etc.).</p>
+<h2 id="low%20level-drivers-when">When</h2>
+<p>The only time a developer would need to create a driver is if there is
+new hardware. Maybe a brand new hardware your company made or that you
+invented. This is because it requires deep knowledge of how the hardware 
+works internally.</p>
+<p>Creating drivers falls more into systems engineering/hardware engineering.</p>
+<p><strong>Summary: Make hardware? You'll need to make drivers...</strong></p></section></section><section class="print-page" id="rust-rust01" heading-number="10"><h1 id="rust-rust01-rust-notes">Rust Notes</h1>
 <h2 id="rust-rust01-table-of-contents">Table of Contents</h2>
 <ol>
 <li><a href="#rust-rust01-1-cargo">Cargo</a></li>
@@ -7281,8 +7463,7 @@ This is because if statements evaluate to a value and are actually called <stron
 <h4 id="rust-rust01-moving-variables">Moving Variables</h4>
 <p>When setting a variable equal to a new variable, Rust invalidates the first variable.
 This is to prevent double free errors which are when the ownership model tries to drop one of the variables but not the other that is also referencing the same memory.</p>
-<p><img alt="img.png" src="../Rust/rust01/images/memory-pointing.png" />
-s1 becomes invalid when s2 is assigned to s1.  This is because s1 and s2 are both pointing to the same memory address.  When s2 is assigned to s1, s1 is no longer valid because it is no longer the only owner of the memory address.</p>
+<p>s1 becomes invalid when s2 is assigned to s1.  This is because s1 and s2 are both pointing to the same memory address.  When s2 is assigned to s1, s1 is no longer valid because it is no longer the only owner of the memory address.</p>
 <h4 id="rust-rust01-stack-data-copy">Stack Data - Copy</h4>
 <p>Data that is stored on the stack is so efficient that its not a problem to manage.  As a convience, Rust is not afraid to duplicate data that’s stored on the stack.  In other words, references on the stack that point to data on the heap need much more management which is why there are more rules and limiations to follow. Like moving variables,</p>
 <p>For stack data, there's no differences between shallow and deep copys because of something called the copy trait.  Variables that hold data with types that have the copy trait, are copied instead of moved so they are still valid after the copy.</p>
@@ -7824,12 +8005,23 @@ If you're creating a function or struct, anything with a data type, you can use 
                 .print-site-enumerate-headings #ai-mcp h2:before { content: '8.2.' counter(counter-ai-mcp-2) ' ' }
                 .print-site-enumerate-headings #ai-mcp h2 {  counter-increment: counter-ai-mcp-2 }
             
-.print-site-enumerate-headings #rust-rust01 > h1:before { content: '9 ' }
+.print-site-enumerate-headings #section-9 > h1:before { content: '9 ' }
+.print-site-enumerate-headings #low%20level-foundations > h1:before { content: '9.1 ' }
 
-                .print-site-enumerate-headings #rust-rust01 h2:before { content: '9.' counter(counter-rust-rust01-2) ' ' }
+                .print-site-enumerate-headings #low%20level-foundations h2:before { content: '9.1.' counter(counter-low%20level-foundations-2) ' ' }
+                .print-site-enumerate-headings #low%20level-foundations h2 {  counter-increment: counter-low%20level-foundations-2 }
+            
+.print-site-enumerate-headings #low%20level-drivers > h1:before { content: '9.2 ' }
+
+                .print-site-enumerate-headings #low%20level-drivers h2:before { content: '9.2.' counter(counter-low%20level-drivers-2) ' ' }
+                .print-site-enumerate-headings #low%20level-drivers h2 {  counter-increment: counter-low%20level-drivers-2 }
+            
+.print-site-enumerate-headings #rust-rust01 > h1:before { content: '10 ' }
+
+                .print-site-enumerate-headings #rust-rust01 h2:before { content: '10.' counter(counter-rust-rust01-2) ' ' }
                 .print-site-enumerate-headings #rust-rust01 h2 {  counter-reset: counter-rust-rust01-3 ;  counter-increment: counter-rust-rust01-2 }
             
-                .print-site-enumerate-headings #rust-rust01 h3:before { content: '9.' counter(counter-rust-rust01-2) '.' counter(counter-rust-rust01-3) ' ' }
+                .print-site-enumerate-headings #rust-rust01 h3:before { content: '10.' counter(counter-rust-rust01-2) '.' counter(counter-rust-rust01-3) ' ' }
                 .print-site-enumerate-headings #rust-rust01 h3 {  counter-increment: counter-rust-rust01-3 }
             </style>
 
