@@ -41,17 +41,50 @@ volumes:
 
 ```
 
-Run container
-``docker compose up -d``
+```bash
+# ───────────────────────────────
+# 🐳 DOCKER COMPOSE COMMAND REFERENCE
+# ───────────────────────────────
 
-Stop container
-``docker compose down``
+# ▶️ Run container (detached mode)
+docker compose up -d
 
-Upgrade container
-``docker compose down``
-``docker compose pull``
-``docker compose up -d``
+# ▶️ Stop and remove container(s)
+docker compose down
 
-Restart container: ``docker compose restart``
+# ▶️ Upgrade container(s)
+docker compose down
+docker compose pull
+docker compose up -d
 
-Chain commands like ``docker compose down && docker compose up -d``
+# ▶️ Restart container(s)
+docker compose restart
+
+# ▶️ Chain commands
+docker compose down && docker compose up -d
+
+# ───────────────────────────────
+# ⚙️ OTHER USEFUL COMMANDS
+# ───────────────────────────────
+
+# View logs (follow mode)
+docker compose logs -f
+
+# View running containers
+docker compose ps
+
+# Rebuild image(s) from Dockerfile
+docker compose build
+
+# Rebuild and restart
+docker compose build --no-cache && docker compose up -d
+
+# Stop containers but keep volumes/networks
+docker compose stop
+
+# Start containers again after stopping
+docker compose start
+
+# Remove unused images and volumes
+docker system prune -a --volumes
+```

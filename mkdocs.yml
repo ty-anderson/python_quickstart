@@ -53,7 +53,20 @@ nav:
   - Basics: Docker/basics.md
   - Docker Compose: Docker/docker_compose.md
   - Creating Images (Dockerfile): Docker/docker_images.md
-  - Host an LLM: AI/docs_105_local_llm.md
+- Self Hosting:
+  - Ollama (Host an LLM): AI/docs_105_local_llm.md
+  - Samba (Shared Drive): self_host/samba.md
+  - Syncthing (File Sync): self_host/syncthing.md
+#  - Plex/Jellyfin (Video Streaming):
+#  - Portainer (Docker UI):
+  - Frigate (CCTV): self_host/frigate.md
+#  - Databases:
+#  - Immich (Photos):
+#  - netdata (resource management):
+#  - Caddy (reverse proxy & web server):
+#  - WireGuard (VPN):
+  - GitHub: Git/remotes.md
+#  - Adguard (DNS):
 - Networking:
   - General Networking: Networking/docs_100_networking.md
   - Servers: Networking/docs_100_servers.md

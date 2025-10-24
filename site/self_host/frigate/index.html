@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://healthfin.solutions/notes/Python/deployment/">
+        <link rel="canonical" href="https://healthfin.solutions/notes/self_host/frigate/">
       
       
-        <link rel="prev" href="../docs_4_building_large_projects/">
+        <link rel="prev" href="../syncthing/">
       
       
-        <link rel="next" href="../docs_6_publishing_project/">
+        <link rel="next" href="../../Git/remotes/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Deploying Python Programs - Tech Notes</title>
+        <title>Frigate (CCTV) - Tech Notes</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#deploying-python-programs" class="md-skip">
+        <a href="#frigate" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Deploying Python Programs
+              Frigate (CCTV)
             
           </span>
         </div>
@@ -252,19 +252,17 @@
       
   
   
-    
   
   
-  
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -278,7 +276,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Python
@@ -327,7 +325,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../docs_1_what_is_python/" class="md-nav__link">
+      <a href="../../Python/docs_1_what_is_python/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -348,7 +346,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../docs_2_how_to_use/" class="md-nav__link">
+      <a href="../../Python/docs_2_how_to_use/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -369,7 +367,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../docs_3_writing_code/" class="md-nav__link">
+      <a href="../../Python/docs_3_writing_code/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -433,7 +431,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../docs_5_advanced_topics/" class="md-nav__link">
+      <a href="../../Python/docs_5_advanced_topics/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -454,7 +452,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../docs_7_important_libraries/" class="md-nav__link">
+      <a href="../../Python/docs_7_important_libraries/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -475,7 +473,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../docs_9_std_lib/" class="md-nav__link">
+      <a href="../../Python/docs_9_std_lib/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -496,7 +494,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../testing/" class="md-nav__link">
+      <a href="../../Python/testing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -522,19 +520,17 @@
                 
   
   
-    
   
   
-  
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
         
           
           <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
@@ -548,7 +544,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
             Execution and Deployment
@@ -562,7 +558,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../docs_4_building_large_projects/" class="md-nav__link">
+      <a href="../../Python/docs_4_building_large_projects/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -580,30 +576,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Deploying Python Programs
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../Python/deployment/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -612,101 +588,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#deployment-types" class="md-nav__link">
-    <span class="md-ellipsis">
-      Deployment Types
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Deployment Types">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#local-script-cron-job" class="md-nav__link">
-    <span class="md-ellipsis">
-      🚀 Local Script / Cron Job
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#docker-container" class="md-nav__link">
-    <span class="md-ellipsis">
-      🐳 Docker Container
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#executable-file" class="md-nav__link">
-    <span class="md-ellipsis">
-      🤖Executable File
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#docker-python-and-multiple-execution-points" class="md-nav__link">
-    <span class="md-ellipsis">
-      Docker, Python, and Multiple Execution Points
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Docker, Python, and Multiple Execution Points">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#typical-pattern" class="md-nav__link">
-    <span class="md-ellipsis">
-      Typical Pattern
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#why-this-approach-works-well" class="md-nav__link">
-    <span class="md-ellipsis">
-      Why This Approach Works Well
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -719,7 +600,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../docs_6_publishing_project/" class="md-nav__link">
+      <a href="../../Python/docs_6_publishing_project/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -783,7 +664,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../python_uv/" class="md-nav__link">
+      <a href="../../Python/python_uv/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -804,7 +685,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../docs_8_documentation/" class="md-nav__link">
+      <a href="../../Python/docs_8_documentation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1068,17 +949,19 @@
       
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -1092,7 +975,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Self Hosting
@@ -1127,7 +1010,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../self_host/samba/" class="md-nav__link">
+      <a href="../samba/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1148,7 +1031,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../self_host/syncthing/" class="md-nav__link">
+      <a href="../syncthing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1166,10 +1049,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../self_host/frigate/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Frigate (CCTV)
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1178,6 +1081,35 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#docker-compose-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker Compose Setup
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1741,77 +1673,11 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#deployment-types" class="md-nav__link">
+  <a href="#docker-compose-setup" class="md-nav__link">
     <span class="md-ellipsis">
-      Deployment Types
+      Docker Compose Setup
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Deployment Types">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#local-script-cron-job" class="md-nav__link">
-    <span class="md-ellipsis">
-      🚀 Local Script / Cron Job
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#docker-container" class="md-nav__link">
-    <span class="md-ellipsis">
-      🐳 Docker Container
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#executable-file" class="md-nav__link">
-    <span class="md-ellipsis">
-      🤖Executable File
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#docker-python-and-multiple-execution-points" class="md-nav__link">
-    <span class="md-ellipsis">
-      Docker, Python, and Multiple Execution Points
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Docker, Python, and Multiple Execution Points">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#typical-pattern" class="md-nav__link">
-    <span class="md-ellipsis">
-      Typical Pattern
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#why-this-approach-works-well" class="md-nav__link">
-    <span class="md-ellipsis">
-      Why This Approach Works Well
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1830,54 +1696,99 @@
                   
 
 
-<h1 id="deploying-python-programs">Deploying Python Programs</h1>
-<p>Deployment of a python program depends on what type of program you are deploying. Desktop apps, web apps, ETL scripts,
-API's, internal tools, etc. all have different requirements.</p>
-<h2 id="deployment-types">Deployment Types</h2>
-<p>There are 3 main forms:</p>
-<ol>
-<li>Standard script/venv.</li>
-<li>Docker container.</li>
-<li>Executable file.</li>
-</ol>
-<hr />
-<h3 id="local-script-cron-job">🚀 Local Script / Cron Job</h3>
-<p>Best for <strong>simple scripts</strong> (ETL, backups, notifications, etc.)</p>
+<h1 id="frigate">Frigate</h1>
+<p>Open source video security feed.</p>
+<p>There are several ways to handle streams. Different protocols exist to 
+handle this.</p>
 <ul>
-<li><strong>Deploy</strong>: copy code to server (via <code>git clone</code>, <code>scp</code>, or syncing)</li>
-<li><strong>Env</strong>: use a virtual environment (<code>uv venv</code>, <code>python -m venv</code>, or <code>conda</code>)</li>
-<li><strong>Run</strong>: directly with <code>python script.py</code> or via cron/systemd</li>
+<li>RTSP - Realtime streaming protocol</li>
+<li>RTMP - not as common</li>
+<li>HTTP/MJPEG - video over HTTP, slower.</li>
 </ul>
-<p>👉 Example:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span>
-<span class="normal">8</span>
-<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>~/my_project<span class="w">                       </span><span class="c1"># create folder</span>
-uv<span class="w"> </span>venv<span class="w">                               </span><span class="c1"># create the venv</span>
-<span class="nb">source</span><span class="w"> </span>.venv/bin/activate<span class="w">             </span><span class="c1"># activate the venv</span>
-uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt<span class="w">    </span><span class="c1"># install dependencies</span>
+<p>If a camera can expose a URI to connect to, then Frigate can probably connect.
+It uses ffmpeg under the hood. Here's an example of how you can try to see if
+a camera is working over a stream:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># ffplay is a ffmpeg module</span>
+ffplay<span class="w"> </span>rtsp://user:password@CAMERA_IP:554/stream_path
 
-<span class="c1"># run the script like</span>
-python<span class="w"> </span>my_job.py
-<span class="c1"># or </span>
-python<span class="w"> </span>-m<span class="w"> </span>my_job
+<span class="c1"># basic view stream over http if no auth required</span>
+ffplay<span class="w"> </span>http://192.168.1.205:8081/video
+
+<span class="c1"># connect with username and password</span>
+ffplay<span class="w"> </span>http://admin:admin@192.168.1.205:8081/video
+
+<span class="c1"># use rtsp</span>
+ffplay<span class="w"> </span>rtsp://user:password@192.168.1.50:554/stream1
 </code></pre></div></td></tr></table></div>
-<p>From here you can setup to run with a cronjob or another program. </p>
-<p>Cronjob:
+<h2 id="docker-compose-setup">Docker Compose Setup</h2>
+<p>Lets setup Frigate.</p>
+<p>Create the directory:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>crontab<span class="w"> </span>-e
-
-<span class="c1"># save this in the crontab file that opens</span>
-<span class="m">0</span>/20<span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span><span class="nb">source</span><span class="w"> </span>/Users/tyleranderson/PyCharmProjects/project/backup_tmp_dir.sh<span class="w"> </span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>mkdir<span class="w"> </span>/srv/frigate
+mkdir<span class="w"> </span>/srv/frigate/config
+touch<span class="w"> </span>/srv/frigate/config/config.yaml
+touch<span class="w"> </span>/srv/frigate/docker-compose.yaml
+</code></pre></div></td></tr></table></div>
+<p>Docker Compose file:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">services</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">frigate</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">frigate</span>
+<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/blakeblackshear/frigate:stable</span>
+<span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unless-stopped</span>
+<span class="w">    </span><span class="nt">privileged</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">shm_size</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;64mb&quot;</span><span class="w">  </span><span class="c1"># needed for ffmpeg buffer</span>
+<span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;5000:5000&quot;</span><span class="w">    </span><span class="c1"># Web UI</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;1935:1935&quot;</span><span class="w">    </span><span class="c1"># RTMP streaming (optional)</span>
+<span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">FRIGATE_RTSP_PASSWORD=KineWind88</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NVIDIA_VISIBLE_DEVICES=all</span>
+<span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/etc/localtime:/etc/localtime:ro</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./config:/config</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./media:/media/frigate</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tmpfs</span>
+<span class="w">        </span><span class="nt">target</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/tmp/cache</span>
+<span class="w">        </span><span class="nt">tmpfs</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000000000</span>
+<span class="w">    </span><span class="nt">runtime</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nvidia</span><span class="w">  </span><span class="c1"># enable gpu acceleration with nvidia gpu</span>
 </code></pre></div></td></tr></table></div></p>
-<p>or Airflow:
+<p>Once the docker compose is working, the config file is how you add 
+cameras and adjust settings.</p>
+<p>config.yaml
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -1901,127 +1812,123 @@ python<span class="w"> </span>-m<span class="w"> </span>my_job
 <span class="normal">21</span>
 <span class="normal">22</span>
 <span class="normal">23</span>
-<span class="normal">24</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">subprocess</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">datetime</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">airflow.decorators</span><span class="w"> </span><span class="kn">import</span> <span class="n">dag</span><span class="p">,</span> <span class="n">task</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">mqtt</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
 
-<span class="nd">@dag</span><span class="p">(</span><span class="n">default_args</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;owner&quot;</span><span class="p">:</span> <span class="s2">&quot;airflow&quot;</span><span class="p">},</span>
-     <span class="n">schedule_interval</span><span class="o">=</span><span class="s2">&quot;*/10 * * * *&quot;</span><span class="p">,</span>
-     <span class="n">dagrun_timeout</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
-     <span class="n">max_active_runs</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
-     <span class="n">max_active_tasks</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
-     <span class="n">start_date</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2025</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
-     <span class="n">catchup</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">run_job</span><span class="p">():</span>
-    <span class="nd">@task</span>
-    <span class="k">def</span><span class="w"> </span><span class="nf">job_1</span><span class="p">():</span>
-        <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="s2">&quot;bash&quot;</span><span class="p">,</span> <span class="s2">&quot;-c&quot;</span><span class="p">,</span> <span class="s2">&quot;source /path/to/file&quot;</span><span class="p">],</span> <span class="n">check</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nt">cameras</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">iphone_camera</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">ffmpeg</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">hwaccel_args</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
+<span class="w">      </span><span class="nt">inputs</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://username:password@192.168.1.205:8081/video</span>
+<span class="w">          </span><span class="nt">input_args</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-avoid_negative_ts make_zero -fflags nobuffer -flags low_delay -analyzeduration 1000000 -probesize 1000000 -rw_timeout 5000000 -use_wallclock_as_timestamps 1</span>
+<span class="w">          </span><span class="nt">roles</span><span class="p">:</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">detect</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">record</span>
+<span class="w">    </span><span class="nt">detect</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">width</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1280</span>
+<span class="w">      </span><span class="nt">height</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">720</span>
+<span class="w">      </span><span class="nt">fps</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span>
 
-    <span class="nd">@task</span>
-    <span class="k">def</span><span class="w"> </span><span class="nf">job_2</span><span class="p">():</span>
-        <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="s2">&quot;bash&quot;</span><span class="p">,</span> <span class="s2">&quot;-c&quot;</span><span class="p">,</span> <span class="s2">&quot;source /path/to/another_file&quot;</span><span class="p">],</span> <span class="n">check</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="w">    </span><span class="nt">record</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">      </span><span class="nt">retain</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">days</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="w">        </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">motion</span>
+<span class="w">      </span><span class="nt">events</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">pre_capture</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span><span class="w">   </span><span class="c1"># seconds before motion</span>
+<span class="w">        </span><span class="nt">post_capture</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span><span class="w">  </span><span class="c1"># seconds after motion</span>
 
-    <span class="n">job_1</span> <span class="o">&gt;&gt;</span> <span class="n">job_2</span>
-
-
-<span class="n">run_job</span><span class="p">()</span>
+<span class="w">    </span><span class="nt">snapshots</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">      </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">      </span><span class="nt">bounding_box</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">      </span><span class="nt">retain</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">default</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span><span class="w">     </span><span class="c1"># keep snapshots for 2 days</span>
 </code></pre></div></td></tr></table></div></p>
-<ul>
-<li>Pros: simple, fast.</li>
-<li>Cons: less portable, harder to reproduce if env drifts.</li>
-</ul>
-<hr />
-<h3 id="docker-container">🐳 Docker Container</h3>
-<p>Best for services you want <strong>consistent across dev/prod</strong>. Much more robust.</p>
-<ul>
-<li>Write a Dockerfile:</li>
-</ul>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">FROM</span><span class="w"> </span><span class="s">python:3.12-slim</span>
-<span class="k">WORKDIR</span><span class="w"> </span><span class="s">/app</span>
-<span class="k">COPY</span><span class="w"> </span>requirements.txt<span class="w"> </span>.
-<span class="k">RUN</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
-<span class="k">COPY</span><span class="w"> </span>..<span class="w"> </span>.
-<span class="k">CMD</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;python&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;my_job.py&quot;</span><span class="p">]</span>
-</code></pre></div></td></tr></table></div>
-<ul>
-<li><strong>Deploy</strong>: <code>docker build -t my_job .</code> then <code>docker run my_job</code></li>
-<li><strong>Schedule</strong>: cron on the host, or Kubernetes Job</li>
-</ul>
-<p>Pros: consistent, portable.
-Cons: more setup overhead than bare venv.</p>
-<h3 id="executable-file">🤖Executable File</h3>
-<p>You can also use pyinstaller (or other libraries that freeze your python code) to create an
-executable file. This would be a good idea for a desktop app or something that a user chooses
-to run on their own. </p>
-<p>Pro: no need for user to have python installed on their computer, easy to distribute.</p>
-<h2 id="docker-python-and-multiple-execution-points">Docker, Python, and Multiple Execution Points</h2>
-<p>In most modern setups, if you have a Python package that contains multiple ETL jobs, 
-the <strong>common pattern is to containerize the entire package</strong> and then deploy that image wherever you run jobs.</p>
-<p>The differences are in <strong>how you execute the individual jobs</strong> inside that container and how you <strong>manage orchestration</strong>.</p>
-<hr />
-<h3 id="typical-pattern"><strong>Typical Pattern</strong></h3>
-<ol>
-<li>
-<p><strong>Single container image</strong></p>
-<ul>
-<li>You build one Docker image for your Python package (with all dependencies baked in).</li>
-<li>This image is versioned and pushed to a container registry (e.g., AWS ECR, GCP Artifact Registry, Docker Hub).</li>
-<li>Keeps dependencies consistent across jobs.</li>
-</ul>
-</li>
-<li>
-<p><strong>Multiple entry points / commands</strong></p>
-<ul>
-<li>Each ETL job is exposed via a CLI entry point in your <code>pyproject.toml</code> or <code>setup.py</code></li>
-</ul>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[project.scripts]</span>
-<span class="n">etl_job_a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;my_package.jobs.job_a:main&quot;</span>
-<span class="n">etl_job_b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;my_package.jobs.job_b:main&quot;</span>
-</code></pre></div></td></tr></table></div>
-* At runtime, the orchestrator decides which command to run:</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>my-etl-image:1.0<span class="w"> </span>etl_job_a
-</code></pre></div></td></tr></table></div>
-* This avoids rebuilding multiple images for each job.</p>
-</li>
-<li>
-<p><strong>Orchestrator triggers containers</strong></p>
-<ul>
-<li><strong>Airflow</strong>, <strong>Prefect</strong>, <strong>Dagster</strong>, or Kubernetes <strong>CronJobs</strong> call the container with the appropriate arguments or entry point.</li>
-<li>Example in Airflow’s <code>DockerOperator</code>:</li>
-</ul>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">DockerOperator</span><span class="p">(</span>
-    <span class="n">task_id</span><span class="o">=</span><span class="s2">&quot;run_etl_job_a&quot;</span><span class="p">,</span>
-    <span class="n">image</span><span class="o">=</span><span class="s2">&quot;my-etl-image:1.0&quot;</span><span class="p">,</span>
-    <span class="n">command</span><span class="o">=</span><span class="s2">&quot;etl_job_a&quot;</span><span class="p">,</span>
-    <span class="o">...</span>
-<span class="p">)</span>
-</code></pre></div></td></tr></table></div>
-</li>
-</ol>
-<hr />
-<h3 id="why-this-approach-works-well"><strong>Why This Approach Works Well</strong></h3>
-<ul>
-<li><strong>Reusability</strong> — One image can run all jobs, avoiding duplication.</li>
-<li><strong>Consistency</strong> — All jobs share the same dependency versions and base environment.</li>
-<li><strong>Smaller CI/CD surface</strong> — You only need to build and push one image per release.</li>
-<li><strong>Version control</strong> — The image tag maps directly to your package release.</li>
-</ul>
-<hr />
-<p>💡 <strong>Rule of thumb:</strong>
-If all ETL jobs share most dependencies and code, <strong>use one container image</strong> with multiple entry points.
-If jobs have very different stacks or run in completely different runtime environments, <strong>split them into separate images</strong>.</p>
+<p>This config is used for testing an http stream with an iphone running 
+ip camera lite. The additional input args are used to turn off gpu 
+accleration since its not supported by http protocol.</p>
+<p>Here is a config that uses RTSP instead of HTTP. This is
+preferred if the camera supports it.</p>
+<p>config.yaml with RTSP:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">mqtt</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+
+<span class="nt">cameras</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">iphone_camera</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">ffmpeg</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">hwaccel_args</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">preset-nvidia-h264</span>
+<span class="w">      </span><span class="nt">inputs</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rtsp://admin:admin@192.168.1.205:8554/live</span>
+<span class="w">          </span><span class="nt">input_args</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">preset-rtsp-restream</span>
+<span class="w">          </span><span class="nt">roles</span><span class="p">:</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">detect</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">record</span>
+
+<span class="w">    </span><span class="nt">detect</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">width</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1280</span>
+<span class="w">      </span><span class="nt">height</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">720</span>
+<span class="w">      </span><span class="nt">fps</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span>
+
+<span class="w">    </span><span class="nt">record</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">      </span><span class="nt">retain</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">days</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="w">        </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">motion</span>
+<span class="w">      </span><span class="nt">events</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">pre_capture</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span><span class="w">   </span><span class="c1"># seconds before motion</span>
+<span class="w">        </span><span class="nt">post_capture</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span><span class="w">  </span><span class="c1"># seconds after motion</span>
+
+<span class="w">    </span><span class="nt">snapshots</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">      </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">      </span><span class="nt">bounding_box</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">      </span><span class="nt">retain</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">default</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span><span class="w">     </span><span class="c1"># keep snapshots for 2 days</span>
+</code></pre></div></td></tr></table></div></p>
 
 
 

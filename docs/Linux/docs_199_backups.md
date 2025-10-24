@@ -56,19 +56,18 @@ rsync -avz /source/dir/ /dest/dir
 
 # actual use
 rsync -avz --rsync-path="sudo rsync" /Users/tyleranderson/PycharmProjects tyler@anderson.home:/srv/backup_media
+
+# ── RSYNC FLAGS
+# -v  verbose mode
+# -a  archive mode (preserves permissions/timestamps)
+# -z  compress files
+# -e  specify remote shell command
+# -r  recursive (copy subdirectories)
+# -h  human-readable file sizes
+# --progress  show progress
+# --delete    remove files in dest not in source
+# --exclude   exclude files (e.g., --exclude='*.log' --exclude='/cache/')
 ```
-
-Flags: 
-
-- ``-v`` = verbose mode.
-- ``-a`` = archive mode. saves permissions and timestamps.
-- ``-z`` = compress files to transfer, lossless compression.
-- ``-e`` = execute specific command.
-- ``-r`` = copy directories recursively. Meaning all files in subfolders as well.
-- ``-h`` = human readable file sizes while coping
-- ``--progress`` = show transfer progress.
-- ``--delete`` = remove files from the backup if they were removed from the source.
-- ``--exclude`` = Exclude specific files like ``--exclude='*.log' --exclude='/cache/'``
 
 ## Tar Files
 
@@ -94,15 +93,14 @@ tar -tvf archive.tar
 
 # Extract specific file from tar file
 tar -xvf archive.tar file.txt
+
+# ── TAR FLAGS
+# -c  create new archive
+# -v  verbose
+# -f  specify archive filename
+# -x  extract
+# -z  gzip compression
 ```
-
-Flags:
-
-- ``-c`` = Crete new archive
-- ``-v`` = Verbose mode (shows progress)
-- ``-f`` = Specifies filename (archive.tar)
-- ``-x`` = Extract
-- ``-z`` = Compress with gzip
 
 ## Encryption
 
@@ -110,86 +108,50 @@ Flags:
 It uses modern cryptography making it more secure, but less featured 
 than something like ``gpg``. Age  lets you use passwords or key files.
 
-Install:
-
 ```bash
-# Install
-brew install age  # MacOS
-sudo apt install age # Linux
-```
+# ───────────────────────────────
+# 🔐 ENCRYPTION (AGE)
+# ───────────────────────────────
 
-How to use - you have 2 options for encryption.
+# Install age
+brew install age           # macOS
+sudo apt install age       # Linux
 
-1. Password - best for quick encryption, no need to manage keys. Less secure and harder to automate.
-
-```bash
-# encrypt with password, prompt will ask for password
+# Option 1: Password Encryption (simple)
 age -o myfile.txt.age -p myfile.txt
-
-# decrypt with password
 age -d myfile.txt.age > myfile.txt
 
-```
-
-2. Public/Private key Encryption - Most secure and good for automation.
-
-```bash
-# generate a key file
-age-keygen -o ~/.age-key.txt  # stores key in ~/.age-key.txt
-# This file contains a public and private key that you can use to encrypt files.
-
-# encrypt file using public key (replace PUBLIC_KEY with your public key in the file)
+# Option 2: Public/Private Key Encryption (secure)
+age-keygen -o ~/.age-key.txt     # create key file
 age -r PUBLIC_KEY -o myfile.txt.age myfile.txt
-
-# decrypt using private key
 age -d -i ~/.age-key.txt myfile.txt.age > myfile.txt
-```
 
-To use the file directly instead of copying the public key:
-
-```bash
-# use head to extract the public key
+# Encrypt using key file directly
 age -r $(head -n 1 ~/.age-key.txt) -o myfile.txt.age myfile.txt
-
-# decrypt
 age -d -i ~/.age-key.txt myfile.txt.age > myfile.txt
-```
 
-Encrypt directory by turning into tar file, then encrypting that file.
-
-```bash
-# Simple example, directory (use tar).
+# Encrypt directory (tar + age)
 tar -czf myfolder.tar.gz myfolder/
 age -o myfolder.tar.gz.age -p myfolder.tar.gz
 
-# convert folder to tar file, encrypt it with age, one command,
-# no intermediate file created.
+# One-liner: tar and encrypt simultaneously
 tar -czf - myfolder/ | age -o myfolder.tar.gz.age -p
 
-# decrypt and extract in one command.
+# Decrypt and extract in one step
 age -d myfolder.tar.gz.age | tar -xz
-```
 
-Decrypt:
-
-```bash
-# decrypt .age file
+# Manual decrypt
 age -d myfolder.tar.gz.age > myfolder.tar.gz
-
-# extract the file
 tar -xzf myfolder.tar.gz
-
-# delete archive file
 shred -u myfolder.tar.gz
+
+# ── AGE FLAGS
+# -o <output>     specify output file
+# -d              decrypt
+# -p              use password mode
+# -r <pubkey>     encrypt with public key
+# -i <identity>   specify private key for decryption
 ```
-
-Flags:
-
-- ``-o <output>`` = output file name.
-- ``-d`` = decrypts an encrypted file.
-- ``-p`` = uses password encryption.
-- ``-r <public-key>`` = Encrypts using public key.
-- ``-i <identity-file>`` = uses private key for decryption. 
 
 Other notes:
 
@@ -199,82 +161,51 @@ Other notes:
 
 ## Removing Sensitive Data
 
-Hard-Disk Drives:
+```bash
+# ───────────────────────────────
+# 🧹 REMOVING SENSITIVE DATA
+# ───────────────────────────────
 
-Securely delete a file with ``shred``. This will overwrite the file with 
-random data mutliple times, renames the file multiple times to obscure 
-its original name, then deletes the file. This makes it very difficult 
-for data recovery tools to extract meaningful information from the files.
+# ── HDD: Use shred
+shred -u secret.txt
+shred -n 10 secret.txt
 
-``shred -u secret.txt``
+# -u  delete file after shredding
+# -n  overwrite N times (default 3)
 
-- ``-u`` = truncate and delete the file after shredding.
-- ``-n`` = number of times to overwrite (defualt is 3) ``shred -n 10 secret.txt``
+# ── Directories: Use wipe
+sudo apt install wipe
+wipe -r /path/to/directory/
+wipe -r /path/to/directory/*  # keep directory but delete contents
 
-For entire directories, you can use ``wipe``. 
+# ── SSD: Use fstrim or srm
+sudo fstrim -v /              # clears free space on SSD
 
-``sudo apt install wipe`` and then ``wipe -r /path/to/directory/`` this will
-remove the directory as well. If you want to keep the directory use 
-``wipe -r /path/to/directory/*``
+# Secure delete tools
+sudo apt install secure-delete  # Ubuntu/Debian
+brew install srm                # macOS
 
-Solid-State Drives:
-
-1. Use ``fstrim`` (Best for Full SSD)
-✅ Best for clearing free space on an SSD
-
-Modern SSDs support TRIM, which tells the SSD to permanently erase deleted data
-
-``sudo fstrim -v /``
-
-2. Use srm or wipe (For File-Level Deletion)
-✅ Best for deleting a single file securely (better than ``shred`` on SSDs)
-
-🔹 Install srm (Secure Remove)
-
-```
-sudo apt install secure-delete  # Debian/Ubuntu
-brew install srm               # macOS
-```
-
-🔹 Securely delete a file = ``srm -v my_secret_file.txt`` 
-
-🔹 Use wipe for Directories = ``wipe -rf my_secret_folder/``
+srm -v my_secret_file.txt       # securely delete a file
+wipe -rf my_secret_folder/      # securely delete a folder
 
 
-## In Practice
+# ───────────────────────────────
+# 🧠 IN PRACTICE
+# ───────────────────────────────
+# Recommended workflow:
 
-The best way to backup files are as follows:
+# - rsync → for incremental local backups
+# - rclone → for cloud backups
+# - syncthing → for live sync between devices (peer-to-peer)
 
-Backup files: 
+# 🔁 Good routine:
+# 1. Daily rsync to local drive
+# 2. Daily/weekly rclone to cloud
 
-- ``rsync`` - command line, good for copying files incrementally to other folders 
-or over ssh.
-- ``rclone`` - just like ``rsync`` but for the cloud. Works with over 50 cloud providers
-like Google Drive, Dropbox, OneDrive, etc.
-- ``syncthing`` - Realtime file sync between your devices. Creates its own files
-on each device and syncs changes between all devices. It is direct peer-to-peer file
-sync, meaning there is no server hosting the files and copying between devices.
-
-Good system:
-
-1. Daily file backups to a local device like USB drive with ``rsync``.
-2. Daily or weekly backups of files to remote with ``rclone``.
-
-```cron
-# backup to local drive
+# ── Example cron jobs
 0 2 * * * rsync -rv --delete /srv/plex_media /mnt/usb/plex_media_backup
-
-# backup to cloud
 0 3 * * * rclone sync /srv/ gdrive:server-backup --log-file=/var/log/rclone.log
 
-```
-
-### Setup rclone
-
-Create a config file to login to cloud provider:
-
-```bash
-# run rclone config wizard
+# Setup rclone
 rclone config
-
 ```
