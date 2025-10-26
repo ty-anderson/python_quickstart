@@ -264,7 +264,7 @@ fn if_control(i: i32) -> i32 {
 ```
 
 If statements can also be used on the right side of a variable.
-This is because if statements evaluate to a value and are actually called **[if expressions](#statements--expressions)**
+This is because if statements evaluate to a value and are actually called "if expressions"
 
 ```rust
 fn main() {
