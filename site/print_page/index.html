@@ -989,6 +989,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../self_host/storage_vs_compute/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Storage vs Compute
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../AI/docs_105_local_llm/" class="md-nav__link">
         
   
@@ -1052,6 +1073,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../self_host/video_streaming/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Plex/Jellyfin (Video Streaming)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../self_host/frigate/" class="md-nav__link">
         
   
@@ -1073,11 +1115,74 @@
   
   
     <li class="md-nav__item">
+      <a href="../self_host/web_server/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Caddy (reverse proxy & web server)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../self_host/wireguard/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    WireGuard (VPN)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Git/remotes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Remotes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../self_host/nas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NAS
   </span>
   
 
@@ -1917,9 +2022,18 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#self_host-storage_vs_compute" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1 Storage vs Compute
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ai-docs_105_local_llm" class="md-nav__link">
     <span class="md-ellipsis">
-      5.1 Ollama (Host an LLM)
+      5.2 Ollama (Host an LLM)
     </span>
   </a>
   
@@ -1928,7 +2042,7 @@
           <li class="md-nav__item">
   <a href="#self_host-samba" class="md-nav__link">
     <span class="md-ellipsis">
-      5.2 Samba (Shared Drive)
+      5.3 Samba (Shared Drive)
     </span>
   </a>
   
@@ -1937,7 +2051,16 @@
           <li class="md-nav__item">
   <a href="#self_host-syncthing" class="md-nav__link">
     <span class="md-ellipsis">
-      5.3 Syncthing (File Sync)
+      5.4 Syncthing (File Sync)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#self_host-video_streaming" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.5 Plex/Jellyfin (Video Streaming)
     </span>
   </a>
   
@@ -1946,7 +2069,25 @@
           <li class="md-nav__item">
   <a href="#self_host-frigate" class="md-nav__link">
     <span class="md-ellipsis">
-      5.4 Frigate (CCTV)
+      5.6 Frigate (CCTV)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#self_host-web_server" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.7 Caddy (reverse proxy & web server)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#self_host-wireguard" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.8 WireGuard (VPN)
     </span>
   </a>
   
@@ -1955,7 +2096,16 @@
           <li class="md-nav__item">
   <a href="#git-remotes" class="md-nav__link">
     <span class="md-ellipsis">
-      5.5 Remotes
+      5.9 Remotes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#self_host-nas" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.10 NAS
     </span>
   </a>
   
@@ -5513,7 +5663,136 @@ The last one that runs becomes the actual image.</p>
                     <section class='print-page md-section' id='section-5' heading-number='5'>
                         <h1>Self Hosting<a class='headerlink' href='#section-5' title='Permanent link'></a>
                         </h1>
-                    <section class="print-page" id="ai-docs_105_local_llm" heading-number="5.1"><h1 id="ai-docs_105_local_llm-ollama">Ollama</h1>
+                    <section class="print-page" id="self_host-storage_vs_compute" heading-number="5.1"><h1 id="self_host-storage_vs_compute-general-architecture-storage-vs-compute">General Architecture - Storage vs Compute</h1>
+<p>TLDR: Separate storage into a dedicated NAS and then use another server
+for running programs on docker. Pull from and save to the NAS. A NAS should
+not be used for compute processes.</p>
+<hr />
+<h2 id="self_host-storage_vs_compute-the-core-idea-separate-compute-from-storage">🧩 The Core Idea: <strong>Separate Compute from Storage</strong></h2>
+<blockquote>
+<p>⚙️ <strong>Compute = running apps, containers, AI detection, transcoding, etc.</strong>
+💾 <strong>Storage = reliable, redundant data layer (your NAS).</strong></p>
+</blockquote>
+<p>When you keep these roles separate:</p>
+<ul>
+<li>Each system can specialize in what it does best.</li>
+<li>You reduce the risk of data loss or performance issues.</li>
+<li>It’s far easier to scale or troubleshoot later.</li>
+</ul>
+<hr />
+<h2 id="self_host-storage_vs_compute-why-its-best-to-keep-nas-dedicated">🧱 Why It’s Best to Keep NAS Dedicated</h2>
+<h3 id="self_host-storage_vs_compute-1-nas-file-systems-zfs-btrfs-etc-are-tuned-for-data-integrity-not-app-workloads">🧠 1. <strong>NAS file systems (ZFS, Btrfs, etc.) are tuned for data integrity, not app workloads</strong></h3>
+<p>They protect your data through:</p>
+<ul>
+<li>checksums</li>
+<li>scrubbing</li>
+<li>snapshots</li>
+<li>RAID/parity</li>
+</ul>
+<p>Running constant compute (e.g., Frigate writing video, or Immich generating thumbnails) can interfere with these optimizations and make rebuilds or snapshots slower.</p>
+<hr />
+<h3 id="self_host-storage_vs_compute-2-cpu-and-memory-resources-get-shared">⚡ 2. <strong>CPU and memory resources get shared</strong></h3>
+<p>NAS tasks like ZFS compression, parity calculations, and indexing already use a fair bit of CPU/RAM.
+If you also run:</p>
+<ul>
+<li>Frigate (AI inference + decoding)</li>
+<li>Immich (image processing + face recognition)</li>
+<li>or Jellyfin (video transcoding)</li>
+</ul>
+<p>…then your NAS’s primary job — protecting and serving data — might get delayed or throttled.</p>
+<hr />
+<h3 id="self_host-storage_vs_compute-3-stability-and-safety">🔒 3. <strong>Stability and safety</strong></h3>
+<p>If one container crashes, hangs, or fills the filesystem, it can:</p>
+<ul>
+<li>Interrupt the NAS’s storage pools</li>
+<li>Corrupt running writes</li>
+<li>Even cause pool degradation if disks get overloaded</li>
+</ul>
+<p>Keeping your NAS “clean” isolates your data from application risk.</p>
+<hr />
+<h2 id="self_host-storage_vs_compute-the-professional-model-and-the-smart-home-lab-model">🧠 The Professional Model (and the Smart Home-Lab Model)</h2>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>Purpose</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Compute Layer</strong></td>
+<td>Run containers, AI, video processing</td>
+<td>Frigate, Immich, Home Assistant, Plex</td>
+</tr>
+<tr>
+<td><strong>Storage Layer (NAS)</strong></td>
+<td>Serve and protect data</td>
+<td>TrueNAS, Unraid, Synology, ZFS pool</td>
+</tr>
+<tr>
+<td><strong>Network Layer</strong></td>
+<td>Link them via fast Ethernet</td>
+<td>1 Gb or 2.5 Gb+ LAN, NFS or SMB shares</td>
+</tr>
+</tbody>
+</table>
+<p>They’re connected by the network — the NAS exports shared folders, and the compute node mounts them.</p>
+<hr />
+<h3 id="self_host-storage_vs_compute-typical-setup-example">🧩 Typical Setup Example</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code>        ┌────────────────────┐
+        │  Cameras / Clients │
+        └────────┬───────────┘
+                 │
+            ┌────┴────┐
+            │ Frigate │   ← Compute (Docker, GPU)
+            │ Immich  │
+            │ Plex    │
+            └────┬────┘
+                 │  (NFS/SMB)
+        ┌────────┴────────┐
+        │      NAS        │  ← Storage (ZFS/RAID, backups)
+        │  TrueNAS / RAID │
+        └─────────────────┘
+</code></pre></div></td></tr></table></div>
+<hr />
+<h2 id="self_host-storage_vs_compute-when-you-can-combine-them">🧩 When You <em>Can</em> Combine Them</h2>
+<p>It’s perfectly fine to run extra apps <em>on your NAS</em> if:</p>
+<ul>
+<li>It’s powerful (e.g., Xeon/i7 CPU, 32 GB+ RAM)</li>
+<li>You’re okay with minor slowdowns</li>
+<li>The apps aren’t CPU-intensive (e.g., photo viewer, simple sync service)</li>
+</ul>
+<p>For example:</p>
+<ul>
+<li>Synology users often run Docker containers on the NAS directly (for convenience).</li>
+<li>Unraid and TrueNAS SCALE support running VMs or containers safely alongside storage — but it still shares the same hardware, so performance depends on your use case.</li>
+</ul>
+<hr />
+<h2 id="self_host-storage_vs_compute-in-short">✅ In short</h2>
+<blockquote>
+<p>For <strong>maximum reliability and scalability</strong>, yes — it’s best to have:</p>
+<ul>
+<li>🖥️ <strong>One machine dedicated to compute</strong> (Frigate, Immich, Plex, etc.)</li>
+<li>💾 <strong>One machine dedicated to storage</strong> (your NAS)</li>
+</ul>
+</blockquote>
+<p>This mirrors how <strong>enterprise datacenters</strong> and <strong>well-designed homelabs</strong> are built — storage servers feed compute servers.</p>
+<hr />
+<p>Would you like me to show what a <strong>recommended 2-node home setup</strong> looks like (with network speeds, mount types, and backup flow)? It’s a great visual for planning how to physically wire and configure it.</p></section><section class="print-page" id="ai-docs_105_local_llm" heading-number="5.2"><h1 id="ai-docs_105_local_llm-ollama">Ollama</h1>
 <p>Ollama is an open-source LLM runtime environment.</p>
 <h2 id="ai-docs_105_local_llm-run-with-docker-compose">Run with Docker Compose</h2>
 <p>Here is a docker compose that runs it all. 
@@ -5652,7 +5931,7 @@ docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </spa
 <span class="c1"># download llama3 model</span>
 docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>ollama<span class="w"> </span>ollama<span class="w"> </span>pull<span class="w"> </span>llama3
 </code></pre></div></td></tr></table></div></p>
-<p>For more info on the REST API definition: https://github.com/ollama/ollama/blob/main/docs/api.md</p></section><section class="print-page" id="self_host-samba" heading-number="5.2"><h1 id="self_host-samba-shared-file-server">Shared File Server</h1>
+<p>For more info on the REST API definition: https://github.com/ollama/ollama/blob/main/docs/api.md</p></section><section class="print-page" id="self_host-samba" heading-number="5.3"><h1 id="self_host-samba-shared-file-server">Shared File Server</h1>
 <p>Samba is an open source file server. You can host a network drive
 to share files across different computers.</p>
 <p>You can dictate account creations, read/write access. You can create
@@ -5833,7 +6112,7 @@ and have bugs. The version below is current as of 2025-10-24.</p>
 <li>For the <strong>Media</strong> share: check “Connect using different credentials” and log in as <strong>guest</strong> (no password).</li>
 <li>For the <strong>Private</strong> share: log in as <code>tyler</code> with your Samba password.</li>
 <li>Check <strong>“Reconnect at sign-in”</strong> — Windows will mount these every time you log in.</li>
-</ul></section><section class="print-page" id="self_host-syncthing" heading-number="5.3"><h1 id="self_host-syncthing-syncthing">Syncthing</h1>
+</ul></section><section class="print-page" id="self_host-syncthing" heading-number="5.4"><h1 id="self_host-syncthing-syncthing">Syncthing</h1>
 <p>syncthing - Realtime file sync between your devices. 
 Creates its own files on each device and syncs changes between all devices. 
 It is direct peer-to-peer file sync, meaning there is no server hosting 
@@ -5915,7 +6194,99 @@ Syncthing stores copies of the files on each device and you can use them offline
 <li><strong>Syncthing</strong> = synced local copies (best for redundancy and offline access).</li>
 </ul>
 <p>To use:</p>
-<p>Install on each device you want to use it with: https://syncthing.net/</p></section><section class="print-page" id="self_host-frigate" heading-number="5.4"><h1 id="self_host-frigate-frigate">Frigate</h1>
+<p>Install on each device you want to use it with: https://syncthing.net/</p></section><section class="print-page" id="self_host-video_streaming" heading-number="5.5"><h1 id="self_host-video_streaming-video-streaming-service">Video Streaming Service</h1>
+<h2 id="self_host-video_streaming-jellyfin">Jellyfin</h2>
+<p>Docker compose file:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">services</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">jellyfin</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">jellyfin/jellyfin</span>
+<span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">jellyfin</span>
+<span class="w">    </span><span class="nt">user</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1000:1000&quot;</span>
+<span class="w">    </span><span class="nt">network_mode</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;host&#39;</span>
+<span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/srv/jellyfin/config:/config</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/srv/jellyfin/cache:/cache</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bind</span>
+<span class="w">        </span><span class="nt">source</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/srv/plex_media</span>
+<span class="w">        </span><span class="nt">target</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/plex_media</span>
+<span class="w">        </span><span class="nt">read_only</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;unless-stopped&#39;</span>
+<span class="w">    </span><span class="c1"># Optional - alternative address used for autodiscovery</span>
+<span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">JELLYFIN_PublishedServerUrl=https://jelly.healthfin.solutions</span>
+</code></pre></div></td></tr></table></div></p>
+<p>Some notes: Jellyfin requires a valid domain to be used if you want to cast to Chromecast. 
+This is because Chromecast's require a valid certificate to stream from. To avoid this
+you would have to install your self signed certificate onto your casting device.</p>
+<p>Steps:</p>
+<ol>
+<li>Host jellyfin</li>
+<li>Setup Caddy to be a reverse proxy from your domain to the jellyfin IP.</li>
+<li>Caddy will automatically issue a valid certificate for this allowing you to stream.</li>
+</ol>
+<h2 id="self_host-video_streaming-plex">Plex</h2>
+<p>Docker compose file:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">services</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">plex</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">plex</span>
+<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">linuxserver/plex</span>
+<span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PUID=1000</span><span class="w">           </span><span class="c1"># Replace with your user ID</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PGID=1000</span><span class="w">           </span><span class="c1"># Replace with your group ID</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">VERSION=docker</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PLEX_CLAIM=claim-fzdegAmx-S6iP68ysfp2</span>
+<span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/srv/plex_media:/media</span><span class="w">    </span><span class="c1"># Your media files</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/srv/plex/config:/config</span><span class="w">   </span><span class="c1"># Plex configuration files</span>
+<span class="w">    </span><span class="nt">network_mode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">host</span>
+<span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unless-stopped</span>
+</code></pre></div></td></tr></table></div>
+<p>Plex does a lot of the certificate management stuff for you. You can connect
+your server to the Plex system to stream, but its not quite a true self hosted
+solution. After you setup your plex server you must go to Plex.com and sign up
+then add your server to your account under their domain. You still end up
+relying on their system. It does come with a lot of other free content through
+Plex which is a benefit.</p>
+<h2 id="self_host-video_streaming-notes">Notes</h2>
+<p>Note that both of these require some kind of external internet to work. If you
+want to truely isolated setup that will work if the internet as a whole
+goes down, you will need streaming devices on your TV that can install the Jellyfin
+client app. </p>
+<p>These include:</p>
+<ul>
+<li>NVIDIA Shield TV (best all-around).</li>
+<li>Cheap Android TV box (Amlogic, etc.) sideloaded with Jellyfin app.</li>
+<li>Intel NUC, Raspberry Pi, or old mini PC hooked up via HDMI and running Linux + Jellyfin Desktop/Browser.</li>
+</ul></section><section class="print-page" id="self_host-frigate" heading-number="5.6"><h1 id="self_host-frigate-frigate">Frigate</h1>
 <p>Open source video security feed.</p>
 <p>There are several ways to handle streams. Different protocols exist to 
 handle this.</p>
@@ -6147,7 +6518,625 @@ preferred if the camera supports it.</p>
 <span class="w">      </span><span class="nt">bounding_box</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">      </span><span class="nt">retain</span><span class="p">:</span>
 <span class="w">        </span><span class="nt">default</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span><span class="w">     </span><span class="c1"># keep snapshots for 2 days</span>
-</code></pre></div></td></tr></table></div></p></section><section class="print-page" id="git-remotes" heading-number="5.5"><h1 id="git-remotes-git-remotes">Git Remotes</h1>
+</code></pre></div></td></tr></table></div></p></section><section class="print-page" id="self_host-web_server" heading-number="5.7"><h1 id="self_host-web_server-web-servers">Web Servers</h1>
+<p>A web server is a server that serves data over the HTTP/HTTPS protocols.
+Typically it is HTML, JSON, XML, or some other type of data. </p>
+<h2 id="self_host-web_server-reverse-proxy">Reverse Proxy</h2>
+<p>A reverse proxy is a process that will reroute network traffic that flows
+through the HTTP/HTTPS protocols, to other machines, using IP addresses.
+One example is if you setup a proxy server to take any networks requests
+to the public ip address A, it will take those requests and push them to
+the machine with local ip address B.</p>
+<p>Think of it like a concierge for your website. You have a website welcome.com.
+When someone goes to welcome.com, the public DNS will use that name to go to
+the public IP you configured, and then when the traffic reaches your server,
+your concierge takes them to the correct room (machine).</p>
+<h2 id="self_host-web_server-caddy">Caddy</h2>
+<p>Caddy is a very easy web server/reverse proxy. It handles certificate creation
+automatically which is super helpful. It also can be used to distribute traffic
+for load balancing, serve static web files, handle simple auth, and more.</p>
+<p>The way you setup caddy is with docker compose:</p>
+<h2 id="self_host-web_server-docker-compose">Docker Compose</h2>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">services</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">caddy</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">caddy:latest</span>
+<span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">caddy</span>
+<span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;80:80&quot;</span><span class="w">        </span><span class="c1"># HTTP</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;443:443&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;8009:8009&quot;</span>
+<span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./Caddyfile:/etc/caddy/Caddyfile</span><span class="w">   </span><span class="c1"># Mount your Caddyfile</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./data:/data</span><span class="w">                       </span><span class="c1"># Let’s Encrypt certificates</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./config:/config</span><span class="w">                   </span><span class="c1"># Caddy configuration</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/srv/web_apps:/srv/web_apps</span><span class="w">        </span><span class="c1"># custom directory I want caddy to have access to for static web pages</span>
+<span class="w">    </span><span class="nt">dns</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.1.1.1</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8.8.8.8</span>
+<span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unless-stopped</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="self_host-web_server-caddyfile">Caddyfile</h2>
+<p>Once the server is running, the caddyfile is the base config for what you want it
+to do. Create a file called <code>Caddyfile</code> and then update based on what you want.
+Here are the offical docs: https://caddyserver.com/docs/caddyfile</p>
+<p>Basic File:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>localhost {
+    respond &quot;Hello, world!&quot;
+}
+
+localhost:2016 {
+    respond &quot;Goodbye, world!&quot;
+}
+</code></pre></div></td></tr></table></div></p>
+<h2 id="self_host-web_server-certificates">Certificates</h2>
+<p>Using certain names in your caddyfile have important caveats. For example, LetsEncrypt,
+the certificate authority that Caddy uses will not issue certificates for localhost. 
+They only do for public domains. Also your browser will show a "Not Trusted" message
+when you try to go to it. </p>
+<p>You can get a local cert program like mkcert and set that up.</p>
+<p>Caddy has a self signed cert with TLS. You can use this like below:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>localhost {
+    root * /srv/web_apps/dev_site
+    file_server
+    tls internal
+}
+</code></pre></div></td></tr></table></div>
+<h2 id="self_host-web_server-authentication">Authentication</h2>
+<p>You can add basic HTTP authentication to any of your routes. Use bcrypt
+to generate a password hash like </p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># with caddy</span>
+caddy<span class="w"> </span>hash-password<span class="w"> </span>--plaintext<span class="w"> </span><span class="s2">&quot;yourpassword&quot;</span>
+
+<span class="c1"># docker</span>
+sudo<span class="w"> </span>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>caddy<span class="w"> </span>caddy<span class="w"> </span>hash-password<span class="w"> </span>--plaintext<span class="w"> </span><span class="s2">&quot;yourpassword&quot;</span>
+</code></pre></div></td></tr></table></div>
+<p>Then add your auth to your route in Caddyfile.
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span></pre></div></td><td class="code"><div><pre><span></span><code># add auth to entire site
+yourdomain.com {
+    basicauth {
+        user password_hash
+    }
+
+    root * /srv/web_apps/site
+    file_server
+}
+
+# add auth to specific route
+example.com {
+    handle /admin* {
+        basicauth {
+            user password_hash
+        }
+        root * /srv/web_apps/admin
+        file_server
+    }
+
+    handle / {
+        root * /srv/web_apps/public
+        file_server
+    }
+}
+</code></pre></div></td></tr></table></div></p>
+<h2 id="self_host-web_server-full-file">Full File</h2>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">  1</span>
+<span class="normal">  2</span>
+<span class="normal">  3</span>
+<span class="normal">  4</span>
+<span class="normal">  5</span>
+<span class="normal">  6</span>
+<span class="normal">  7</span>
+<span class="normal">  8</span>
+<span class="normal">  9</span>
+<span class="normal"> 10</span>
+<span class="normal"> 11</span>
+<span class="normal"> 12</span>
+<span class="normal"> 13</span>
+<span class="normal"> 14</span>
+<span class="normal"> 15</span>
+<span class="normal"> 16</span>
+<span class="normal"> 17</span>
+<span class="normal"> 18</span>
+<span class="normal"> 19</span>
+<span class="normal"> 20</span>
+<span class="normal"> 21</span>
+<span class="normal"> 22</span>
+<span class="normal"> 23</span>
+<span class="normal"> 24</span>
+<span class="normal"> 25</span>
+<span class="normal"> 26</span>
+<span class="normal"> 27</span>
+<span class="normal"> 28</span>
+<span class="normal"> 29</span>
+<span class="normal"> 30</span>
+<span class="normal"> 31</span>
+<span class="normal"> 32</span>
+<span class="normal"> 33</span>
+<span class="normal"> 34</span>
+<span class="normal"> 35</span>
+<span class="normal"> 36</span>
+<span class="normal"> 37</span>
+<span class="normal"> 38</span>
+<span class="normal"> 39</span>
+<span class="normal"> 40</span>
+<span class="normal"> 41</span>
+<span class="normal"> 42</span>
+<span class="normal"> 43</span>
+<span class="normal"> 44</span>
+<span class="normal"> 45</span>
+<span class="normal"> 46</span>
+<span class="normal"> 47</span>
+<span class="normal"> 48</span>
+<span class="normal"> 49</span>
+<span class="normal"> 50</span>
+<span class="normal"> 51</span>
+<span class="normal"> 52</span>
+<span class="normal"> 53</span>
+<span class="normal"> 54</span>
+<span class="normal"> 55</span>
+<span class="normal"> 56</span>
+<span class="normal"> 57</span>
+<span class="normal"> 58</span>
+<span class="normal"> 59</span>
+<span class="normal"> 60</span>
+<span class="normal"> 61</span>
+<span class="normal"> 62</span>
+<span class="normal"> 63</span>
+<span class="normal"> 64</span>
+<span class="normal"> 65</span>
+<span class="normal"> 66</span>
+<span class="normal"> 67</span>
+<span class="normal"> 68</span>
+<span class="normal"> 69</span>
+<span class="normal"> 70</span>
+<span class="normal"> 71</span>
+<span class="normal"> 72</span>
+<span class="normal"> 73</span>
+<span class="normal"> 74</span>
+<span class="normal"> 75</span>
+<span class="normal"> 76</span>
+<span class="normal"> 77</span>
+<span class="normal"> 78</span>
+<span class="normal"> 79</span>
+<span class="normal"> 80</span>
+<span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span></pre></div></td><td class="code"><div><pre><span></span><code>(basic_auth_users) {
+    @protected {
+        not path /public_notes*   # everything EXCEPT /public_notes*
+    }
+
+    basic_auth @protected  {
+            user password_hash
+        }
+    }
+
+home.server {
+    tls internal
+
+    handle / {
+        root * /srv/web_apps/home
+        file_server
+    }
+
+    handle /test* {
+        respond &quot;Hello from test path&quot;
+    }
+
+    handle /notes* {
+        root * /srv/web_apps
+        file_server browse
+    }
+
+    handle {
+        respond &quot;❌ Unmatched path: {uri}&quot; 404
+    }
+}
+
+
+healthfin.solutions {
+    handle /public_notes* {
+            root * /srv/web_apps
+            file_server
+        }
+
+    import basic_auth_users
+
+    handle / {
+        root * /srv/web_apps/home
+        file_server
+    }
+
+    handle /confetti {
+        rewrite * /confetti.html
+        root * /srv/web_apps/home
+        file_server
+    }
+
+    handle /timeline {
+        rewrite * /timeline.html
+        root * /srv/web_apps/home
+        file_server
+    }
+
+    handle /notes* {
+            root * /srv/web_apps
+            file_server
+        }
+
+    handle {
+        respond &quot;❌ Unmatched path: {uri}&quot; 404
+    }
+}
+
+
+# billboard analytics
+billboard.anderson {
+    tls internal
+    reverse_proxy 192.168.1.104:8000
+}
+
+billboard.healthfin.solutions {
+    import basic_auth_users
+
+    reverse_proxy 192.168.1.104:8000 {
+        header_up Host {http.request.host}  # fixes the issue of static files in the website.
+    }
+}
+
+# immich
+pics.anderson {
+    tls internal
+    reverse_proxy 192.168.1.104:2283
+}
+
+pics.healthfin.solutions {
+    import basic_auth_users
+
+    reverse_proxy 192.168.1.104:2283 {
+        header_up Host {http.request.host}  # fixes the issue of static files in the website.
+    }
+}
+
+# LLM
+ollama.anderson {
+    tls internal
+    reverse_proxy 192.168.1.104:3001
+}
+
+ai.healthfin.solutions {
+    reverse_proxy 192.168.1.104:3001
+}
+
+yt.healthfin.solutions {
+    import basic_auth_users
+    reverse_proxy 192.168.1.104:8091
+}
+
+jelly.healthfin.solutions {
+    reverse_proxy 192.168.1.104:8096
+}
+
+docs.anderson {
+    tls internal
+    root * /srv/web_apps/notes
+    file_server
+}
+
+dns.anderson {
+    import basic_auth_users
+    tls internal
+    reverse_proxy 192.168.1.104:3000
+}
+
+resources.anderson {
+    import basic_auth_users
+    tls internal
+    reverse_proxy 192.168.1.104:19999
+}
+
+jdownloader.anderson {
+    import basic_auth_users
+    tls internal
+    reverse_proxy 192.168.1.104:5800
+}
+
+torrent.anderson {
+    import basic_auth_users
+    tls internal
+    reverse_proxy 192.168.1.104:8080
+}
+</code></pre></div></td></tr></table></div></section><section class="print-page" id="self_host-wireguard" heading-number="5.8"><h1 id="self_host-wireguard-wireguard">Wireguard</h1>
+<p>Wireguard (wg) is an open source VPN software.</p>
+<p>You'll need to update the docker compose file with your hosts public ip
+and also create a bcrypt hashed password. You can do the password with
+python like this:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>python3<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>bcrypt
+python3<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;import bcrypt; print(bcrypt.hashpw(b&#39;yourpassword&#39;, bcrypt.gensalt()).decode())&quot;</span>
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">volumes</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">etc_wireguard</span><span class="p">:</span>
+
+<span class="nt">services</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">wg-easy</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
+<span class="w">      </span><span class="c1"># Change Language:</span>
+<span class="w">      </span><span class="c1"># (Supports: en, ua, ru, tr, no, pl, fr, de, ca, es, ko, vi, nl, is, pt, chs, cht, it, th, hi, ja, si)</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">LANG=en</span>
+<span class="w">      </span><span class="c1"># ⚠️ Required:</span>
+<span class="w">      </span><span class="c1"># Change this to your host&#39;s public address</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">WG_HOST=&lt;host.public.ip.address&gt;</span>
+
+<span class="w">      </span><span class="c1"># Optional:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PASSWORD_HASH=&lt;password_hash&gt;</span>
+<span class="w">      </span><span class="c1"># - PORT=51821</span>
+<span class="w">      </span><span class="c1"># - WG_PORT=51820</span>
+<span class="w">      </span><span class="c1"># - WG_CONFIG_PORT=92820</span>
+<span class="w">      </span><span class="c1"># - WG_DEFAULT_ADDRESS=10.8.0.x</span>
+<span class="w">      </span><span class="c1"># - WG_DEFAULT_DNS=1.1.1.1</span>
+<span class="w">      </span><span class="c1"># - WG_MTU=1420</span>
+<span class="w">      </span><span class="c1"># - WG_ALLOWED_IPS=192.168.15.0/24, 10.0.1.0/24</span>
+<span class="w">      </span><span class="c1"># - WG_PERSISTENT_KEEPALIVE=25</span>
+<span class="w">      </span><span class="c1"># - WG_PRE_UP=echo &quot;Pre Up&quot; &gt; /etc/wireguard/pre-up.txt</span>
+<span class="w">      </span><span class="c1"># - WG_POST_UP=echo &quot;Post Up&quot; &gt; /etc/wireguard/post-up.txt</span>
+<span class="w">      </span><span class="c1"># - WG_PRE_DOWN=echo &quot;Pre Down&quot; &gt; /etc/wireguard/pre-down.txt</span>
+<span class="w">      </span><span class="c1"># - WG_POST_DOWN=echo &quot;Post Down&quot; &gt; /etc/wireguard/post-down.txt</span>
+<span class="w">      </span><span class="c1"># - UI_TRAFFIC_STATS=true</span>
+<span class="w">      </span><span class="c1"># - UI_CHART_TYPE=0 # (0 Charts disabled, 1 # Line chart, 2 # Area chart, 3 # Bar chart)</span>
+<span class="w">      </span><span class="c1"># - WG_ENABLE_ONE_TIME_LINKS=true</span>
+<span class="w">      </span><span class="c1"># - UI_ENABLE_SORT_CLIENTS=true</span>
+<span class="w">      </span><span class="c1"># - WG_ENABLE_EXPIRES_TIME=true</span>
+<span class="w">      </span><span class="c1"># - ENABLE_PROMETHEUS_METRICS=false</span>
+<span class="w">      </span><span class="c1"># - PROMETHEUS_METRICS_PASSWORD=$$2a$$12$$vkvKpeEAHD78gasyawIod.1leBMKg8sBwKW.pQyNsq78bXV3INf2G # (needs double $$, hash of &#39;prometheus_password&#39;; see &quot;How_to_generate_an_bcrypt_hash.md&quot; for generate the hash)</span>
+
+<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/wg-easy/wg-easy</span>
+<span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">wg-easy-compose</span>
+<span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">etc_wireguard:/etc/wireguard</span>
+<span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;51820:51820/udp&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;51821:51821/tcp&quot;</span>
+<span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unless-stopped</span>
+<span class="w">    </span><span class="nt">cap_add</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NET_ADMIN</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SYS_MODULE</span>
+<span class="w">      </span><span class="c1"># - NET_RAW # ⚠️ Uncomment if using Podman</span>
+<span class="w">    </span><span class="nt">sysctls</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">net.ipv4.ip_forward=1</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">net.ipv4.conf.all.src_valid_mark=1</span>
+</code></pre></div></td></tr></table></div>
+<p>Once the container is running you'll need to setup other machines to
+have access. </p>
+<ol>
+<li>Go to the UI: http://<your-server-ip>:51821</li>
+<li>Add Client. Name it something descriptive. wg-easy automatically:</li>
+<li>Creates a new private/public key pair for that client</li>
+<li>Assigns a VPN IP address</li>
+<li>Generates a .conf file and a QR code</li>
+<li>Connect Devices</li>
+</ol>
+<h3 id="self_host-wireguard-desktop-laptop">🧑‍💻 <strong>Desktop / Laptop</strong></h3>
+<ol>
+<li>
+<p>Install <strong>WireGuard</strong>:</p>
+<ul>
+<li>macOS → App Store (“WireGuard”)</li>
+<li>Windows → <a href="https://www.wireguard.com/install/">wireguard.com/install</a></li>
+<li>Linux → <code>sudo apt install wireguard</code></li>
+</ul>
+</li>
+<li>
+<p>In wg-easy, click <strong>“Download config”</strong> for your client.
+   It’ll be a file like <code>tyler-laptop.conf</code>.</p>
+</li>
+<li>
+<p>Open the WireGuard app → “Import Tunnel” → select that file.</p>
+</li>
+<li>
+<p>Toggle <strong>Activate</strong> to connect.</p>
+</li>
+</ol>
+<hr />
+<h3 id="self_host-wireguard-mobile-iphone-android">📱 <strong>Mobile (iPhone / Android)</strong></h3>
+<ol>
+<li>Install the official <strong>WireGuard app</strong>.</li>
+<li>On the wg-easy dashboard, click <strong>“Show QR code”</strong> next to the client.</li>
+<li>In the WireGuard app → “Add Tunnel” → “Scan from QR Code.”</li>
+<li>Scan it, save, and toggle <strong>Activate</strong> to connect.</li>
+</ol>
+<p>That’s it — your phone now routes through your home network via VPN!</p>
+<hr />
+<h2 id="self_host-wireguard-4-test-the-connection">🌎 4. Test the Connection</h2>
+<p>Once connected:</p>
+<ul>
+<li>Visit <a href="https://ipinfo.io">https://ipinfo.io</a> — it should show <strong>your home’s public IP</strong>, not your phone/laptop’s local network IP.</li>
+<li>If you can reach internal devices like <code>192.168.x.x</code>, that means local routing is working too.</li>
+</ul>
+<hr />
+<h2 id="self_host-wireguard-5-optional-enable-port-forwarding">⚙️ 5. (Optional) Enable Port Forwarding</h2>
+<p>If you want to access wg-easy <strong>from outside your LAN</strong>:</p>
+<ul>
+<li>Forward <strong>UDP port 51820</strong> on your router → your server’s LAN IP.</li>
+<li>
+<p>(Optionally) Forward <strong>TCP 51821</strong> if you want to reach the dashboard remotely.</p>
+<ul>
+<li>Though best practice: leave 51821 closed and use a VPN client only.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="self_host-wireguard-6-add-more-clients-later">🔐 6. Add More Clients Later</h2>
+<p>Each client is isolated, so you can add as many as you want:</p>
+<ul>
+<li>“Add client” → scan QR or download config → done.
+  wg-easy handles all the routing automatically.</li>
+</ul>
+<hr /></section><section class="print-page" id="git-remotes" heading-number="5.9"><h1 id="git-remotes-git-remotes">Git Remotes</h1>
 <p>A "remote" in the git environment is another location to 
 store a copy of your git project. It is great for backing up projects
 and sharing code/collaboration.</p>
@@ -6204,7 +7193,11 @@ git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span
 <span class="c1"># origin is name of remote, change to whatever you want. </span>
 <span class="c1"># main is name of branch, change to whatever branch you want to commit.</span>
 <span class="c1"># the -u sets this remote as the active one for tracking. </span>
-</code></pre></div></td></tr></table></div></p></section></section>
+</code></pre></div></td></tr></table></div></p></section><section class="print-page" id="self_host-nas" heading-number="5.10"><h1 id="self_host-nas-nas-network-attached-storage">NAS (Network Attached Storage)</h1>
+<p>A NAS system is a dedicated server that is used ONLY for network storage.
+It runs a NAS operating system such as TrueNAS, Unraid, or Linux with 
+<code>mdadm</code> or <code>zfs</code> and has a motherboard that can support multiple hard drives. </p>
+<p>A NAS system should only be used for storage, not running any apps or processes.</p></section></section>
                     <section class='print-page md-section' id='section-6' heading-number='6'>
                         <h1>Networking<a class='headerlink' href='#section-6' title='Permanent link'></a>
                         </h1>
@@ -8133,14 +9126,14 @@ works internally.</p>
 <h2 id="rust-rust01-table-of-contents">Table of Contents</h2>
 <ol>
 <li><a href="#rust-rust01-1-cargo">Cargo</a></li>
-<li><a href="#rust-rust01-2-running-a-program---detailed">Running a Program - Detailed</a></li>
+<li><a href="#rust-rust01-">Running a Program - Detailed</a></li>
 <li><a href="#rust-rust01-3-rust-language-basics">Rust Basics</a><ul>
 <li><a href="#rust-rust01-data-types">Data Types</a></li>
 <li><a href="#rust-rust01-variables">Variables</a></li>
 <li><a href="#rust-rust01-references">References</a></li>
 <li><a href="#rust-rust01-shadowing">Shadowing</a></li>
 <li><a href="#rust-rust01-scope">Scope</a></li>
-<li><a href="#rust-rust01-statements--expressions">Statements &amp; Expressions</a></li>
+<li><a href="#rust-rust01-">Statements &amp; Expressions</a></li>
 <li><a href="#rust-rust01-functions">Functions</a></li>
 <li><a href="#rust-rust01-returning-from-function">Returning from Function</a></li>
 <li><a href="#rust-rust01-if-expressions">If Expressions</a></li>
@@ -8152,7 +9145,7 @@ works internally.</p>
 <li><a href="#rust-rust01-ownership-behaviors">Ownership Rules</a></li>
 <li><a href="#rust-rust01-references-and-pointers">References, Pointers, and Borrowing</a></li>
 <li><a href="#rust-rust01-moving-variables">Moving Variables</a></li>
-<li><a href="#rust-rust01-stack-data---copy">Copying Variables</a></li>
+<li><a href="#rust-rust01-">Copying Variables</a></li>
 <li><a href="#rust-rust01-dangling-references">Dangling References</a></li>
 <li><a href="#rust-rust01-side-note-stack-and-heap">Stack and Heap</a></li>
 </ul>
@@ -9174,30 +10167,55 @@ If you're creating a function or struct, anything with a data type, you can use 
                 .print-site-enumerate-headings #docker-docker_images h2 {  counter-increment: counter-docker-docker_images-2 }
             
 .print-site-enumerate-headings #section-5 > h1:before { content: '5 ' }
-.print-site-enumerate-headings #ai-docs_105_local_llm > h1:before { content: '5.1 ' }
+.print-site-enumerate-headings #self_host-storage_vs_compute > h1:before { content: '5.1 ' }
 
-                .print-site-enumerate-headings #ai-docs_105_local_llm h2:before { content: '5.1.' counter(counter-ai-docs_105_local_llm-2) ' ' }
+                .print-site-enumerate-headings #self_host-storage_vs_compute h2:before { content: '5.1.' counter(counter-self_host-storage_vs_compute-2) ' ' }
+                .print-site-enumerate-headings #self_host-storage_vs_compute h2 {  counter-increment: counter-self_host-storage_vs_compute-2 }
+            
+.print-site-enumerate-headings #ai-docs_105_local_llm > h1:before { content: '5.2 ' }
+
+                .print-site-enumerate-headings #ai-docs_105_local_llm h2:before { content: '5.2.' counter(counter-ai-docs_105_local_llm-2) ' ' }
                 .print-site-enumerate-headings #ai-docs_105_local_llm h2 {  counter-increment: counter-ai-docs_105_local_llm-2 }
             
-.print-site-enumerate-headings #self_host-samba > h1:before { content: '5.2 ' }
+.print-site-enumerate-headings #self_host-samba > h1:before { content: '5.3 ' }
 
-                .print-site-enumerate-headings #self_host-samba h2:before { content: '5.2.' counter(counter-self_host-samba-2) ' ' }
+                .print-site-enumerate-headings #self_host-samba h2:before { content: '5.3.' counter(counter-self_host-samba-2) ' ' }
                 .print-site-enumerate-headings #self_host-samba h2 {  counter-increment: counter-self_host-samba-2 }
             
-.print-site-enumerate-headings #self_host-syncthing > h1:before { content: '5.3 ' }
+.print-site-enumerate-headings #self_host-syncthing > h1:before { content: '5.4 ' }
 
-                .print-site-enumerate-headings #self_host-syncthing h2:before { content: '5.3.' counter(counter-self_host-syncthing-2) ' ' }
+                .print-site-enumerate-headings #self_host-syncthing h2:before { content: '5.4.' counter(counter-self_host-syncthing-2) ' ' }
                 .print-site-enumerate-headings #self_host-syncthing h2 {  counter-increment: counter-self_host-syncthing-2 }
             
-.print-site-enumerate-headings #self_host-frigate > h1:before { content: '5.4 ' }
+.print-site-enumerate-headings #self_host-video_streaming > h1:before { content: '5.5 ' }
 
-                .print-site-enumerate-headings #self_host-frigate h2:before { content: '5.4.' counter(counter-self_host-frigate-2) ' ' }
+                .print-site-enumerate-headings #self_host-video_streaming h2:before { content: '5.5.' counter(counter-self_host-video_streaming-2) ' ' }
+                .print-site-enumerate-headings #self_host-video_streaming h2 {  counter-increment: counter-self_host-video_streaming-2 }
+            
+.print-site-enumerate-headings #self_host-frigate > h1:before { content: '5.6 ' }
+
+                .print-site-enumerate-headings #self_host-frigate h2:before { content: '5.6.' counter(counter-self_host-frigate-2) ' ' }
                 .print-site-enumerate-headings #self_host-frigate h2 {  counter-increment: counter-self_host-frigate-2 }
             
-.print-site-enumerate-headings #git-remotes > h1:before { content: '5.5 ' }
+.print-site-enumerate-headings #self_host-web_server > h1:before { content: '5.7 ' }
 
-                .print-site-enumerate-headings #git-remotes h2:before { content: '5.5.' counter(counter-git-remotes-2) ' ' }
+                .print-site-enumerate-headings #self_host-web_server h2:before { content: '5.7.' counter(counter-self_host-web_server-2) ' ' }
+                .print-site-enumerate-headings #self_host-web_server h2 {  counter-increment: counter-self_host-web_server-2 }
+            
+.print-site-enumerate-headings #self_host-wireguard > h1:before { content: '5.8 ' }
+
+                .print-site-enumerate-headings #self_host-wireguard h2:before { content: '5.8.' counter(counter-self_host-wireguard-2) ' ' }
+                .print-site-enumerate-headings #self_host-wireguard h2 {  counter-increment: counter-self_host-wireguard-2 }
+            
+.print-site-enumerate-headings #git-remotes > h1:before { content: '5.9 ' }
+
+                .print-site-enumerate-headings #git-remotes h2:before { content: '5.9.' counter(counter-git-remotes-2) ' ' }
                 .print-site-enumerate-headings #git-remotes h2 {  counter-increment: counter-git-remotes-2 }
+            
+.print-site-enumerate-headings #self_host-nas > h1:before { content: '5.10 ' }
+
+                .print-site-enumerate-headings #self_host-nas h2:before { content: '5.10.' counter(counter-self_host-nas-2) ' ' }
+                .print-site-enumerate-headings #self_host-nas h2 {  counter-increment: counter-self_host-nas-2 }
             
 .print-site-enumerate-headings #section-6 > h1:before { content: '6 ' }
 .print-site-enumerate-headings #networking-docs_100_networking > h1:before { content: '6.1 ' }

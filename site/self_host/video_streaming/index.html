@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://healthfin.solutions/notes/Python/docs_4_building_large_projects/">
+        <link rel="canonical" href="https://healthfin.solutions/notes/self_host/video_streaming/">
       
       
-        <link rel="prev" href="../testing/">
+        <link rel="prev" href="../syncthing/">
       
       
-        <link rel="next" href="../deployment/">
+        <link rel="next" href="../frigate/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Building Large Projects - Tech Notes</title>
+        <title>Plex/Jellyfin (Video Streaming) - Tech Notes</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#building-large-projects" class="md-skip">
+        <a href="#video-streaming-service" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Building Large Projects
+              Plex/Jellyfin (Video Streaming)
             
           </span>
         </div>
@@ -252,19 +252,17 @@
       
   
   
-    
   
   
-  
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -278,7 +276,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Python
@@ -327,7 +325,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../docs_1_what_is_python/" class="md-nav__link">
+      <a href="../../Python/docs_1_what_is_python/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -348,7 +346,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../docs_2_how_to_use/" class="md-nav__link">
+      <a href="../../Python/docs_2_how_to_use/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -369,7 +367,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../docs_3_writing_code/" class="md-nav__link">
+      <a href="../../Python/docs_3_writing_code/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -433,7 +431,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../docs_5_advanced_topics/" class="md-nav__link">
+      <a href="../../Python/docs_5_advanced_topics/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -454,7 +452,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../docs_7_important_libraries/" class="md-nav__link">
+      <a href="../../Python/docs_7_important_libraries/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -475,7 +473,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../docs_9_std_lib/" class="md-nav__link">
+      <a href="../../Python/docs_9_std_lib/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -496,7 +494,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../testing/" class="md-nav__link">
+      <a href="../../Python/testing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -522,19 +520,17 @@
                 
   
   
-    
   
   
-  
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
         
           
           <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
@@ -548,7 +544,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
             Execution and Deployment
@@ -559,30 +555,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Building Large Projects
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../Python/docs_4_building_large_projects/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -591,191 +567,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#general" class="md-nav__link">
-    <span class="md-ellipsis">
-      General
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#vocabulary" class="md-nav__link">
-    <span class="md-ellipsis">
-      Vocabulary
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#the-classic-structure-double-name" class="md-nav__link">
-    <span class="md-ellipsis">
-      The Classic Structure (Double Name)
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="The Classic Structure (Double Name)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#the-workflow" class="md-nav__link">
-    <span class="md-ellipsis">
-      The Workflow
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#a-more-modern-system" class="md-nav__link">
-    <span class="md-ellipsis">
-      A More Modern System
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="A More Modern System">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#goals-of-a-good-structure" class="md-nav__link">
-    <span class="md-ellipsis">
-      Goals of a good structure
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#canonical-layout-src-structure" class="md-nav__link">
-    <span class="md-ellipsis">
-      Canonical layout (src/ structure)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#pyprojecttoml-modern-packaging" class="md-nav__link">
-    <span class="md-ellipsis">
-      pyproject.toml (modern packaging)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#public-api-design" class="md-nav__link">
-    <span class="md-ellipsis">
-      Public API design
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#layers-that-scale" class="md-nav__link">
-    <span class="md-ellipsis">
-      Layers that scale
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#configuration-secrets" class="md-nav__link">
-    <span class="md-ellipsis">
-      Configuration &amp; secrets
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#logging" class="md-nav__link">
-    <span class="md-ellipsis">
-      Logging
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#testing-strategy" class="md-nav__link">
-    <span class="md-ellipsis">
-      Testing strategy
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#data-and-resources" class="md-nav__link">
-    <span class="md-ellipsis">
-      Data and resources
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cli-vs-library" class="md-nav__link">
-    <span class="md-ellipsis">
-      CLI vs library
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#common-pitfalls-to-avoid" class="md-nav__link">
-    <span class="md-ellipsis">
-      Common pitfalls to avoid
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#minimal-example-for-a-cli" class="md-nav__link">
-    <span class="md-ellipsis">
-      Minimal example for a CLI
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -788,7 +579,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../deployment/" class="md-nav__link">
+      <a href="../../Python/deployment/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -809,7 +600,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../docs_6_publishing_project/" class="md-nav__link">
+      <a href="../../Python/docs_6_publishing_project/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -873,7 +664,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../python_uv/" class="md-nav__link">
+      <a href="../../Python/python_uv/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -894,7 +685,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../docs_8_documentation/" class="md-nav__link">
+      <a href="../../Python/docs_8_documentation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1158,17 +949,19 @@
       
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -1182,7 +975,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Self Hosting
@@ -1196,7 +989,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../self_host/storage_vs_compute/" class="md-nav__link">
+      <a href="../storage_vs_compute/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1238,7 +1031,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../self_host/samba/" class="md-nav__link">
+      <a href="../samba/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1259,7 +1052,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../self_host/syncthing/" class="md-nav__link">
+      <a href="../syncthing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1277,10 +1070,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../self_host/video_streaming/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Plex/Jellyfin (Video Streaming)
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1289,6 +1102,53 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#jellyfin" class="md-nav__link">
+    <span class="md-ellipsis">
+      Jellyfin
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plex" class="md-nav__link">
+    <span class="md-ellipsis">
+      Plex
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1301,7 +1161,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../self_host/frigate/" class="md-nav__link">
+      <a href="../frigate/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1322,7 +1182,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../self_host/web_server/" class="md-nav__link">
+      <a href="../web_server/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1343,7 +1203,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../self_host/wireguard/" class="md-nav__link">
+      <a href="../wireguard/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1385,7 +1245,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../self_host/nas/" class="md-nav__link">
+      <a href="../nas/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1936,165 +1796,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#general" class="md-nav__link">
+  <a href="#jellyfin" class="md-nav__link">
     <span class="md-ellipsis">
-      General
+      Jellyfin
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#vocabulary" class="md-nav__link">
+  <a href="#plex" class="md-nav__link">
     <span class="md-ellipsis">
-      Vocabulary
+      Plex
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-classic-structure-double-name" class="md-nav__link">
+  <a href="#notes" class="md-nav__link">
     <span class="md-ellipsis">
-      The Classic Structure (Double Name)
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="The Classic Structure (Double Name)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#the-workflow" class="md-nav__link">
-    <span class="md-ellipsis">
-      The Workflow
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#a-more-modern-system" class="md-nav__link">
-    <span class="md-ellipsis">
-      A More Modern System
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="A More Modern System">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#goals-of-a-good-structure" class="md-nav__link">
-    <span class="md-ellipsis">
-      Goals of a good structure
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#canonical-layout-src-structure" class="md-nav__link">
-    <span class="md-ellipsis">
-      Canonical layout (src/ structure)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#pyprojecttoml-modern-packaging" class="md-nav__link">
-    <span class="md-ellipsis">
-      pyproject.toml (modern packaging)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#public-api-design" class="md-nav__link">
-    <span class="md-ellipsis">
-      Public API design
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#layers-that-scale" class="md-nav__link">
-    <span class="md-ellipsis">
-      Layers that scale
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#configuration-secrets" class="md-nav__link">
-    <span class="md-ellipsis">
-      Configuration &amp; secrets
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#logging" class="md-nav__link">
-    <span class="md-ellipsis">
-      Logging
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#testing-strategy" class="md-nav__link">
-    <span class="md-ellipsis">
-      Testing strategy
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#data-and-resources" class="md-nav__link">
-    <span class="md-ellipsis">
-      Data and resources
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cli-vs-library" class="md-nav__link">
-    <span class="md-ellipsis">
-      CLI vs library
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#common-pitfalls-to-avoid" class="md-nav__link">
-    <span class="md-ellipsis">
-      Common pitfalls to avoid
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#minimal-example-for-a-cli" class="md-nav__link">
-    <span class="md-ellipsis">
-      Minimal example for a CLI
+      Notes
     </span>
   </a>
   
@@ -2115,25 +1837,9 @@
                   
 
 
-<h1 id="building-large-projects">Building Large Projects</h1>
-<h2 id="general">General</h2>
-<p>Large python projects can be extremely powerful, 
-but they must be organized a certain way to work properly.</p>
-<p>A project should always start with a root folder and other 
-folders and files will be housed inside the root folder.</p>
-<p>There are special <code>.py</code> files that python will use to do
-different things such as <code>__init__.py</code> and <code>__main__.py</code>.</p>
-<h2 id="vocabulary">Vocabulary</h2>
-<ul>
-<li><strong>Module:</strong> .py file</li>
-<li><strong>Package:</strong> a folder with <code>__init__.py</code> file in it. This will have code that can be imported.</li>
-<li><strong>Library:</strong> One or more packages grouped together and distributed via PyPI. Built to
-be reusable blocks of code.</li>
-</ul>
-<h2 id="the-classic-structure-double-name">The Classic Structure (Double Name)</h2>
-<p>The classic method to package a project is with the double name method.
-This uses a root folder to hold all the metadata, README, LICENSE, pyproject, etc. and then 
-a subfolder that has the project code. Below is an example:
+<h1 id="video-streaming-service">Video Streaming Service</h1>
+<h2 id="jellyfin">Jellyfin</h2>
+<p>Docker compose file:
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -2146,55 +1852,39 @@ a subfolder that has the project code. Below is an example:
 <span class="normal">10</span>
 <span class="normal">11</span>
 <span class="normal">12</span>
-<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code>pandas/               # repo root
-├─ pyproject.toml / setup.py / setup.cfg
-├─ README.md
-├─ LICENSE
-├─ pandas/            # actual Python package (import name = pandas)
-│  ├─ __init__.py
-│  ├─ core/
-│  ├─ io/
-│  ├─ util/
-│  └─ ...
-├─ doc/               # documentation
-├─ tests/             # test suite
-└─ ...
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">services</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">jellyfin</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">jellyfin/jellyfin</span>
+<span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">jellyfin</span>
+<span class="w">    </span><span class="nt">user</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1000:1000&quot;</span>
+<span class="w">    </span><span class="nt">network_mode</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;host&#39;</span>
+<span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/srv/jellyfin/config:/config</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/srv/jellyfin/cache:/cache</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bind</span>
+<span class="w">        </span><span class="nt">source</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/srv/plex_media</span>
+<span class="w">        </span><span class="nt">target</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/plex_media</span>
+<span class="w">        </span><span class="nt">read_only</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;unless-stopped&#39;</span>
+<span class="w">    </span><span class="c1"># Optional - alternative address used for autodiscovery</span>
+<span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">JELLYFIN_PublishedServerUrl=https://jelly.healthfin.solutions</span>
 </code></pre></div></td></tr></table></div></p>
-<p>This lets us run things like:
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>pandas
-
-python<span class="w"> </span>-m<span class="w"> </span>pandas.core
-</code></pre></div></td></tr></table></div></p>
-<p>This setup gives the least amount of friction, is well established, and 
-gives good organization. The downside is that it can cause mask import mistakes
-where the script runs in dev but not in prod once you pip install it.</p>
-<p>You can avoid these issues by doing <code>pip install -e .</code> which installs your package
-in edit mode. Edit mode means you can make changes to the installed package
-and it will hot reload. </p>
-<h3 id="the-workflow">The Workflow</h3>
+<p>Some notes: Jellyfin requires a valid domain to be used if you want to cast to Chromecast. 
+This is because Chromecast's require a valid certificate to stream from. To avoid this
+you would have to install your self signed certificate onto your casting device.</p>
+<p>Steps:</p>
 <ol>
-<li>Build your project. </li>
-<li>Install your project <code>pip install -e .</code></li>
-<li>In <code>pyproject.toml</code> add:
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[project.scripts]</span>
-<span class="n">package_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;module:callable&quot;</span>
-<span class="c1"># this creates a command line command. Replace with a command and path to what gets executed.</span>
-</code></pre></div></td></tr></table></div></li>
-<li>Call like <code>package_name</code> if you want a terminal command.</li>
+<li>Host jellyfin</li>
+<li>Setup Caddy to be a reverse proxy from your domain to the jellyfin IP.</li>
+<li>Caddy will automatically issue a valid certificate for this allowing you to stream.</li>
 </ol>
-<h2 id="a-more-modern-system">A More Modern System</h2>
-<h3 id="goals-of-a-good-structure">Goals of a good structure</h3>
-<ul>
-<li><strong>Separation of concerns:</strong> isolate domain logic, I/O, and interfaces.</li>
-<li><strong>Testability &amp; maintainability:</strong> easy to unit test and refactor.</li>
-<li><strong>Distributable:</strong> buildable wheel, clean dependency metadata.</li>
-<li><strong>Usability:</strong> clear public API, stable CLI, sensible configuration.</li>
-</ul>
-<h3 id="canonical-layout-src-structure">Canonical layout (src/ structure)</h3>
+<h2 id="plex">Plex</h2>
+<p>Docker compose file:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -2208,226 +1898,38 @@ and it will hot reload. </p>
 <span class="normal">11</span>
 <span class="normal">12</span>
 <span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span></pre></div></td><td class="code"><div><pre><span></span><code>your-project/
-├─ pyproject.toml
-├─ README.md
-├─ LICENSE
-├─ .gitignore
-├─ src/
-│  └─ your_package/
-│     ├─ __init__.py
-│     ├─ __main__.py           # optional: `python -m your_package`
-│     ├─ cli/                  # CLI commands
-│     │  └─ __init__.py
-│     ├─ core/                 # domain logic (pure, testable)
-│     │  ├─ models.py
-│     │  ├─ services.py
-│     │  └─ rules.py
-│     ├─ adapters/             # I/O boundaries (DB, HTTP, FS, APIs)
-│     │  ├─ db.py
-│     │  ├─ http.py
-│     │  └─ storage.py
-│     ├─ app/                  # application orchestration/wiring
-│     │  ├─ config.py
-│     │  ├─ logging.py
-│     │  └─ container.py       # dependency wiring/injection
-│     └─ utils/                # cross-cutting helpers
-│        └─ time.py
-├─ tests/
-│  ├─ conftest.py
-│  ├─ unit/
-│  └─ integration/
-└─ examples/                    # optional usage demos / notebooks
+<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">services</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">plex</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">plex</span>
+<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">linuxserver/plex</span>
+<span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PUID=1000</span><span class="w">           </span><span class="c1"># Replace with your user ID</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PGID=1000</span><span class="w">           </span><span class="c1"># Replace with your group ID</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">VERSION=docker</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PLEX_CLAIM=claim-fzdegAmx-S6iP68ysfp2</span>
+<span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/srv/plex_media:/media</span><span class="w">    </span><span class="c1"># Your media files</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/srv/plex/config:/config</span><span class="w">   </span><span class="c1"># Plex configuration files</span>
+<span class="w">    </span><span class="nt">network_mode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">host</span>
+<span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unless-stopped</span>
 </code></pre></div></td></tr></table></div>
-<p>Why <code>src/</code>? It prevents tests from accidentally importing 
-your <strong>working directory</strong> instead of the installed package, 
-catching packaging/import mistakes early.</p>
-<h3 id="pyprojecttoml-modern-packaging">pyproject.toml (modern packaging)</h3>
-<p>Use PEP 621 metadata; pick a backend (e.g., Hatchling, Setuptools).</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[build-system]</span>
-<span class="n">requires</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;hatchling&gt;=1.25&quot;</span><span class="p">]</span>
-<span class="n">build-backend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;hatchling.build&quot;</span>
-
-<span class="k">[project]</span>
-<span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;your-project&quot;</span>
-<span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;0.1.0&quot;</span>
-<span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Does X&quot;</span>
-<span class="n">readme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;README.md&quot;</span>
-<span class="n">requires-python</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&gt;=3.10&quot;</span>
-<span class="n">license</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">file</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;LICENSE&quot;</span><span class="w"> </span><span class="p">}</span>
-<span class="n">authors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;You&quot;</span><span class="w"> </span><span class="p">}]</span>
-<span class="n">dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
-<span class="w">  </span><span class="s2">&quot;requests&gt;=2.32&quot;</span><span class="p">,</span>
-<span class="p">]</span>
-
-<span class="k">[project.optional-dependencies]</span>
-<span class="n">dev</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;pytest&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;mypy&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;ruff&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;black&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;pytest-cov&quot;</span><span class="p">]</span>
-
-<span class="k">[project.scripts]</span><span class="w">                 </span><span class="c1"># creates console commands on install</span>
-<span class="n">your-cli</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;your_package.cli:main&quot;</span>
-
-<span class="k">[tool.hatch.build.targets.wheel]</span>
-<span class="n">packages</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;src/your_package&quot;</span><span class="p">]</span>
-</code></pre></div></td></tr></table></div>
+<p>Plex does a lot of the certificate management stuff for you. You can connect
+your server to the Plex system to stream, but its not quite a true self hosted
+solution. After you setup your plex server you must go to Plex.com and sign up
+then add your server to your account under their domain. You still end up
+relying on their system. It does come with a lot of other free content through
+Plex which is a benefit.</p>
+<h2 id="notes">Notes</h2>
+<p>Note that both of these require some kind of external internet to work. If you
+want to truely isolated setup that will work if the internet as a whole
+goes down, you will need streaming devices on your TV that can install the Jellyfin
+client app. </p>
+<p>These include:</p>
 <ul>
-<li><strong>[project.scripts]</strong> wires a <strong>console script</strong> (entry point). It points to a callable (e.g., <code>def main(): ...</code>).</li>
-<li>Prefer <strong>runtime deps</strong> under <code>[project.dependencies]</code> and dev tools under an optional extra (e.g., <code>pip install .[dev]</code>).</li>
+<li>NVIDIA Shield TV (best all-around).</li>
+<li>Cheap Android TV box (Amlogic, etc.) sideloaded with Jellyfin app.</li>
+<li>Intel NUC, Raspberry Pi, or old mini PC hooked up via HDMI and running Linux + Jellyfin Desktop/Browser.</li>
 </ul>
-<h3 id="public-api-design">Public API design</h3>
-<ul>
-<li>Use <code>__init__.py</code> to <strong>re-export</strong> the small, stable surface you commit to:</li>
-</ul>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># src/your_package/__init__.py</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">.core.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">Thing</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">.core.services</span><span class="w"> </span><span class="kn">import</span> <span class="n">Service</span>
-
-<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Thing&quot;</span><span class="p">,</span> <span class="s2">&quot;Service&quot;</span><span class="p">]</span>
-</code></pre></div></td></tr></table></div>
-* Keep internal modules private-ish (don’t re-export them) so refactors don’t break users.</p>
-<h3 id="layers-that-scale">Layers that scale</h3>
-<ul>
-<li><strong>core/</strong>: pure business rules, no network/filesystem. Most unit tests live here.</li>
-<li><strong>adapters/</strong>: concrete I/O implementations (Postgres, S3, HTTP, etc.).</li>
-<li><strong>app/</strong> (or <strong>service/</strong>): composition, config, logging, dependency injection, runtime wiring.</li>
-<li><strong>cli/</strong>: thin commands that call into <strong>app/</strong> (don’t bury logic in click/argparse handlers).</li>
-</ul>
-<p>This “ports &amp; adapters” (hexagonal) approach keeps logic decoupled from I/O so you can swap adapters (e.g., SQLite → Postgres) or test with fakes.</p>
-<h3 id="configuration-secrets">Configuration &amp; secrets</h3>
-<ul>
-<li>Read config <strong>from environment</strong> first, with optional <code>.env</code> during development.</li>
-<li>Centralize in <code>app/config.py</code>:</li>
-</ul>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span>
-<span class="normal">8</span>
-<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
-
-<span class="nd">@dataclass</span>
-<span class="k">class</span><span class="w"> </span><span class="nc">Settings</span><span class="p">:</span>
-    <span class="n">db_url</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;APP_DB_URL&quot;</span><span class="p">,</span> <span class="s2">&quot;sqlite:///local.db&quot;</span><span class="p">)</span>
-    <span class="n">log_level</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;APP_LOG_LEVEL&quot;</span><span class="p">,</span> <span class="s2">&quot;INFO&quot;</span><span class="p">)</span>
-
-<span class="n">settings</span> <span class="o">=</span> <span class="n">Settings</span><span class="p">()</span>
-</code></pre></div></td></tr></table></div>
-* Avoid global state; pass <code>settings</code> into your app wiring or use a small container.</p>
-<h3 id="logging">Logging</h3>
-<ul>
-<li>Configure once in <code>app/logging.py</code> and call it from your CLI entry:</li>
-</ul>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span>
-<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">logging</span><span class="o">,</span><span class="w"> </span><span class="nn">sys</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">setup</span><span class="p">(</span><span class="n">level</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;INFO&quot;</span><span class="p">):</span>
-    <span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span>
-        <span class="n">level</span><span class="o">=</span><span class="n">level</span><span class="p">,</span>
-        <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">%(asctime)s</span><span class="s2"> </span><span class="si">%(levelname)s</span><span class="s2"> </span><span class="si">%(name)s</span><span class="s2">: </span><span class="si">%(message)s</span><span class="s2">&quot;</span><span class="p">,</span>
-        <span class="n">stream</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="p">,</span>
-    <span class="p">)</span>
-</code></pre></div></td></tr></table></div>
-<h3 id="testing-strategy">Testing strategy</h3>
-<ul>
-<li><strong>pytest</strong> with <code>tests/unit</code> for pure logic and <code>tests/integration</code> for external systems.</li>
-<li>Use fakes or fixtures for adapters; avoid hitting the network in unit tests.</li>
-<li>Keep test imports identical to users: <code>from your_package import Service</code>.</li>
-</ul>
-<h3 id="data-and-resources">Data and resources</h3>
-<ul>
-<li>Keep runtime data in the package only if truly needed; prefer external files or embedded resources loaded via <code>importlib.resources</code> rather than relative paths.</li>
-<li>For large assets, ship them separately or fetch at runtime.</li>
-</ul>
-<h3 id="cli-vs-library">CLI vs library</h3>
-<ul>
-<li>Treat the <strong>package as a library</strong> first; keep the CLI thin. That makes automation and testing easier and lets others use your code programmatically.</li>
-</ul>
-<h3 id="common-pitfalls-to-avoid">Common pitfalls to avoid</h3>
-<ul>
-<li><strong>Logic in scripts</strong>: move code out of <code>if __name__ == "__main__":</code> into functions/classes.</li>
-<li><strong>Tight coupling to I/O</strong>: keep core pure; push side effects to adapters.</li>
-<li><strong>Leaky imports</strong>: don’t rely on import side effects; be explicit.</li>
-<li><strong>Messy init</strong>: avoid heavy work at import time; initialize in <code>main()</code> / app wiring.</li>
-</ul>
-<h2 id="minimal-example-for-a-cli">Minimal example for a CLI</h2>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># src/your_package/cli.py</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">argparse</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">.app.logging</span><span class="w"> </span><span class="kn">import</span> <span class="n">setup</span> <span class="k">as</span> <span class="n">setup_logging</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">.app.config</span><span class="w"> </span><span class="kn">import</span> <span class="n">settings</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">.core.services</span><span class="w"> </span><span class="kn">import</span> <span class="n">Service</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
-    <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">()</span>
-    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;--log-level&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="n">settings</span><span class="o">.</span><span class="n">log_level</span><span class="p">)</span>
-    <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
-
-    <span class="n">setup_logging</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">log_level</span><span class="p">)</span>
-    <span class="n">Service</span><span class="p">()</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
-</code></pre></div></td></tr></table></div>
 
 
 
