@@ -229,7 +229,7 @@ fn repeat_value(i: i32) -> i32 {
 }
 ```
 To return a value from a function, you need to have the arrow and return type.
-The last [expression](#statements--expressions) will be what a function returns if it has a return type.
+The last will be what a function returns if it has a return type.
 You can also return early with the return keyword
 ```rust
 fn repeat_value(i: i32) -> i32 {
