@@ -12,16 +12,17 @@ They can enhance security by isolating the host system from the system running t
 - Docker is what runs cloud services. For example, if we spin up a resource in Azure, it's probably running on Docker.
 - Fixes the issue of "it runs on my machine" for development (reproducible environment).
 - Containers are isolated from the host machine, which makes it more secure.
+- **Extremely stable and reproducible environments.**
 
 **Docker is great for both development and production.**
 
 ## What is Docker?
 
-Docker is a utility that hosts other programs in their own containers.
-
+Docker is a utility that hosts other programs in their own containers. 
 Think of a container like an ultra-light weight version of a virtual machine.
 
 The difference between a VM and a container:
+
 - VM's require allocating a chunk of a computer's hardware resources to its own kernel and OS.
 - A container can share the kernel and user space.
 

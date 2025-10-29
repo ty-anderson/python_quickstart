@@ -5061,14 +5061,17 @@ They can enhance security by isolating the host system from the system running t
 <li>Docker is what runs cloud services. For example, if we spin up a resource in Azure, it's probably running on Docker.</li>
 <li>Fixes the issue of "it runs on my machine" for development (reproducible environment).</li>
 <li>Containers are isolated from the host machine, which makes it more secure.</li>
+<li><strong>Extremely stable and reproducible environments.</strong></li>
 </ul>
 <p><strong>Docker is great for both development and production.</strong></p>
 <h2 id="docker-intro-what-is-docker">What is Docker?</h2>
-<p>Docker is a utility that hosts other programs in their own containers.</p>
-<p>Think of a container like an ultra-light weight version of a virtual machine.</p>
-<p>The difference between a VM and a container:
-- VM's require allocating a chunk of a computer's hardware resources to its own kernel and OS.
-- A container can share the kernel and user space.</p>
+<p>Docker is a utility that hosts other programs in their own containers. 
+Think of a container like an ultra-light weight version of a virtual machine.</p>
+<p>The difference between a VM and a container:</p>
+<ul>
+<li>VM's require allocating a chunk of a computer's hardware resources to its own kernel and OS.</li>
+<li>A container can share the kernel and user space.</li>
+</ul>
 <p>Terms:</p>
 <ul>
 <li>Image: A copy of the software that is ready to run on docker.</li>
@@ -6620,6 +6623,23 @@ caddy<span class="w"> </span>hash-password<span class="w"> </span>--plaintext<sp
 <span class="c1"># docker</span>
 sudo<span class="w"> </span>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>caddy<span class="w"> </span>caddy<span class="w"> </span>hash-password<span class="w"> </span>--plaintext<span class="w"> </span><span class="s2">&quot;yourpassword&quot;</span>
 </code></pre></div></td></tr></table></div>
+<p>When making your Caddyfile, you can create your own domain names to serve like
+"home.server". Caddy will serve these LOCALLY, meaning you can't access outside
+of your private network, but you could use a VPN. The other caveat to this is
+that you'll need your machines to be able to resolve these names through one
+of two options:</p>
+<ol>
+<li>Individual computer DNS resolution.</li>
+<li>Network level DNS resolution.</li>
+</ol>
+<p>For option 1 - go to <code>/etc/hosts</code> and add your custom routes <code>192.168.1.104   home.server</code>
+For option 2 - host a network DNS software like Adguard. Here you can configure the network
+to resolve these names. </p>
+<p>If you do this, you'll still get the message that your browser doesn't trust the site
+because it doesn't trust the self signed certificate. You could export the certificate
+from caddy and install to all the computers that will use the sites.</p>
+<p>If you don't want to do this, you'll need to purchase a real domain name and point it
+to your home network.</p>
 <p>Then add your auth to your route in Caddyfile.
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>

@@ -95,6 +95,26 @@ caddy hash-password --plaintext "yourpassword"
 sudo docker exec -it caddy caddy hash-password --plaintext "yourpassword"
 ```
 
+When making your Caddyfile, you can create your own domain names to serve like
+"home.server". Caddy will serve these LOCALLY, meaning you can't access outside
+of your private network, but you could use a VPN. The other caveat to this is
+that you'll need your machines to be able to resolve these names through one
+of two options:
+
+1. Individual computer DNS resolution.
+2. Network level DNS resolution.
+
+For option 1 - go to ``/etc/hosts`` and add your custom routes ``192.168.1.104   home.server``
+For option 2 - host a network DNS software like Adguard. Here you can configure the network
+to resolve these names. 
+
+If you do this, you'll still get the message that your browser doesn't trust the site
+because it doesn't trust the self signed certificate. You could export the certificate
+from caddy and install to all the computers that will use the sites.
+
+If you don't want to do this, you'll need to purchase a real domain name and point it
+to your home network.
+
 Then add your auth to your route in Caddyfile.
 ```caddyfile
 # add auth to entire site

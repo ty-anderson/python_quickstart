@@ -8,13 +8,9 @@
       
       
       
-        <link rel="canonical" href="https://healthfin.solutions/notes/self_host/web_server/">
+        <link rel="canonical" href="https://healthfin.solutions/notes/Rust/strings/">
       
       
-        <link rel="prev" href="../frigate/">
-      
-      
-        <link rel="next" href="../wireguard/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -22,7 +18,7 @@
     
     
       
-        <title>Caddy (reverse proxy & web server) - Tech Notes</title>
+        <title>Rust Strings - Tech Notes</title>
       
     
     
@@ -80,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#web-servers" class="md-skip">
+        <a href="#rust-strings" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Caddy (reverse proxy & web server)
+              Rust Strings
             
           </span>
         </div>
@@ -949,19 +945,17 @@
       
   
   
-    
   
   
-  
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -975,7 +969,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Self Hosting
@@ -989,7 +983,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../storage_vs_compute/" class="md-nav__link">
+      <a href="../../self_host/storage_vs_compute/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1031,7 +1025,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../samba/" class="md-nav__link">
+      <a href="../../self_host/samba/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1052,7 +1046,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../syncthing/" class="md-nav__link">
+      <a href="../../self_host/syncthing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1073,7 +1067,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../video_streaming/" class="md-nav__link">
+      <a href="../../self_host/video_streaming/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1094,7 +1088,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../frigate/" class="md-nav__link">
+      <a href="../../self_host/frigate/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1112,30 +1106,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Caddy (reverse proxy & web server)
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../self_host/web_server/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1144,89 +1118,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#reverse-proxy" class="md-nav__link">
-    <span class="md-ellipsis">
-      Reverse Proxy
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#caddy" class="md-nav__link">
-    <span class="md-ellipsis">
-      Caddy
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#docker-compose" class="md-nav__link">
-    <span class="md-ellipsis">
-      Docker Compose
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#caddyfile" class="md-nav__link">
-    <span class="md-ellipsis">
-      Caddyfile
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#certificates" class="md-nav__link">
-    <span class="md-ellipsis">
-      Certificates
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#authentication" class="md-nav__link">
-    <span class="md-ellipsis">
-      Authentication
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#full-file" class="md-nav__link">
-    <span class="md-ellipsis">
-      Full File
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1239,7 +1130,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../wireguard/" class="md-nav__link">
+      <a href="../../self_host/wireguard/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1281,7 +1172,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../nas/" class="md-nav__link">
+      <a href="../../self_host/nas/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1792,7 +1683,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Rust/rust01/" class="md-nav__link">
+      <a href="../rust01/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1825,77 +1716,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#reverse-proxy" class="md-nav__link">
-    <span class="md-ellipsis">
-      Reverse Proxy
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#caddy" class="md-nav__link">
-    <span class="md-ellipsis">
-      Caddy
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#docker-compose" class="md-nav__link">
-    <span class="md-ellipsis">
-      Docker Compose
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#caddyfile" class="md-nav__link">
-    <span class="md-ellipsis">
-      Caddyfile
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#certificates" class="md-nav__link">
-    <span class="md-ellipsis">
-      Certificates
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#authentication" class="md-nav__link">
-    <span class="md-ellipsis">
-      Authentication
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#full-file" class="md-nav__link">
-    <span class="md-ellipsis">
-      Full File
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1909,467 +1729,12 @@
                   
 
 
-<h1 id="web-servers">Web Servers</h1>
-<p>A web server is a server that serves data over the HTTP/HTTPS protocols.
-Typically it is HTML, JSON, XML, or some other type of data. </p>
-<h2 id="reverse-proxy">Reverse Proxy</h2>
-<p>A reverse proxy is a process that will reroute network traffic that flows
-through the HTTP/HTTPS protocols, to other machines, using IP addresses.
-One example is if you setup a proxy server to take any networks requests
-to the public ip address A, it will take those requests and push them to
-the machine with local ip address B.</p>
-<p>Think of it like a concierge for your website. You have a website welcome.com.
-When someone goes to welcome.com, the public DNS will use that name to go to
-the public IP you configured, and then when the traffic reaches your server,
-your concierge takes them to the correct room (machine).</p>
-<h2 id="caddy">Caddy</h2>
-<p>Caddy is a very easy web server/reverse proxy. It handles certificate creation
-automatically which is super helpful. It also can be used to distribute traffic
-for load balancing, serve static web files, handle simple auth, and more.</p>
-<p>The way you setup caddy is with docker compose:</p>
-<h2 id="docker-compose">Docker Compose</h2>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">services</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">caddy</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">caddy:latest</span>
-<span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">caddy</span>
-<span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;80:80&quot;</span><span class="w">        </span><span class="c1"># HTTP</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;443:443&quot;</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;8009:8009&quot;</span>
-<span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./Caddyfile:/etc/caddy/Caddyfile</span><span class="w">   </span><span class="c1"># Mount your Caddyfile</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./data:/data</span><span class="w">                       </span><span class="c1"># Let’s Encrypt certificates</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./config:/config</span><span class="w">                   </span><span class="c1"># Caddy configuration</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/srv/web_apps:/srv/web_apps</span><span class="w">        </span><span class="c1"># custom directory I want caddy to have access to for static web pages</span>
-<span class="w">    </span><span class="nt">dns</span><span class="p">:</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.1.1.1</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8.8.8.8</span>
-<span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unless-stopped</span>
-</code></pre></div></td></tr></table></div>
-<h2 id="caddyfile">Caddyfile</h2>
-<p>Once the server is running, the caddyfile is the base config for what you want it
-to do. Create a file called <code>Caddyfile</code> and then update based on what you want.
-Here are the offical docs: https://caddyserver.com/docs/caddyfile</p>
-<p>Basic File:
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>localhost {
-    respond &quot;Hello, world!&quot;
-}
-
-localhost:2016 {
-    respond &quot;Goodbye, world!&quot;
-}
-</code></pre></div></td></tr></table></div></p>
-<h2 id="certificates">Certificates</h2>
-<p>Using certain names in your caddyfile have important caveats. For example, LetsEncrypt,
-the certificate authority that Caddy uses will not issue certificates for localhost. 
-They only do for public domains. Also your browser will show a "Not Trusted" message
-when you try to go to it. </p>
-<p>You can get a local cert program like mkcert and set that up.</p>
-<p>Caddy has a self signed cert with TLS. You can use this like below:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>localhost {
-    root * /srv/web_apps/dev_site
-    file_server
-    tls internal
-}
-</code></pre></div></td></tr></table></div>
-<h2 id="authentication">Authentication</h2>
-<p>You can add basic HTTP authentication to any of your routes. Use bcrypt
-to generate a password hash like </p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># with caddy</span>
-caddy<span class="w"> </span>hash-password<span class="w"> </span>--plaintext<span class="w"> </span><span class="s2">&quot;yourpassword&quot;</span>
-
-<span class="c1"># docker</span>
-sudo<span class="w"> </span>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>caddy<span class="w"> </span>caddy<span class="w"> </span>hash-password<span class="w"> </span>--plaintext<span class="w"> </span><span class="s2">&quot;yourpassword&quot;</span>
-</code></pre></div></td></tr></table></div>
-<p>When making your Caddyfile, you can create your own domain names to serve like
-"home.server". Caddy will serve these LOCALLY, meaning you can't access outside
-of your private network, but you could use a VPN. The other caveat to this is
-that you'll need your machines to be able to resolve these names through one
-of two options:</p>
+<h1 id="rust-strings">Rust Strings</h1>
+<p>In Rust there are two main types of strings:</p>
 <ol>
-<li>Individual computer DNS resolution.</li>
-<li>Network level DNS resolution.</li>
+<li><code>&amp;str</code> - string literals. A borrowed reference to a string slice. Read only.</li>
+<li><code>String</code> - owned text that can be modified. Goes on the heap.</li>
 </ol>
-<p>For option 1 - go to <code>/etc/hosts</code> and add your custom routes <code>192.168.1.104   home.server</code>
-For option 2 - host a network DNS software like Adguard. Here you can configure the network
-to resolve these names. </p>
-<p>If you do this, you'll still get the message that your browser doesn't trust the site
-because it doesn't trust the self signed certificate. You could export the certificate
-from caddy and install to all the computers that will use the sites.</p>
-<p>If you don't want to do this, you'll need to purchase a real domain name and point it
-to your home network.</p>
-<p>Then add your auth to your route in Caddyfile.
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span></pre></div></td><td class="code"><div><pre><span></span><code># add auth to entire site
-yourdomain.com {
-    basicauth {
-        user password_hash
-    }
-
-    root * /srv/web_apps/site
-    file_server
-}
-
-# add auth to specific route
-example.com {
-    handle /admin* {
-        basicauth {
-            user password_hash
-        }
-        root * /srv/web_apps/admin
-        file_server
-    }
-
-    handle / {
-        root * /srv/web_apps/public
-        file_server
-    }
-}
-</code></pre></div></td></tr></table></div></p>
-<h2 id="full-file">Full File</h2>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">  1</span>
-<span class="normal">  2</span>
-<span class="normal">  3</span>
-<span class="normal">  4</span>
-<span class="normal">  5</span>
-<span class="normal">  6</span>
-<span class="normal">  7</span>
-<span class="normal">  8</span>
-<span class="normal">  9</span>
-<span class="normal"> 10</span>
-<span class="normal"> 11</span>
-<span class="normal"> 12</span>
-<span class="normal"> 13</span>
-<span class="normal"> 14</span>
-<span class="normal"> 15</span>
-<span class="normal"> 16</span>
-<span class="normal"> 17</span>
-<span class="normal"> 18</span>
-<span class="normal"> 19</span>
-<span class="normal"> 20</span>
-<span class="normal"> 21</span>
-<span class="normal"> 22</span>
-<span class="normal"> 23</span>
-<span class="normal"> 24</span>
-<span class="normal"> 25</span>
-<span class="normal"> 26</span>
-<span class="normal"> 27</span>
-<span class="normal"> 28</span>
-<span class="normal"> 29</span>
-<span class="normal"> 30</span>
-<span class="normal"> 31</span>
-<span class="normal"> 32</span>
-<span class="normal"> 33</span>
-<span class="normal"> 34</span>
-<span class="normal"> 35</span>
-<span class="normal"> 36</span>
-<span class="normal"> 37</span>
-<span class="normal"> 38</span>
-<span class="normal"> 39</span>
-<span class="normal"> 40</span>
-<span class="normal"> 41</span>
-<span class="normal"> 42</span>
-<span class="normal"> 43</span>
-<span class="normal"> 44</span>
-<span class="normal"> 45</span>
-<span class="normal"> 46</span>
-<span class="normal"> 47</span>
-<span class="normal"> 48</span>
-<span class="normal"> 49</span>
-<span class="normal"> 50</span>
-<span class="normal"> 51</span>
-<span class="normal"> 52</span>
-<span class="normal"> 53</span>
-<span class="normal"> 54</span>
-<span class="normal"> 55</span>
-<span class="normal"> 56</span>
-<span class="normal"> 57</span>
-<span class="normal"> 58</span>
-<span class="normal"> 59</span>
-<span class="normal"> 60</span>
-<span class="normal"> 61</span>
-<span class="normal"> 62</span>
-<span class="normal"> 63</span>
-<span class="normal"> 64</span>
-<span class="normal"> 65</span>
-<span class="normal"> 66</span>
-<span class="normal"> 67</span>
-<span class="normal"> 68</span>
-<span class="normal"> 69</span>
-<span class="normal"> 70</span>
-<span class="normal"> 71</span>
-<span class="normal"> 72</span>
-<span class="normal"> 73</span>
-<span class="normal"> 74</span>
-<span class="normal"> 75</span>
-<span class="normal"> 76</span>
-<span class="normal"> 77</span>
-<span class="normal"> 78</span>
-<span class="normal"> 79</span>
-<span class="normal"> 80</span>
-<span class="normal"> 81</span>
-<span class="normal"> 82</span>
-<span class="normal"> 83</span>
-<span class="normal"> 84</span>
-<span class="normal"> 85</span>
-<span class="normal"> 86</span>
-<span class="normal"> 87</span>
-<span class="normal"> 88</span>
-<span class="normal"> 89</span>
-<span class="normal"> 90</span>
-<span class="normal"> 91</span>
-<span class="normal"> 92</span>
-<span class="normal"> 93</span>
-<span class="normal"> 94</span>
-<span class="normal"> 95</span>
-<span class="normal"> 96</span>
-<span class="normal"> 97</span>
-<span class="normal"> 98</span>
-<span class="normal"> 99</span>
-<span class="normal">100</span>
-<span class="normal">101</span>
-<span class="normal">102</span>
-<span class="normal">103</span>
-<span class="normal">104</span>
-<span class="normal">105</span>
-<span class="normal">106</span>
-<span class="normal">107</span>
-<span class="normal">108</span>
-<span class="normal">109</span>
-<span class="normal">110</span>
-<span class="normal">111</span>
-<span class="normal">112</span>
-<span class="normal">113</span>
-<span class="normal">114</span>
-<span class="normal">115</span>
-<span class="normal">116</span>
-<span class="normal">117</span>
-<span class="normal">118</span>
-<span class="normal">119</span>
-<span class="normal">120</span>
-<span class="normal">121</span>
-<span class="normal">122</span>
-<span class="normal">123</span>
-<span class="normal">124</span>
-<span class="normal">125</span>
-<span class="normal">126</span>
-<span class="normal">127</span>
-<span class="normal">128</span>
-<span class="normal">129</span>
-<span class="normal">130</span>
-<span class="normal">131</span>
-<span class="normal">132</span>
-<span class="normal">133</span>
-<span class="normal">134</span>
-<span class="normal">135</span>
-<span class="normal">136</span>
-<span class="normal">137</span>
-<span class="normal">138</span>
-<span class="normal">139</span>
-<span class="normal">140</span>
-<span class="normal">141</span>
-<span class="normal">142</span>
-<span class="normal">143</span>
-<span class="normal">144</span>
-<span class="normal">145</span></pre></div></td><td class="code"><div><pre><span></span><code>(basic_auth_users) {
-    @protected {
-        not path /public_notes*   # everything EXCEPT /public_notes*
-    }
-
-    basic_auth @protected  {
-            user password_hash
-        }
-    }
-
-home.server {
-    tls internal
-
-    handle / {
-        root * /srv/web_apps/home
-        file_server
-    }
-
-    handle /test* {
-        respond &quot;Hello from test path&quot;
-    }
-
-    handle /notes* {
-        root * /srv/web_apps
-        file_server browse
-    }
-
-    handle {
-        respond &quot;❌ Unmatched path: {uri}&quot; 404
-    }
-}
-
-
-healthfin.solutions {
-    handle /public_notes* {
-            root * /srv/web_apps
-            file_server
-        }
-
-    import basic_auth_users
-
-    handle / {
-        root * /srv/web_apps/home
-        file_server
-    }
-
-    handle /confetti {
-        rewrite * /confetti.html
-        root * /srv/web_apps/home
-        file_server
-    }
-
-    handle /timeline {
-        rewrite * /timeline.html
-        root * /srv/web_apps/home
-        file_server
-    }
-
-    handle /notes* {
-            root * /srv/web_apps
-            file_server
-        }
-
-    handle {
-        respond &quot;❌ Unmatched path: {uri}&quot; 404
-    }
-}
-
-
-# billboard analytics
-billboard.anderson {
-    tls internal
-    reverse_proxy 192.168.1.104:8000
-}
-
-billboard.healthfin.solutions {
-    import basic_auth_users
-
-    reverse_proxy 192.168.1.104:8000 {
-        header_up Host {http.request.host}  # fixes the issue of static files in the website.
-    }
-}
-
-# immich
-pics.anderson {
-    tls internal
-    reverse_proxy 192.168.1.104:2283
-}
-
-pics.healthfin.solutions {
-    import basic_auth_users
-
-    reverse_proxy 192.168.1.104:2283 {
-        header_up Host {http.request.host}  # fixes the issue of static files in the website.
-    }
-}
-
-# LLM
-ollama.anderson {
-    tls internal
-    reverse_proxy 192.168.1.104:3001
-}
-
-ai.healthfin.solutions {
-    reverse_proxy 192.168.1.104:3001
-}
-
-yt.healthfin.solutions {
-    import basic_auth_users
-    reverse_proxy 192.168.1.104:8091
-}
-
-jelly.healthfin.solutions {
-    reverse_proxy 192.168.1.104:8096
-}
-
-docs.anderson {
-    tls internal
-    root * /srv/web_apps/notes
-    file_server
-}
-
-dns.anderson {
-    import basic_auth_users
-    tls internal
-    reverse_proxy 192.168.1.104:3000
-}
-
-resources.anderson {
-    import basic_auth_users
-    tls internal
-    reverse_proxy 192.168.1.104:19999
-}
-
-jdownloader.anderson {
-    import basic_auth_users
-    tls internal
-    reverse_proxy 192.168.1.104:5800
-}
-
-torrent.anderson {
-    import basic_auth_users
-    tls internal
-    reverse_proxy 192.168.1.104:8080
-}
-</code></pre></div></td></tr></table></div>
 
 
 
