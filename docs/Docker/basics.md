@@ -68,7 +68,8 @@ host machine port to the port that is being used in the docker container.
 
 ### Docker Volumes
 
-Files and Docker
+Files and Docker: 
+
 If you need to use files for anything involving docker, you need to configure volumes.
 
 Volumes are a mapping of the docker container file system to the host file system.
