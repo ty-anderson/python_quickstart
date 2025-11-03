@@ -74,6 +74,10 @@ nav:
   - Servers: Networking/docs_100_servers.md
   - Caddy: Networking/docs_101_caddy.md
   - DNS: Networking/docs_102_dns_server.md
+- Windows:
+  - Password Policy: windows_admin/password_policy.md
+- Databases:
+  - DuckDB: databases/duckdb.md
 - Linux and Other OS:
   - Linux: Linux/docs_104_linux.md
   - SSH: Linux/docs_103_ssh.md
@@ -84,6 +88,7 @@ nav:
 - AI:
   - Ollama: AI/docs_105_local_llm.md
   - MCP: AI/mcp.md
+  - Claude Code: AI/claude_code.md
 - Low-Level:
   - Learning Paths: Low Level/foundations.md
   - Drivers: Low Level/drivers.md

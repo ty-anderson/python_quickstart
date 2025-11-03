@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://healthfin.solutions/notes/Networking/docs_100_networking/">
+        <link rel="canonical" href="https://healthfin.solutions/notes/databases/duckdb/">
       
       
-        <link rel="prev" href="../../self_host/nas/">
+        <link rel="prev" href="../../windows_admin/password_policy/">
       
       
-        <link rel="next" href="../docs_100_servers/">
+        <link rel="next" href="../../Linux/docs_104_linux/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>General Networking - Tech Notes</title>
+        <title>DuckDB - Tech Notes</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#networking" class="md-skip">
+        <a href="#duckdb" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              General Networking
+              DuckDB
             
           </span>
         </div>
@@ -1201,19 +1201,17 @@
       
   
   
-    
   
   
-  
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
         
           
           <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
@@ -1227,7 +1225,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             Networking
@@ -1238,30 +1236,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    General Networking
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../Networking/docs_100_networking/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1270,101 +1248,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#dhcp" class="md-nav__link">
-    <span class="md-ellipsis">
-      DHCP
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dns" class="md-nav__link">
-    <span class="md-ellipsis">
-      DNS
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="DNS">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#local-dns" class="md-nav__link">
-    <span class="md-ellipsis">
-      Local DNS
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ipv4-vs-ipv6" class="md-nav__link">
-    <span class="md-ellipsis">
-      IPv4 vs IPv6
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="IPv4 vs IPv6">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ipv4" class="md-nav__link">
-    <span class="md-ellipsis">
-      IPv4
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ipv6" class="md-nav__link">
-    <span class="md-ellipsis">
-      IPv6
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#commands" class="md-nav__link">
-    <span class="md-ellipsis">
-      Commands
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1377,7 +1260,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../docs_100_servers/" class="md-nav__link">
+      <a href="../../Networking/docs_100_servers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1398,7 +1281,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../docs_101_caddy/" class="md-nav__link">
+      <a href="../../Networking/docs_101_caddy/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1419,7 +1302,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../docs_102_dns_server/" class="md-nav__link">
+      <a href="../../Networking/docs_102_dns_server/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1507,17 +1390,19 @@
       
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
         
           
           <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
@@ -1531,7 +1416,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
             Databases
@@ -1542,10 +1427,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../databases/duckdb/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    DuckDB
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1554,6 +1459,35 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      CLI
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1991,75 +1925,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#dhcp" class="md-nav__link">
+  <a href="#cli" class="md-nav__link">
     <span class="md-ellipsis">
-      DHCP
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dns" class="md-nav__link">
-    <span class="md-ellipsis">
-      DNS
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="DNS">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#local-dns" class="md-nav__link">
-    <span class="md-ellipsis">
-      Local DNS
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ipv4-vs-ipv6" class="md-nav__link">
-    <span class="md-ellipsis">
-      IPv4 vs IPv6
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="IPv4 vs IPv6">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ipv4" class="md-nav__link">
-    <span class="md-ellipsis">
-      IPv4
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ipv6" class="md-nav__link">
-    <span class="md-ellipsis">
-      IPv6
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#commands" class="md-nav__link">
-    <span class="md-ellipsis">
-      Commands
+      CLI
     </span>
   </a>
   
@@ -2080,72 +1948,14 @@
                   
 
 
-<h1 id="networking">Networking</h1>
-<p>A network has many different things going on.</p>
-<p>In networking, devices sit behind routers. Routers have a public IP address that
-is used in accessing the internet, or a wide area network (WAN). The router also 
-manages local ip address for all devices through DHCP. </p>
-<h2 id="dhcp">DHCP</h2>
-<p>DHCP - Dynamic Host Configuration Protocol</p>
-<p>DHCP is a server responsible for assigning local ip addresses to devices on the network. 
-It can also have local domain names assigned, frequently setup as <code>home.local</code> or <code>local</code>.</p>
-<p>You can use DHCP to reserve certain ip addresses for certain devices.
-You can also assign names that point to a certain device. This way you can refer to 
-the device on the network by an easy to remember name instead of the ip address.
-For example 192.168.1.104 -&gt; homeserver.</p>
-<p>When a device joins a network, it sends a "DHCP discover" message. 
-A DHCP server responds to the message and assigns an IP address and other configuration information. 
-DHCP also assigns new IP addresses when devices move to new locations. </p>
-<h2 id="dns">DNS</h2>
-<p>DNS - Domain Name System</p>
-<p>This translates IP addresses into domain names. Think of a phonebook for the internet. Instead
-of names to phone numbers it points domain names to ip addresses. There are public DNS servers
-that route the public domains on the internet. </p>
-<h3 id="local-dns">Local DNS</h3>
-<p>There are also DNS servers that are run on a router or a local machine. This establishes
-mappings from names to ip address only on your local network. This makes it so you can setup
-a device with, say ip <code>192.168.1.104</code> to name <code>mydevice.home</code>. Keep in mind that your 
-router might have a suffix that attaches to these names, such as <code>.home</code></p>
-<h2 id="ipv4-vs-ipv6">IPv4 vs IPv6</h2>
-<h3 id="ipv4">IPv4</h3>
-<p>consists of devices having a 32-bit address that looks like 192.168.1.100.
-It consists of public and private addresses, where the public addresses are
-accessible over the internet and private addresses are only accessible over 
-a local network. This means for data to get passed from one device over the internet
-to another device, the protocol Network Area Translation (NAT) is used. NAT
-will convert every packet of your private ip to the public which costs compute.</p>
-<h3 id="ipv6">IPv6</h3>
-<ul>
-<li>128-bit addresses, virtually infinite possible addresses.</li>
-<li>Device addresses are globally routable (not hidden behind a public IP).</li>
-<li>Because devices are globally routable, it eliminates the need for NAT 
-as devices can connect end-to-end. Allowing for better connection
-speeds for video, audio, peer-to-peer, gaming, etc.</li>
-<li>Devices can auto-configure with Stateless Address Autoconfiguration (SLAAC), no
-need for DHCP.</li>
-<li>Firewalls are more relevant with IPv6 due to addresses being globally routable.</li>
-</ul>
-<p><code>ip -6 addr show</code></p>
-<p>Local address: <code>fe80::</code></p>
-<ul>
-<li>Scope: Local network segment (cannot be routed on the internet).</li>
-<li>Usage: Used for internal network functions like router discovery and neighbor discovery.</li>
-<li>Common for: Internal device communication.</li>
-</ul>
-<p>Global address: Usually starts with <code>2xxx::</code> or <code>3xxx::</code></p>
-<ul>
-<li>Scope: Globally routable on the internet.</li>
-<li>Usage: For internet-facing applications or public communication.</li>
-<li>This is often the correct address for external access.</li>
-</ul>
-<p>Address types:</p>
-<ul>
-<li>scope global → for internet or external routing.</li>
-<li>scope link → for local network only.</li>
-</ul>
-<p>SSH: ssh user@[fe80::1a2b:3c4d:5e6f%eth0]</p>
-<h2 id="commands">Commands</h2>
-<p><code>netstat</code> - </p>
+<h1 id="duckdb">DuckDB</h1>
+<h2 id="cli">CLI</h2>
+<p>Install for MacOS:
+<code>curl https://install.duckdb.org | sh</code></p>
+<p>Install for Windows:
+<code>winget install DuckDB.cli</code></p>
+<p>Install for Docker:
+<code>docker run --rm -it -v "$(pwd):/workspace" -w /workspace duckdb/duckdb</code></p>
 
 
 
