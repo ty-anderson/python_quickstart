@@ -74,7 +74,7 @@ nav:
       - Caddy (reverse proxy & web server): self_host/web_server.md
       - WireGuard (VPN): self_host/wireguard.md
       - GitHub Remotes: Git/remotes.md
-      - Forgejo: self_host/foregejo.md
+      - Forgejo: self_host/forgejo.md
 #  - Adguard (DNS):
 - Networking:
     - General Networking: Networking/docs_100_networking.md

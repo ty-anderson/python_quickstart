@@ -1361,7 +1361,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../self_host/foregejo.md" class="md-nav__link">
+      <a href="../self_host/forgejo/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2400,6 +2400,15 @@
   <a href="#git-remotes" class="md-nav__link">
     <span class="md-ellipsis">
       5.2.8 Remotes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#self_host-forgejo" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2.9 Forgejo
     </span>
   </a>
   
@@ -8927,7 +8936,52 @@ git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span
 <span class="c1"># origin is name of remote, change to whatever you want. </span>
 <span class="c1"># main is name of branch, change to whatever branch you want to commit.</span>
 <span class="c1"># the -u sets this remote as the active one for tracking. </span>
-</code></pre></div></td></tr></table></div></p></section></section></section>
+</code></pre></div></td></tr></table></div></p></section><section class="print-page" id="self_host-forgejo" heading-number="5.2.9"><h1 id="self_host-forgejo-forgejo">Forgejo</h1>
+<p>Self-hosted GitHub....</p>
+<p>https://forgejo.org/</p>
+<h2 id="self_host-forgejo-install-with-docker-compose">Install with Docker Compose</h2>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">networks</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">forgejo</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">external</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+
+<span class="nt">services</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">server</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">codeberg.org/forgejo/forgejo:13</span>
+<span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">forgejo</span>
+<span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">USER_UID=1000</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">USER_GID=1000</span>
+<span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">always</span>
+<span class="w">    </span><span class="nt">networks</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">forgejo</span>
+<span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./forgejo:/data</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/etc/timezone:/etc/timezone:ro</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/etc/localtime:/etc/localtime:ro</span>
+<span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;3000:3000&#39;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;222:22&#39;</span>
+</code></pre></div></td></tr></table></div></section></section></section>
                     <section class='print-page md-section' id='section-6' heading-number='6'>
                         <h1>Networking<a class='headerlink' href='#section-6' title='Permanent link'></a>
                         </h1>
@@ -11050,6 +11104,8 @@ If you're creating a function or struct, anything with a data type, you can use 
 .print-site-enumerate-headings #self_host-wireguard > h1:before { content: '5.2.7 ' }
 
 .print-site-enumerate-headings #git-remotes > h1:before { content: '5.2.8 ' }
+
+.print-site-enumerate-headings #self_host-forgejo > h1:before { content: '5.2.9 ' }
 
 .print-site-enumerate-headings #section-6 > h1:before { content: '6 ' }
 .print-site-enumerate-headings #networking-docs_100_networking > h1:before { content: '6.1 ' }
