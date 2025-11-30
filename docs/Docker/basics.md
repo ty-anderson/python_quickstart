@@ -39,6 +39,9 @@ docker logs <container name or id>
 # continuously showing log output
 docker logs -f <container-name-or-id>
 
+# view docker resource usage
+docker stats
+
 ```
 
 ## Run a Container Examples

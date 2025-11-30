@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://healthfin.solutions/notes/Docker/docker_images/">
+        <link rel="canonical" href="https://healthfin.solutions/notes/self_host/login_attempts/">
       
       
-        <link rel="prev" href="../docker_compose/">
+        <link rel="prev" href="../docs_199_backups/">
       
       
-        <link rel="next" href="../../self_host/docs_104_linux/">
+        <link rel="next" href="../storage_vs_compute/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Creating Images (Dockerfile) - Tech Notes</title>
+        <title>Login Security - Tech Notes</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#build-a-docker-image" class="md-skip">
+        <a href="#important-commands" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Creating Images (Dockerfile)
+              Login Security
             
           </span>
         </div>
@@ -823,19 +823,17 @@
       
   
   
-    
   
   
-  
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
@@ -849,7 +847,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Docker
@@ -863,7 +861,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../intro/" class="md-nav__link">
+      <a href="../../Docker/intro/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -884,7 +882,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../basics/" class="md-nav__link">
+      <a href="../../Docker/basics/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -905,11 +903,176 @@
   
   
     <li class="md-nav__item">
-      <a href="../docker_compose/" class="md-nav__link">
+      <a href="../../Docker/docker_compose/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Docker Compose
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Docker/docker_images/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Creating Images (Dockerfile)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Self Hosting
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Self Hosting
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    General
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            General
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs_104_linux/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Linux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs_103_ssh/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SSH
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs_199_backups/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Backups
   </span>
   
 
@@ -932,14 +1095,12 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
-      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
   
   <span class="md-ellipsis">
-    Creating Images (Dockerfile)
+    Login Security
   </span>
   
 
@@ -950,7 +1111,7 @@
         
   
   <span class="md-ellipsis">
-    Creating Images (Dockerfile)
+    Login Security
   </span>
   
 
@@ -962,8 +1123,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -972,54 +1131,276 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#build-dockerfile" class="md-nav__link">
+  <a href="#important-commands" class="md-nav__link">
     <span class="md-ellipsis">
-      Build Dockerfile
+      Important Commands
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#build-image" class="md-nav__link">
+  <a href="#fail2ban" class="md-nav__link">
     <span class="md-ellipsis">
-      Build Image
+      Fail2Ban
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#docker-compose-build-on-run" class="md-nav__link">
+  <a href="#what-fail2ban-does" class="md-nav__link">
     <span class="md-ellipsis">
-      Docker Compose Build on Run
+      🛡️ What Fail2Ban Does
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#automating-build-and-deploy" class="md-nav__link">
+  <a href="#fail2ban-in-one-sentence" class="md-nav__link">
     <span class="md-ellipsis">
-      Automating Build and Deploy
+      🔍 Fail2Ban in One Sentence
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#add-uv-to-image" class="md-nav__link">
+  <a href="#install-fail2ban-ubuntu" class="md-nav__link">
     <span class="md-ellipsis">
-      Add uv to image
+      🚀 Install Fail2Ban (Ubuntu)
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#multi-stage-build" class="md-nav__link">
+  <a href="#how-it-works-internally" class="md-nav__link">
     <span class="md-ellipsis">
-      Multi-Stage build
+      📦 How It Works Internally
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-fail2ban-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔒 Key Fail2Ban Concepts
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔒 Key Fail2Ban Concepts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-jail" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Jail
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-filter" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Filter
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-action" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Action
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-fail2ban-protects-against" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔥 What Fail2Ban Protects Against
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-fail2ban-is-loved" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 Why Fail2Ban Is Loved
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧠 Why Fail2Ban Is Loved">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#protects-every-server-automatically" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✓ Protects every server automatically
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extremely-low-overhead" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✓ Extremely low overhead
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#very-configurable" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✓ Very configurable
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#no-weird-firewall-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✓ No weird firewall rules
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zero-maintenance" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✓ Zero maintenance
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛠️ Basic Configuration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-fail2ban-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      👀 Check Fail2Ban Status
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="👀 Check Fail2Ban Status">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#all-jails" class="md-nav__link">
+    <span class="md-ellipsis">
+      All jails:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-the-ssh-jail" class="md-nav__link">
+    <span class="md-ellipsis">
+      Check the SSH jail:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-who-has-been-banned" class="md-nav__link">
+    <span class="md-ellipsis">
+      📅 See who has been banned
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bonus-protect-against-password-guessing-even-when-they-use-valid-username" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔥 Bonus: Protect Against Password Guessing Even When They Use Valid Username
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#want-maximum-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔒 Want Maximum Security?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔒 Want Maximum Security?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-change-ssh-port" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Change SSH port
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-disable-password-authentication-only-ssh-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Disable password authentication (only SSH keys)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-add-fail2ban-key-only-unbeatable-combo" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Add fail2ban + key-only = unbeatable combo
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#if-you-want" class="md-nav__link">
+    <span class="md-ellipsis">
+      If you want:
     </span>
   </a>
   
@@ -1034,83 +1415,6 @@
 
               
             
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
-        
-          
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    Self Hosting
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5">
-            <span class="md-nav__icon md-icon"></span>
-            Self Hosting
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    General
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_1">
-            <span class="md-nav__icon md-icon"></span>
-            General
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
               
                 
   
@@ -1118,91 +1422,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../self_host/docs_104_linux/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Linux
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../self_host/docs_103_ssh/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    SSH
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../self_host/docs_199_backups/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Backups
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../self_host/login_attempts/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Login Security
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../self_host/storage_vs_compute/" class="md-nav__link">
+      <a href="../storage_vs_compute/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1223,7 +1443,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../self_host/nas/" class="md-nav__link">
+      <a href="../nas/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1308,7 +1528,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../self_host/samba/" class="md-nav__link">
+      <a href="../samba/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1329,7 +1549,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../self_host/syncthing/" class="md-nav__link">
+      <a href="../syncthing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1350,7 +1570,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../self_host/video_streaming/" class="md-nav__link">
+      <a href="../video_streaming/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1371,7 +1591,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../self_host/frigate/" class="md-nav__link">
+      <a href="../frigate/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1392,7 +1612,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../self_host/web_server/" class="md-nav__link">
+      <a href="../web_server/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1413,7 +1633,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../self_host/wireguard/" class="md-nav__link">
+      <a href="../wireguard/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2025,8 +2245,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -2035,54 +2253,276 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#build-dockerfile" class="md-nav__link">
+  <a href="#important-commands" class="md-nav__link">
     <span class="md-ellipsis">
-      Build Dockerfile
+      Important Commands
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#build-image" class="md-nav__link">
+  <a href="#fail2ban" class="md-nav__link">
     <span class="md-ellipsis">
-      Build Image
+      Fail2Ban
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#docker-compose-build-on-run" class="md-nav__link">
+  <a href="#what-fail2ban-does" class="md-nav__link">
     <span class="md-ellipsis">
-      Docker Compose Build on Run
+      🛡️ What Fail2Ban Does
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#automating-build-and-deploy" class="md-nav__link">
+  <a href="#fail2ban-in-one-sentence" class="md-nav__link">
     <span class="md-ellipsis">
-      Automating Build and Deploy
+      🔍 Fail2Ban in One Sentence
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#add-uv-to-image" class="md-nav__link">
+  <a href="#install-fail2ban-ubuntu" class="md-nav__link">
     <span class="md-ellipsis">
-      Add uv to image
+      🚀 Install Fail2Ban (Ubuntu)
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#multi-stage-build" class="md-nav__link">
+  <a href="#how-it-works-internally" class="md-nav__link">
     <span class="md-ellipsis">
-      Multi-Stage build
+      📦 How It Works Internally
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-fail2ban-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔒 Key Fail2Ban Concepts
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔒 Key Fail2Ban Concepts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-jail" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Jail
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-filter" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Filter
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-action" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Action
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-fail2ban-protects-against" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔥 What Fail2Ban Protects Against
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-fail2ban-is-loved" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 Why Fail2Ban Is Loved
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧠 Why Fail2Ban Is Loved">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#protects-every-server-automatically" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✓ Protects every server automatically
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extremely-low-overhead" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✓ Extremely low overhead
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#very-configurable" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✓ Very configurable
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#no-weird-firewall-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✓ No weird firewall rules
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zero-maintenance" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✓ Zero maintenance
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛠️ Basic Configuration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-fail2ban-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      👀 Check Fail2Ban Status
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="👀 Check Fail2Ban Status">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#all-jails" class="md-nav__link">
+    <span class="md-ellipsis">
+      All jails:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-the-ssh-jail" class="md-nav__link">
+    <span class="md-ellipsis">
+      Check the SSH jail:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-who-has-been-banned" class="md-nav__link">
+    <span class="md-ellipsis">
+      📅 See who has been banned
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bonus-protect-against-password-guessing-even-when-they-use-valid-username" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔥 Bonus: Protect Against Password Guessing Even When They Use Valid Username
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#want-maximum-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔒 Want Maximum Security?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔒 Want Maximum Security?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-change-ssh-port" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Change SSH port
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-disable-password-authentication-only-ssh-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Disable password authentication (only SSH keys)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-add-fail2ban-key-only-unbeatable-combo" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Add fail2ban + key-only = unbeatable combo
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#if-you-want" class="md-nav__link">
+    <span class="md-ellipsis">
+      If you want:
     </span>
   </a>
   
@@ -2103,316 +2543,488 @@
                   
 
 
-<h1 id="build-a-docker-image">Build a Docker Image</h1>
-<p>A <strong>Dockerfile</strong> is how to build an image. The contents might look something like this:</p>
-<h2 id="build-dockerfile">Build Dockerfile</h2>
-<p>Simple python app:
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">FROM</span><span class="w"> </span><span class="s">python:3.12-slim</span>
-<span class="k">WORKDIR</span><span class="w"> </span><span class="s">/app</span>
-<span class="k">COPY</span><span class="w"> </span>requirements.txt<span class="w"> </span>.
-<span class="k">RUN</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
-<span class="k">COPY</span><span class="w"> </span>.<span class="w"> </span>.
-<span class="k">CMD</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;python&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;app.py&quot;</span><span class="p">]</span>
-</code></pre></div></td></tr></table></div></p>
-<p>Flask app (more complex):
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c"># Use a lightweight Python image</span>
-<span class="k">FROM</span><span class="w"> </span><span class="s">python:3.12-slim</span>
+  <h1>Login Security</h1>
 
-<span class="c"># Set the working directory inside the container</span>
-<span class="k">WORKDIR</span><span class="w"> </span><span class="s">/app</span>
+<p>Here you go — a <strong>clean, comprehensive, copy-paste-ready</strong> set of Fail2Ban + login monitoring commands, all in one code block, with clear comment headers for each section.</p>
+<p>Use this anytime you want to quickly investigate login attempts, bans, SSH failures, or brute-force activity.</p>
+<h2 id="important-commands">Important Commands</h2>
+<hr />
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">  1</span>
+<span class="normal">  2</span>
+<span class="normal">  3</span>
+<span class="normal">  4</span>
+<span class="normal">  5</span>
+<span class="normal">  6</span>
+<span class="normal">  7</span>
+<span class="normal">  8</span>
+<span class="normal">  9</span>
+<span class="normal"> 10</span>
+<span class="normal"> 11</span>
+<span class="normal"> 12</span>
+<span class="normal"> 13</span>
+<span class="normal"> 14</span>
+<span class="normal"> 15</span>
+<span class="normal"> 16</span>
+<span class="normal"> 17</span>
+<span class="normal"> 18</span>
+<span class="normal"> 19</span>
+<span class="normal"> 20</span>
+<span class="normal"> 21</span>
+<span class="normal"> 22</span>
+<span class="normal"> 23</span>
+<span class="normal"> 24</span>
+<span class="normal"> 25</span>
+<span class="normal"> 26</span>
+<span class="normal"> 27</span>
+<span class="normal"> 28</span>
+<span class="normal"> 29</span>
+<span class="normal"> 30</span>
+<span class="normal"> 31</span>
+<span class="normal"> 32</span>
+<span class="normal"> 33</span>
+<span class="normal"> 34</span>
+<span class="normal"> 35</span>
+<span class="normal"> 36</span>
+<span class="normal"> 37</span>
+<span class="normal"> 38</span>
+<span class="normal"> 39</span>
+<span class="normal"> 40</span>
+<span class="normal"> 41</span>
+<span class="normal"> 42</span>
+<span class="normal"> 43</span>
+<span class="normal"> 44</span>
+<span class="normal"> 45</span>
+<span class="normal"> 46</span>
+<span class="normal"> 47</span>
+<span class="normal"> 48</span>
+<span class="normal"> 49</span>
+<span class="normal"> 50</span>
+<span class="normal"> 51</span>
+<span class="normal"> 52</span>
+<span class="normal"> 53</span>
+<span class="normal"> 54</span>
+<span class="normal"> 55</span>
+<span class="normal"> 56</span>
+<span class="normal"> 57</span>
+<span class="normal"> 58</span>
+<span class="normal"> 59</span>
+<span class="normal"> 60</span>
+<span class="normal"> 61</span>
+<span class="normal"> 62</span>
+<span class="normal"> 63</span>
+<span class="normal"> 64</span>
+<span class="normal"> 65</span>
+<span class="normal"> 66</span>
+<span class="normal"> 67</span>
+<span class="normal"> 68</span>
+<span class="normal"> 69</span>
+<span class="normal"> 70</span>
+<span class="normal"> 71</span>
+<span class="normal"> 72</span>
+<span class="normal"> 73</span>
+<span class="normal"> 74</span>
+<span class="normal"> 75</span>
+<span class="normal"> 76</span>
+<span class="normal"> 77</span>
+<span class="normal"> 78</span>
+<span class="normal"> 79</span>
+<span class="normal"> 80</span>
+<span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">############################################################</span>
+<span class="c1"># FAIL2BAN STATUS &amp; OVERVIEW</span>
+<span class="c1">############################################################</span>
 
-<span class="c"># Copy app files to the container</span>
-<span class="k">COPY</span><span class="w"> </span>.<span class="w"> </span>/app
+<span class="c1"># Show all active jails (Fail2Ban services being monitored)</span>
+sudo<span class="w"> </span>fail2ban-client<span class="w"> </span>status
 
-<span class="c"># Install dependencies</span>
-<span class="k">RUN</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--no-cache-dir<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+<span class="c1"># Show detailed status for SSH jail: failures, bans, file watched</span>
+sudo<span class="w"> </span>fail2ban-client<span class="w"> </span>status<span class="w"> </span>sshd
 
-<span class="c"># Set environment variables</span>
-<span class="k">ENV</span><span class="w"> </span><span class="nv">FLASK_ENV</span><span class="o">=</span>production
-<span class="k">ENV</span><span class="w"> </span><span class="nv">PYTHONUNBUFFERED</span><span class="o">=</span><span class="m">1</span>
+<span class="c1"># Show Fail2Ban version, active jails, global info</span>
+sudo<span class="w"> </span>fail2ban-client<span class="w"> </span>-v<span class="w"> </span>-v<span class="w"> </span>status<span class="w"> </span>sshd
 
-<span class="c"># Expose the port (optional if using Docker Compose)</span>
-<span class="k">EXPOSE</span><span class="w"> </span><span class="s">8090</span>
 
-<span class="c"># Run Gunicorn when the container starts</span>
-<span class="k">CMD</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;gunicorn&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;-w&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;4&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;-b&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;0.0.0.0:8090&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;web_app.app:app&quot;</span><span class="p">]</span>
-</code></pre></div></td></tr></table></div></p>
-<h2 id="build-image">Build Image</h2>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># build the image</span>
-docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>my-image-name:tag<span class="w"> </span>.<span class="w">  </span><span class="c1"># &lt;- don&#39;t forget that period</span>
+<span class="c1">############################################################</span>
+<span class="c1"># REAL-TIME MONITORING (LIVE VIEW)</span>
+<span class="c1">############################################################</span>
 
-<span class="c1"># example 1</span>
-docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>my-flask-app:latest<span class="w"> </span>.
+<span class="c1"># Watch Fail2Ban log in real time (bans, failures, regex matches)</span>
+sudo<span class="w"> </span>tail<span class="w"> </span>-f<span class="w"> </span>/var/log/fail2ban.log
 
-<span class="c1"># example 2</span>
-docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>my-flask-app:v1.0<span class="w"> </span>.
+<span class="c1"># Live monitoring of SSH authentication logs</span>
+sudo<span class="w"> </span>tail<span class="w"> </span>-f<span class="w"> </span>/var/log/auth.log
 
-<span class="c1"># building on a Mac but will run on linux, specify to run on amd64.</span>
-docker<span class="w"> </span>build<span class="w"> </span>--platform<span class="w"> </span>linux/amd64<span class="w"> </span>-t<span class="w"> </span>yt_download:latest<span class="w"> </span>.
 
-<span class="c1"># once the image has been created:</span>
-<span class="c1"># save image to a tar file for sharing/copying</span>
-docker<span class="w"> </span>save<span class="w"> </span>-o<span class="w"> </span>/Users/tyleranderson/Downloads/yt_downloads_250226.tar<span class="w"> </span>yt_download:latest
+<span class="c1">############################################################</span>
+<span class="c1"># VIEW BAN EVENTS</span>
+<span class="c1">############################################################</span>
 
-<span class="c1"># load the file as an image</span>
-docker<span class="w"> </span>load<span class="w"> </span>-i<span class="w"> </span>/srv/flask_yt_download/yt_downloads_250226.tar<span class="sb">`</span>
+<span class="c1"># Show all ban events (including archived logs)</span>
+sudo<span class="w"> </span>zgrep<span class="w"> </span>-i<span class="w"> </span><span class="s2">&quot;Ban&quot;</span><span class="w"> </span>/var/log/fail2ban.log*
+
+<span class="c1"># Show all unban events</span>
+sudo<span class="w"> </span>zgrep<span class="w"> </span>-i<span class="w"> </span><span class="s2">&quot;Unban&quot;</span><span class="w"> </span>/var/log/fail2ban.log*
+
+<span class="c1"># List currently banned IP addresses</span>
+sudo<span class="w"> </span>fail2ban-client<span class="w"> </span>status<span class="w"> </span>sshd<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-i<span class="w"> </span><span class="s2">&quot;Banned IP list&quot;</span>
+
+
+<span class="c1">############################################################</span>
+<span class="c1"># VIEW FAILED LOGIN ATTEMPTS (SYSTEM LOGS)</span>
+<span class="c1">############################################################</span>
+
+<span class="c1"># Show all failed SSH logins</span>
+sudo<span class="w"> </span>grep<span class="w"> </span>-i<span class="w"> </span><span class="s2">&quot;failed password&quot;</span><span class="w"> </span>/var/log/auth.log
+
+<span class="c1"># Show invalid username attempts</span>
+sudo<span class="w"> </span>grep<span class="w"> </span>-i<span class="w"> </span><span class="s2">&quot;invalid user&quot;</span><span class="w"> </span>/var/log/auth.log
+
+<span class="c1"># Show all authentication failures (ssh + sudo)</span>
+sudo<span class="w"> </span>grep<span class="w"> </span>-i<span class="w"> </span><span class="s2">&quot;authentication failure&quot;</span><span class="w"> </span>/var/log/auth.log
+
+<span class="c1"># Show failed attempts from a specific IP</span>
+sudo<span class="w"> </span>grep<span class="w"> </span>-i<span class="w"> </span><span class="s2">&quot;failed&quot;</span><span class="w"> </span>/var/log/auth.log<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>&lt;IP&gt;
+
+
+<span class="c1">############################################################</span>
+<span class="c1"># OVERVIEW OF RECENT LOGIN ACTIVITY</span>
+<span class="c1">############################################################</span>
+
+<span class="c1"># Show successful logins (SSH + local)</span>
+last
+
+<span class="c1"># Show failed login attempts (from btmp)</span>
+sudo<span class="w"> </span>lastb
+
+<span class="c1"># Show all SSH login attempts in the last 12 hours</span>
+sudo<span class="w"> </span>journalctl<span class="w"> </span>-u<span class="w"> </span>ssh<span class="w"> </span>--since<span class="w"> </span><span class="s2">&quot;12 hours ago&quot;</span>
+
+
+<span class="c1">############################################################</span>
+<span class="c1"># ANALYZE BRUTE FORCE PATTERNS</span>
+<span class="c1">############################################################</span>
+
+<span class="c1"># Count failed attempts by IP (most frequent first)</span>
+sudo<span class="w"> </span>grep<span class="w"> </span><span class="s2">&quot;Failed password&quot;</span><span class="w"> </span>/var/log/auth.log<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">&#39;{print $(NF-3)}&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span><span class="p">|</span><span class="w"> </span>uniq<span class="w"> </span>-c<span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span>-nr
+
+<span class="c1"># Count attempts by username (detect targeted accounts)</span>
+sudo<span class="w"> </span>grep<span class="w"> </span><span class="s2">&quot;Failed password&quot;</span><span class="w"> </span>/var/log/auth.log<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">&#39;{print $(NF-5)}&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span><span class="p">|</span><span class="w"> </span>uniq<span class="w"> </span>-c<span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span>-nr
+
+<span class="c1"># Show top 20 offending IPs</span>
+sudo<span class="w"> </span>grep<span class="w"> </span><span class="s2">&quot;Failed password&quot;</span><span class="w"> </span>/var/log/auth.log<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">&#39;{print $(NF-3)}&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span><span class="p">|</span><span class="w"> </span>uniq<span class="w"> </span>-c<span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span>-nr<span class="w"> </span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-20
+
+
+<span class="c1">############################################################</span>
+<span class="c1"># CORRELATE FAIL2BAN BANS WITH AUTH.LOG ATTEMPTS</span>
+<span class="c1">############################################################</span>
+
+<span class="c1"># For each banned IP, print their matching authentication failures</span>
+sudo<span class="w"> </span>zgrep<span class="w"> </span>-i<span class="w"> </span><span class="s2">&quot;Ban&quot;</span><span class="w"> </span>/var/log/fail2ban.log*<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">&#39;{print $NF}&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span><span class="p">|</span><span class="w"> </span>uniq<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="nb">read</span><span class="w"> </span>ip<span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">      </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;----- Attempts from </span><span class="nv">$ip</span><span class="s2"> -----&quot;</span>
+<span class="w">      </span>sudo<span class="w"> </span>grep<span class="w"> </span><span class="nv">$ip</span><span class="w"> </span>/var/log/auth.log
+<span class="w">      </span><span class="nb">echo</span>
+<span class="w">    </span><span class="k">done</span>
+
+
+<span class="c1">############################################################</span>
+<span class="c1"># MONITOR SYSTEM LOAD / QUEUES DURING ATTACKS</span>
+<span class="c1">############################################################</span>
+
+<span class="c1"># Check CPU load and process queue (sar requires sysstat installed)</span>
+sar<span class="w"> </span>-q
+
+<span class="c1"># View CPU usage over time</span>
+sar<span class="w"> </span>-u
+
+<span class="c1"># View memory usage over time</span>
+sar<span class="w"> </span>-r
+
+<span class="c1"># View disk I/O bottlenecks (very useful during brute-force DDoS)</span>
+iostat<span class="w"> </span>-xz<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">5</span>
+
+
+<span class="c1">############################################################</span>
+<span class="c1"># EXTRA: CHECK FIREWALL RULES FAIL2BAN ADDED</span>
+<span class="c1">############################################################</span>
+
+<span class="c1"># Show firewall rules currently applied (iptables)</span>
+sudo<span class="w"> </span>iptables<span class="w"> </span>-L<span class="w"> </span>-n
+
+<span class="c1"># Show nftables rules (Ubuntu 22+)</span>
+sudo<span class="w"> </span>nft<span class="w"> </span>list<span class="w"> </span>ruleset
 </code></pre></div></td></tr></table></div>
-<h2 id="docker-compose-build-on-run">Docker Compose Build on Run</h2>
-<p>When you use docker compose with an image, you have two options:</p>
+<h2 id="fail2ban">Fail2Ban</h2>
+<p>Fail2Ban <strong>is one of the simplest, smartest, and most important security tools</strong> you can put on an Ubuntu server — especially one exposed to SSH.</p>
+<p>Think of it as:</p>
+<blockquote>
+<p><strong>A security guard that watches your logs and automatically blocks attackers.</strong></p>
+</blockquote>
+<p>It’s lightweight, fast, and almost zero-maintenance once set up.</p>
+<p>Let’s go deep — <strong>but clearly</strong> — so you truly understand it.</p>
+<hr />
+<h2 id="what-fail2ban-does">🛡️ <strong>What Fail2Ban Does</strong></h2>
+<p>Fail2Ban:</p>
 <ol>
-<li>Build the image on run.</li>
-<li>Run from an existing image.</li>
+<li><strong>Watches system logs</strong> (like <code>/var/log/auth.log</code> for SSH)</li>
+<li>
+<p><strong>Detects suspicious behavior</strong>, such as:</p>
+<ul>
+<li>repeated password failures</li>
+<li>invalid users</li>
+<li>repeated 404s (web servers)</li>
+<li>bot scanning patterns</li>
+<li><strong>Automatically bans the attacker’s IP</strong> using <code>iptables</code>, <code>nftables</code>, or <code>firewalld</code></li>
+<li><strong>Unbans them later</strong> (default 10 min)</li>
+</ul>
+</li>
 </ol>
-<p>Build image as part of docker compose start up.
+<p>This stops brute-force attacks dead.</p>
+<hr />
+<h2 id="fail2ban-in-one-sentence">🔍 <strong>Fail2Ban in One Sentence</strong></h2>
+<blockquote>
+<p>It monitors log files and bans any IP that fails too many times too quickly.</p>
+</blockquote>
+<hr />
+<h2 id="install-fail2ban-ubuntu">🚀 <strong>Install Fail2Ban (Ubuntu)</strong></h2>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo apt update
+sudo apt install fail2ban
+</code></pre></div></td></tr></table></div>
+<p>This immediately protects SSH with default settings.</p>
+<hr />
+<h2 id="how-it-works-internally">📦 <strong>How It Works Internally</strong></h2>
+<p>Fail2Ban is built around:</p>
+<ul>
+<li><strong>Jails</strong> → what service to monitor (e.g., sshd)</li>
+<li><strong>Filters</strong> → regex rules to detect bad behavior</li>
+<li><strong>Actions</strong> → what to do when triggered (e.g., block IP)</li>
+<li><strong>Log paths</strong> → where to watch</li>
+</ul>
+<hr />
+<h2 id="key-fail2ban-concepts">🔒 <strong>Key Fail2Ban Concepts</strong></h2>
+<h3 id="1-jail"><strong>1. Jail</strong></h3>
+<p>A <em>jail</em> is a configuration unit describing:</p>
+<ul>
+<li>log file to watch</li>
+<li>filter to use</li>
+<li>ban time</li>
+<li>max retries</li>
+</ul>
+<p>Example jail (<code>sshd</code>):</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">services</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">flask_app</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">build</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.</span><span class="w">  </span><span class="c1"># This tells Compose to use the Dockerfile in the current directory</span>
-<span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">flask_gunicorn</span>
-<span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;8090:8090&quot;</span>
-</code></pre></div></td></tr></table></div></p>
-<p>Run when image already exists.
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>[sshd]
+enabled = true
+port = ssh
+filter = sshd
+logpath = /var/log/auth.log
+maxretry = 5
+bantime = 600
+</code></pre></div></td></tr></table></div>
+<hr />
+<h3 id="2-filter"><strong>2. Filter</strong></h3>
+<p>Filters contain regular expressions matching log failures.</p>
+<p>Example (<code>/etc/fail2ban/filter.d/sshd.conf</code>):</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>failregex = ^%(__prefix_line)sFailed password for .* from &lt;HOST&gt;
+</code></pre></div></td></tr></table></div>
+<p>When that regex matches logs too many times → ban.</p>
+<hr />
+<h3 id="3-action"><strong>3. Action</strong></h3>
+<p>Actions define what happens after a ban:</p>
+<p>Typical action:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>iptables -I INPUT -s &lt;ip&gt; -j DROP
+</code></pre></div></td></tr></table></div>
+<p>In other words,
+<strong>the attacker’s packets die silently.</strong></p>
+<p>Modern systems use <code>nftables</code>.</p>
+<hr />
+<h2 id="what-fail2ban-protects-against">🔥 <strong>What Fail2Ban Protects Against</strong></h2>
+<p>✔ SSH brute-force
+✔ bots trying random usernames
+✔ scanning for WordPress or PHPMyAdmin
+✔ HTTP request floods (light protection)
+✔ SMTP brute-force
+✔ Nextcloud login failures
+✔ Jupyter Notebook login failures
+✔ anything with logs</p>
+<hr />
+<h2 id="why-fail2ban-is-loved">🧠 <strong>Why Fail2Ban Is Loved</strong></h2>
+<h4 id="protects-every-server-automatically"><strong>✓ Protects every server automatically</strong></h4>
+<p>Millions of bots scan the internet 24/7. Fail2Ban keeps them out.</p>
+<h4 id="extremely-low-overhead"><strong>✓ Extremely low overhead</strong></h4>
+<p>It’s tiny — it barely uses memory or CPU.</p>
+<h4 id="very-configurable"><strong>✓ Very configurable</strong></h4>
+<p>You can write jails for custom apps or logs.</p>
+<h4 id="no-weird-firewall-rules"><strong>✓ No weird firewall rules</strong></h4>
+<p>Fail2Ban adds temporary bans — safer than permanent blocks.</p>
+<h4 id="zero-maintenance"><strong>✓ Zero maintenance</strong></h4>
+<p>Install → configure → forget.</p>
+<hr />
+<h2 id="basic-configuration">🛠️ <strong>Basic Configuration</strong></h2>
+<p>Always edit this file (not the defaults):</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo nano /etc/fail2ban/jail.local
+</code></pre></div></td></tr></table></div>
+<p>Example good configuration:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code>[DEFAULT]
+bantime = 30m
+findtime = 10m
+maxretry = 5
+banaction = nftables-multiport
+
+[sshd]
+enabled = true
+port = ssh
+logpath = /var/log/auth.log
+backend = systemd
+</code></pre></div></td></tr></table></div>
+<p>Then apply:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo systemctl restart fail2ban
+</code></pre></div></td></tr></table></div>
+<hr />
+<h2 id="check-fail2ban-status">👀 <strong>Check Fail2Ban Status</strong></h2>
+<h4 id="all-jails">All jails:</h4>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo fail2ban-client status
+</code></pre></div></td></tr></table></div>
+<h4 id="check-the-ssh-jail">Check the SSH jail:</h4>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo fail2ban-client status sshd
+</code></pre></div></td></tr></table></div>
+<p>Example output:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">services</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">flask_app</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my_flask_app</span><span class="w">  </span><span class="c1"># Use the existing built image</span>
-<span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">flask_gunicorn</span>
-<span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;8090:8090&quot;</span>
-</code></pre></div></td></tr></table></div></p>
-<h2 id="automating-build-and-deploy">Automating Build and Deploy</h2>
-<p>There are many steps when it comes to building and deploying. They can all be automated in one script.
-Here's an example:</p>
-<p>Dockerfile
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c"># Use a lightweight Python image</span>
-<span class="k">FROM</span><span class="w"> </span><span class="s">python:3.12-slim</span>
-
-<span class="c"># Set the working directory inside the container</span>
-<span class="k">WORKDIR</span><span class="w"> </span><span class="s">/app</span>
-
-<span class="c"># Install system dependencies, including ffmpeg</span>
-<span class="k">RUN</span><span class="w"> </span>apt-get<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>--no-install-recommends<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>ffmpeg<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span><span class="o">&amp;&amp;</span><span class="w"> </span>apt-get<span class="w"> </span>clean<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span>/var/lib/apt/lists/*
-
-<span class="k">RUN</span><span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>curl
-
-<span class="c"># Copy app files to the container</span>
-<span class="k">COPY</span><span class="w"> </span>.<span class="w"> </span>/app
-
-<span class="c"># Install dependencies</span>
-<span class="k">RUN</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--no-cache-dir<span class="w"> </span>-r<span class="w"> </span>requirements.txt
-
-<span class="c"># Set environment variables</span>
-<span class="k">ENV</span><span class="w"> </span><span class="nv">FLASK_ENV</span><span class="o">=</span>production
-<span class="k">ENV</span><span class="w"> </span><span class="nv">PYTHONUNBUFFERED</span><span class="o">=</span><span class="m">1</span>
-
-<span class="c"># Expose the port (optional if using Docker Compose)</span>
-<span class="k">EXPOSE</span><span class="w"> </span><span class="s">8090</span>
-
-<span class="c"># Run Gunicorn when the container starts</span>
-<span class="k">CMD</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;gunicorn&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;-w&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;4&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;-b&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;0.0.0.0:8090&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;app:app&quot;</span><span class="p">]</span>
-</code></pre></div></td></tr></table></div></p>
-<p>Deployment script
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span>
-<span class="normal">33</span>
-<span class="normal">34</span>
-<span class="normal">35</span>
-<span class="normal">36</span>
-<span class="normal">37</span>
-<span class="normal">38</span>
-<span class="normal">39</span>
-<span class="normal">40</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="ch">#!/usr/bin/env bash</span>
-
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Remove existing image to make a new one.&quot;</span>
-docker<span class="w"> </span>rmi<span class="w"> </span>yt_download:latest
-
-rm<span class="w"> </span>data.db<span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;No db to remove, moving on&quot;</span>
-
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Build image for Linux server.&quot;</span>
-docker<span class="w"> </span>build<span class="w"> </span>--platform<span class="w"> </span>linux/amd64<span class="w"> </span>-t<span class="w"> </span>yt_download:latest<span class="w"> </span>.<span class="w">  </span><span class="c1"># uses Dockerfile to build</span>
-docker<span class="w"> </span>save<span class="w"> </span>-o<span class="w"> </span>yt_download_image.tar<span class="w"> </span>yt_download:latest
-
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Transfer file to server.&quot;</span>
-rsync<span class="w"> </span>-v<span class="w"> </span>--rsync-path<span class="o">=</span><span class="s2">&quot;sudo rsync&quot;</span><span class="w"> </span>yt_download_image.tar<span class="w"> </span>tyler@anderson.home:/srv/flask_yt_download
-
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Remove local copy of Docker image and docker image file.&quot;</span>
-docker<span class="w"> </span>rmi<span class="w"> </span>yt_download:latest
-rm<span class="w"> </span>yt_download_image.tar
-
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Log into server and spin up image.&quot;</span>
-ssh<span class="w"> </span>tyler@anderson.home<span class="w"> </span><span class="s">&lt;&lt; &#39;EOF&#39;</span>
-<span class="s">cd /srv/flask_yt_download || { echo &quot;Directory not found&quot;; exit 1; }</span>
-
-<span class="s"># create database file</span>
-<span class="s">sudo touch data.db</span>
-
-<span class="s"># Spin down container if running</span>
-<span class="s">sudo docker compose down || echo &quot;No container running&quot;</span>
-
-<span class="s"># Remove old Docker image</span>
-<span class="s">sudo docker rmi yt_download || echo &quot;Image not found&quot;</span>
-
-<span class="s"># Load new image</span>
-<span class="s">sudo docker load -i yt_download_image.tar</span>
-
-<span class="s"># Remove the transferred image file</span>
-<span class="s">sudo rm yt_download_image.tar</span>
-
-<span class="s"># Restart the container</span>
-<span class="s">sudo docker compose up -d</span>
-<span class="s">EOF</span>
-</code></pre></div></td></tr></table></div></p>
-<h2 id="add-uv-to-image">Add uv to image</h2>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code>Status for the jail: sshd
+|- Filter
+|  |- Currently failed: 1
+|  |- Total failed:     248
+|  `- File list:        /var/log/auth.log
+`- Actions
+   |- Currently banned: 7
+   |- Total banned:     104
+   `- Banned IP list:   162.243.12.43 185.22.44.9 ...
+</code></pre></div></td></tr></table></div>
+<hr />
+<h2 id="see-who-has-been-banned">📅 <strong>See who has been banned</strong></h2>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo zgrep &quot;Ban&quot; -h /var/log/fail2ban.log*
+</code></pre></div></td></tr></table></div>
+<hr />
+<h2 id="bonus-protect-against-password-guessing-even-when-they-use-valid-username">🔥 <strong>Bonus: Protect Against Password Guessing Even When They Use Valid Username</strong></h2>
+<p>Add to <code>sshd</code> jail:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c"># build a wheel file inside a docker image</span>
-<span class="k">FROM</span><span class="w"> </span><span class="s">python:3.13</span>
-<span class="k">COPY</span><span class="w"> </span>--from<span class="o">=</span>ghcr.io/astral-sh/uv:latest<span class="w"> </span>/uv<span class="w"> </span>/bin/uv
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>ignoreip = 192.168.1.0/24
+maxretry = 4
+findtime = 10m
+bantime = 24h
 </code></pre></div></td></tr></table></div>
-<h2 id="multi-stage-build">Multi-Stage build</h2>
-<p>You can build an image in stages. 
-It creates separate images during the build. 
-The last one that runs becomes the actual image.</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c"># Build stage</span>
-<span class="k">FROM</span><span class="w"> </span><span class="s">python:3.13</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s">builder</span>
-<span class="k">COPY</span><span class="w"> </span>--from<span class="o">=</span>ghcr.io/astral-sh/uv:latest<span class="w"> </span>/uv<span class="w"> </span>/bin/uv
-<span class="k">COPY</span><span class="w"> </span>.<span class="w"> </span>/src
-<span class="k">WORKDIR</span><span class="w"> </span><span class="s">/src</span>
-<span class="k">RUN</span><span class="w"> </span>uv<span class="w"> </span>build
-
-<span class="c"># Runtime stage</span>
-<span class="k">FROM</span><span class="w"> </span><span class="s">python:3.13-slim</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s">runtime</span>
-<span class="k">COPY</span><span class="w"> </span>--from<span class="o">=</span>ghcr.io/astral-sh/uv:latest<span class="w"> </span>/uv<span class="w"> </span>/bin/uv
-<span class="k">COPY</span><span class="w"> </span>--from<span class="o">=</span>builder<span class="w"> </span>/src/dist/*.whl<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>rm<span class="w"> </span>/tmp/*.whl
-
-<span class="k">RUN</span><span class="w"> </span>uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--system<span class="w"> </span>/tmp/*.whl<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>rm<span class="w"> </span>/tmp/*.whl
-
-<span class="k">CMD</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;invoice_start&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;--sharepoint&quot;</span><span class="p">]</span>
+<p>And also add:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>[sshd-ddos]
+enabled = true
+filter = sshd-ddos
+port = ssh
+logpath = /var/log/auth.log
+maxretry = 2
 </code></pre></div></td></tr></table></div>
+<p>This catches bots that open <strong>many new SSH sessions at once</strong> (DDoS style).</p>
+<hr />
+<h2 id="want-maximum-security">🔒 Want Maximum Security?</h2>
+<p>(optional but recommended)</p>
+<h3 id="1-change-ssh-port"><strong>1. Change SSH port</strong></h3>
+<p>Stops ~95% of bots.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo nano /etc/ssh/sshd_config
+Port 2222
+</code></pre></div></td></tr></table></div>
+<p>Restart SSH:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo systemctl restart ssh
+</code></pre></div></td></tr></table></div>
+<h3 id="2-disable-password-authentication-only-ssh-keys"><strong>2. Disable password authentication (only SSH keys)</strong></h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>PasswordAuthentication no
+</code></pre></div></td></tr></table></div>
+<h3 id="3-add-fail2ban-key-only-unbeatable-combo"><strong>3. Add fail2ban + key-only = unbeatable combo</strong></h3>
+<hr />
+<h2 id="if-you-want">If you want:</h2>
+<p>I can help you:</p>
+<ul>
+<li>configure the ideal <code>jail.local</code> for your server</li>
+<li>check your current SSH brute-force attempts</li>
+<li>tune the ban times</li>
+<li>whitelist your LAN</li>
+<li>secure Docker containers or any app logs you want protected</li>
+</ul>
+<p>Just tell me how you want to use it!</p>
 
 
 
