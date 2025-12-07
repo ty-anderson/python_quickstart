@@ -1684,11 +1684,32 @@
   
   
     <li class="md-nav__item">
-      <a href="../Video%20Processing/docs_200_ffmpeg/" class="md-nav__link">
+      <a href="../Video%20Processing/general/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    FFmpeg
+    Basics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Video%20Processing/video_tools/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tools
   </span>
   
 
@@ -2534,9 +2555,18 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#video%20processing-docs_200_ffmpeg" class="md-nav__link">
+  <a href="#video%20processing-general" class="md-nav__link">
     <span class="md-ellipsis">
-      9.1 FFmpeg
+      9.1 Basics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#video%20processing-video_tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.2 Tools
     </span>
   </a>
   
@@ -2545,7 +2575,7 @@
           <li class="md-nav__item">
   <a href="#video%20processing-docs_200_streaming" class="md-nav__link">
     <span class="md-ellipsis">
-      9.2 Streaming
+      9.3 Streaming
     </span>
   </a>
   
@@ -5433,7 +5463,10 @@ Think of a container like an ultra-light weight version of a virtual machine.</p
 <span class="normal">38</span>
 <span class="normal">39</span>
 <span class="normal">40</span>
-<span class="normal">41</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># When you find an image you want to use do</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># When you find an image you want to use do</span>
 docker<span class="w"> </span>pull<span class="w"> </span>&lt;image_name&gt;
 
 <span class="c1"># To see images downloaded use</span>
@@ -5474,6 +5507,9 @@ docker<span class="w"> </span>logs<span class="w"> </span>-f<span class="w"> </s
 
 <span class="c1"># view docker resource usage</span>
 docker<span class="w"> </span>stats
+
+<span class="c1"># remove images not being referenced by a container</span>
+docker<span class="w"> </span>image<span class="w"> </span>prune
 </code></pre></div></td></tr></table></div>
 <h2 id="docker-basics-run-a-container-examples">Run a Container Examples</h2>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -6902,10 +6938,7 @@ wipe<span class="w"> </span>-rf<span class="w"> </span>my_secret_folder/<span cl
 
 <span class="c1"># Setup rclone</span>
 rclone<span class="w"> </span>config
-</code></pre></div></td></tr></table></div></section><section class="print-page" id="self_host-login_attempts" heading-number="5.1.4"><h1 id="self_host-login_attempts-self_host-login_attempts">Login Security</h1><p>Here you go — a <strong>clean, comprehensive, copy-paste-ready</strong> set of Fail2Ban + login monitoring commands, all in one code block, with clear comment headers for each section.</p>
-<p>Use this anytime you want to quickly investigate login attempts, bans, SSH failures, or brute-force activity.</p>
-<h2 id="self_host-login_attempts-important-commands">Important Commands</h2>
-<hr />
+</code></pre></div></td></tr></table></div></section><section class="print-page" id="self_host-login_attempts" heading-number="5.1.4"><h1 id="self_host-login_attempts-important-commands">Important Commands</h1>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">  1</span>
 <span class="normal">  2</span>
 <span class="normal">  3</span>
@@ -9405,62 +9438,878 @@ net user &quot;username&quot; /PasswordChg:Yes
                     <section class='print-page md-section' id='section-9' heading-number='9'>
                         <h1>Video Processing<a class='headerlink' href='#section-9' title='Permanent link'></a>
                         </h1>
-                    <section class="print-page" id="video%20processing-docs_200_ffmpeg" heading-number="9.1"><h1 id="video%20processing-docs_200_ffmpeg-ffmpeg">FFmpeg</h1>
-<p>ffmpeg is a video editing command tool. </p>
-<h2 id="video%20processing-docs_200_ffmpeg-how-a-video-works">How a Video Works</h2>
-<ol>
-<li>A video file consists of a container (like MP4, MKV) and encoded video/audio streams inside.</li>
-<li>The codec is what encodes (compresses) the video/audio when saving it and decodes (decompresses) it when playing it.</li>
-</ol>
-<h2 id="video%20processing-docs_200_ffmpeg-converting-a-video-file-transcoding">Converting a Video File (Transcoding)</h2>
-<p>If you want to convert a video file from one format to another (e.g., MKV to MP4 or H.264 to H.265), 
-you use transcoding software (like HandBrake, FFmpeg, or VLC). The process involves:</p>
-<ol>
-<li>Decoding (using the current codec).</li>
-<li>Re-encoding (using a new codec or settings).</li>
-<li>Packaging the video/audio into a new container format.</li>
-</ol>
-<p>For example:</p>
-<ul>
-<li>MKV (H.264 + AAC) → MP4 (H.264 + AAC) → Just a container change (remuxing, no transcoding needed).</li>
-<li>MP4 (H.264) → MP4 (H.265) → A full re-encoding is required.</li>
-</ul>
-<p>So while codecs are a part of the conversion process, they don't handle file conversion by themselves—you need transcoding software for that.</p>
-<ul>
-<li>
-<p>Codec - software that compresses or decompresses media files (audio or video). Determines the encoding. 
-Important for compression, compatability, and streaming efficiency.</p>
-</li>
-<li>
-<p>Video Codecs - These compress video data to reduce file size while maintaining visual quality.</p>
-</li>
-<li>
-<p>H.264 (AVC) – Most common, widely supported, good balance of quality and size.</p>
-</li>
-<li>H.265 (HEVC) – More efficient than H.264 (better quality at smaller sizes), but requires more processing power.</li>
-<li>VP9 – Open-source alternative to H.265, widely used on YouTube.</li>
-<li>AV1 – Newer, even better compression than VP9 and H.265, but requires more CPU power to decode.</li>
-<li>
-<p>MPEG-2 – Older, used in DVDs and some broadcast TV.</p>
-</li>
-<li>
-<p>Audio Codecs - These compress audio data for storage and streaming.</p>
-</li>
-<li>
-<p>AAC – Common in MP4 files, better quality than MP3 at the same bitrate.</p>
-</li>
-<li>MP3 – Universal compatibility, but lower efficiency.</li>
-<li>Opus – High efficiency, used in VoIP and streaming.</li>
-<li>FLAC – Lossless, used for high-quality music storage.</li>
-<li>Dolby Digital (AC-3) / DTS – Used in surround sound systems.</li>
-</ul>
-<h2 id="video%20processing-docs_200_ffmpeg-codec-vs-container-mkv-mp4">Codec vs. Container (MKV, MP4)</h2>
-<ul>
-<li>Container formats (like MKV, MP4, AVI, MOV) hold video, audio, and subtitle tracks.</li>
-<li>Codecs determine how the actual video and audio inside the container are compressed and played.</li>
-<li>Example: An MP4 file can contain H.264 video + AAC audio.</li>
-</ul>
-<p>So, when choosing a video format, you need to consider both the container (MKV, MP4, etc.) and the codec (H.264, H.265, etc.).</p></section><section class="print-page" id="video%20processing-docs_200_streaming" heading-number="9.2"><h1 id="video%20processing-docs_200_streaming-streaming">Streaming</h1>
+                    <section class="print-page" id="video%20processing-general" heading-number="9.1"><h1 id="video%20processing-general-basics-of-video-files">Basics of Video Files</h1>
+<h2 id="video%20processing-general-how-video-files-work">How Video Files Work</h2>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span>
+<span class="normal">76</span>
+<span class="normal">77</span>
+<span class="normal">78</span>
+<span class="normal">79</span>
+<span class="normal">80</span>
+<span class="normal">81</span>
+<span class="normal">82</span>
+<span class="normal">83</span>
+<span class="normal">84</span>
+<span class="normal">85</span>
+<span class="normal">86</span>
+<span class="normal">87</span>
+<span class="normal">88</span></pre></div></td><td class="code"><div><pre><span></span><code>===============================================================
+ VIDEO FILE BASICS
+===============================================================
+
+• A video file contains:
+  - A CONTAINER (MP4, MKV, MOV)
+  - VIDEO + AUDIO STREAMS encoded with codecs
+
+• CODEC = software that compresses/decompresses video/audio
+• CONTAINER = the wrapper that holds streams + metadata
+
+
+===============================================================
+ TRANSCODING (CONVERTING VIDEO)
+===============================================================
+
+• Converting formats involves:
+  1. Decode old codec
+  2. Re-encode into new codec
+  3. Repackage into container
+
+• REMUX = container change only (no re-encode)
+  Example: MKV (H.264) → MP4 (H.264)  
+
+• RE-ENCODE = codec change
+  Example: H.264 → H.265
+
+
+===============================================================
+ COMMON VIDEO CODECS
+===============================================================
+
+• H.264 (AVC)
+  - Most common, highly compatible
+
+• H.265 (HEVC)
+  - Better compression than H.264
+  - Requires more processing power
+
+• VP9
+  - Open-source alternative to HEVC
+  - Widely used by YouTube
+
+• AV1
+  - Newer, best compression efficiency
+  - CPU-heavy decoding
+
+• MPEG-2
+  - Older, used in DVDs/broadcast
+
+
+===============================================================
+ COMMON AUDIO CODECS
+===============================================================
+
+• AAC
+  - Standard in MP4, good quality
+
+• MP3
+  - Universal support, older format
+
+• Opus
+  - Very efficient, great for streaming/VoIP
+
+• FLAC
+  - Lossless, larger files
+
+• AC-3 / DTS
+  - Surround sound codecs
+
+
+===============================================================
+ CONTAINER vs CODEC
+===============================================================
+
+• Container = file type:
+  - MP4, MKV, MOV, AVI
+
+• Codec = how streams are compressed:
+  - H.264, H.265, VP9, AV1 (video)
+  - AAC, MP3, Opus, FLAC (audio)
+
+• Example:
+  MP4 container can include:
+    • H.264 video + AAC audio
+    • H.265 video + AAC audio
+
+===============================================================
+</code></pre></div></td></tr></table></div>
+<h2 id="video%20processing-general-best-formats">Best Formats</h2>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span>
+<span class="normal">76</span>
+<span class="normal">77</span>
+<span class="normal">78</span>
+<span class="normal">79</span>
+<span class="normal">80</span>
+<span class="normal">81</span>
+<span class="normal">82</span>
+<span class="normal">83</span>
+<span class="normal">84</span>
+<span class="normal">85</span>
+<span class="normal">86</span>
+<span class="normal">87</span>
+<span class="normal">88</span>
+<span class="normal">89</span>
+<span class="normal">90</span>
+<span class="normal">91</span></pre></div></td><td class="code"><div><pre><span></span><code>###############################################################
+#  BEST VIDEO CODECS
+###############################################################
+
+# AV1 — BEST OVERALL QUALITY + COMPRESSION
+# - Most efficient modern codec
+# - Smallest file size, best quality
+# - Royalty-free
+# - Used by YouTube, Netflix, Twitch
+# - Poor support on older devices (QuickTime can&#39;t play on M1)
+# Best for: streaming, archival, future-proofing
+
+# H.264 / AVC — BEST COMPATIBILITY (UNIVERSAL)
+# - Works everywhere: iPhone, Android, browsers, TVs
+# - Hardware acceleration everywhere
+# - Smooth editing
+# Best for: sharing, editing, MP4 outputs
+
+# H.265 / HEVC — HIGH EFFICIENCY (Apple-favored)
+# - Better compression than H.264
+# - Works great on iPhone/iPad/Apple TV
+# - Slow encoding on CPU
+# Best for: 4K distribution, Apple workflows
+
+# VP9 — GOOD COMPRESSION, WIDELY SUPPORTED IN BROWSERS
+# - Used by YouTube (older 4K formats)
+# - Better than H.264
+# Best for: web playback
+
+
+###############################################################
+#  BEST AUDIO CODECS
+###############################################################
+
+# OPUS — BEST MODERN LOSSY AUDIO
+# - Highest quality at any bitrate
+# - Amazing for speech + music
+# - Not supported inside MP4
+# Best for: WEBM, MKV, streaming
+
+# AAC — MOST COMPATIBLE AUDIO
+# - Universal on mobile/desktop
+# - Native to MP4
+# Best for: H.264/H.265 MP4 outputs
+
+# FLAC — BEST LOSSLESS AUDIO
+# - Perfect compression, no quality loss
+# Best for: archival, MKV
+
+# PCM WAV — RAW, UNCOMPRESSED
+# Best for: editing timelines (ProRes workflows)
+
+
+###############################################################
+#  BEST PAIRINGS (Most Common)
+###############################################################
+
+# 1. Best Overall Modern (Web/Streaming)
+#    AV1 + Opus (WEBM or MKV)
+
+# 2. Best Universal Compatibility
+#    H.264 + AAC (MP4)
+
+# 3. Best Apple Ecosystem
+#    HEVC (H.265) + AAC (MP4/MOV)
+
+# 4. Best Editing Workflow
+#    Apple ProRes + PCM WAV (MOV)
+
+# 5. Best Archival (Lossless)
+#    FFV1 + FLAC (MKV)
+
+###############################################################
+#  QUICK RULES
+###############################################################
+
+# - If you care about compatibility → Use H.264 + AAC
+# - If you care about smallest size + best quality → Use AV1 + Opus
+# - If you are archiving media → Use MKV (supports everything)
+# - If you edit video → Use ProRes
+# - If you’re on macOS (QuickTime) → Convert AV1 to H.264 or HEVC
+# - MP4 is strict → MKV is flexible
+
+###############################################################
+#  BEST CONTAINER CHOICES
+###############################################################
+
+# MKV  → Best for AV1, VP9, FLAC, Opus, multi-tracks, archival
+# MP4  → Best for compatibility (H.264/AAC)
+# MOV  → Best for editing (ProRes)
+# WEBM → Best for browser streaming (AV1/VP9 + Opus)
+</code></pre></div></td></tr></table></div>
+<h2 id="video%20processing-general-chose-a-container">Chose a Container</h2>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span></pre></div></td><td class="code"><div><pre><span></span><code>===============================================================
+             VIDEO CONTAINER DECISION FLOWCHART
+===============================================================
+
+START
+ │
+ ├── Do you need MAXIMUM compatibility across ALL devices?
+ │        (iPhone, Android, TV, browser, Windows, macOS, apps)
+ │
+ └──► YES → Use **MP4**
+          - Best universal playback
+          - Requires H.264/H.265 + AAC
+          - Works everywhere
+
+ └──► NO → Continue
+            │
+            ├── Are you editing video (Final Cut, Premiere, DaVinci)?
+            │
+            └──► YES → Use **MOV**
+                     - Use ProRes for editing
+                     - Intra-frame codec = smooth timeline
+
+            └──► NO → Continue
+                       │
+                       ├── Do you want BEST quality + flexibility?
+                       │   (AV1, VP9, Opus, FLAC, multi-audio, subtitles)
+                       │
+                       └──► YES → Use **MKV**
+                                - Supports all modern codecs
+                                - Best for archival + high quality
+
+                       └──► NO → Use **MP4**
+                                - Good for small files, wide support
+
+===============================================================
+</code></pre></div></td></tr></table></div>
+<h2 id="video%20processing-general-choose-a-codec">Choose a Codec</h2>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span></pre></div></td><td class="code"><div><pre><span></span><code>===============================================================
+                 VIDEO / AUDIO CODEC DECISION GUIDE
+===============================================================
+
+VIDEO CODECS
+---------------------------------------------------------------
+
+● Want best compression + quality?
+    → **AV1**
+    (Smallest files, best quality, future standard)
+
+● Want best compatibility?
+    → **H.264**
+    (Works everywhere)
+
+● Want smaller files but still high compatibility?
+    → **H.265 / HEVC**
+    (Great for 4K on Apple devices)
+
+● Need YouTube-like web performance?
+    → **VP9**
+    (Widely supported in browsers)
+
+● Editing in Final Cut / Premiere?
+    → **ProRes**
+    (Smoothest editing workflow)
+
+● True archival / lossless?
+    → **FFV1**
+    (Used for film preservation)
+
+
+AUDIO CODECS
+---------------------------------------------------------------
+
+● Best general-purpose quality?
+    → **AAC**
+
+● Universal compatibility?
+    → **MP3**
+
+● Best modern efficiency?
+    → **Opus**
+    (Great for streaming, voice, web media)
+
+● Best lossless audio storage?
+    → **FLAC**
+
+● Surround sound?
+    → **AC-3 (Dolby Digital)** or **DTS**
+
+---------------------------------------------------------------
+SUMMARY PAIRS
+---------------------------------------------------------------
+● Streaming / Future-proof → AV1 + Opus
+● Universal playback → H.264 + AAC (MP4)
+● Apple ecosystem / 4K → HEVC + AAC (MP4/MOV)
+● Editing workflow → ProRes + WAV (MOV)
+● Archival → FFV1 + FLAC (MKV)
+===============================================================
+</code></pre></div></td></tr></table></div></section><section class="print-page" id="video%20processing-video_tools" heading-number="9.2"><h1 id="video%20processing-video_tools-video-tools">Video Tools</h1>
+<h2 id="video%20processing-video_tools-ffmpeg">FFmpeg</h2>
+<p>ffmpeg is an open source video editing command tool. Very powerful, other 
+video editing programs are built on top of this software.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">  1</span>
+<span class="normal">  2</span>
+<span class="normal">  3</span>
+<span class="normal">  4</span>
+<span class="normal">  5</span>
+<span class="normal">  6</span>
+<span class="normal">  7</span>
+<span class="normal">  8</span>
+<span class="normal">  9</span>
+<span class="normal"> 10</span>
+<span class="normal"> 11</span>
+<span class="normal"> 12</span>
+<span class="normal"> 13</span>
+<span class="normal"> 14</span>
+<span class="normal"> 15</span>
+<span class="normal"> 16</span>
+<span class="normal"> 17</span>
+<span class="normal"> 18</span>
+<span class="normal"> 19</span>
+<span class="normal"> 20</span>
+<span class="normal"> 21</span>
+<span class="normal"> 22</span>
+<span class="normal"> 23</span>
+<span class="normal"> 24</span>
+<span class="normal"> 25</span>
+<span class="normal"> 26</span>
+<span class="normal"> 27</span>
+<span class="normal"> 28</span>
+<span class="normal"> 29</span>
+<span class="normal"> 30</span>
+<span class="normal"> 31</span>
+<span class="normal"> 32</span>
+<span class="normal"> 33</span>
+<span class="normal"> 34</span>
+<span class="normal"> 35</span>
+<span class="normal"> 36</span>
+<span class="normal"> 37</span>
+<span class="normal"> 38</span>
+<span class="normal"> 39</span>
+<span class="normal"> 40</span>
+<span class="normal"> 41</span>
+<span class="normal"> 42</span>
+<span class="normal"> 43</span>
+<span class="normal"> 44</span>
+<span class="normal"> 45</span>
+<span class="normal"> 46</span>
+<span class="normal"> 47</span>
+<span class="normal"> 48</span>
+<span class="normal"> 49</span>
+<span class="normal"> 50</span>
+<span class="normal"> 51</span>
+<span class="normal"> 52</span>
+<span class="normal"> 53</span>
+<span class="normal"> 54</span>
+<span class="normal"> 55</span>
+<span class="normal"> 56</span>
+<span class="normal"> 57</span>
+<span class="normal"> 58</span>
+<span class="normal"> 59</span>
+<span class="normal"> 60</span>
+<span class="normal"> 61</span>
+<span class="normal"> 62</span>
+<span class="normal"> 63</span>
+<span class="normal"> 64</span>
+<span class="normal"> 65</span>
+<span class="normal"> 66</span>
+<span class="normal"> 67</span>
+<span class="normal"> 68</span>
+<span class="normal"> 69</span>
+<span class="normal"> 70</span>
+<span class="normal"> 71</span>
+<span class="normal"> 72</span>
+<span class="normal"> 73</span>
+<span class="normal"> 74</span>
+<span class="normal"> 75</span>
+<span class="normal"> 76</span>
+<span class="normal"> 77</span>
+<span class="normal"> 78</span>
+<span class="normal"> 79</span>
+<span class="normal"> 80</span>
+<span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">###############################################################</span>
+<span class="c1">#  BASIC INFO</span>
+<span class="c1">###############################################################</span>
+
+<span class="c1"># Show file info</span>
+ffprobe<span class="w"> </span>-hide_banner<span class="w"> </span>input.mp4
+
+<span class="c1"># Show all streams</span>
+ffmpeg<span class="w"> </span>-i<span class="w"> </span>input.mp4
+
+
+<span class="c1">###############################################################</span>
+<span class="c1">#  REMUX (NO RE-ENCODE) — Lossless, Fast</span>
+<span class="c1">###############################################################</span>
+
+<span class="c1"># MP4 → MKV</span>
+ffmpeg<span class="w"> </span>-i<span class="w"> </span>input.mp4<span class="w"> </span>-c<span class="w"> </span>copy<span class="w"> </span>output.mkv
+
+<span class="c1"># MKV → MP4 (only works if codecs are MP4-compatible)</span>
+ffmpeg<span class="w"> </span>-i<span class="w"> </span>input.mkv<span class="w"> </span>-c<span class="w"> </span>copy<span class="w"> </span>output.mp4
+
+<span class="c1"># WEBM → MKV (AV1/VP9 safe)</span>
+ffmpeg<span class="w"> </span>-i<span class="w"> </span>input.webm<span class="w"> </span>-c<span class="w"> </span>copy<span class="w"> </span>output.mkv
+
+
+<span class="c1">###############################################################</span>
+<span class="c1">#  VIDEO CONVERSION (RE-ENCODE)</span>
+<span class="c1">###############################################################</span>
+
+<span class="c1"># Convert to H.264 (good quality)</span>
+ffmpeg<span class="w"> </span>-i<span class="w"> </span>input.mkv<span class="w"> </span>-c:v<span class="w"> </span>libx264<span class="w"> </span>-crf<span class="w"> </span><span class="m">18</span><span class="w"> </span>-preset<span class="w"> </span>medium<span class="w"> </span>-c:a<span class="w"> </span>aac<span class="w"> </span>output.mp4
+
+<span class="c1"># Convert to HEVC (H.265)</span>
+ffmpeg<span class="w"> </span>-i<span class="w"> </span>input.mp4<span class="w"> </span>-c:v<span class="w"> </span>libx265<span class="w"> </span>-crf<span class="w"> </span><span class="m">20</span><span class="w"> </span>-preset<span class="w"> </span>medium<span class="w"> </span>-c:a<span class="w"> </span>copy<span class="w"> </span>output_hevc.mp4
+
+<span class="c1"># Convert AV1 to H.264 (for QuickTime, iPhone)</span>
+ffmpeg<span class="w"> </span>-i<span class="w"> </span>input.webm<span class="w"> </span>-c:v<span class="w"> </span>libx264<span class="w"> </span>-crf<span class="w"> </span><span class="m">18</span><span class="w"> </span>-preset<span class="w"> </span>medium<span class="w"> </span>-c:a<span class="w"> </span>aac<span class="w"> </span>output.mp4
+
+<span class="c1"># re-encode the audio and video</span>
+ffmpeg<span class="w"> </span>-i<span class="w"> </span><span class="s1">&#39;Video file.webm&#39;</span><span class="w"> </span><span class="se">\</span>
+-c:v<span class="w"> </span>libx264<span class="w"> </span>-crf<span class="w"> </span><span class="m">18</span><span class="w"> </span>-preset<span class="w"> </span>medium<span class="w"> </span><span class="se">\</span>
+-c:a<span class="w"> </span>aac<span class="w"> </span>-b:a<span class="w"> </span>192k<span class="w"> </span><span class="se">\</span>
+<span class="s1">&#39;Video file.mp4&#39;</span>
+
+<span class="c1"># to mkv</span>
+ffmpeg<span class="w"> </span>-i<span class="w"> </span><span class="s1">&#39;Video file.webm&#39;</span><span class="w"> </span><span class="se">\</span>
+-c:v<span class="w"> </span>copy<span class="w"> </span><span class="se">\</span>
+-c:a<span class="w"> </span>aac<span class="w"> </span>-b:a<span class="w"> </span>192k<span class="w"> </span><span class="se">\</span>
+<span class="s1">&#39;Video file.mkv&#39;</span>
+
+<span class="c1">###############################################################</span>
+<span class="c1">#  HARDWARE ACCELERATION (Apple M1/M2/M3)</span>
+<span class="c1">###############################################################</span>
+
+<span class="c1"># H.264 hardware encode (fast)</span>
+ffmpeg<span class="w"> </span>-i<span class="w"> </span>input.mov<span class="w"> </span>-c:v<span class="w"> </span>h264_videotoolbox<span class="w"> </span>-c:a<span class="w"> </span>aac<span class="w"> </span>output.mp4
+
+<span class="c1"># HEVC hardware encode</span>
+ffmpeg<span class="w"> </span>-i<span class="w"> </span>input.mov<span class="w"> </span>-c:v<span class="w"> </span>hevc_videotoolbox<span class="w"> </span>-c:a<span class="w"> </span>aac<span class="w"> </span>output_hevc.mp4
+
+
+<span class="c1">###############################################################</span>
+<span class="c1">#  AUDIO ONLY</span>
+<span class="c1">###############################################################</span>
+
+<span class="c1"># Extract audio (no re-encode)</span>
+ffmpeg<span class="w"> </span>-i<span class="w"> </span>input.mp4<span class="w"> </span>-vn<span class="w"> </span>-c:a<span class="w"> </span>copy<span class="w"> </span>audio.m4a
+
+<span class="c1"># Convert audio to AAC</span>
+ffmpeg<span class="w"> </span>-i<span class="w"> </span>input.opus<span class="w"> </span>-c:a<span class="w"> </span>aac<span class="w"> </span>-b:a<span class="w"> </span>192k<span class="w"> </span>output.m4a
+
+<span class="c1"># Convert audio to MP3</span>
+ffmpeg<span class="w"> </span>-i<span class="w"> </span>input.wav<span class="w"> </span>-c:a<span class="w"> </span>libmp3lame<span class="w"> </span>-b:a<span class="w"> </span>320k<span class="w"> </span>output.mp3
+
+
+<span class="c1">###############################################################</span>
+<span class="c1">#  TRIM / CUT VIDEO (NO RE-ENCODE)</span>
+<span class="c1">###############################################################</span>
+
+<span class="c1"># Cut between timestamps (fast, no re-encode)</span>
+ffmpeg<span class="w"> </span>-ss<span class="w"> </span><span class="m">00</span>:00:30<span class="w"> </span>-to<span class="w"> </span><span class="m">00</span>:01:00<span class="w"> </span>-i<span class="w"> </span>input.mp4<span class="w"> </span>-c<span class="w"> </span>copy<span class="w"> </span>clip.mp4
+
+<span class="c1"># Cut and re-encode (more accurate)</span>
+ffmpeg<span class="w"> </span>-ss<span class="w"> </span><span class="m">00</span>:00:30<span class="w"> </span>-to<span class="w"> </span><span class="m">00</span>:01:00<span class="w"> </span>-i<span class="w"> </span>input.mp4<span class="w"> </span>-c:v<span class="w"> </span>libx264<span class="w"> </span>-c:a<span class="w"> </span>copy<span class="w"> </span>clip.mp4
+
+
+<span class="c1">###############################################################</span>
+<span class="c1">#  SCALE / RESIZE</span>
+<span class="c1">###############################################################</span>
+
+<span class="c1"># Resize to 1080p</span>
+ffmpeg<span class="w"> </span>-i<span class="w"> </span>input.mp4<span class="w"> </span>-vf<span class="w"> </span><span class="nv">scale</span><span class="o">=</span><span class="m">1920</span>:1080<span class="w"> </span>-c:v<span class="w"> </span>libx264<span class="w"> </span>-crf<span class="w"> </span><span class="m">18</span><span class="w"> </span>output_1080p.mp4
+
+<span class="c1"># Resize with hardware acceleration</span>
+ffmpeg<span class="w"> </span>-i<span class="w"> </span>input.mp4<span class="w"> </span>-vf<span class="w"> </span><span class="nv">scale</span><span class="o">=</span><span class="m">1280</span>:720<span class="w"> </span>-c:v<span class="w"> </span>h264_videotoolbox<span class="w"> </span>output_720p.mp4
+
+
+<span class="c1">###############################################################</span>
+<span class="c1">#  CONCATENATION (JOIN VIDEOS)</span>
+<span class="c1">###############################################################</span>
+
+<span class="c1"># Method 1: Same codec (fast)</span>
+<span class="c1"># Create list.txt containing:</span>
+<span class="c1"># file &#39;a.mp4&#39;</span>
+<span class="c1"># file &#39;b.mp4&#39;</span>
+ffmpeg<span class="w"> </span>-f<span class="w"> </span>concat<span class="w"> </span>-safe<span class="w"> </span><span class="m">0</span><span class="w"> </span>-i<span class="w"> </span>list.txt<span class="w"> </span>-c<span class="w"> </span>copy<span class="w"> </span>merged.mp4
+
+<span class="c1"># Method 2: Different codecs (re-encode)</span>
+ffmpeg<span class="w"> </span>-i<span class="w"> </span><span class="s2">&quot;concat:a.mp4|b.mp4&quot;</span><span class="w"> </span>-c:v<span class="w"> </span>libx264<span class="w"> </span>-c:a<span class="w"> </span>aac<span class="w"> </span>output.mp4
+
+
+<span class="c1">###############################################################</span>
+<span class="c1">#  EXTRA USEFUL COMMANDS</span>
+<span class="c1">###############################################################</span>
+
+<span class="c1"># Extract JPG thumbnail at 10 seconds</span>
+ffmpeg<span class="w"> </span>-ss<span class="w"> </span><span class="m">00</span>:00:10<span class="w"> </span>-i<span class="w"> </span>input.mp4<span class="w"> </span>-vframes<span class="w"> </span><span class="m">1</span><span class="w"> </span>thumb.jpg
+
+<span class="c1"># Increase brightness</span>
+ffmpeg<span class="w"> </span>-i<span class="w"> </span>input.mp4<span class="w"> </span>-vf<span class="w"> </span><span class="s2">&quot;eq=brightness=0.1&quot;</span><span class="w"> </span>output.mp4
+
+<span class="c1"># Remove audio</span>
+ffmpeg<span class="w"> </span>-i<span class="w"> </span>input.mp4<span class="w"> </span>-an<span class="w"> </span>no_audio.mp4
+
+<span class="c1"># Remove video (audio only)</span>
+ffmpeg<span class="w"> </span>-i<span class="w"> </span>input.mp4<span class="w"> </span>-vn<span class="w"> </span>audio_only.m4a
+
+<span class="c1"># Change playback speed (2x faster)</span>
+ffmpeg<span class="w"> </span>-i<span class="w"> </span>input.mp4<span class="w"> </span>-vf<span class="w"> </span><span class="s2">&quot;setpts=0.5*PTS&quot;</span><span class="w"> </span>-filter:a<span class="w"> </span><span class="s2">&quot;atempo=2.0&quot;</span><span class="w"> </span>output_fast.mp4
+
+
+<span class="c1">###############################################################</span>
+<span class="c1">#  CREATE GIF (HIGH QUALITY)</span>
+<span class="c1">###############################################################</span>
+
+<span class="c1"># Generate palette (better colors)</span>
+ffmpeg<span class="w"> </span>-i<span class="w"> </span>input.mp4<span class="w"> </span>-vf<span class="w"> </span>palettegen<span class="w"> </span>palette.png
+
+<span class="c1"># Create GIF using palette</span>
+ffmpeg<span class="w"> </span>-i<span class="w"> </span>input.mp4<span class="w"> </span>-i<span class="w"> </span>palette.png<span class="w"> </span>-filter_complex<span class="w"> </span><span class="s2">&quot;paletteuse&quot;</span><span class="w"> </span>output.gif
+</code></pre></div></td></tr></table></div>
+<h2 id="video%20processing-video_tools-yt-dlp">yt-dlp</h2>
+<p>yt-dlp is a fork of youtube-dl. It is a command-line program to download videos from YouTube and many other sites.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># basic download</span>
+yt-dlp<span class="w"> </span><span class="s2">&quot;https://www.youtube.com/watch?v=VIDEO_ID&quot;</span>
+
+<span class="c1"># download best video and audio</span>
+yt-dlp<span class="w"> </span>-f<span class="w"> </span><span class="s2">&quot;bestvideo+bestaudio/best&quot;</span><span class="w"> </span><span class="s2">&quot;URL&quot;</span>
+
+<span class="c1"># download playlist</span>
+yt-dlp<span class="w"> </span>--yes-playlist<span class="w"> </span><span class="s2">&quot;https://www.youtube.com/playlist?list=PLAYLIST_ID&quot;</span>
+
+<span class="c1"># download audio only</span>
+yt-dlp<span class="w"> </span>-x<span class="w"> </span>--audio-format<span class="w"> </span>mp3<span class="w"> </span><span class="s2">&quot;URL&quot;</span>
+
+<span class="c1"># Download with custom filename</span>
+yt-dlp<span class="w"> </span>-o<span class="w"> </span><span class="s2">&quot;%(title)s.%(ext)s&quot;</span><span class="w"> </span><span class="s2">&quot;URL&quot;</span>
+
+<span class="c1"># combine best quality, location, and make sure it&#39;s not a playlist</span>
+yt-dlp<span class="w"> </span>-f<span class="w"> </span><span class="s2">&quot;bestvideo+bestaudio/best&quot;</span><span class="w"> </span>-o<span class="w"> </span><span class="s2">&quot;downloads/%(title)s.%(ext)s&quot;</span><span class="w"> </span>--no-playlist<span class="w"> </span><span class="s2">&quot;URL&quot;</span>
+</code></pre></div></td></tr></table></div></section><section class="print-page" id="video%20processing-docs_200_streaming" heading-number="9.3"><h1 id="video%20processing-docs_200_streaming-streaming">Streaming</h1>
 <p>The <strong>"best" streaming protocol</strong> depends on the use case. Here’s a breakdown of what’s ideal for different scenarios:</p>
 <h3 id="video%20processing-docs_200_streaming-best-streaming-protocols-by-use-case"><strong>Best Streaming Protocols by Use Case</strong></h3>
 <p><strong>On-Demand Video Streaming (e.g., Netflix, YouTube)</strong></p>
@@ -11141,14 +11990,19 @@ If you're creating a function or struct, anything with a data type, you can use 
                 .print-site-enumerate-headings #databases-duckdb h2 {  counter-increment: counter-databases-duckdb-2 }
             
 .print-site-enumerate-headings #section-9 > h1:before { content: '9 ' }
-.print-site-enumerate-headings #video%20processing-docs_200_ffmpeg > h1:before { content: '9.1 ' }
+.print-site-enumerate-headings #video%20processing-general > h1:before { content: '9.1 ' }
 
-                .print-site-enumerate-headings #video%20processing-docs_200_ffmpeg h2:before { content: '9.1.' counter(counter-video%20processing-docs_200_ffmpeg-2) ' ' }
-                .print-site-enumerate-headings #video%20processing-docs_200_ffmpeg h2 {  counter-increment: counter-video%20processing-docs_200_ffmpeg-2 }
+                .print-site-enumerate-headings #video%20processing-general h2:before { content: '9.1.' counter(counter-video%20processing-general-2) ' ' }
+                .print-site-enumerate-headings #video%20processing-general h2 {  counter-increment: counter-video%20processing-general-2 }
             
-.print-site-enumerate-headings #video%20processing-docs_200_streaming > h1:before { content: '9.2 ' }
+.print-site-enumerate-headings #video%20processing-video_tools > h1:before { content: '9.2 ' }
 
-                .print-site-enumerate-headings #video%20processing-docs_200_streaming h2:before { content: '9.2.' counter(counter-video%20processing-docs_200_streaming-2) ' ' }
+                .print-site-enumerate-headings #video%20processing-video_tools h2:before { content: '9.2.' counter(counter-video%20processing-video_tools-2) ' ' }
+                .print-site-enumerate-headings #video%20processing-video_tools h2 {  counter-increment: counter-video%20processing-video_tools-2 }
+            
+.print-site-enumerate-headings #video%20processing-docs_200_streaming > h1:before { content: '9.3 ' }
+
+                .print-site-enumerate-headings #video%20processing-docs_200_streaming h2:before { content: '9.3.' counter(counter-video%20processing-docs_200_streaming-2) ' ' }
                 .print-site-enumerate-headings #video%20processing-docs_200_streaming h2 {  counter-increment: counter-video%20processing-docs_200_streaming-2 }
             
 .print-site-enumerate-headings #section-10 > h1:before { content: '10 ' }

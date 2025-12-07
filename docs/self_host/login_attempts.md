@@ -1,9 +1,4 @@
-Here you go — a **clean, comprehensive, copy-paste-ready** set of Fail2Ban + login monitoring commands, all in one code block, with clear comment headers for each section.
-
-Use this anytime you want to quickly investigate login attempts, bans, SSH failures, or brute-force activity.
-
-## Important Commands
----
+# Important Commands
 
 ```bash
 ############################################################

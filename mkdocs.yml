@@ -86,7 +86,8 @@ nav:
 - Databases:
     - DuckDB: databases/duckdb.md
 - Video Processing:
-    - FFmpeg: Video Processing/docs_200_ffmpeg.md
+    - Basics: Video Processing/general.md
+    - Tools: Video Processing/video_tools.md
     - Streaming: Video Processing/docs_200_streaming.md
 - AI:
     - Ollama: AI/docs_105_local_llm.md

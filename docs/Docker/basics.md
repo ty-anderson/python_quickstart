@@ -42,6 +42,9 @@ docker logs -f <container-name-or-id>
 # view docker resource usage
 docker stats
 
+# remove images not being referenced by a container
+docker image prune
+
 ```
 
 ## Run a Container Examples

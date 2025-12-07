@@ -1775,11 +1775,32 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Video%20Processing/docs_200_ffmpeg/" class="md-nav__link">
+      <a href="../../Video%20Processing/general/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    FFmpeg
+    Basics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Video%20Processing/video_tools/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tools
   </span>
   
 
@@ -2159,7 +2180,10 @@
 <span class="normal">38</span>
 <span class="normal">39</span>
 <span class="normal">40</span>
-<span class="normal">41</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># When you find an image you want to use do</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># When you find an image you want to use do</span>
 docker<span class="w"> </span>pull<span class="w"> </span>&lt;image_name&gt;
 
 <span class="c1"># To see images downloaded use</span>
@@ -2200,6 +2224,9 @@ docker<span class="w"> </span>logs<span class="w"> </span>-f<span class="w"> </s
 
 <span class="c1"># view docker resource usage</span>
 docker<span class="w"> </span>stats
+
+<span class="c1"># remove images not being referenced by a container</span>
+docker<span class="w"> </span>image<span class="w"> </span>prune
 </code></pre></div></td></tr></table></div>
 <h2 id="run-a-container-examples">Run a Container Examples</h2>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
