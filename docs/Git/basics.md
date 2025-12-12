@@ -29,6 +29,9 @@ git pull
 # remove all uncommited changes (USE WITH CAUTION, NO RECOVERY OPTIONS)
 git reset --hard
 
+# remove staged (indexed) changes.
+git restore --staged .
+git restore --staged path/to/file
 ```
 
 The location of the git files is a directory in the root directory of your project.
@@ -71,3 +74,152 @@ git reset --hard HEAD~1 # USE WITH CAUTION
 
 To get back to head just checkout the branch:
 ``git checkout main``
+
+
+---
+
+## Git Structure
+
+### 1. **HEAD**
+
+* The **last committed snapshot**
+* “What’s in the repo right now”
+* Points to a commit
+
+```
+HEAD = last commit
+```
+
+---
+
+### 2. **INDEX (Staging Area)**
+
+* What **will go into the next commit**
+* Acts as a **buffer** between your files and HEAD
+
+```
+INDEX = prepared for commit
+```
+
+---
+
+### 3. **WORKING TREE**
+
+* Your actual files on disk
+* What you’re actively editing
+
+```
+WORKING TREE = your local files
+```
+
+---
+
+## Flow of changes
+
+```
+Edit file
+  ↓
+WORKING TREE
+  ↓  git add
+INDEX
+  ↓  git commit
+HEAD
+```
+
+---
+
+## What each command affects
+
+### `git add file`
+
+* WORKING TREE → INDEX
+
+---
+
+### `git commit`
+
+* INDEX → HEAD
+
+---
+
+## `git restore`
+
+### Discard local changes
+
+```bash
+git restore file.txt
+```
+
+* HEAD → WORKING TREE
+* ❌ deletes uncommitted changes
+
+---
+
+### Unstage a file
+
+```bash
+git restore --staged file.txt
+```
+
+* HEAD → INDEX
+* ✔ keeps working tree changes
+
+---
+
+## `git reset`
+
+### Default (`--mixed`)
+
+```bash
+git reset HEAD file.txt
+```
+
+* HEAD → INDEX
+* Same effect as:
+
+```bash
+git restore --staged file.txt
+```
+
+---
+
+### Soft reset
+
+```bash
+git reset --soft HEAD~1
+```
+
+* Moves HEAD
+* INDEX + WORKING TREE unchanged
+
+---
+
+### Hard reset ⚠️
+
+```bash
+git reset --hard HEAD
+```
+
+* HEAD → INDEX → WORKING TREE
+* ❌ deletes all local changes
+
+---
+
+## One-line mental model
+
+> **HEAD** = last commit
+> **INDEX** = next commit
+> **WORKING TREE** = current edits
+
+---
+
+## Safe commands to remember
+
+| Task            | Command                     |
+| --------------- | --------------------------- |
+| Unstage file    | `git restore --staged file` |
+| Discard changes | `git restore file`          |
+| Stage file      | `git add file`              |
+
+---
+
